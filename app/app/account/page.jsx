@@ -25,10 +25,10 @@ import { DEMO_PORTFOLIO, DEMO_TRANSACTIONS } from "@/lib/demo-portfolio";
 function MetricCard({ icon: Icon, label, value, sub, highlight }) {
   return (
     <article
-      className={`vq-glass-hover p-5 ${highlight ? "ring-2 ring-red-400/25 shadow-glow" : ""}`}
+      className={`vq-glass-hover p-5 ${highlight ? "ring-2 ring-nolo-400/25 shadow-glow" : ""}`}
     >
       <div className="flex items-start justify-between gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500 dark:text-red-400">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500 dark:text-nolo-400">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>
@@ -153,7 +153,7 @@ function EmptyAccount() {
 
   return (
     <div className="vq-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
-      <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-red-500/10 text-red-500 ring-2 ring-red-400/20 dark:text-red-400">
+      <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-nolo-500/10 text-nolo-500 ring-2 ring-nolo-400/20 dark:text-nolo-400">
         <Wallet className="h-8 w-8" aria-hidden="true" />
       </span>
       <h2 className="mt-6 text-xl font-semibold text-vault-text">

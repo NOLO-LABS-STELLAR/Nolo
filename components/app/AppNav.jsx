@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { NoloLogo } from "@/components/brand/NoloLogo";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -58,9 +59,10 @@ export default function AppNav() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
           <Link
             href="/app"
-            className="text-lg font-bold tracking-tight text-vault-text transition-colors duration-300 hover:text-red-500"
+            className="rounded-lg transition-opacity duration-300 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400"
+            aria-label="Nolo home"
           >
-            VaultQuest
+            <NoloLogo markSize={28} wordmarkClassName="text-[26px]" />
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
@@ -72,7 +74,7 @@ export default function AppNav() {
                   href={href}
                   className={`rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ${
                     active
-                      ? "bg-red-500/15 text-red-600 ring-1 ring-red-400/30 dark:text-red-400"
+                      ? "bg-nolo-500/15 text-nolo-600 ring-1 ring-nolo-400/30 dark:text-nolo-400"
                       : "text-vault-muted hover:bg-vault-surface hover:text-vault-text"
                   }`}
                   aria-current={active ? "page" : undefined}
@@ -94,7 +96,7 @@ export default function AppNav() {
                 onClick={toggleHighContrast}
                 aria-pressed={highContrast}
                 aria-label={highContrast ? "Disable high contrast mode" : "Enable high contrast mode"}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-text transition-all duration-300 hover:border-red-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-text transition-all duration-300 hover:border-nolo-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg"
               >
                 <Contrast className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -102,7 +104,7 @@ export default function AppNav() {
                 type="button"
                 onClick={() => setRpcOpen(true)}
                 aria-label="Configure custom RPC endpoints"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-text transition-all duration-300 hover:border-red-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-text transition-all duration-300 hover:border-nolo-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg"
               >
                 <Server className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -145,7 +147,7 @@ export default function AppNav() {
                       href={href}
                       onClick={() => setMenuOpen(false)}
                       className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
-                        active ? "bg-red-500/15 text-red-600 dark:text-red-400" : "text-vault-muted"
+                        active ? "bg-nolo-500/15 text-nolo-600 dark:text-nolo-400" : "text-vault-muted"
                       }`}
                     >
                       <Icon className="h-5 w-5" aria-hidden="true" />

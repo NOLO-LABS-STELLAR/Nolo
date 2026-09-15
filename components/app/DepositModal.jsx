@@ -217,13 +217,13 @@ export default function DepositModal({ isOpen, onClose }) {
                     inputMode="decimal"
                     className={`mt-2 w-full rounded-2xl border bg-vault-surface px-4 py-3 text-lg font-semibold text-vault-text outline-none transition focus:ring-2 ${
                       error
-                        ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/25"
-                        : "border-vault-border focus:border-red-400 focus:ring-red-400/25"
+                        ? "border-nolo-500/50 focus:border-nolo-500 focus:ring-nolo-500/25"
+                        : "border-vault-border focus:border-nolo-400 focus:ring-nolo-400/25"
                     }`}
                     placeholder="0.00"
                   />
                   {error && (
-                    <p className="mt-2 text-sm text-red-500 font-semibold" role="alert">
+                    <p className="mt-2 text-sm text-nolo-500 font-semibold" role="alert">
                       {error}
                     </p>
                   )}
@@ -234,7 +234,7 @@ export default function DepositModal({ isOpen, onClose }) {
                         key={pct}
                         type="button"
                         onClick={() => handleQuickAmount(pct)}
-                        className="flex-1 rounded-xl border border-vault-border/60 px-3 py-2 text-sm font-medium text-vault-muted transition-colors hover:bg-vault-surface hover:text-vault-text focus:outline-none focus:ring-2 focus:ring-red-400/25"
+                        className="flex-1 rounded-xl border border-vault-border/60 px-3 py-2 text-sm font-medium text-vault-muted transition-colors hover:bg-vault-surface hover:text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-400/25"
                       >
                         {pct}%
                       </button>
@@ -242,7 +242,7 @@ export default function DepositModal({ isOpen, onClose }) {
                     <button
                       type="button"
                       onClick={handleMaxAmount}
-                      className="flex-1 rounded-xl border border-red-500/40 px-3 py-2 text-sm font-medium text-red-400 transition-colors hover:bg-red-500/10 hover:text-red-300 focus:outline-none focus:ring-2 focus:ring-red-400/25"
+                      className="flex-1 rounded-xl border border-nolo-500/40 px-3 py-2 text-sm font-medium text-nolo-400 transition-colors hover:bg-nolo-500/10 hover:text-nolo-300 focus:outline-none focus:ring-2 focus:ring-nolo-400/25"
                     >
                       Max
                     </button>
@@ -258,11 +258,11 @@ export default function DepositModal({ isOpen, onClose }) {
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-vault-muted">Deposit amount</span>
-                      <span className="font-medium text-red-500">-{amountNum > 0 ? formatAssetAmount(amountNum, "USDC") : "0.00 USDC"}</span>
+                      <span className="font-medium text-nolo-500">-{amountNum > 0 ? formatAssetAmount(amountNum, "USDC") : "0.00 USDC"}</span>
                     </div>
                     <div className="border-t border-vault-border/30 pt-2 flex justify-between text-sm">
                       <span className="font-semibold text-vault-text">Remaining after deposit</span>
-                      <span className={`font-bold ${remainingUsdc < 0 ? "text-red-500" : "text-vault-text"}`}>
+                      <span className={`font-bold ${remainingUsdc < 0 ? "text-nolo-500" : "text-vault-text"}`}>
                         {remainingUsdc >= 0 ? formatAssetAmount(remainingUsdc, "USDC") : "0.00 USDC"}
                       </span>
                     </div>
@@ -364,13 +364,13 @@ export default function DepositModal({ isOpen, onClose }) {
                 </div>
                 <div className="flex justify-between py-2.5 pt-4">
                   <span className="font-semibold text-vault-text">Deduction Summary</span>
-                  <span className="font-bold text-red-500">
+                  <span className="font-bold text-nolo-500">
                     {amount} USDC + {formatToken(gasBudget, "AVAX")}
                   </span>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-4 text-xs text-vault-muted">
+              <div className="rounded-2xl border border-nolo-500/20 bg-nolo-500/5 p-4 text-xs text-vault-muted">
                 Yield generated from pooled deposits funds periodic prize drawings. Your original deposit (principal) remains fully withdrawable at any time.
               </div>
             </section>
@@ -378,8 +378,8 @@ export default function DepositModal({ isOpen, onClose }) {
 
           {step === "loading" && (
             <section className="flex flex-col items-center justify-center py-16 space-y-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-red-500/30">
-                <Loader2 className="h-8 w-8 animate-spin text-red-400" />
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-nolo-500/30">
+                <Loader2 className="h-8 w-8 animate-spin text-nolo-400" />
               </div>
               <h3 className="text-lg font-semibold text-vault-text">Processing Deposit</h3>
               <p className="text-sm text-vault-muted max-w-xs text-center">

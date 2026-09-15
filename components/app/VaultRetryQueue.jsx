@@ -165,7 +165,7 @@ function StatusBadge({ status, retryState }) {
   }
   if (retryState === "exhausted") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-medium text-red-600 dark:text-red-400">
+      <span className="inline-flex items-center gap-1 rounded-full bg-nolo-500/10 px-2.5 py-0.5 text-xs font-medium text-nolo-600 dark:text-nolo-400">
         <AlertCircle className="h-3 w-3" aria-hidden="true" />
         Needs attention
       </span>
@@ -181,7 +181,7 @@ function StatusBadge({ status, retryState }) {
   }
   if (status === "failed") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2.5 py-0.5 text-xs font-medium text-red-600 dark:text-red-400">
+      <span className="inline-flex items-center gap-1 rounded-full bg-nolo-500/10 px-2.5 py-0.5 text-xs font-medium text-nolo-600 dark:text-nolo-400">
         <AlertCircle className="h-3 w-3" aria-hidden="true" />
         Failed
       </span>
@@ -220,7 +220,7 @@ function ErrorMessage({ errorCode, errorDetail }) {
   };
 
   return (
-    <p className="mt-1 text-xs text-red-500 dark:text-red-400">
+    <p className="mt-1 text-xs text-nolo-500 dark:text-nolo-400">
       {messages[errorCode] || errorDetail || "An unknown error occurred."}
     </p>
   );
@@ -501,14 +501,14 @@ export default function VaultRetryQueue() {
           aria-controls="retry-queue-content"
         >
           <div className="flex items-center gap-2">
-            <AlertCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
+            <AlertCircle className="h-5 w-5 text-nolo-500" aria-hidden="true" />
             <h2 className="text-lg font-semibold text-vault-text">
               Pending Actions
             </h2>
           </div>
           <div className="flex gap-1.5">
             {failedCount > 0 && (
-              <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-xs font-medium text-red-600 dark:text-red-400">
+              <span className="inline-flex items-center rounded-full bg-nolo-500/10 px-2 py-0.5 text-xs font-medium text-nolo-600 dark:text-nolo-400">
                 {failedCount} failed
               </span>
             )}

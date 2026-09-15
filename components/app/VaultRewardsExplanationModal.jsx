@@ -89,7 +89,7 @@ export default function VaultRewardsExplanationModal() {
 
               <div className="px-6 py-5 space-y-6">
                 <p className="text-sm leading-relaxed text-vault-muted">
-                  VaultQuest rewards you for saving. Here&apos;s how the reward system works.
+                  Nolo rewards you for saving. Here&apos;s how the reward system works.
                 </p>
 
                 <div className="space-y-4">

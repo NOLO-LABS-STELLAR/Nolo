@@ -85,11 +85,11 @@ export default function ProfileEditor() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-medium ${
                   isActive 
-                    ? "bg-red-500/10 text-red-500 ring-1 ring-red-500/30 shadow-glow" 
+                    ? "bg-nolo-500/10 text-nolo-500 ring-1 ring-nolo-500/30 shadow-glow" 
                     : "text-vault-muted hover:bg-vault-surface/50 hover:text-vault-text"
                 }`}
               >
-                <Icon className={`w-5 h-5 ${isActive ? "text-red-500" : ""}`} />
+                <Icon className={`w-5 h-5 ${isActive ? "text-nolo-500" : ""}`} />
                 {tab.label}
               </button>
             );
@@ -124,23 +124,23 @@ export default function ProfileEditor() {
                     <label className="text-sm font-medium text-vault-text">Display Name</label>
                     <input
                       type="text"
-                      className={`w-full bg-vault-surface border ${errors.name ? 'border-red-500' : 'border-vault-border'} rounded-lg px-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all`}
+                      className={`w-full bg-vault-surface border ${errors.name ? 'border-nolo-500' : 'border-vault-border'} rounded-lg px-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500/50 transition-all`}
                       placeholder="e.g. DeFi Degen"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
-                    {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-xs text-nolo-500 mt-1">{errors.name}</p>}
                   </div>
                   <div className="space-y-1">
                     <label className="text-sm font-medium text-vault-text">Email Address</label>
                     <input
                       type="email"
-                      className={`w-full bg-vault-surface border ${errors.email ? 'border-red-500' : 'border-vault-border'} rounded-lg px-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all`}
+                      className={`w-full bg-vault-surface border ${errors.email ? 'border-nolo-500' : 'border-vault-border'} rounded-lg px-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500/50 transition-all`}
                       placeholder="john@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
-                    {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                    {errors.email && <p className="text-xs text-nolo-500 mt-1">{errors.email}</p>}
                   </div>
                   <div className="space-y-1">
                     <label className="text-sm font-medium text-vault-text">Wallet Address</label>
@@ -162,13 +162,13 @@ export default function ProfileEditor() {
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-vault-muted" />
                       <input
                         type="password"
-                        className={`w-full bg-vault-surface border ${errors.currentPassword ? 'border-red-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all`}
+                        className={`w-full bg-vault-surface border ${errors.currentPassword ? 'border-nolo-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500/50 transition-all`}
                         placeholder="••••••••"
                         value={formData.currentPassword}
                         onChange={(e) => setFormData({ ...formData, currentPassword: e.target.value })}
                       />
                     </div>
-                    {errors.currentPassword && <p className="text-xs text-red-500 mt-1">{errors.currentPassword}</p>}
+                    {errors.currentPassword && <p className="text-xs text-nolo-500 mt-1">{errors.currentPassword}</p>}
                   </div>
                   <div className="space-y-1">
                     <label className="text-sm font-medium text-vault-text">New Password</label>
@@ -176,13 +176,13 @@ export default function ProfileEditor() {
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-vault-muted" />
                       <input
                         type="password"
-                        className={`w-full bg-vault-surface border ${errors.newPassword ? 'border-red-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all`}
+                        className={`w-full bg-vault-surface border ${errors.newPassword ? 'border-nolo-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500/50 transition-all`}
                         placeholder="••••••••"
                         value={formData.newPassword}
                         onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
                       />
                     </div>
-                    {errors.newPassword && <p className="text-xs text-red-500 mt-1">{errors.newPassword}</p>}
+                    {errors.newPassword && <p className="text-xs text-nolo-500 mt-1">{errors.newPassword}</p>}
                   </div>
                   <div className="space-y-1">
                     <label className="text-sm font-medium text-vault-text">Confirm New Password</label>
@@ -190,13 +190,13 @@ export default function ProfileEditor() {
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-vault-muted" />
                       <input
                         type="password"
-                        className={`w-full bg-vault-surface border ${errors.confirmPassword ? 'border-red-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all`}
+                        className={`w-full bg-vault-surface border ${errors.confirmPassword ? 'border-nolo-500' : 'border-vault-border'} rounded-lg pl-10 pr-4 py-2.5 text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500/50 transition-all`}
                         placeholder="••••••••"
                         value={formData.confirmPassword}
                         onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                       />
                     </div>
-                    {errors.confirmPassword && <p className="text-xs text-red-500 mt-1">{errors.confirmPassword}</p>}
+                    {errors.confirmPassword && <p className="text-xs text-nolo-500 mt-1">{errors.confirmPassword}</p>}
                   </div>
                 </div>
               )}
@@ -210,7 +210,7 @@ export default function ProfileEditor() {
                     </div>
                     <button 
                       onClick={() => setFormData(f => ({ ...f, emailAlerts: !f.emailAlerts }))}
-                      className={`w-12 h-6 rounded-full transition-colors relative ${formData.emailAlerts ? 'bg-red-500' : 'bg-vault-border'}`}
+                      className={`w-12 h-6 rounded-full transition-colors relative ${formData.emailAlerts ? 'bg-nolo-500' : 'bg-vault-border'}`}
                     >
                       <span className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform ${formData.emailAlerts ? 'translate-x-6' : 'translate-x-0'}`} />
                     </button>
@@ -223,7 +223,7 @@ export default function ProfileEditor() {
                     </div>
                     <button 
                       onClick={() => setFormData(f => ({ ...f, pushNotifications: !f.pushNotifications }))}
-                      className={`w-12 h-6 rounded-full transition-colors relative ${formData.pushNotifications ? 'bg-red-500' : 'bg-vault-border'}`}
+                      className={`w-12 h-6 rounded-full transition-colors relative ${formData.pushNotifications ? 'bg-nolo-500' : 'bg-vault-border'}`}
                     >
                       <span className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform ${formData.pushNotifications ? 'translate-x-6' : 'translate-x-0'}`} />
                     </button>

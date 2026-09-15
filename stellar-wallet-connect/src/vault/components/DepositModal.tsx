@@ -212,7 +212,7 @@ export const DepositModal: FC<DepositModalProps> = ({
                   min="0"
                   value={amount}
                   onChange={(e) => { setAmount(e.target.value); setError(null); }}
-                  className="w-full rounded-xl border border-red-900/40 bg-[#1A0505] px-4 py-3 pr-16 text-lg text-white placeholder-gray-600 outline-none transition-colors focus:border-red-500/60 focus:ring-1 focus:ring-red-500/30"
+                  className="w-full rounded-xl border border-nolo-900/40 bg-[#1A120D] px-4 py-3 pr-16 text-lg text-white placeholder-gray-600 outline-none transition-colors focus:border-nolo-500/60 focus:ring-1 focus:ring-nolo-500/30"
                   placeholder="0.00"
                 />
                 <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400">
@@ -222,7 +222,7 @@ export const DepositModal: FC<DepositModalProps> = ({
             </div>
 
             {/* Balance impact preview */}
-            <div className="rounded-xl border border-red-900/20 bg-[#1A0505]/40 p-3 space-y-1.5">
+            <div className="rounded-xl border border-nolo-900/20 bg-[#1A120D]/40 p-3 space-y-1.5">
               <p className="text-xs font-medium text-gray-400">Balance impact</p>
               <div className="flex justify-between text-xs">
                 <span className="text-gray-500">Current balance</span>
@@ -230,11 +230,11 @@ export const DepositModal: FC<DepositModalProps> = ({
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-gray-500">Deposit amount</span>
-                <span className="text-red-400">-{amountNum > 0 ? formatAmount(String(amountNum), pool.asset) : `0.00 ${pool.asset}`}</span>
+                <span className="text-nolo-400">-{amountNum > 0 ? formatAmount(String(amountNum), pool.asset) : `0.00 ${pool.asset}`}</span>
               </div>
-              <div className="flex justify-between text-xs border-t border-red-900/20 pt-1.5">
+              <div className="flex justify-between text-xs border-t border-nolo-900/20 pt-1.5">
                 <span className="font-medium text-gray-300">Remaining after deposit</span>
-                <span className={`font-semibold ${remainingBalance < 0 ? "text-red-400" : "text-emerald-400"}`}>
+                <span className={`font-semibold ${remainingBalance < 0 ? "text-nolo-400" : "text-emerald-400"}`}>
                   {formatAmount(String(remainingBalance), pool.asset)}
                 </span>
               </div>
@@ -250,14 +250,14 @@ export const DepositModal: FC<DepositModalProps> = ({
                 discovering it from a reverted transaction. */}
             {(remainingWalletCapacity !== null || remainingPoolCapacity !== null) && (
               <div
-                className="rounded-xl border border-red-900/20 bg-[#1A0505]/40 p-3 space-y-1.5"
+                className="rounded-xl border border-nolo-900/20 bg-[#1A120D]/40 p-3 space-y-1.5"
                 data-testid="deposit-capacity-preview"
               >
                 <p className="text-xs font-medium text-gray-400">Deposit capacity</p>
                 {remainingWalletCapacity !== null && (
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-500">Your remaining limit</span>
-                    <span className={exceedsWalletCap ? "text-red-400" : "text-gray-300"}>
+                    <span className={exceedsWalletCap ? "text-nolo-400" : "text-gray-300"}>
                       {formatAmount(String(remainingWalletCapacity), pool.asset)}
                     </span>
                   </div>
@@ -265,7 +265,7 @@ export const DepositModal: FC<DepositModalProps> = ({
                 {remainingPoolCapacity !== null && (
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-500">Pool remaining capacity</span>
-                    <span className={exceedsPoolCap ? "text-red-400" : "text-gray-300"}>
+                    <span className={exceedsPoolCap ? "text-nolo-400" : "text-gray-300"}>
                       {formatAmount(String(remainingPoolCapacity), pool.asset)}
                     </span>
                   </div>
@@ -275,7 +275,7 @@ export const DepositModal: FC<DepositModalProps> = ({
 
             {/* Post-deposit vault state preview (#685) */}
             {amountNum > 0 && (
-              <div className="rounded-xl border border-red-900/20 bg-[#1A0505]/40 p-3 space-y-2" data-testid="deposit-simulation-preview">
+              <div className="rounded-xl border border-nolo-900/20 bg-[#1A120D]/40 p-3 space-y-2" data-testid="deposit-simulation-preview">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-medium text-gray-400">Post-deposit pool state preview</p>
                   <span className="text-[10px] uppercase font-semibold text-gray-500">Simulated</span>
@@ -297,7 +297,7 @@ export const DepositModal: FC<DepositModalProps> = ({
                   </span>
                 </div>
                 {depositPreview.queuedWithdrawals > 0 && (
-                  <div className="flex justify-between text-xs border-t border-red-900/20 pt-1.5">
+                  <div className="flex justify-between text-xs border-t border-nolo-900/20 pt-1.5">
                     <span className="text-gray-500">Queued withdrawals coverage</span>
                     <span className={depositPreview.queueDeficit > 0 ? "text-amber-400 font-medium" : "text-emerald-400 font-medium"}>
                       {depositPreview.queueCoverageRatio === Number.POSITIVE_INFINITY
@@ -316,7 +316,7 @@ export const DepositModal: FC<DepositModalProps> = ({
                 key={warning.code}
                 className={`flex items-start gap-2 rounded-lg border p-3 text-sm ${
                   warning.severity === "danger"
-                    ? "border-red-900/60 bg-red-900/20 text-red-300"
+                    ? "border-nolo-900/60 bg-nolo-900/20 text-nolo-300"
                     : "border-amber-900/40 bg-amber-900/10 text-amber-300"
                 }`}
                 data-testid={`risk-warning-${warning.code.toLowerCase().replace(/_/g, "-")}`}
@@ -367,7 +367,7 @@ export const DepositModal: FC<DepositModalProps> = ({
                   key={pct}
                   type="button"
                   onClick={() => handleQuickAmount(pct)}
-                  className="flex-1 rounded-lg border border-red-900/30 px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-red-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                  className="flex-1 rounded-lg border border-nolo-900/30 px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-nolo-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
                 >
                   {pct}%
                 </button>
@@ -375,21 +375,21 @@ export const DepositModal: FC<DepositModalProps> = ({
               <button
                 type="button"
                 onClick={handleMax}
-                className="flex-1 rounded-lg border border-red-600/40 px-3 py-2 text-sm font-medium text-red-400 transition-colors hover:bg-red-900/20 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="flex-1 rounded-lg border border-nolo-600/40 px-3 py-2 text-sm font-medium text-nolo-400 transition-colors hover:bg-nolo-900/20 hover:text-nolo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Max
               </button>
             </div>
 
             {error && (
-              <p className="text-sm text-red-400">{error}</p>
+              <p className="text-sm text-nolo-400">{error}</p>
             )}
 
             <button
               type="button"
               onClick={handleContinue}
               disabled={!isValid || refreshing}
-              className="w-full flex items-center justify-center gap-2 rounded-xl bg-red-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="w-full flex items-center justify-center gap-2 rounded-xl bg-nolo-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               {refreshing && <Loader2 className="h-4 w-4 animate-spin" />}
               {refreshing ? "Refreshing pool data..." : "Continue"}
@@ -399,7 +399,7 @@ export const DepositModal: FC<DepositModalProps> = ({
 
         {step === "review" && (
           <div className="space-y-4">
-            <div className="rounded-xl border border-red-900/30 bg-[#1A0505]/60 p-4 space-y-3">
+            <div className="rounded-xl border border-nolo-900/30 bg-[#1A120D]/60 p-4 space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400">Amount</span>
                 <span className="text-white font-semibold">{formatAmount(amount, pool.asset)}</span>
@@ -438,21 +438,21 @@ export const DepositModal: FC<DepositModalProps> = ({
             </div>
 
             {error && (
-              <p className="text-sm text-red-400">{error}</p>
+              <p className="text-sm text-nolo-400">{error}</p>
             )}
 
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={() => setStep("input")}
-                className="flex-1 rounded-xl border border-red-900/30 py-3 text-sm font-semibold text-gray-300 transition-colors hover:bg-red-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="flex-1 rounded-xl border border-nolo-900/30 py-3 text-sm font-semibold text-gray-300 transition-colors hover:bg-nolo-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Back
               </button>
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="flex-1 rounded-xl bg-red-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="flex-1 rounded-xl bg-nolo-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Confirm deposit
               </button>
@@ -462,11 +462,11 @@ export const DepositModal: FC<DepositModalProps> = ({
 
         {step === "broadcasting" && (
           <div className="flex flex-col items-center gap-4 py-6">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-red-500/30">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-nolo-500/30">
               {error ? (
-                <AlertTriangle className="h-8 w-8 text-red-400" />
+                <AlertTriangle className="h-8 w-8 text-nolo-400" />
               ) : (
-                <Loader2 className="h-8 w-8 animate-spin text-red-400" />
+                <Loader2 className="h-8 w-8 animate-spin text-nolo-400" />
               )}
             </div>
             <p className="text-base font-semibold text-white">
@@ -481,7 +481,7 @@ export const DepositModal: FC<DepositModalProps> = ({
               <button
                 type="button"
                 onClick={() => { setStep("review"); setError(null); }}
-                className="rounded-xl bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="rounded-xl bg-nolo-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Try again
               </button>
@@ -508,7 +508,7 @@ export const DepositModal: FC<DepositModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="rounded-xl bg-nolo-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               Close
             </button>

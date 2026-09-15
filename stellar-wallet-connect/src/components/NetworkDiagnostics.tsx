@@ -78,15 +78,15 @@ export const NetworkDiagnostics: FC = () => {
         <div
           role="alert"
           aria-live="assertive"
-          className="relative rounded-2xl border border-red-500/30 bg-red-950/40 backdrop-blur-md p-4 text-red-200 animate-in fade-in slide-in-from-top-4 duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-[0_0_15px_rgba(239,68,68,0.15)]"
+          className="relative rounded-2xl border border-nolo-500/30 bg-nolo-950/40 backdrop-blur-md p-4 text-nolo-200 animate-in fade-in slide-in-from-top-4 duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-[0_0_15px_rgba(239,68,68,0.15)]"
         >
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-400">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-nolo-500/10 text-nolo-400">
               <AlertTriangle className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
               <h2 className="text-sm font-semibold text-white">Network Mismatch Blocked Action</h2>
-              <p className="text-xs text-red-300 mt-0.5">
+              <p className="text-xs text-nolo-300 mt-0.5">
                 Your wallet is connected to <span className="font-bold uppercase">{network}</span>, but the VaultQuest dApp expects <span className="font-bold uppercase">{EXPECTED_NETWORK}</span>. Core transaction options are disabled.
               </p>
             </div>
@@ -94,7 +94,7 @@ export const NetworkDiagnostics: FC = () => {
           <button
             type="button"
             onClick={() => setExpanded(true)}
-            className="text-xs shrink-0 font-semibold text-red-300 hover:text-white underline underline-offset-2 transition-colors focus:outline-none focus:ring-1 focus:ring-red-400 p-1 rounded"
+            className="text-xs shrink-0 font-semibold text-nolo-300 hover:text-white underline underline-offset-2 transition-colors focus:outline-none focus:ring-1 focus:ring-nolo-400 p-1 rounded"
           >
             Open Diagnostics Panel
           </button>
@@ -107,7 +107,7 @@ export const NetworkDiagnostics: FC = () => {
           type="button"
           onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
-          className="inline-flex items-center gap-2 rounded-xl border border-red-900/30 bg-[#1A0505]/40 px-4 py-2 text-xs font-semibold text-gray-400 hover:text-white hover:bg-red-900/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+          className="inline-flex items-center gap-2 rounded-xl border border-nolo-900/30 bg-[#1A120D]/40 px-4 py-2 text-xs font-semibold text-gray-400 hover:text-white hover:bg-nolo-900/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500"
         >
           <Settings className={`h-3.5 w-3.5 ${expanded ? "rotate-90" : ""} transition-transform duration-300`} aria-hidden="true" />
           {expanded ? "Hide Diagnostics" : "System Diagnostics"}
@@ -118,11 +118,11 @@ export const NetworkDiagnostics: FC = () => {
       {expanded && (
         <aside
           aria-label="System Diagnostics"
-          className="rounded-2xl border border-red-900/20 bg-[#120303]/90 backdrop-blur-md p-4 sm:p-5 text-gray-300 animate-in zoom-in-95 duration-200 shadow-xl space-y-4"
+          className="rounded-2xl border border-nolo-900/20 bg-[#120303]/90 backdrop-blur-md p-4 sm:p-5 text-gray-300 animate-in zoom-in-95 duration-200 shadow-xl space-y-4"
         >
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-red-900/20 pb-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-nolo-900/20 pb-3">
             <div className="flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-900/20 text-red-400">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-400">
                 <Terminal className="h-4 w-4" aria-hidden="true" />
               </span>
               <div>
@@ -136,14 +136,14 @@ export const NetworkDiagnostics: FC = () => {
                   type="checkbox"
                   checked={anonymize}
                   onChange={(e) => setAnonymize(e.target.checked)}
-                  className="rounded border-red-900/40 bg-black/40 text-red-600 focus:ring-red-500"
+                  className="rounded border-nolo-900/40 bg-black/40 text-nolo-600 focus:ring-nolo-500"
                 />
                 Anonymize
               </label>
               <button
                 type="button"
                 onClick={handleCopy}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-red-900/20 border border-red-900/40 hover:bg-red-900/40 px-3 py-1.5 text-xs font-medium text-white transition-colors focus:outline-none focus:ring-1 focus:ring-red-400"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-nolo-900/20 border border-nolo-900/40 hover:bg-nolo-900/40 px-3 py-1.5 text-xs font-medium text-white transition-colors focus:outline-none focus:ring-1 focus:ring-nolo-400"
               >
                 {copied ? (
                   <>
@@ -162,8 +162,8 @@ export const NetworkDiagnostics: FC = () => {
 
           <div className="grid gap-4 md:grid-cols-2 text-xs">
             {/* Wallet State */}
-            <div className="space-y-2 rounded-xl border border-red-900/10 bg-black/10 p-3">
-              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-red-400">Wallet Connectivity</h4>
+            <div className="space-y-2 rounded-xl border border-nolo-900/10 bg-black/10 p-3">
+              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-nolo-400">Wallet Connectivity</h4>
               <dl className="space-y-1">
                 <div className="flex justify-between">
                   <dt className="text-gray-400">Status:</dt>
@@ -179,7 +179,7 @@ export const NetworkDiagnostics: FC = () => {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-gray-400">Detected Wallet Network:</dt>
-                  <dd className={`font-semibold uppercase ${mismatch ? "text-red-400" : "text-emerald-400"}`}>
+                  <dd className={`font-semibold uppercase ${mismatch ? "text-nolo-400" : "text-emerald-400"}`}>
                     {network || "Unknown"}
                   </dd>
                 </div>
@@ -187,14 +187,14 @@ export const NetworkDiagnostics: FC = () => {
             </div>
 
             {/* Network State */}
-            <div className="space-y-2 rounded-xl border border-red-900/10 bg-black/10 p-3">
-              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-red-400">Stellar Network Targets</h4>
+            <div className="space-y-2 rounded-xl border border-nolo-900/10 bg-black/10 p-3">
+              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-nolo-400">Stellar Network Targets</h4>
               <dl className="space-y-1">
                 <div className="flex justify-between">
                   <dt className="text-gray-400">Expected Network Name:</dt>
                   <dd className="font-semibold uppercase text-emerald-400">{EXPECTED_NETWORK}</dd>
                 </div>
-                <div className="flex flex-col gap-0.5 mt-1 border-t border-red-900/10 pt-1">
+                <div className="flex flex-col gap-0.5 mt-1 border-t border-nolo-900/10 pt-1">
                   <dt className="text-gray-400 text-[10px]">Expected Network Passphrase:</dt>
                   <dd className="font-mono text-[10px] text-gray-200 break-all select-all bg-black/30 p-1 rounded mt-0.5">
                     {expectedNetworkConfig?.passphrase || "N/A"}
@@ -204,8 +204,8 @@ export const NetworkDiagnostics: FC = () => {
             </div>
 
             {/* Deployment Manifest Attestation */}
-            <div className="space-y-2 rounded-xl border border-red-900/10 bg-black/10 p-3 md:col-span-2">
-              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-red-400 flex items-center gap-1.5">
+            <div className="space-y-2 rounded-xl border border-nolo-900/10 bg-black/10 p-3 md:col-span-2">
+              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-nolo-400 flex items-center gap-1.5">
                 <Shield className="h-3 w-3" aria-hidden="true" />
                 Deployment Manifest Attestation
               </h4>
@@ -220,7 +220,7 @@ export const NetworkDiagnostics: FC = () => {
                   <dl className="grid gap-x-4 gap-y-1.5 sm:grid-cols-2">
                     <div>
                       <dt className="text-gray-400">Verification Status:</dt>
-                      <dd className={`font-semibold ${attestation.verified ? "text-emerald-400" : "text-red-400"}`}>
+                      <dd className={`font-semibold ${attestation.verified ? "text-emerald-400" : "text-nolo-400"}`}>
                         {attestation.verified ? "Verified" : "Mismatch Detected"}
                       </dd>
                     </div>
@@ -241,8 +241,8 @@ export const NetworkDiagnostics: FC = () => {
                         <dt className="text-gray-400">Mismatches:</dt>
                         <dd className="mt-1 space-y-1">
                           {attestation.mismatches.map((m, i) => (
-                            <div key={i} className="text-[10px] font-mono bg-red-950/30 rounded p-1.5 border border-red-900/20">
-                              <span className="text-red-400">{m.field}</span>: manifest=<span className="text-emerald-400">{m.manifestValue}</span> env=<span className="text-red-400">{m.envValue}</span>
+                            <div key={i} className="text-[10px] font-mono bg-nolo-950/30 rounded p-1.5 border border-nolo-900/20">
+                              <span className="text-nolo-400">{m.field}</span>: manifest=<span className="text-emerald-400">{m.manifestValue}</span> env=<span className="text-nolo-400">{m.envValue}</span>
                             </div>
                           ))}
                         </dd>
@@ -254,8 +254,8 @@ export const NetworkDiagnostics: FC = () => {
             </div>
 
             {/* Smart Contracts Configuration */}
-            <div className="space-y-2 rounded-xl border border-red-900/10 bg-black/10 p-3 md:col-span-2">
-              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-red-400">Registered Smart Contracts & API</h4>
+            <div className="space-y-2 rounded-xl border border-nolo-900/10 bg-black/10 p-3 md:col-span-2">
+              <h4 className="font-semibold text-white uppercase tracking-wider text-[10px] text-nolo-400">Registered Smart Contracts & API</h4>
               <dl className="grid gap-x-4 gap-y-1.5 sm:grid-cols-2">
                 <div>
                   <dt className="text-gray-400">Drip Pool Contract ID:</dt>
@@ -294,7 +294,7 @@ export const NetworkDiagnostics: FC = () => {
           </div>
 
           {envError && (
-            <div className="rounded-xl border border-red-500/20 bg-red-950/20 p-3 text-xs text-red-300 flex items-start gap-2">
+            <div className="rounded-xl border border-nolo-500/20 bg-nolo-950/20 p-3 text-xs text-nolo-300 flex items-start gap-2">
               <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" aria-hidden="true" />
               <div>
                 <span className="font-semibold text-white">Environment Warnings:</span>

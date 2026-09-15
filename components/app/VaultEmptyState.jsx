@@ -15,8 +15,8 @@ import { Vault, Search, Clock, TrendingUp, ArrowRight, PlusCircle, RefreshCw } f
 const VARIANTS = {
   dashboard: {
     Icon: Vault,
-    iconBg: "bg-red-500/10",
-    iconColor: "text-red-500",
+    iconBg: "bg-nolo-500/10",
+    iconColor: "text-nolo-500",
     title: "No active positions yet",
     description:
       "You haven't joined any prize savings vaults. Deposit to start earning yield tickets and enter weekly prize draws — your principal is always withdrawable.",

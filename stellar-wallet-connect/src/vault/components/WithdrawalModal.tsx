@@ -123,7 +123,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
                   max={depositedNum}
                   value={amount}
                   onChange={(e) => { setAmount(e.target.value); setError(null); }}
-                  className="w-full rounded-xl border border-red-900/40 bg-[#1A0505] px-4 py-3 pr-16 text-lg text-white placeholder-gray-600 outline-none transition-colors focus:border-red-500/60 focus:ring-1 focus:ring-red-500/30"
+                  className="w-full rounded-xl border border-nolo-900/40 bg-[#1A120D] px-4 py-3 pr-16 text-lg text-white placeholder-gray-600 outline-none transition-colors focus:border-nolo-500/60 focus:ring-1 focus:ring-nolo-500/30"
                   placeholder="0.00"
                 />
                 <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm text-gray-400">
@@ -148,7 +148,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
                   key={pct}
                   type="button"
                   onClick={() => handleQuickAmount(pct)}
-                  className="flex-1 rounded-lg border border-red-900/30 px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-red-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                  className="flex-1 rounded-lg border border-nolo-900/30 px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-nolo-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
                 >
                   {pct}%
                 </button>
@@ -158,18 +158,18 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
             <button
               type="button"
               onClick={handleMax}
-              className="w-full rounded-lg border border-red-600/40 px-3 py-2 text-sm font-medium text-red-400 transition-colors hover:bg-red-900/20 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="w-full rounded-lg border border-nolo-600/40 px-3 py-2 text-sm font-medium text-nolo-400 transition-colors hover:bg-nolo-900/20 hover:text-nolo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               Withdraw all ({formatAmount(position.deposited, pool.asset)})
             </button>
 
-            {error && <p className="text-sm text-red-400">{error}</p>}
+            {error && <p className="text-sm text-nolo-400">{error}</p>}
 
             <button
               type="button"
               onClick={handleContinue}
               disabled={!isValid}
-              className="w-full rounded-xl bg-red-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="w-full rounded-xl bg-nolo-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               Continue
             </button>
@@ -178,7 +178,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
 
         {step === "review" && (
           <div className="space-y-4">
-            <div className="rounded-xl border border-red-900/30 bg-[#1A0505]/60 p-4 space-y-3">
+            <div className="rounded-xl border border-nolo-900/30 bg-[#1A120D]/60 p-4 space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400">Amount</span>
                 <span className="text-white font-semibold">{formatAmount(amount, pool.asset)}</span>
@@ -216,20 +216,20 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
                 </div>
               </div>
             )}
-            {error && errorKind === "generic" && <p className="text-sm text-red-400">{error}</p>}
+            {error && errorKind === "generic" && <p className="text-sm text-nolo-400">{error}</p>}
 
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={() => setStep("input")}
-                className="flex-1 rounded-xl border border-red-900/30 py-3 text-sm font-semibold text-gray-300 transition-colors hover:bg-red-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="flex-1 rounded-xl border border-nolo-900/30 py-3 text-sm font-semibold text-gray-300 transition-colors hover:bg-nolo-900/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Back
               </button>
               <button
                 type="button"
                 onClick={handleConfirm}
-                className="flex-1 rounded-xl bg-red-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="flex-1 rounded-xl bg-nolo-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 Confirm withdrawal
               </button>
@@ -243,15 +243,15 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
               className={`flex h-16 w-16 items-center justify-center rounded-full border-2 ${
                 errorKind === "lockup_active" || errorKind === "insufficient_liquidity"
                   ? "border-amber-500/30"
-                  : "border-red-500/30"
+                  : "border-nolo-500/30"
               }`}
             >
               {errorKind === "lockup_active" || errorKind === "insufficient_liquidity" ? (
                 <Clock className="h-8 w-8 text-amber-400" />
               ) : error ? (
-                <AlertTriangle className="h-8 w-8 text-red-400" />
+                <AlertTriangle className="h-8 w-8 text-nolo-400" />
               ) : (
-                <Loader2 className="h-8 w-8 animate-spin text-red-400" />
+                <Loader2 className="h-8 w-8 animate-spin text-nolo-400" />
               )}
             </div>
             <p className="text-base font-semibold text-white">
@@ -278,7 +278,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
               <button
                 type="button"
                 onClick={() => { setStep("review"); setError(null); setErrorKind("generic"); }}
-                className="rounded-xl bg-red-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+                className="rounded-xl bg-nolo-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
               >
                 {errorKind === "lockup_active" || errorKind === "insufficient_liquidity" ? "Back" : "Try again"}
               </button>
@@ -311,7 +311,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
                 ? `Your withdrawal of ${formatAmount(amount, pool.asset)} was added to the pool's withdrawal queue because idle liquidity couldn't cover it right now. It will be paid out automatically as liquidity becomes available -- no action needed.`
                 : `Your withdrawal of ${formatAmount(amount, pool.asset)} from the pool has been successfully confirmed.`}
             </p>
-            <div className="w-full divide-y divide-red-900/20 rounded-xl border border-red-900/30 bg-[#1A0505]/40 px-4 py-2 text-xs">
+            <div className="w-full divide-y divide-nolo-900/20 rounded-xl border border-nolo-900/30 bg-[#1A120D]/40 px-4 py-2 text-xs">
               <div className="flex justify-between py-1.5">
                 <span className="text-gray-400">Pool</span>
                 <span className="text-white font-medium">{pool.name}</span>
@@ -334,7 +334,7 @@ export const WithdrawalModal: FC<WithdrawalModalProps> = ({ pool, position, onWi
             <button
               type="button"
               onClick={onClose}
-              className="w-full rounded-xl bg-red-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="w-full rounded-xl bg-nolo-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               Close
             </button>

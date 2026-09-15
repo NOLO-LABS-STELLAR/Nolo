@@ -38,13 +38,13 @@ export default function WinnerCelebration({
         ...defaults,
         particleCount,
         origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-        colors: ["#dc2626", "#f87171", "#fca5a5", "#fef2f2"],
+        colors: ["#C4441F", "#F2754D", "#FFC4AE", "#FFF3EE"],
       });
       confetti({
         ...defaults,
         particleCount,
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-        colors: ["#dc2626", "#f87171", "#fca5a5", "#fef2f2"],
+        colors: ["#C4441F", "#F2754D", "#FFC4AE", "#FFF3EE"],
       });
     }, 250);
 
@@ -66,7 +66,7 @@ export default function WinnerCelebration({
   };
 
   const handleShare = () => {
-    const text = `🎉 I just won ${prizeAmount} ${prizeCurrency} on VaultQuest! Prize-linked savings that actually reward savers. Join me at vaultquest.io`;
+    const text = `🎉 I just won ${prizeAmount} ${prizeCurrency} on Nolo! Prize-linked savings that actually reward savers. Join me at vaultquest.io`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -104,12 +104,12 @@ export default function WinnerCelebration({
             exit={{ scale: 0.8, opacity: 0, y: 50 }}
             transition={{ type: "spring", duration: 0.5 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md overflow-hidden rounded-3xl border border-red-500/30 bg-gradient-to-br from-vault-surface via-vault-bg to-vault-surface shadow-2xl"
+            className="relative w-full max-w-md overflow-hidden rounded-3xl border border-nolo-500/30 bg-gradient-to-br from-vault-surface via-vault-bg to-vault-surface shadow-2xl"
           >
             <button
               type="button"
               onClick={handleClose}
-              className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-vault-surface/80 text-vault-muted backdrop-blur-sm transition-all duration-300 hover:bg-red-500/20 hover:text-red-500"
+              className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-vault-surface/80 text-vault-muted backdrop-blur-sm transition-all duration-300 hover:bg-nolo-500/20 hover:text-nolo-500"
               aria-label="Close celebration"
             >
               <X className="h-4 w-4" />
@@ -120,7 +120,7 @@ export default function WinnerCelebration({
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 shadow-xl"
+                className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-nolo-500 to-nolo-600 shadow-xl"
               >
                 <Trophy className="h-12 w-12 text-white" aria-hidden="true" />
               </motion.div>
@@ -147,12 +147,12 @@ export default function WinnerCelebration({
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mb-6 rounded-2xl border border-red-500/30 bg-red-500/10 p-6"
+                className="mb-6 rounded-2xl border border-nolo-500/30 bg-nolo-500/10 p-6"
               >
                 <div className="mb-1 text-sm font-medium text-vault-muted">
                   Prize Amount
                 </div>
-                <div className="text-4xl font-bold text-red-500 sm:text-5xl">
+                <div className="text-4xl font-bold text-nolo-500 sm:text-5xl">
                   {prizeAmount}
                   <span className="ml-2 text-2xl text-vault-muted">
                     {prizeCurrency}
@@ -179,7 +179,7 @@ export default function WinnerCelebration({
                 <button
                   type="button"
                   onClick={handleCopyLink}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-vault-border bg-vault-surface px-6 py-3 text-sm font-semibold text-vault-text backdrop-blur-md transition-all duration-300 hover:border-red-500/40 hover:bg-red-500/10 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-vault-border bg-vault-surface px-6 py-3 text-sm font-semibold text-vault-text backdrop-blur-md transition-all duration-300 hover:border-nolo-500/40 hover:bg-nolo-500/10 hover:text-nolo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500"
                 >
                   <Share2 className="h-4 w-4" aria-hidden="true" />
                   Copy Link
@@ -196,7 +196,7 @@ export default function WinnerCelebration({
               </motion.p>
             </div>
 
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-red-500/5 via-transparent to-red-500/5" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-nolo-500/5 via-transparent to-nolo-500/5" />
           </motion.div>
         </motion.div>
       )}

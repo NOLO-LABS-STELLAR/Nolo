@@ -113,8 +113,8 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
 
   if (!timeLeft) return null;
 
-  const borderColor = timeLeft.isComplete ? "text-emerald-500" : "text-red-500";
-  const bgColor = timeLeft.isComplete ? "bg-emerald-500/10" : "bg-red-500/10";
+  const borderColor = timeLeft.isComplete ? "text-emerald-500" : "text-nolo-500";
+  const bgColor = timeLeft.isComplete ? "bg-emerald-500/10" : "bg-nolo-500/10";
 
   return (
     <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
@@ -169,7 +169,7 @@ const TimerSegment = memo(function TimerSegment({ value, label, animate = true, 
       <div
         className={`font-mono font-bold tabular-nums transition-all duration-150 ${
           shouldAnimate
-            ? "scale-110 text-red-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
+            ? "scale-110 text-nolo-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
             : "scale-100 text-vault-text"
         } ${small ? "text-xl sm:text-3xl" : "text-4xl sm:text-6xl"}`}
       >

@@ -80,7 +80,7 @@ export default function PoolCapacityIndicator({
     ? "bg-emerald-500"
     : analysis.isNearFull
       ? "bg-amber-500"
-      : "bg-gradient-to-r from-red-500 to-red-400";
+      : "bg-gradient-to-r from-nolo-500 to-nolo-400";
 
   const textColor = analysis.isFull
     ? "text-emerald-500"

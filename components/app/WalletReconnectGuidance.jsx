@@ -17,19 +17,19 @@ export default function WalletReconnectGuidance({ isDisconnected, isNetworkMisma
       <div className={`rounded-2xl border p-4 sm:p-6 flex gap-4 ${
         isNetworkMismatch
           ? "border-amber-500/30 bg-amber-500/10"
-          : "border-red-500/30 bg-red-500/10"
+          : "border-nolo-500/30 bg-nolo-500/10"
       }`}>
         <div className="flex-shrink-0">
           {isNetworkMismatch ? (
             <Wifi className="h-6 w-6 text-amber-500 sm:h-7 sm:w-7" aria-hidden="true" />
           ) : (
-            <AlertTriangle className="h-6 w-6 text-red-500 sm:h-7 sm:w-7" aria-hidden="true" />
+            <AlertTriangle className="h-6 w-6 text-nolo-500 sm:h-7 sm:w-7" aria-hidden="true" />
           )}
         </div>
 
         <div className="flex-1">
           <h3 className={`text-base font-semibold ${
-            isNetworkMismatch ? "text-amber-100" : "text-red-100"
+            isNetworkMismatch ? "text-amber-100" : "text-nolo-100"
           }`}>
             {isNetworkMismatch ? t("wallet.reconnect.networkMismatchTitle") : t("wallet.reconnect.interruptedTitle")}
           </h3>
@@ -42,7 +42,7 @@ export default function WalletReconnectGuidance({ isDisconnected, isNetworkMisma
             {isDisconnected && onRetry && (
               <button
                 onClick={onRetry}
-                className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-red-950/50"
+                className="inline-flex items-center gap-2 rounded-lg bg-nolo-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-nolo-950/50"
               >
                 <RefreshCw className="h-4 w-4" aria-hidden="true" />
                 {t("wallet.reconnect.reconnect")}
@@ -50,7 +50,7 @@ export default function WalletReconnectGuidance({ isDisconnected, isNetworkMisma
             )}
             <button
               onClick={() => setIsDismissed(true)}
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-400/30 px-4 py-2 text-sm font-semibold text-gray-300 transition-colors hover:border-gray-400/50 hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 focus-visible:ring-offset-red-950/50"
+              className="inline-flex items-center gap-2 rounded-lg border border-gray-400/30 px-4 py-2 text-sm font-semibold text-gray-300 transition-colors hover:border-gray-400/50 hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 focus-visible:ring-offset-nolo-950/50"
             >
               {t("common.close")}
             </button>

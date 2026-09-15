@@ -111,7 +111,7 @@ export default function ErrorDebugger({ error, isOpen, onClose }) {
           >
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between border-b border-vault-border p-6 bg-vault-surface/20">
-                <div className="flex items-center gap-2 text-red-500">
+                <div className="flex items-center gap-2 text-nolo-500">
                   <AlertCircle className="h-5 w-5" />
                   <h2 className="text-lg font-bold tracking-tight">Error Debugger</h2>
                 </div>
@@ -132,7 +132,7 @@ export default function ErrorDebugger({ error, isOpen, onClose }) {
 
                 <div className="rounded-2xl bg-vault-surface border border-vault-border p-6 shadow-sm">
                   <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-vault-text">
-                    <HelpCircle className="h-4 w-4 text-red-500" />
+                    <HelpCircle className="h-4 w-4 text-nolo-500" />
                     Helpful Solution
                   </div>
                   <p className="text-sm text-vault-muted mb-6 leading-relaxed">
@@ -142,10 +142,10 @@ export default function ErrorDebugger({ error, isOpen, onClose }) {
                     href={data.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between rounded-xl bg-vault-bg px-4 py-3 text-xs font-semibold text-vault-text border border-vault-border hover:border-red-500/50 hover:bg-red-500/5 transition-all group"
+                    className="flex items-center justify-between rounded-xl bg-vault-bg px-4 py-3 text-xs font-semibold text-vault-text border border-vault-border hover:border-nolo-500/50 hover:bg-nolo-500/5 transition-all group"
                   >
                     Troubleshooting Guide
-                    <ExternalLink className="h-3.5 w-3.5 text-vault-muted group-hover:text-red-500 transition-colors" />
+                    <ExternalLink className="h-3.5 w-3.5 text-vault-muted group-hover:text-nolo-500 transition-colors" />
                   </a>
                 </div>
 
@@ -154,7 +154,7 @@ export default function ErrorDebugger({ error, isOpen, onClose }) {
                     <div className="text-sm font-semibold text-vault-text">Technical Details</div>
                     <button
                       onClick={handleCopy}
-                      className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-vault-muted hover:text-red-500 transition-colors"
+                      className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-vault-muted hover:text-nolo-500 transition-colors"
                     >
                       {copied ? (
                         <>
@@ -180,7 +180,7 @@ export default function ErrorDebugger({ error, isOpen, onClose }) {
               <div className="border-t border-vault-border p-6 bg-vault-surface/40 backdrop-blur-md">
                 <button
                   onClick={onClose}
-                  className="w-full rounded-xl bg-red-600 py-3.5 font-bold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-700 active:scale-[0.98]"
+                  className="w-full rounded-xl bg-nolo-600 py-3.5 font-bold text-white shadow-lg shadow-nolo-500/20 transition-all hover:bg-nolo-700 active:scale-[0.98]"
                 >
                   Close & Try Again
                 </button>

@@ -42,7 +42,7 @@ export default function VaultFeeBreakdown({
           : platformFeePct != null
           ? "Enter amount to estimate"
           : "—",
-      sub: "Retained by VaultQuest protocol",
+      sub: "Retained by Nolo protocol",
     },
   ];
 

@@ -7,7 +7,7 @@ const RISK_CARDS = [
   {
     icon: ShieldCheck,
     title: "How vaults work",
-    body: "Your deposit stays yours. VaultQuest pools deposits, routes the yield they generate into a prize pool, and pays your principal back in full whenever you withdraw.",
+    body: "Your deposit stays yours. Nolo pools deposits, routes the yield they generate into a prize pool, and pays your principal back in full whenever you withdraw.",
   },
   {
     icon: UserCheck,

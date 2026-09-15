@@ -9,7 +9,7 @@ import { AlertTriangle, Inbox, Loader2, RefreshCw, Wallet, WifiOff } from "lucid
  * re-implement the same patterns on every page.
  *
  * All components share:
- *  - The dark VaultQuest theme (`bg-[#1A0505]` etc.)
+ *  - The dark VaultQuest theme (`bg-[#1A120D]` etc.)
  *  - Accessible labels (`role`, `aria-live`)
  *  - Optional action / retry CTAs
  *  - Mobile-first responsive layout
@@ -36,7 +36,7 @@ const Shell: FC<ShellProps> = ({ children, className = "", role, ariaLive }) => 
   <div
     role={role}
     aria-live={ariaLive}
-    className={`flex flex-col items-center justify-center gap-4 rounded-2xl border border-red-900/30 bg-[#1A0505]/60 px-6 py-12 text-center sm:px-10 sm:py-16 ${className}`}
+    className={`flex flex-col items-center justify-center gap-4 rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 px-6 py-12 text-center sm:px-10 sm:py-16 ${className}`}
   >
     {children}
   </div>
@@ -58,7 +58,7 @@ export const LoadingState: FC<LoadingStateProps> = ({
   className,
 }) => (
   <Shell role="status" ariaLive="polite" className={className}>
-    <Loader2 className="h-8 w-8 animate-spin text-red-400" aria-hidden="true" />
+    <Loader2 className="h-8 w-8 animate-spin text-nolo-400" aria-hidden="true" />
     <p className="text-base font-medium text-white">{label}</p>
     {description && <p className="text-sm text-gray-400">{description}</p>}
     <span className="sr-only">{label}…</span>
@@ -88,7 +88,7 @@ export const EmptyState: FC<EmptyStateProps> = ({
   className,
 }) => (
   <Shell className={className}>
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-900/20 text-red-400">
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-400">
       {icon ?? <Inbox className="h-7 w-7" aria-hidden="true" />}
     </div>
     <div className="space-y-1">
@@ -101,7 +101,7 @@ export const EmptyState: FC<EmptyStateProps> = ({
       <button
         type="button"
         onClick={action.onClick}
-        className="mt-2 inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+        className="mt-2 inline-flex items-center gap-2 rounded-xl bg-nolo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
       >
         {action.label}
       </button>
@@ -126,7 +126,7 @@ export const ErrorState: FC<ErrorStateProps> = ({
   className,
 }) => (
   <Shell role="alert" ariaLive="assertive" className={className}>
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-600/20 text-red-400 border border-red-500/30">
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-600/20 text-nolo-400 border border-nolo-500/30">
       <AlertTriangle className="h-7 w-7" aria-hidden="true" />
     </div>
     <div className="space-y-1">
@@ -137,7 +137,7 @@ export const ErrorState: FC<ErrorStateProps> = ({
       <button
         type="button"
         onClick={onRetry}
-        className="mt-2 inline-flex items-center gap-2 rounded-xl border border-red-500/40 bg-red-900/30 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+        className="mt-2 inline-flex items-center gap-2 rounded-xl border border-nolo-500/40 bg-nolo-900/30 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
       >
         <RefreshCw className="h-4 w-4" aria-hidden="true" />
         Try again
@@ -159,7 +159,7 @@ export const WalletDisconnectedState: FC<WalletDisconnectedStateProps> = ({
   className,
 }) => (
   <Shell className={className}>
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-900/20 text-red-400">
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-400">
       <Wallet className="h-7 w-7" aria-hidden="true" />
     </div>
     <div className="space-y-1">
@@ -172,7 +172,7 @@ export const WalletDisconnectedState: FC<WalletDisconnectedStateProps> = ({
       <button
         type="button"
         onClick={onConnect}
-        className="mt-2 inline-flex items-center gap-2 rounded-xl bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+        className="mt-2 inline-flex items-center gap-2 rounded-xl bg-nolo-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
       >
         <Wallet className="h-4 w-4" aria-hidden="true" />
         Connect wallet
@@ -214,7 +214,7 @@ export interface OfflineStateProps {
 
 export const OfflineState: FC<OfflineStateProps> = ({ className }) => (
   <Shell role="alert" ariaLive="assertive" className={className}>
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-900/20 text-red-400">
+    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-400">
       <WifiOff className="h-7 w-7" aria-hidden="true" />
     </div>
     <div className="space-y-1">

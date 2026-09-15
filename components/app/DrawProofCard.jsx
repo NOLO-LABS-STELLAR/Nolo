@@ -42,7 +42,7 @@ function VerificationBadge({ status }) {
   }
   if (status === "failed") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold text-red-400 border border-red-500/20">
+      <span className="inline-flex items-center gap-1 rounded-full bg-nolo-500/10 px-2 py-0.5 text-[10px] font-semibold text-nolo-400 border border-nolo-500/20">
         <ShieldAlert className="h-3 w-3" />
         Failed
       </span>
@@ -120,7 +120,7 @@ export default function DrawProofCard({ proof, onViewProof, explorerUrl = "https
         <VerificationBadge status={badgeStatus} />
       </div>
       {badgeStatus === "failed" && (
-        <div className="flex items-start gap-1.5 rounded-lg border border-red-900/40 bg-red-950/20 px-2.5 py-1.5 text-[10px] text-red-400">
+        <div className="flex items-start gap-1.5 rounded-lg border border-nolo-900/40 bg-nolo-950/20 px-2.5 py-1.5 text-[10px] text-nolo-400">
           <ShieldAlert className="mt-0.5 h-3 w-3 shrink-0" />
           <span>
             This draw could not be independently verified{proof.verification_error ? `: ${proof.verification_error}` : "."} Treat the winner below as unconfirmed.

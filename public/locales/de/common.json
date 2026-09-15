@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "VaultQuest — Risikofreies Sparen mit Preisen",
+    "title": "Nolo — Risikofreies Sparen mit Preisen",
     "description": "Zahlen Sie ein, erwirtschaften Sie Rendite und gewinnen Sie Preise, ohne Ihr Kapital zu riskieren."
   },
   "nav": {
@@ -16,7 +16,7 @@
     "terms": "Produktbedingungen",
     "privacy": "Datenschutz",
     "language": "Sprache",
-    "copyright": "© {{year}} VaultQuest. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} Nolo. Alle Rechte vorbehalten."
   },
   "vaults": {
     "title": "Tresore",

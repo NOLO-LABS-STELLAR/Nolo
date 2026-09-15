@@ -90,7 +90,7 @@ describe("SavedPoolsWatchlist", () => {
     expect(desktopOpen3).toBeDisabled();
 
     // Verify opacity classes on the parent wrapper elements
-    // The closed pool rows (in table body) should have the opacity-60 and bg-red-950/10 classes
+    // The closed pool rows (in table body) should have the opacity-60 and bg-nolo-950/10 classes
     const closedRows = container.querySelectorAll("tr.opacity-60");
     expect(closedRows).toHaveLength(2); // pool-2 and pool-3 desktop rows
   });

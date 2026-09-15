@@ -80,7 +80,7 @@ export default function VaultMetricsCards({ loading = false }) {
       icon: Activity,
       label: "Recent Activity",
       value: `${recentCount} txns`,
-      accent: "#ef4444",
+      accent: "#E4572E",
     },
   ];
 

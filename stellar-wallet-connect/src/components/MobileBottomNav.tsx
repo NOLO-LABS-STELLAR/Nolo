@@ -51,7 +51,7 @@ export const MobileBottomNav: FC<MobileBottomNavProps> = ({
       className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
     >
       <div
-        className="flex items-center justify-around border-t border-red-900/30 bg-[#0A0202]/90 px-2 pb-safe-or-2 pt-2"
+        className="flex items-center justify-around border-t border-nolo-900/30 bg-[#0A0202]/90 px-2 pb-safe-or-2 pt-2"
         style={{
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
@@ -69,19 +69,19 @@ export const MobileBottomNav: FC<MobileBottomNavProps> = ({
               aria-current={isActive ? "page" : undefined}
             >
               {isActive && (
-                <span className="absolute -top-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+                <span className="absolute -top-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-nolo-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
               )}
               <Icon
                 className={`h-5 w-5 transition-all ${
                   isActive
-                    ? "scale-110 text-red-400"
+                    ? "scale-110 text-nolo-400"
                     : "text-gray-500 group-hover:text-gray-300"
                 }`}
                 aria-hidden="true"
               />
               <span
                 className={`text-[10px] font-medium transition-colors ${
-                  isActive ? "text-red-400" : "text-gray-500"
+                  isActive ? "text-nolo-400" : "text-gray-500"
                 }`}
               >
                 {label}

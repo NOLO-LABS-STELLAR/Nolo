@@ -32,7 +32,7 @@ const FAQ_CATEGORIES = [
     icon: MessageSquare,
     questions: [
       { q: "Why is my transaction pending?", a: "Blockchain congestion can occasionally slow down processing. If it takes longer than 5 minutes, check the network status below." },
-      { q: "Are there any deposit fees?", a: "VaultQuest doesn't charge deposit fees, but you will need a small amount of XLM for Stellar network gas fees." }
+      { q: "Are there any deposit fees?", a: "Nolo doesn't charge deposit fees, but you will need a small amount of XLM for Stellar network gas fees." }
     ]
   },
   {
@@ -269,9 +269,9 @@ export default function SupportWidget() {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="John Doe"
-                        className={`w-full rounded-xl border ${formErrors.name ? 'border-red-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none`}
+                        className={`w-full rounded-xl border ${formErrors.name ? 'border-nolo-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none`}
                       />
-                      {formErrors.name && <p className="text-[10px] text-red-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.name}</p>}
+                      {formErrors.name && <p className="text-[10px] text-nolo-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.name}</p>}
                     </div>
 
                     <div className="space-y-1">
@@ -282,9 +282,9 @@ export default function SupportWidget() {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="john@example.com"
-                        className={`w-full rounded-xl border ${formErrors.email ? 'border-red-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none`}
+                        className={`w-full rounded-xl border ${formErrors.email ? 'border-nolo-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none`}
                       />
-                      {formErrors.email && <p className="text-[10px] text-red-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.email}</p>}
+                      {formErrors.email && <p className="text-[10px] text-nolo-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.email}</p>}
                     </div>
 
                     <div className="space-y-1">
@@ -310,9 +310,9 @@ export default function SupportWidget() {
                         value={formData.description}
                         onChange={handleInputChange}
                         placeholder="Please describe your issue in detail..."
-                        className={`w-full rounded-xl border ${formErrors.description ? 'border-red-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none resize-none`}
+                        className={`w-full rounded-xl border ${formErrors.description ? 'border-nolo-500/50' : 'border-vault-border'} bg-vault-surface/50 p-3 text-sm text-vault-text focus:border-vault-accent focus:outline-none resize-none`}
                       />
-                      {formErrors.description && <p className="text-[10px] text-red-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.description}</p>}
+                      {formErrors.description && <p className="text-[10px] text-nolo-400 mt-1 flex items-center gap-1"><AlertCircle size={10} /> {formErrors.description}</p>}
                     </div>
 
                     <button

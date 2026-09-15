@@ -160,8 +160,8 @@ export default function PositionMaturityCountdown({
 
   return (
     <div className="vq-glass relative overflow-hidden p-5">
-      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-[80px]" />
-      <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-red-500/10 blur-[80px]" />
+      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
+      <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
 
       <div className="relative flex flex-col items-center gap-4">
         {positionLabel && (
@@ -170,7 +170,7 @@ export default function PositionMaturityCountdown({
           </p>
         )}
 
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-nolo-500">
           <Clock className="h-4 w-4 animate-pulse" />
           {timeLeft.isComplete ? "Maturity Reached" : "Position Matures In"}
         </div>
@@ -217,7 +217,7 @@ const TimerSegment = memo(function TimerSegment({ value, label }) {
       <div
         className={`font-mono font-bold tabular-nums transition-all duration-150 ${
           shouldAnimate
-            ? "scale-110 text-red-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
+            ? "scale-110 text-nolo-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]"
             : "scale-100 text-vault-text"
         } text-2xl sm:text-5xl`}
       >

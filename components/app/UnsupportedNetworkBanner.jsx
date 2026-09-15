@@ -29,7 +29,7 @@ export default function UnsupportedNetworkBanner() {
         <div>
           <h2 className="text-sm font-semibold text-vault-text">Unsupported network</h2>
           <p className="mt-0.5 text-sm text-vault-muted">
-            VaultQuest runs on {target.name}. Switch networks to deposit, save, and claim prizes.
+            Nolo runs on {target.name}. Switch networks to deposit, save, and claim prizes.
           </p>
         </div>
       </div>

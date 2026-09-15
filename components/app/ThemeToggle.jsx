@@ -41,7 +41,7 @@ export default function ThemeToggle({ className = "" }) {
       onClick={() => setTheme(nextTheme)}
       aria-label={LABELS[theme ?? "dark"]}
       title={LABELS[theme ?? "dark"]}
-      className={`relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-vault-border bg-vault-surface shadow-glass transition-all duration-300 hover:border-red-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg ${className}`}
+      className={`relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-vault-border bg-vault-surface shadow-glass transition-all duration-300 hover:border-nolo-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg ${className}`}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

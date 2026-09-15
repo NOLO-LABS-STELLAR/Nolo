@@ -125,7 +125,7 @@ export default function CustomRpcModal({ open, onClose }) {
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id="rpc-modal-title" className="flex items-center gap-2 text-lg font-semibold text-vault-text">
-              <Server className="h-5 w-5 text-red-500" aria-hidden="true" />
+              <Server className="h-5 w-5 text-nolo-500" aria-hidden="true" />
               Custom RPC settings
             </h2>
             <p className="mt-1 text-sm text-vault-muted">
@@ -136,7 +136,7 @@ export default function CustomRpcModal({ open, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-vault-muted hover:text-vault-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+            className="rounded-lg p-1 text-vault-muted hover:text-vault-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500"
             aria-label="Close"
           >
             <X className="h-5 w-5" />
@@ -157,7 +157,7 @@ export default function CustomRpcModal({ open, onClose }) {
                     value={values[field.key]}
                     onChange={(e) => setField(field.key, e.target.value)}
                     placeholder={field.placeholder}
-                    className="w-full rounded-xl border border-vault-border bg-vault-surface py-2.5 pl-3 pr-10 text-sm text-vault-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                    className="w-full rounded-xl border border-vault-border bg-vault-surface py-2.5 pl-3 pr-10 text-sm text-vault-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500"
                     autoComplete="off"
                     spellCheck={false}
                   />
@@ -174,14 +174,14 @@ export default function CustomRpcModal({ open, onClose }) {
                   type="button"
                   onClick={() => testField(field)}
                   disabled={status[field.key] === "testing"}
-                  className="shrink-0 rounded-xl border border-vault-border bg-vault-surface px-3 py-2 text-xs font-medium text-vault-text hover:border-red-400/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 disabled:opacity-50"
+                  className="shrink-0 rounded-xl border border-vault-border bg-vault-surface px-3 py-2 text-xs font-medium text-vault-text hover:border-nolo-400/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500 disabled:opacity-50"
                 >
                   Test
                 </button>
               </div>
               <p className="mt-1 text-xs text-vault-muted">{field.hint}</p>
               {errors[field.key] && (
-                <p className="mt-1 text-xs text-red-600 dark:text-red-400" role="alert">
+                <p className="mt-1 text-xs text-nolo-600 dark:text-nolo-400" role="alert">
                   {errors[field.key]}
                 </p>
               )}

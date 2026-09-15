@@ -12,7 +12,7 @@ const ACHIEVEMENT_BADGES_DATA = [
   {
     id: "early-adopter",
     name: "Early Adopter",
-    description: "Joined VaultQuest during the beta phase.",
+    description: "Joined Nolo during the beta phase.",
     condition: "Automatic for beta users",
     unlocked: true,
     earnedAt: "2026-03-15T10:00:00Z",
@@ -57,11 +57,11 @@ const ACHIEVEMENT_BADGES_DATA = [
   {
     id: "referral-master",
     name: "Networker",
-    description: "Helped 10 new savers join the VaultQuest community.",
+    description: "Helped 10 new savers join the Nolo community.",
     condition: "Refer 10 users",
     unlocked: false,
     earnedAt: null,
-    color: "from-red-500 to-rose-600",
+    color: "from-nolo-500 to-rose-600",
   },
   {
     id: "diamond-hands",
@@ -120,7 +120,7 @@ function BadgeIcon({ unlocked, colorClass, name }) {
         {/* Badge Shape */}
         <path
           d="M50 5 L85 20 L85 55 C85 75 70 90 50 95 C30 90 15 75 15 55 L15 20 L50 5 Z"
-          className={unlocked ? `fill-current text-red-500/10 stroke-red-500/30` : "fill-vault-surface stroke-vault-border"}
+          className={unlocked ? `fill-current text-nolo-500/10 stroke-nolo-500/30` : "fill-vault-surface stroke-vault-border"}
           strokeWidth="2"
         />
         
@@ -138,7 +138,7 @@ function BadgeIcon({ unlocked, colorClass, name }) {
       {/* Icon Overlay */}
       <div className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${unlocked ? "scale-100" : "scale-75 opacity-50"}`}>
         {unlocked ? (
-          <Award className="h-8 w-8 text-red-500 sm:h-10 sm:w-10" />
+          <Award className="h-8 w-8 text-nolo-500 sm:h-10 sm:w-10" />
         ) : (
           <Lock className="h-6 w-6 text-vault-muted sm:h-8 sm:w-8" />
         )}
@@ -146,7 +146,7 @@ function BadgeIcon({ unlocked, colorClass, name }) {
 
       {/* Glow Effect for unlocked badges */}
       {unlocked && (
-        <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-red-500/10 blur-xl" />
+        <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-nolo-500/10 blur-xl" />
       )}
     </div>
   );
@@ -168,7 +168,7 @@ export default function BadgesGallery() {
         </div>
         <div className="hidden sm:block">
           <div className="flex items-center gap-2 rounded-full border border-vault-border bg-vault-surface/50 px-3 py-1 text-xs font-semibold text-vault-muted">
-            <Award className="h-3.5 w-3.5 text-red-500" />
+            <Award className="h-3.5 w-3.5 text-nolo-500" />
             {ACHIEVEMENT_BADGES_DATA.filter(b => b.unlocked).length} / {ACHIEVEMENT_BADGES_DATA.length} Earned
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function BadgesGallery() {
             <div
               className={`flex flex-col items-center rounded-2xl border p-4 transition-all duration-300 ${
                 badge.unlocked
-                  ? "border-vault-border bg-vault-surface/30 hover:border-red-500/30 hover:shadow-glow active:scale-95"
+                  ? "border-vault-border bg-vault-surface/30 hover:border-nolo-500/30 hover:shadow-glow active:scale-95"
                   : "border-dashed border-vault-border bg-vault-surface/10 grayscale"
               }`}
             >
@@ -224,7 +224,7 @@ export default function BadgesGallery() {
                 <div className="mt-2 border-t border-vault-border/50 pt-2">
                   <div className="flex items-center justify-between text-[9px] font-bold uppercase tracking-tight">
                     <span className="text-vault-muted">Status</span>
-                    <span className={badge.unlocked ? "text-emerald-500" : "text-red-500"}>
+                    <span className={badge.unlocked ? "text-emerald-500" : "text-nolo-500"}>
                       {badge.unlocked ? "Earned" : "Locked"}
                     </span>
                   </div>

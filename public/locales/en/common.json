@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "VaultQuest — No-loss prize savings",
+    "title": "Nolo — No-loss prize savings",
     "description": "Deposit, earn yield, and win prizes without risking your principal."
   },
   "nav": {
@@ -16,7 +16,7 @@
     "terms": "Product terms",
     "privacy": "Privacy policy",
     "language": "Language",
-    "copyright": "© {{year}} VaultQuest. All rights reserved."
+    "copyright": "© {{year}} Nolo. All rights reserved."
   },
   "buttons": {
     "retry": "Retry",
@@ -34,7 +34,7 @@
     "reconnect": {
       "networkMismatchTitle": "Network Mismatch Detected",
       "interruptedTitle": "Wallet Connection Interrupted",
-      "networkMismatchBody": "Your wallet is connected to a different blockchain network than VaultQuest expects. Please switch to the correct network in your wallet settings to continue.",
+      "networkMismatchBody": "Your wallet is connected to a different blockchain network than Nolo expects. Please switch to the correct network in your wallet settings to continue.",
       "interruptedBody": "Your wallet connection was lost. This might happen due to a network issue or if you switched to another application. Click the button below to reconnect securely.",
       "reconnect": "Reconnect Wallet"
     }
@@ -43,7 +43,7 @@
     "dashboard": {
       "tagline": "Prize-linked savings · Principal protected",
       "title": "Save together. Win together.",
-      "subtitle": "VaultQuest pools your deposits, routes yield to weekly prizes, and keeps every saver&apos;s principal withdrawable in full. No-loss by design.",
+      "subtitle": "Nolo pools your deposits, routes yield to weekly prizes, and keeps every saver&apos;s principal withdrawable in full. No-loss by design.",
       "joinTitle": "Ready to join a pool?",
       "connectedBody": "Explore active prize savings pools and manage your yields.",
       "disconnectedBody": "Connect your wallet or follow the steps to start your savings journey.",

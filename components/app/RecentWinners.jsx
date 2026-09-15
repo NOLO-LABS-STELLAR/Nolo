@@ -216,7 +216,7 @@ export default function RecentWinners() {
             <Trophy className="h-5 w-5 text-amber-500 animate-pulse" aria-hidden="true" />
             Recent Prize Winners
           </h2>
-          <p className="text-sm text-vault-muted">Live payout records of savers in VaultQuest pools</p>
+          <p className="text-sm text-vault-muted">Live payout records of savers in Nolo pools</p>
         </div>
       </div>
 
@@ -247,7 +247,7 @@ export default function RecentWinners() {
                 className={`w-64 shrink-0 rounded-2xl p-5 transition-transform duration-300 select-none ${
                   isLargeWin
                     ? "bg-gradient-to-br from-amber-500/10 via-yellow-500/5 to-amber-600/10 border border-amber-500/40 shadow-[0_4px_20px_rgba(245,158,11,0.12)] hover:border-amber-400 hover:scale-[1.02]"
-                    : "vq-glass border border-vault-border bg-vault-surface/40 hover:border-red-400/30 hover:scale-[1.02]"
+                    : "vq-glass border border-vault-border bg-vault-surface/40 hover:border-nolo-400/30 hover:scale-[1.02]"
                 }`}
               >
                 <div className="flex items-center justify-between">

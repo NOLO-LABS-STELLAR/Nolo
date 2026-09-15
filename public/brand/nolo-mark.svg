@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Nolo">
+  <title>Nolo</title>
+  <circle cx="60" cy="60" r="52" fill="#e4572e"/>
+  <ellipse cx="41" cy="35" rx="15" ry="9" fill="#ffffff" opacity="0.28" transform="rotate(-32 41 35)"/>
+  <circle cx="60" cy="60" r="25" fill="#fff8ec"/>
+</svg>

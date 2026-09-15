@@ -38,7 +38,7 @@ export interface SavedPoolsWatchlistProps {
 }
 
 const HeaderIcon: FC<{ children: ReactNode }> = ({ children }) => (
-  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-900/20 text-red-300">
+  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-300">
     {children}
   </div>
 );
@@ -99,10 +99,10 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
         />
       </header>
 
-      <div className="hidden overflow-hidden rounded-2xl border border-red-900/30 bg-[#1A0505]/60 lg:block">
+      <div className="hidden overflow-hidden rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 lg:block">
         <table className="w-full text-left text-sm">
           <thead className="text-xs uppercase tracking-wide text-gray-400">
-            <tr className="border-b border-red-900/30">
+            <tr className="border-b border-nolo-900/30">
               <th scope="col" className="px-4 py-3 font-medium">Pool</th>
               <th scope="col" className="px-4 py-3 font-medium">Status</th>
               <th scope="col" className="px-4 py-3 font-medium">TVL</th>
@@ -117,15 +117,15 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
               return (
                 <tr
                   key={entry.id}
-                  className={`border-b border-red-900/20 last:border-0 transition-opacity ${
-                    isUnavailable ? "opacity-60 bg-red-950/10" : ""
+                  className={`border-b border-nolo-900/20 last:border-0 transition-opacity ${
+                    isUnavailable ? "opacity-60 bg-nolo-950/10" : ""
                   }`}
                 >
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2 font-medium text-white">
                       <span>{entry.name}</span>
                       {isUnavailable && (
-                        <span className="rounded bg-red-950/80 border border-red-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-red-400">
+                        <span className="rounded bg-nolo-950/80 border border-nolo-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-nolo-400">
                           Unavailable
                         </span>
                       )}
@@ -145,7 +145,7 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
                           type="button"
                           onClick={() => onOpenPool(entry.id)}
                           disabled={isUnavailable}
-                          className="inline-flex items-center gap-1 rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-900/20 disabled:cursor-not-allowed disabled:opacity-40 transition-colors"
+                          className="inline-flex items-center gap-1 rounded-lg border border-nolo-500/30 px-3 py-1.5 text-xs font-semibold text-white hover:bg-nolo-900/20 disabled:cursor-not-allowed disabled:opacity-40 transition-colors"
                         >
                           Open
                           <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -156,7 +156,7 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
                           type="button"
                           onClick={() => onUnsave(entry)}
                           disabled={savingPoolId === entry.id}
-                          className="inline-flex items-center gap-1 rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
+                          className="inline-flex items-center gap-1 rounded-lg bg-nolo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
                         >
                           <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
                           {savingPoolId === entry.id ? "Removing…" : "Remove"}
@@ -177,8 +177,8 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
           return (
             <li
               key={entry.id}
-              className={`rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-4 transition-opacity ${
-                isUnavailable ? "opacity-60 bg-red-950/10" : ""
+              className={`rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-4 transition-opacity ${
+                isUnavailable ? "opacity-60 bg-nolo-950/10" : ""
               }`}
             >
               <div className="flex items-start justify-between gap-3">
@@ -186,7 +186,7 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
                   <div className="flex items-center gap-2 font-medium text-white">
                     <span>{entry.name}</span>
                     {isUnavailable && (
-                      <span className="rounded bg-red-950/80 border border-red-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-red-400">
+                      <span className="rounded bg-nolo-950/80 border border-nolo-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-nolo-400">
                         Unavailable
                       </span>
                     )}
@@ -217,7 +217,7 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
                     type="button"
                     onClick={() => onOpenPool(entry.id)}
                     disabled={isUnavailable}
-                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl border border-red-500/30 px-4 py-2 text-sm font-semibold text-white hover:bg-red-900/20 disabled:cursor-not-allowed disabled:opacity-40 transition-colors"
+                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl border border-nolo-500/30 px-4 py-2 text-sm font-semibold text-white hover:bg-nolo-900/20 disabled:cursor-not-allowed disabled:opacity-40 transition-colors"
                   >
                     Open pool
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -228,7 +228,7 @@ export const SavedPoolsWatchlist: FC<SavedPoolsWatchlistProps> = ({
                     type="button"
                     onClick={() => onUnsave(entry)}
                     disabled={savingPoolId === entry.id}
-                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
+                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-xl bg-nolo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
                   >
                     <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
                     {savingPoolId === entry.id ? "Removing…" : "Remove"}

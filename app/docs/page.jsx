@@ -12,7 +12,7 @@ export default function ProtocolDocsPage() {
           <h1 className="text-4xl font-bold text-vault-text">Protocol Documentation</h1>
         </div>
         <p className="text-lg text-vault-muted">
-          Learn how VaultQuest works, from the no-loss prize savings model to contributing to the core protocol.
+          Learn how Nolo works, from the no-loss prize savings model to contributing to the core protocol.
         </p>
       </div>
 
@@ -23,7 +23,7 @@ export default function ProtocolDocsPage() {
           </h2>
           <div className="prose prose-invert max-w-none text-vault-muted">
             <p>
-              VaultQuest is a no-loss prize savings protocol. Users deposit funds into a prize vault, and instead of earning standard interest, they stand a chance to win prizes through regular prize draws. The yield generated from all deposits is aggregated and distributed as prizes to randomly selected winners.
+              Nolo is a no-loss prize savings protocol. Users deposit funds into a prize vault, and instead of earning standard interest, they stand a chance to win prizes through regular prize draws. The yield generated from all deposits is aggregated and distributed as prizes to randomly selected winners.
             </p>
             <h3>Vault Lifecycle</h3>
             <p>
@@ -59,7 +59,7 @@ export default function ProtocolDocsPage() {
           </h2>
           <div className="prose prose-invert max-w-none text-vault-muted">
             <h3>Local Development Setup</h3>
-            <p>To run VaultQuest locally:</p>
+            <p>To run Nolo locally:</p>
             <pre className="mt-2 rounded-lg bg-black/50 p-4 font-mono text-sm">
               <code>
                 git clone https://github.com/yours-anjikon/vaultquest.git<br/>

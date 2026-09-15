@@ -189,7 +189,7 @@ function NotificationsCenter() {
     <div className="space-y-8">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <div className="flex items-center gap-3 text-red-500">
+          <div className="flex items-center gap-3 text-nolo-500">
             <Bell className="h-7 w-7" aria-hidden="true" />
             <h1 className="text-3xl font-bold text-vault-text">Vault Notifications</h1>
           </div>
@@ -205,7 +205,7 @@ function NotificationsCenter() {
 
       <section className="grid gap-4 sm:grid-cols-3" aria-label="Notification summary">
         <div className="vq-glass-hover p-5">
-          <Inbox className="h-5 w-5 text-red-500" aria-hidden="true" />
+          <Inbox className="h-5 w-5 text-nolo-500" aria-hidden="true" />
           <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-vault-muted">Total notifications</p>
           <p className="mt-1 text-2xl font-bold text-vault-text">{notifications.length}</p>
         </div>
@@ -283,14 +283,14 @@ function NotificationsCenter() {
                     return (
                       <li key={notification.id} className="flex flex-col gap-4 p-4 sm:flex-row sm:items-start sm:justify-between">
                         <div className="flex gap-3">
-                          <span className={`mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-vault-border ${isRead ? "bg-vault-surface text-vault-muted" : "bg-red-500/10 text-red-500"}`}>
+                          <span className={`mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-vault-border ${isRead ? "bg-vault-surface text-vault-muted" : "bg-nolo-500/10 text-nolo-500"}`}>
                             {isRead ? <Check className="h-4 w-4" aria-hidden="true" /> : <Bell className="h-4 w-4" aria-hidden="true" />}
                           </span>
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <p className="font-semibold text-vault-text">{notification.title}</p>
                               <ScopeBadge scope={notification.scope} />
-                              <span className={`rounded-full border px-2 py-0.5 text-xs font-semibold ${isRead ? "border-vault-border text-vault-muted" : "border-red-400/30 bg-red-500/10 text-red-500"}`}>
+                              <span className={`rounded-full border px-2 py-0.5 text-xs font-semibold ${isRead ? "border-vault-border text-vault-muted" : "border-nolo-400/30 bg-nolo-500/10 text-nolo-500"}`}>
                                 {isRead ? "Read" : "Unread"}
                               </span>
                               {notification.dismissed && (

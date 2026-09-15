@@ -180,10 +180,10 @@ export default function AppDashboardPage() {
       <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between border-b border-vault-border/20 pb-8">
         <div className="space-y-4 max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-vault-border bg-vault-surface px-3 py-1 text-xs font-medium text-vault-muted backdrop-blur-md transition-all duration-300">
-            <Sparkles className="h-3.5 w-3.5 text-red-500" aria-hidden="true" />
+            <Sparkles className="h-3.5 w-3.5 text-nolo-500" aria-hidden="true" />
             {t("routes.dashboard.tagline")}
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-vault-text sm:text-4xl lg:text-5xl bg-gradient-to-r from-vault-text via-vault-text to-red-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-extrabold tracking-tight text-vault-text sm:text-4xl lg:text-5xl bg-gradient-to-r from-vault-text via-vault-text to-nolo-500 bg-clip-text text-transparent">
             {t("routes.dashboard.title")}
           </h1>
           <p className="text-base text-vault-muted leading-relaxed">
@@ -251,7 +251,7 @@ export default function AppDashboardPage() {
                   localStorage.removeItem("vq_first_deposit_onboarding_dismissed");
                   setOnboardingForceOpen(true);
                 }}
-                className="text-xs font-semibold text-red-400 hover:text-red-300 transition-colors hover:underline"
+                className="text-xs font-semibold text-nolo-400 hover:text-nolo-300 transition-colors hover:underline"
               >
                 Reopen First-Deposit Guide
               </button>
@@ -301,7 +301,7 @@ export default function AppDashboardPage() {
           )}
 
           <section className="vq-glass p-6 text-center sm:p-8 relative overflow-hidden group">
-            <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-red-500/10 blur-xl transition-all duration-300 group-hover:scale-125" />
+            <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-nolo-500/10 blur-xl transition-all duration-300 group-hover:scale-125" />
             <h2 className="text-xl font-bold text-vault-text">{t("routes.dashboard.joinTitle")}</h2>
             <p className="mt-2 text-sm text-vault-muted">
               {isConnected

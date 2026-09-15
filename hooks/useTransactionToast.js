@@ -85,7 +85,7 @@ export function TransactionToastProvider({ children }) {
               exit={{ opacity: 0, x: 20, scale: 0.95 }}
               className={`pointer-events-auto flex w-80 items-start gap-3 rounded-2xl border p-4 shadow-glass backdrop-blur-xl transition-colors ${
                 toast.type === "error"
-                  ? "border-red-500/30 bg-red-500/5 text-red-600 dark:text-red-400"
+                  ? "border-nolo-500/30 bg-nolo-500/5 text-nolo-600 dark:text-nolo-400"
                   : toast.type === "success"
                   ? "border-emerald-500/30 bg-emerald-500/5 text-emerald-600 dark:text-emerald-400"
                   : toast.type === "pending"
@@ -112,7 +112,7 @@ export function TransactionToastProvider({ children }) {
                       openDebugger(toast.error);
                       removeToast(toast.id);
                     }}
-                    className="mt-3 flex items-center gap-1.5 rounded-lg bg-red-500/10 px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-red-500/20 active:scale-95"
+                    className="mt-3 flex items-center gap-1.5 rounded-lg bg-nolo-500/10 px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wider transition-all hover:bg-nolo-500/20 active:scale-95"
                   >
                     <Terminal className="h-3 w-3" />
                     Debug Error

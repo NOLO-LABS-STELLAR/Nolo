@@ -101,17 +101,17 @@ const LIFECYCLE_CONFIG = {
     label: "Expired",
     color: "red",
     icon: XCircle,
-    bgClass: "bg-red-500/10",
-    borderClass: "border-red-500/40",
-    textClass: "text-red-600 dark:text-red-400",
+    bgClass: "bg-nolo-500/10",
+    borderClass: "border-nolo-500/40",
+    textClass: "text-nolo-600 dark:text-nolo-400",
   },
   [ProposalLifecycle.CANCELLED]: {
     label: "Cancelled",
     color: "red",
     icon: Ban,
-    bgClass: "bg-red-500/10",
-    borderClass: "border-red-500/40",
-    textClass: "text-red-600 dark:text-red-400",
+    bgClass: "bg-nolo-500/10",
+    borderClass: "border-nolo-500/40",
+    textClass: "text-nolo-600 dark:text-nolo-400",
   },
 };
 
@@ -425,7 +425,7 @@ function ApproverSnapshotView({ proposal }) {
               className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-mono ${
                 isCurrentSigner
                   ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                  : "bg-red-500/10 text-red-600 dark:text-red-400"
+                  : "bg-nolo-500/10 text-nolo-600 dark:text-nolo-400"
               }`}
             >
               {addr}
@@ -485,7 +485,7 @@ function AuthorizationTreeView({ proposal }) {
               Verified
             </span>
           ) : (
-            <span className="flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-xs text-red-500">
+            <span className="flex items-center gap-1 rounded-full bg-nolo-500/10 px-2 py-0.5 text-xs text-nolo-500">
               <AlertTriangle className="h-3 w-3" aria-hidden="true" />
               Mismatch
             </span>
@@ -514,9 +514,9 @@ function AuthorizationTreeView({ proposal }) {
               )}
 
               {!verification.valid && (
-                <div className="rounded-md border border-red-500/30 bg-red-500/10 p-2">
+                <div className="rounded-md border border-nolo-500/30 bg-nolo-500/10 p-2">
                   {verification.mismatches.map((msg, i) => (
-                    <p key={i} className="text-xs text-red-500">
+                    <p key={i} className="text-xs text-nolo-500">
                       {msg}
                     </p>
                   ))}
@@ -670,8 +670,8 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
 
         {/* Contract error display */}
         {errorMessage && (
-          <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-            <p className="text-xs text-red-600 dark:text-red-400">
+          <div className="mt-4 rounded-lg border border-nolo-500/30 bg-nolo-500/10 p-3">
+            <p className="text-xs text-nolo-600 dark:text-nolo-400">
               {errorMessage}
             </p>
           </div>
@@ -683,8 +683,8 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
             {canApprove && (
               <>
                 {!verification.valid && (
-                  <div className="mb-2 w-full rounded-md border border-red-500/30 bg-red-500/10 p-2">
-                    <p className="text-xs text-red-500">
+                  <div className="mb-2 w-full rounded-md border border-nolo-500/30 bg-nolo-500/10 p-2">
+                    <p className="text-xs text-nolo-500">
                       Authorization tree verification failed. Review the decoded
                       tree before approving.
                     </p>
@@ -715,7 +715,7 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
               <button
                 type="button"
                 onClick={() => onCancel(proposal.id)}
-                className="vq-btn-ghost flex-1 border-red-400/40 text-red-600 hover:bg-red-500/10 dark:text-red-400"
+                className="vq-btn-ghost flex-1 border-nolo-400/40 text-nolo-600 hover:bg-nolo-500/10 dark:text-nolo-400"
               >
                 <Ban className="h-4 w-4" aria-hidden="true" />
                 Cancel
@@ -735,8 +735,8 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
 
         {/* Expiry info */}
         {lifecycle === ProposalLifecycle.EXPIRED && (
-          <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-            <p className="text-xs text-red-600 dark:text-red-400">
+          <div className="mt-4 rounded-lg border border-nolo-500/30 bg-nolo-500/10 p-3">
+            <p className="text-xs text-nolo-600 dark:text-nolo-400">
               Expired on {new Date(proposal.expiresAt).toLocaleString()}
             </p>
           </div>
@@ -744,8 +744,8 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
 
         {/* Cancellation info */}
         {lifecycle === ProposalLifecycle.CANCELLED && (
-          <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-            <p className="text-xs text-red-600 dark:text-red-400">
+          <div className="mt-4 rounded-lg border border-nolo-500/30 bg-nolo-500/10 p-3">
+            <p className="text-xs text-nolo-600 dark:text-nolo-400">
               This proposal was cancelled.
             </p>
           </div>
@@ -905,7 +905,7 @@ export default function AdminProposalsPage() {
     <div className="space-y-6">
       <header>
         <div className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-red-500" aria-hidden="true" />
+          <Shield className="h-8 w-8 text-nolo-500" aria-hidden="true" />
           <h1 className="text-3xl font-bold text-vault-text">
             {t("routes.admin.proposals.title")}
           </h1>
@@ -969,11 +969,11 @@ export default function AdminProposalsPage() {
           type="button"
           onClick={() => setFilter("expired")}
           className={`vq-glass-hover p-5 text-left transition-all ${
-            filter === "expired" ? "ring-2 ring-red-400/30" : ""
+            filter === "expired" ? "ring-2 ring-nolo-400/30" : ""
           }`}
         >
           <div className="flex items-center justify-between">
-            <XCircle className="h-5 w-5 text-red-500" aria-hidden="true" />
+            <XCircle className="h-5 w-5 text-nolo-500" aria-hidden="true" />
             <span className="text-2xl font-bold text-vault-text">{stats.expired}</span>
           </div>
           <p className="mt-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
@@ -993,7 +993,7 @@ export default function AdminProposalsPage() {
                 onClick={() => setFilter(f)}
                 className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
                   filter === f
-                    ? "bg-red-500/15 text-red-600 ring-1 ring-red-400/30 dark:text-red-400"
+                    ? "bg-nolo-500/15 text-nolo-600 ring-1 ring-nolo-400/30 dark:text-nolo-400"
                     : "text-vault-muted hover:bg-vault-surface hover:text-vault-text"
                 }`}
               >

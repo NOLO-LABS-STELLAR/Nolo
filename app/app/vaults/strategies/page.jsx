@@ -66,7 +66,7 @@ const STRATEGIES = [
     id: "high-yield",
     name: "High Yield",
     icon: Activity,
-    colorClass: "text-red-500 bg-red-500/10 border-red-500/20",
+    colorClass: "text-nolo-500 bg-nolo-500/10 border-nolo-500/20",
     summary: "An aggressive yield strategy that leverages liquid staking and dynamic pool routing for maximum yield generation.",
     explanation: "Best suited for active participants looking for the highest possible yield and larger prize pools. This strategy routes funds through optimized staking strategies, which carries slightly higher smart contract interaction risk in exchange for stellar reward rates.",
     expectedActions: [
@@ -127,7 +127,7 @@ export default function StrategiesPage() {
           return (
             <section 
               key={strategy.id} 
-              className="vq-glass p-6 sm:p-8 space-y-6 hover:shadow-glow hover:border-red-400/20 transition-all duration-300"
+              className="vq-glass p-6 sm:p-8 space-y-6 hover:shadow-glow hover:border-nolo-400/20 transition-all duration-300"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-4">
@@ -136,7 +136,7 @@ export default function StrategiesPage() {
                   </span>
                   <div>
                     <h2 className="text-2xl font-bold text-vault-text">{strategy.name}</h2>
-                    <p className="mt-1 text-sm font-semibold text-red-500/80 dark:text-red-400/80">
+                    <p className="mt-1 text-sm font-semibold text-nolo-500/80 dark:text-nolo-400/80">
                       {strategy.summary}
                     </p>
                   </div>
@@ -156,7 +156,7 @@ export default function StrategiesPage() {
                   <ul className="space-y-2">
                     {strategy.expectedActions.map((action, index) => (
                       <li key={index} className="flex items-start gap-2.5 text-sm text-vault-muted">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-500 text-xs font-bold mt-0.5">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-nolo-500/10 text-nolo-500 text-xs font-bold mt-0.5">
                           {index + 1}
                         </span>
                         <span>{action}</span>
@@ -175,7 +175,7 @@ export default function StrategiesPage() {
                     <Link
                       key={vault.id}
                       href={`/app/vaults/${vault.id}`}
-                      className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-2 rounded-xl border border-vault-border bg-vault-surface text-vault-text hover:border-red-400/40 hover:text-red-500 hover:shadow-glow transition-all"
+                      className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-2 rounded-xl border border-vault-border bg-vault-surface text-vault-text hover:border-nolo-400/40 hover:text-nolo-500 hover:shadow-glow transition-all"
                     >
                       {vault.name} ({vault.asset})
                       <ArrowRight size={12} className="opacity-75" />

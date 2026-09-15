@@ -42,7 +42,7 @@ export default function YieldCalculator() {
       data.push({
         year: `Year ${year}`,
         "Traditional Bank": Math.round(bankTotal),
-        VaultQuest: Math.round(vaultTotal),
+        Nolo: Math.round(vaultTotal),
         bankEarnings: Math.round(bankTotal - principal),
         vaultEarnings: Math.round(vaultTotal - principal),
       });
@@ -51,7 +51,7 @@ export default function YieldCalculator() {
   }, [principal, customAPY, years]);
 
   const finalYear = comparisonData[comparisonData.length - 1];
-  const difference = finalYear["VaultQuest"] - finalYear["Traditional Bank"];
+  const difference = finalYear["Nolo"] - finalYear["Traditional Bank"];
   const percentageGain = (
     (difference / finalYear["Traditional Bank"]) *
     100
@@ -76,8 +76,8 @@ export default function YieldCalculator() {
             </div>
             <div className="flex items-center justify-between gap-4">
               <span className="flex items-center gap-1.5 text-xs text-vault-muted">
-                <span className="h-2 w-2 rounded-full bg-red-500" />
-                VaultQuest
+                <span className="h-2 w-2 rounded-full bg-nolo-500" />
+                Nolo
               </span>
               <span className="text-xs font-semibold text-vault-text">
                 ${payload[1].value.toLocaleString()}
@@ -100,18 +100,18 @@ export default function YieldCalculator() {
     <section className="vq-glass p-4 sm:p-6 lg:p-8">
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-vault-border/30 pb-4">
         <div className="flex items-center gap-2">
-          <Calculator className="h-6 w-6 text-red-500" aria-hidden="true" />
+          <Calculator className="h-6 w-6 text-nolo-500" aria-hidden="true" />
           <h2 className="text-lg sm:text-xl font-bold text-vault-text">
             Savings Calculator
           </h2>
         </div>
-        <span className="self-start sm:self-auto rounded-full bg-red-500/15 px-2.5 py-1 text-xs font-medium text-red-600 dark:text-red-400">
+        <span className="self-start sm:self-auto rounded-full bg-nolo-500/15 px-2.5 py-1 text-xs font-medium text-nolo-600 dark:text-nolo-400">
           Interactive
         </span>
       </div>
 
       <p className="mb-6 text-sm text-vault-muted">
-        Compare VaultQuest&apos;s prize-linked savings with traditional bank
+        Compare Nolo&apos;s prize-linked savings with traditional bank
         accounts. Adjust the parameters below to see how much more you could
         earn while having chances to win prizes.
       </p>
@@ -124,7 +124,7 @@ export default function YieldCalculator() {
             htmlFor="principal"
             className="flex items-center gap-2 text-sm font-medium text-vault-text"
           >
-            <TrendingUp className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <TrendingUp className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             Initial Deposit
           </label>
           <input
@@ -135,7 +135,7 @@ export default function YieldCalculator() {
             step="100"
             value={principal}
             onChange={(e) => setPrincipal(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-red-500"
+            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-nolo-500"
           />
           <div className="flex items-center justify-between">
             <input
@@ -146,7 +146,7 @@ export default function YieldCalculator() {
                   Math.max(100, Math.min(50000, Number(e.target.value))),
                 )
               }
-              className="w-28 rounded-lg border border-vault-border bg-vault-surface px-3 py-1.5 text-sm font-semibold text-vault-text focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+              className="w-28 rounded-lg border border-vault-border bg-vault-surface px-3 py-1.5 text-sm font-semibold text-vault-text focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
             />
             <span className="text-xs text-vault-muted">$100 - $50,000</span>
           </div>
@@ -158,7 +158,7 @@ export default function YieldCalculator() {
             htmlFor="years"
             className="flex items-center gap-2 text-sm font-medium text-vault-text"
           >
-            <Calendar className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <Calendar className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             Time Period
           </label>
           <input
@@ -169,7 +169,7 @@ export default function YieldCalculator() {
             step="1"
             value={years}
             onChange={(e) => setYears(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-red-500"
+            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-nolo-500"
           />
           <div className="flex items-center justify-between">
             <span className="text-sm font-semibold text-vault-text">
@@ -185,12 +185,12 @@ export default function YieldCalculator() {
             htmlFor="custom-apy"
             className="flex items-center gap-2 text-sm font-medium text-vault-text"
           >
-            <Percent className="h-4 w-4 text-red-500" aria-hidden="true" />
-            VaultQuest APY
+            <Percent className="h-4 w-4 text-nolo-500" aria-hidden="true" />
+            Nolo APY
             <button
               type="button"
               onClick={() => setShowCustomAPY(!showCustomAPY)}
-              className="ml-auto text-xs text-red-500 hover:text-red-600"
+              className="ml-auto text-xs text-nolo-500 hover:text-nolo-600"
             >
               {showCustomAPY ? "Reset" : "Customize"}
             </button>
@@ -205,7 +205,7 @@ export default function YieldCalculator() {
                 step="0.1"
                 value={customAPY}
                 onChange={(e) => setCustomAPY(Number(e.target.value))}
-                className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-red-500"
+                className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-nolo-500"
               />
               <div className="flex items-center justify-between">
                 <input
@@ -217,7 +217,7 @@ export default function YieldCalculator() {
                     )
                   }
                   step="0.1"
-                  className="w-20 rounded-lg border border-vault-border bg-vault-surface px-3 py-1.5 text-sm font-semibold text-vault-text focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                  className="w-20 rounded-lg border border-vault-border bg-vault-surface px-3 py-1.5 text-sm font-semibold text-vault-text focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                 />
                 <span className="text-xs text-vault-muted">1% - 15%</span>
               </div>
@@ -247,9 +247,9 @@ export default function YieldCalculator() {
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="h-3 w-3 rounded bg-red-500" />
+              <span className="h-3 w-3 rounded bg-nolo-500" />
               <span className="text-vault-muted">
-                VaultQuest ({customAPY}%)
+                Nolo ({customAPY}%)
               </span>
             </div>
           </div>
@@ -290,7 +290,7 @@ export default function YieldCalculator() {
                 fill="#64748b"
                 radius={[8, 8, 0, 0]}
               />
-              <Bar dataKey="VaultQuest" fill="#ef4444" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="Nolo" fill="#E4572E" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -310,12 +310,12 @@ export default function YieldCalculator() {
           </p>
         </div>
 
-        <div className="vq-glass-hover border-red-400/30 p-4 ring-2 ring-red-400/20">
+        <div className="vq-glass-hover border-nolo-400/30 p-4 ring-2 ring-nolo-400/20">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
-            VaultQuest
+            Nolo
           </p>
           <p className="mt-2 text-2xl font-bold text-vault-text">
-            ${finalYear["VaultQuest"].toLocaleString()}
+            ${finalYear["Nolo"].toLocaleString()}
           </p>
           <p className="mt-1 text-xs text-vault-muted">
             Earnings: ${finalYear.vaultEarnings.toLocaleString()}
@@ -338,23 +338,23 @@ export default function YieldCalculator() {
       {/* Additional Benefits */}
       <div className="mt-6 rounded-lg border border-vault-border bg-vault-surface/40 p-4">
         <h3 className="mb-3 text-sm font-semibold text-vault-text">
-          Plus, with VaultQuest you also get:
+          Plus, with Nolo you also get:
         </h3>
         <ul className="space-y-2 text-sm text-vault-muted">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-red-500">✓</span>
+            <span className="mt-0.5 text-nolo-500">✓</span>
             <span>Weekly chances to win prizes from pooled yield</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-red-500">✓</span>
+            <span className="mt-0.5 text-nolo-500">✓</span>
             <span>100% principal protection - withdraw anytime</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-red-500">✓</span>
+            <span className="mt-0.5 text-nolo-500">✓</span>
             <span>Transparent blockchain-based prize draws</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-red-500">✓</span>
+            <span className="mt-0.5 text-nolo-500">✓</span>
             <span>No fees, no lock-up periods</span>
           </li>
         </ul>

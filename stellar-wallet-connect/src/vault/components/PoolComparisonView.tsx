@@ -110,7 +110,7 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
     <section aria-label="Pool comparison" className="space-y-4">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-900/20 text-red-300">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-nolo-900/20 text-nolo-300">
             <Columns className="h-4 w-4" aria-hidden="true" />
           </div>
           <div>
@@ -128,7 +128,7 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
             <button
               type="button"
               onClick={onClear}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-red-500/30 px-3 py-1.5 text-xs font-semibold text-gray-300 transition-colors hover:bg-red-900/20 hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-nolo-500/30 px-3 py-1.5 text-xs font-semibold text-gray-300 transition-colors hover:bg-nolo-900/20 hover:text-white"
             >
               <X className="h-3.5 w-3.5" aria-hidden="true" />
               Clear all
@@ -149,8 +149,8 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
               disabled={!isSelected && isMaxed}
               className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-medium transition-all ${
                 isSelected
-                  ? "bg-red-600 text-white shadow-sm"
-                  : "border border-red-900/30 text-gray-400 hover:border-red-500/40 hover:text-gray-200"
+                  ? "bg-nolo-600 text-white shadow-sm"
+                  : "border border-nolo-900/30 text-gray-400 hover:border-nolo-500/40 hover:text-gray-200"
               } disabled:cursor-not-allowed disabled:opacity-40`}
               aria-pressed={isSelected}
             >
@@ -173,11 +173,11 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
 
       {/* Comparison table */}
       {selectedPools.length > 0 ? (
-        <div className="overflow-x-auto rounded-2xl border border-red-900/30 bg-[#1A0505]/60">
+        <div className="overflow-x-auto rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-red-900/30">
-                <th scope="col" className="sticky left-0 z-10 min-w-[120px] bg-[#1A0505] px-4 py-3 text-xs font-medium uppercase tracking-wide text-gray-400">
+              <tr className="border-b border-nolo-900/30">
+                <th scope="col" className="sticky left-0 z-10 min-w-[120px] bg-[#1A120D] px-4 py-3 text-xs font-medium uppercase tracking-wide text-gray-400">
                   &nbsp;
                 </th>
                 {selectedPools.map((pool) => (
@@ -187,7 +187,7 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
                       <button
                         type="button"
                         onClick={() => onToggleSelect(pool.id)}
-                        className="shrink-0 rounded-full p-0.5 text-gray-500 transition-colors hover:bg-red-900/20 hover:text-red-400"
+                        className="shrink-0 rounded-full p-0.5 text-gray-500 transition-colors hover:bg-nolo-900/20 hover:text-nolo-400"
                         aria-label={`Remove ${pool.name} from comparison`}
                       >
                         <X className="h-3 w-3" />
@@ -199,8 +199,8 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
             </thead>
             <tbody>
               {ROWS.map((row, i) => (
-                <tr key={row.label} className={i < ROWS.length - 1 ? "border-b border-red-900/20" : ""}>
-                  <th scope="row" className="sticky left-0 z-10 bg-[#1A0505] px-4 py-2.5 text-xs font-medium text-gray-400">
+                <tr key={row.label} className={i < ROWS.length - 1 ? "border-b border-nolo-900/20" : ""}>
+                  <th scope="row" className="sticky left-0 z-10 bg-[#1A120D] px-4 py-2.5 text-xs font-medium text-gray-400">
                     {row.label}
                   </th>
                   {selectedPools.map((pool) => (
@@ -214,7 +214,7 @@ export const PoolComparisonView: FC<PoolComparisonViewProps> = ({
           </table>
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-red-900/30 bg-[#1A0505]/30 px-6 py-12 text-center">
+        <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-nolo-900/30 bg-[#1A120D]/30 px-6 py-12 text-center">
           <Columns className="h-8 w-8 text-gray-600" aria-hidden="true" />
           <p className="text-sm text-gray-500">
             Select two or more pools above to see a side-by-side comparison.

@@ -8,7 +8,7 @@ export default function NotFound() {
     <main className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
       <div className="vq-glass max-w-lg px-8 py-12 sm:px-12 sm:py-16 relative overflow-hidden">
         {/* Decorative background glow */}
-        <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-3xl" />
+        <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl" />
 
         {/* Playful illustration */}
@@ -29,14 +29,14 @@ export default function NotFound() {
               width="80"
               height="90"
               rx="12"
-              className="stroke-red-500/60 dark:stroke-red-400/60"
+              className="stroke-nolo-500/60 dark:stroke-nolo-400/60"
               strokeWidth="3"
               fill="none"
             />
             {/* Door arc */}
             <path
               d="M20 35 Q60 5 100 35"
-              className="stroke-red-500/60 dark:stroke-red-400/60"
+              className="stroke-nolo-500/60 dark:stroke-nolo-400/60"
               strokeWidth="3"
               fill="none"
             />
@@ -45,7 +45,7 @@ export default function NotFound() {
               cx="60"
               cy="60"
               r="14"
-              className="stroke-red-500 dark:stroke-red-400"
+              className="stroke-nolo-500 dark:stroke-nolo-400"
               strokeWidth="3"
               fill="none"
             />
@@ -53,14 +53,14 @@ export default function NotFound() {
               cx="60"
               cy="60"
               r="6"
-              className="fill-red-500/20 dark:fill-red-400/20"
+              className="fill-nolo-500/20 dark:fill-nolo-400/20"
             />
             {/* Question mark */}
             <text
               x="60"
               y="68"
               textAnchor="middle"
-              className="fill-red-500 dark:fill-red-400"
+              className="fill-nolo-500 dark:fill-nolo-400"
               fontSize="28"
               fontWeight="bold"
               fontFamily="serif"
@@ -68,7 +68,7 @@ export default function NotFound() {
               ?
             </text>
             {/* Keyhole */}
-            <circle cx="60" cy="85" r="4" className="fill-red-500/40 dark:fill-red-400/40" />
+            <circle cx="60" cy="85" r="4" className="fill-nolo-500/40 dark:fill-nolo-400/40" />
           </svg>
         </div>
 

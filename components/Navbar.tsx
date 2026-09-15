@@ -85,7 +85,7 @@ export default function Navbar() {
           className="flex items-center gap-2 text-xl font-bold text-violet-600 dark:text-violet-400"
         >
           <Vault className="h-6 w-6" />
-          VaultQuest
+          Nolo
         </Link>
 
         {/* Desktop links */}

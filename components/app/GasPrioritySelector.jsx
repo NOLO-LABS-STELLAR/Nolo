@@ -239,8 +239,8 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
               onClick={() => setNetworkKey(item.key)}
               className={`rounded-2xl border p-4 text-left transition-all duration-300 ${
                 selected
-                  ? "border-red-400/40 bg-red-500/10 ring-2 ring-red-400/15"
-                  : "border-vault-border/50 bg-vault-surface/25 hover:border-red-400/25 hover:bg-vault-surface/40"
+                  ? "border-nolo-400/40 bg-nolo-500/10 ring-2 ring-nolo-400/15"
+                  : "border-vault-border/50 bg-vault-surface/25 hover:border-nolo-400/25 hover:bg-vault-surface/40"
               }`}
             >
               <p className="text-sm font-semibold text-vault-text">{item.label}</p>
@@ -268,8 +268,8 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
               onClick={() => setPriorityKey(item.key)}
               className={`rounded-2xl border p-4 text-left transition-all duration-300 ${
                 selected
-                  ? "border-red-400/40 bg-red-500/10 shadow-glow"
-                  : "border-vault-border/50 bg-vault-surface/25 hover:border-red-400/25 hover:bg-vault-surface/40"
+                  ? "border-nolo-400/40 bg-nolo-500/10 shadow-glow"
+                  : "border-vault-border/50 bg-vault-surface/25 hover:border-nolo-400/25 hover:bg-vault-surface/40"
               }`}
             >
               <div className="flex items-start justify-between gap-3">
@@ -279,7 +279,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
                 </div>
                 <span
                   className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.24em] ${
-                    selected ? "bg-red-500/15 text-red-500" : "bg-vault-border/30 text-vault-muted"
+                    selected ? "bg-nolo-500/15 text-nolo-500" : "bg-vault-border/30 text-vault-muted"
                   }`}
                 >
                   {item.eta}
@@ -365,7 +365,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
       <div className="mt-5 grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="rounded-2xl border border-vault-border/50 bg-vault-surface/25 p-4">
           <div className="flex items-center gap-2 text-sm font-semibold text-vault-text">
-            <Activity className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <Activity className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             Execution payload
           </div>
           <pre className="mt-3 overflow-auto rounded-xl bg-slate-950/80 p-4 text-xs leading-relaxed text-slate-200">
@@ -396,7 +396,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
             </p>
             <p className="mt-1 text-lg font-semibold text-vault-text">{tier.label}</p>
             <p className="mt-1 text-xs text-vault-muted">{tier.description}</p>
-            <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-red-500 dark:text-red-400">
+            <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-nolo-500 dark:text-nolo-400">
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               {tier.eta} target inclusion
             </div>

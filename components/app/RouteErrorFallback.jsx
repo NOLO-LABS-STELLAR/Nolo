@@ -30,8 +30,8 @@ export default function RouteErrorFallback({ error, reset, title = "Something we
   const reloadSection = () => window.location.reload();
 
   return (
-    <div className="flex min-h-[420px] w-full flex-col items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/5 p-8 text-center backdrop-blur-md">
-      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-red-500/30 bg-red-500/20 text-red-400">
+    <div className="flex min-h-[420px] w-full flex-col items-center justify-center rounded-2xl border border-nolo-500/20 bg-nolo-500/5 p-8 text-center backdrop-blur-md">
+      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-nolo-500/30 bg-nolo-500/20 text-nolo-400">
         <AlertTriangle size={32} />
       </div>
       <h2 className="mb-2 text-2xl font-bold text-vault-text">{title}</h2>
@@ -43,7 +43,7 @@ export default function RouteErrorFallback({ error, reset, title = "Something we
         <button
           type="button"
           onClick={() => reset?.()}
-          className="flex items-center gap-2 rounded-lg bg-red-500/20 px-4 py-2.5 font-semibold text-red-400 transition-colors hover:bg-red-500/30"
+          className="flex items-center gap-2 rounded-lg bg-nolo-500/20 px-4 py-2.5 font-semibold text-nolo-400 transition-colors hover:bg-nolo-500/30"
         >
           <RotateCcw size={18} />
           {t("buttons.retry")}

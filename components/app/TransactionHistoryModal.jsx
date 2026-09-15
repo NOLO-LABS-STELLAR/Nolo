@@ -83,7 +83,7 @@ export default function TransactionHistoryModal({ open, onClose, walletAddress }
         <div className="px-5 py-4">
           {loading && <p className="text-sm text-vault-muted">{t("common.loading")}</p>}
           {error && (
-            <p className="text-sm text-red-400">
+            <p className="text-sm text-nolo-400">
               {t("common.error")}: {error}{" "}
               <button
                 onClick={() => setPage(1)}

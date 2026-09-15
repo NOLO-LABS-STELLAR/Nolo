@@ -84,8 +84,8 @@ export default function TicketDistributionGrid({
       return (
         <div
           style={style}
-          className={`flex items-center gap-4 border-b border-vault-border px-4 transition-all duration-200 hover:bg-red-500/5 cursor-pointer ${
-            isUserTicket ? "bg-red-500/10" : ""
+          className={`flex items-center gap-4 border-b border-vault-border px-4 transition-all duration-200 hover:bg-nolo-500/5 cursor-pointer ${
+            isUserTicket ? "bg-nolo-500/10" : ""
           }`}
           onClick={() => onTicketClick?.(ticket)}
           role="button"
@@ -98,7 +98,7 @@ export default function TicketDistributionGrid({
           }}
         >
           <div className="flex w-32 items-center gap-2 text-sm font-mono text-vault-text">
-            <Ticket className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <Ticket className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             #{ticket.ticketNumber}
           </div>
           <div className="flex-1 truncate text-sm text-vault-muted font-mono">
@@ -109,7 +109,7 @@ export default function TicketDistributionGrid({
             {probability}%
           </div>
           {isUserTicket && (
-            <div className="rounded-full bg-red-500 px-2 py-0.5 text-xs font-medium text-white">
+            <div className="rounded-full bg-nolo-500 px-2 py-0.5 text-xs font-medium text-white">
               You
             </div>
           )}
@@ -129,7 +129,7 @@ export default function TicketDistributionGrid({
         onClick={() => handleSort(sortKey)}
         className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-300 ${
           isActive
-            ? "bg-red-500/20 text-red-500"
+            ? "bg-nolo-500/20 text-nolo-500"
             : "bg-vault-surface text-vault-muted hover:bg-vault-surface/80 hover:text-vault-text"
         }`}
       >
@@ -164,14 +164,14 @@ export default function TicketDistributionGrid({
           value={searchQuery}
           onChange={handleSearchChange}
           placeholder="Search by ticket number or address..."
-          className="w-full rounded-xl border border-vault-border bg-vault-surface px-10 py-2.5 text-sm text-vault-text placeholder-vault-muted backdrop-blur-md transition-all duration-300 focus:border-red-500/50 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+          className="w-full rounded-xl border border-vault-border bg-vault-surface px-10 py-2.5 text-sm text-vault-text placeholder-vault-muted backdrop-blur-md transition-all duration-300 focus:border-nolo-500/50 focus:outline-none focus:ring-2 focus:ring-nolo-500/20"
           aria-label="Search tickets"
         />
         {searchQuery && (
           <button
             type="button"
             onClick={() => setSearchQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-red-500 transition-colors duration-300 hover:text-red-600"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-nolo-500 transition-colors duration-300 hover:text-nolo-600"
             aria-label="Clear search"
           >
             Clear
@@ -222,7 +222,7 @@ export default function TicketDistributionGrid({
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="mt-2 text-xs text-red-500 hover:text-red-600"
+                className="mt-2 text-xs text-nolo-500 hover:text-nolo-600"
               >
                 Clear search
               </button>

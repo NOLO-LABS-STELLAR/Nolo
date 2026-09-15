@@ -51,7 +51,7 @@ export default function VaultParticipantInsights({ vault, isLoading = false }) {
   return (
     <section className="vq-glass space-y-5 p-4 sm:p-6" aria-labelledby="participant-insights-title">
       <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <Users className="h-5 w-5" aria-hidden="true" />
         </span>
         <div>
