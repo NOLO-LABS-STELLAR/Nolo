@@ -1,5 +1,5 @@
 /**
- * Contract interface consumed by VaultQuest frontend pool flows (#67).
+ * Contract interface consumed by Nolo frontend pool flows (#67).
  *
  * This is the seam between the UI and the Soroban contract layer. Components
  * and hooks depend only on {@link VaultContractClient}; production code wires a

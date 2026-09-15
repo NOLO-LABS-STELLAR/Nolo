@@ -4,7 +4,7 @@ import { Activity, Users, Info } from "lucide-react";
 
 function InsightSkeleton() {
   return (
-    <section className="vq-glass space-y-4 p-4 sm:p-6" aria-label="Loading participant insights">
+    <section className="nolo-glass space-y-4 p-4 sm:p-6" aria-label="Loading participant insights">
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 animate-pulse rounded-xl bg-vault-border/30" />
         <div className="space-y-2">
@@ -22,7 +22,7 @@ function InsightSkeleton() {
 
 function EmptyInsights() {
   return (
-    <section className="vq-glass p-4 sm:p-6" aria-label="Participant insights">
+    <section className="nolo-glass p-4 sm:p-6" aria-label="Participant insights">
       <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-muted">
           <Info className="h-5 w-5" aria-hidden="true" />
@@ -49,7 +49,7 @@ export default function VaultParticipantInsights({ vault, isLoading = false }) {
   }
 
   return (
-    <section className="vq-glass space-y-5 p-4 sm:p-6" aria-labelledby="participant-insights-title">
+    <section className="nolo-glass space-y-5 p-4 sm:p-6" aria-labelledby="participant-insights-title">
       <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <Users className="h-5 w-5" aria-hidden="true" />

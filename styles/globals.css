@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --vq-bg: #fff8ec;
-  --vq-surface: rgba(255, 255, 255, 0.78);
-  --vq-text: #2a1d17;
-  --vq-muted: #7a6455;
-  --vq-border: rgba(180, 150, 125, 0.38);
-  --vq-accent: #e4572e;
-  --vq-accent-strong: #c4441f;
-  --vq-accent-glow: rgba(228, 87, 46, 0.28);
-  --vq-glass-gradient: linear-gradient(
+  --nolo-bg: #fff8ec;
+  --nolo-surface: rgba(255, 255, 255, 0.78);
+  --nolo-text: #2a1d17;
+  --nolo-muted: #7a6455;
+  --nolo-border: rgba(180, 150, 125, 0.38);
+  --nolo-accent: #e4572e;
+  --nolo-accent-strong: #c4441f;
+  --nolo-accent-glow: rgba(228, 87, 46, 0.28);
+  --nolo-glass-gradient: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.94) 0%,
     rgba(255, 246, 233, 0.78) 50%,
     rgba(253, 235, 215, 0.58) 100%
   );
-  --vq-shadow-glass: 0 8px 32px rgba(74, 45, 29, 0.1), 0 2px 8px rgba(74, 45, 29, 0.05);
-  --vq-shadow-glow: 0 0 0 1px rgba(228, 87, 46, 0.14), 0 0 24px rgba(228, 87, 46, 0.1);
-  --vq-font-display: "Baloo 2", "Trebuchet MS", Verdana, sans-serif;
-  --vq-font-sans: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --nolo-shadow-glass: 0 8px 32px rgba(74, 45, 29, 0.1), 0 2px 8px rgba(74, 45, 29, 0.05);
+  --nolo-shadow-glow: 0 0 0 1px rgba(228, 87, 46, 0.14), 0 0 24px rgba(228, 87, 46, 0.1);
+  --nolo-font-display: "Baloo 2", "Trebuchet MS", Verdana, sans-serif;
+  --nolo-font-sans: "Outfit", "Helvetica Neue", Arial, sans-serif;
 }
 
 .dark {
-  --vq-bg: #1a120d;
-  --vq-surface: rgba(48, 33, 25, 0.6);
-  --vq-text: #fff8ec;
-  --vq-muted: #b9a190;
-  --vq-border: rgba(196, 167, 144, 0.22);
-  --vq-accent: #f2754d;
-  --vq-accent-strong: #ff9470;
-  --vq-accent-glow: rgba(242, 117, 77, 0.4);
-  --vq-glass-gradient: linear-gradient(
+  --nolo-bg: #1a120d;
+  --nolo-surface: rgba(48, 33, 25, 0.6);
+  --nolo-text: #fff8ec;
+  --nolo-muted: #b9a190;
+  --nolo-border: rgba(196, 167, 144, 0.22);
+  --nolo-accent: #f2754d;
+  --nolo-accent-strong: #ff9470;
+  --nolo-accent-glow: rgba(242, 117, 77, 0.4);
+  --nolo-glass-gradient: linear-gradient(
     135deg,
     rgba(58, 40, 30, 0.7) 0%,
     rgba(38, 26, 19, 0.55) 50%,
     rgba(26, 18, 13, 0.42) 100%
   );
-  --vq-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.28);
-  --vq-shadow-glow: 0 0 0 1px rgba(242, 117, 77, 0.28), 0 0 28px rgba(242, 117, 77, 0.14);
+  --nolo-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.28);
+  --nolo-shadow-glow: 0 0 0 1px rgba(242, 117, 77, 0.28), 0 0 28px rgba(242, 117, 77, 0.14);
 }
 
 @layer base {
@@ -49,10 +49,10 @@
 
   body {
     @apply min-h-screen bg-vault-bg text-vault-text antialiased transition-all duration-300;
-    font-family: var(--vq-font-sans);
+    font-family: var(--nolo-font-sans);
     background-image: radial-gradient(
         ellipse 80% 50% at 50% -20%,
-        var(--vq-accent-glow),
+        var(--nolo-accent-glow),
         transparent 70%
       ),
       radial-gradient(ellipse 60% 40% at 100% 100%, rgba(196, 167, 144, 0.14), transparent);
@@ -61,57 +61,57 @@
   h1,
   h2,
   h3 {
-    font-family: var(--vq-font-display);
+    font-family: var(--nolo-font-display);
     font-weight: 800;
     letter-spacing: -0.01em;
   }
 }
 
 @layer components {
-  .vq-glass {
+  .nolo-glass {
     @apply rounded-2xl border border-vault-border bg-glass-gradient shadow-glass backdrop-blur-xl transition-all duration-300;
   }
 
-  .vq-glass-hover {
-    @apply vq-glass hover:shadow-glow hover:border-nolo-400/30 dark:hover:border-nolo-400/25;
+  .nolo-glass-hover {
+    @apply nolo-glass hover:shadow-glow hover:border-nolo-400/30 dark:hover:border-nolo-400/25;
   }
 
-  .vq-btn-primary {
+  .nolo-btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-xl bg-nolo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg dark:bg-nolo-600 dark:hover:bg-nolo-500;
   }
 
-  .vq-btn-ghost {
+  .nolo-btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-xl border border-vault-border bg-vault-surface px-4 py-2 text-sm font-medium text-vault-text backdrop-blur-md transition-all duration-300 hover:border-nolo-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400;
   }
 
-  .vq-accordion-content {
+  .nolo-accordion-content {
     overflow: hidden;
   }
 
-  .vq-accordion-content[data-state="open"] {
-    animation: vq-accordion-down 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  .nolo-accordion-content[data-state="open"] {
+    animation: nolo-accordion-down 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .vq-accordion-content[data-state="closed"] {
-    animation: vq-accordion-up 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  .nolo-accordion-content[data-state="closed"] {
+    animation: nolo-accordion-up 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* FAQ body: ≥4.5:1 contrast on glass (WCAG AA normal text) */
-  .vq-faq-content {
+  .nolo-faq-content {
     @apply text-vault-text;
   }
 
-  .vq-faq-content p,
-  .vq-faq-content li {
+  .nolo-faq-content p,
+  .nolo-faq-content li {
     @apply text-stone-800 dark:text-stone-100;
   }
 
-  .vq-faq-content strong {
+  .nolo-faq-content strong {
     @apply font-semibold text-stone-900 dark:text-[#fff8ec];
   }
 }
 
-@keyframes vq-accordion-down {
+@keyframes nolo-accordion-down {
   from {
     height: 0;
   }
@@ -120,7 +120,7 @@
   }
 }
 
-@keyframes vq-accordion-up {
+@keyframes nolo-accordion-up {
   from {
     height: var(--radix-accordion-content-height);
   }
@@ -131,16 +131,16 @@
 
 /* High-contrast mode (WCAG AAA: #000 / #fff / #ff0 borders) */
 html.high-contrast {
-  --vq-bg: #000000;
-  --vq-surface: #000000;
-  --vq-text: #ffffff;
-  --vq-muted: #ffffff;
-  --vq-border: #ffff00;
-  --vq-accent: #ffff00;
-  --vq-accent-glow: transparent;
-  --vq-glass-gradient: none;
-  --vq-shadow-glass: none;
-  --vq-shadow-glow: none;
+  --nolo-bg: #000000;
+  --nolo-surface: #000000;
+  --nolo-text: #ffffff;
+  --nolo-muted: #ffffff;
+  --nolo-border: #ffff00;
+  --nolo-accent: #ffff00;
+  --nolo-accent-glow: transparent;
+  --nolo-glass-gradient: none;
+  --nolo-shadow-glass: none;
+  --nolo-shadow-glow: none;
 }
 
 html.high-contrast body {
@@ -148,8 +148,8 @@ html.high-contrast body {
   background-color: #000000;
 }
 
-html.high-contrast .vq-glass,
-html.high-contrast .vq-glass-hover,
+html.high-contrast .nolo-glass,
+html.high-contrast .nolo-glass-hover,
 html.high-contrast [class*="backdrop-blur"] {
   backdrop-filter: none !important;
   background: #000000 !important;
@@ -158,14 +158,14 @@ html.high-contrast [class*="backdrop-blur"] {
   box-shadow: none !important;
 }
 
-html.high-contrast .vq-btn-primary {
+html.high-contrast .nolo-btn-primary {
   background: #ffff00 !important;
   color: #000000 !important;
   border: 3px solid #ffffff !important;
   box-shadow: none !important;
 }
 
-html.high-contrast .vq-btn-ghost {
+html.high-contrast .nolo-btn-ghost {
   background: #000000 !important;
   color: #ffffff !important;
   border: 3px solid #ffff00 !important;
@@ -207,8 +207,8 @@ html.high-contrast a {
   text-decoration: underline;
 }
 
-html.high-contrast .vq-faq-content p,
-html.high-contrast .vq-faq-content li,
-html.high-contrast .vq-faq-content strong {
+html.high-contrast .nolo-faq-content p,
+html.high-contrast .nolo-faq-content li,
+html.high-contrast .nolo-faq-content strong {
   color: #ffffff !important;
 }

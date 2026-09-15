@@ -1,5 +1,5 @@
 /**
- * Shared data-access hooks for VaultQuest frontend surfaces.
+ * Shared data-access hooks for Nolo frontend surfaces.
  *
  * This file is the UI-facing boundary for backend REST reads, contract read
  * fallbacks, transaction-status polling, cache invalidation, and normalized view
@@ -286,7 +286,7 @@ export function useSavedPools(
 
   const network = env.NEXT_PUBLIC_SOROBAN_NETWORK_PASSPHRASE || "standalone";
   const contractId = env.NEXT_PUBLIC_DRIP_POOL_CONTRACT_ID || "unknown";
-  const storageKey = `vaultquest_watchlist_${network}_${contractId}_${walletAddress}`;
+  const storageKey = `nolo_watchlist_${network}_${contractId}_${walletAddress}`;
 
   // Safe migration of legacy configurations
   useEffect(() => {
@@ -297,7 +297,7 @@ export function useSavedPools(
       !walletAddress
     )
       return;
-    const legacyKeys = ["vaultquest_watchlist", "vaultquest_saved_pools"];
+    const legacyKeys = ["nolo_watchlist", "nolo_saved_pools"];
     for (const key of legacyKeys) {
       const oldRaw = localStorage.getItem(key);
       if (oldRaw) {
@@ -506,7 +506,7 @@ export function useActivityExport(): ActivityExportResult {
       const blob = await api.exportActivity({ wallet, format, from, to });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      const filename = `vaultquest-activity-${wallet.slice(0, 8)}.${format}`;
+      const filename = `nolo-activity-${wallet.slice(0, 8)}.${format}`;
       a.href = url;
       a.download = filename;
       a.click();
@@ -534,7 +534,7 @@ export interface PersistedTxState {
   errorMessage?: string;
 }
 
-const TX_STATE_STORAGE_KEY = "vaultquest_pending_tx_state";
+const TX_STATE_STORAGE_KEY = "nolo_pending_tx_state";
 
 export function usePersistedTxState(): {
   state: PersistedTxState | null;

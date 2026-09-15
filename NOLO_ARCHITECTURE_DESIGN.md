@@ -1,9 +1,9 @@
-# VaultQuest Prize Pool Architecture Design
+# Nolo Prize Pool Architecture Design
 ## Integrated Design for Issues #378, #379, #380, #381
 
 ### Executive Summary
 
-This document proposes an integrated architecture for the VaultQuest no-loss lottery protocol, addressing four interconnected concerns:
+This document proposes an integrated architecture for the Nolo no-loss lottery protocol, addressing four interconnected concerns:
 1. **Solvency Invariants** (#378): Formal accounting and reserve management
 2. **Verifiable Randomness** (#379): Unbiased, auditable winner selection
 3. **Participant Indexing** (#380): Scalable sampling and weighted snapshots
@@ -112,7 +112,7 @@ winner = participant_snapshot[winner_index]
 
 1. **Round Binding:**
    - Include immutable round ID in all randomness calculations
-   - Domain-separate with string "vaultquest-draw" || round_id
+   - Domain-separate with string "nolo-draw" || round_id
    - Store randomness commitment at lock time
 
 2. **Verification:**

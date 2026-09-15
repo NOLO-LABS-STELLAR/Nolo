@@ -3,7 +3,7 @@
 //! Governed yield-strategy adapter (#496, #532).
 //!
 //! Deploys idle pool principal into an external `YieldStrategy` (see
-//! `vaultquest_common::strategy`), harvests realized gains into
+//! `nolo_common::strategy`), harvests realized gains into
 //! `Pool.distributable_yield`, and absorbs realized losses against
 //! `Pool.principal_in_strategy`.
 //!
@@ -20,7 +20,7 @@
 use super::*;
 use soroban_sdk::auth::{ContractContext, InvokerContractAuthEntry, SubContractInvocation};
 use soroban_sdk::IntoVal;
-use vaultquest_common::strategy::StrategyRotationPhase;
+use nolo_common::strategy::StrategyRotationPhase;
 
 fn get_strategy_token(env: &Env) -> Address {
     DripPool::get_token_address(env).unwrap_or_else(|_| env.current_contract_address())
@@ -69,7 +69,7 @@ pub(crate) fn set_strategy(env: &Env, caller: &Address, strategy: &Address) -> R
         internal_propose_strategy(env, strategy, i128::MAX)?;
     } else {
         let client = YieldStrategyClient::new(env, strategy);
-        if client.interface_version() != vaultquest_common::STRATEGY_INTERFACE_VERSION {
+        if client.interface_version() != nolo_common::STRATEGY_INTERFACE_VERSION {
             return Err(Error::StrategyVersionUnsupported);
         }
 
@@ -116,7 +116,7 @@ fn internal_propose_strategy(
     }
 
     let client = YieldStrategyClient::new(env, strategy);
-    if client.interface_version() != vaultquest_common::STRATEGY_INTERFACE_VERSION {
+    if client.interface_version() != nolo_common::STRATEGY_INTERFACE_VERSION {
         return Err(Error::StrategyVersionUnsupported);
     }
 
@@ -154,7 +154,7 @@ pub(crate) fn validate_strategy(env: &Env, caller: &Address) -> Result<(), Error
     let strategy = proposed.ok_or(Error::StrategyNotSet)?;
 
     let client = YieldStrategyClient::new(env, &strategy);
-    if client.interface_version() != vaultquest_common::STRATEGY_INTERFACE_VERSION {
+    if client.interface_version() != nolo_common::STRATEGY_INTERFACE_VERSION {
         return Err(Error::StrategyVersionUnsupported);
     }
 

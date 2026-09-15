@@ -1,4 +1,4 @@
-//! Standardized VaultQuest contract error codes.
+//! Standardized Nolo contract error codes.
 //!
 //! All Soroban contracts in this workspace share a single `ContractError` enum
 //! so clients can decode failures consistently across drip-pool, vault, and
@@ -15,7 +15,7 @@
 
 use soroban_sdk::contracterror;
 
-/// Unified contract error enum for all VaultQuest Soroban contracts.
+/// Unified contract error enum for all Nolo Soroban contracts.
 #[contracterror]
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
 #[repr(u32)]

@@ -292,7 +292,7 @@ function QueuedAction({ action, now, onRetry, onCancel, onDismiss }) {
             type="button"
             onClick={() => onRetry(action)}
             disabled={retryDisabled}
-            className="vq-btn-primary px-3 py-1.5 text-xs"
+            className="nolo-btn-primary px-3 py-1.5 text-xs"
             aria-label={`Retry ${action.type}`}
             data-testid={`retry-button-${action.id}`}
           >
@@ -310,7 +310,7 @@ function QueuedAction({ action, now, onRetry, onCancel, onDismiss }) {
           type="button"
           onClick={isPending ? () => onCancel(action) : () => onDismiss(action)}
           disabled={isRetrying}
-          className="vq-btn-ghost px-2 py-1.5 text-xs"
+          className="nolo-btn-ghost px-2 py-1.5 text-xs"
           aria-label={isPending ? "Cancel pending action" : "Dismiss"}
         >
           {isPending ? (
@@ -491,7 +491,7 @@ export default function VaultRetryQueue() {
   if (totalCount === 0) return null;
 
   return (
-    <section className="vq-glass p-4 sm:p-6" role="region" aria-label="Transaction retry queue">
+    <section className="nolo-glass p-4 sm:p-6" role="region" aria-label="Transaction retry queue">
       <div className="flex items-center justify-between">
         <button
           type="button"
@@ -522,7 +522,7 @@ export default function VaultRetryQueue() {
 
         <div className="flex items-center gap-2">
           {totalCount > 1 && (
-            <button type="button" onClick={handleClearAll} className="vq-btn-ghost px-3 py-1.5 text-xs">
+            <button type="button" onClick={handleClearAll} className="nolo-btn-ghost px-3 py-1.5 text-xs">
               <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
               Clear all
             </button>
@@ -530,7 +530,7 @@ export default function VaultRetryQueue() {
           <button
             type="button"
             onClick={() => setCollapsed((c) => !c)}
-            className="vq-btn-ghost px-3 py-1.5 text-xs"
+            className="nolo-btn-ghost px-3 py-1.5 text-xs"
             aria-label={collapsed ? "Expand queue" : "Collapse queue"}
           >
             {collapsed ? "Show" : "Hide"}

@@ -12,9 +12,9 @@ import ThemeToggle from "./ThemeToggle";
 import BalanceAutoRefresh from "./BalanceAutoRefresh";
 import CustomRpcModal from "./CustomRpcModal";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { StellarWalletIndicator } from "@vaultquest/stellar-wallet-connect";
+import { StellarWalletIndicator } from "@nolo/stellar-wallet-connect";
 
-const HIGH_CONTRAST_KEY = "vaultquest-high-contrast";
+const HIGH_CONTRAST_KEY = "nolo-high-contrast";
 
 const LINKS = [
   { href: "/app/prizes", label: "Prizes", icon: Gift },
@@ -164,12 +164,12 @@ export default function AppNav() {
                       type="button"
                       onClick={toggleHighContrast}
                       aria-pressed={highContrast}
-                      className={`vq-btn-ghost ${highContrast ? "ring-2 ring-yellow-400" : ""}`}
+                      className={`nolo-btn-ghost ${highContrast ? "ring-2 ring-yellow-400" : ""}`}
                     >
                       <Contrast className="h-4 w-4" aria-hidden="true" />
                       High contrast
                     </button>
-                    <button type="button" onClick={() => setRpcOpen(true)} className="vq-btn-ghost">
+                    <button type="button" onClick={() => setRpcOpen(true)} className="nolo-btn-ghost">
                       <Server className="h-4 w-4" aria-hidden="true" />
                       RPC settings
                     </button>

@@ -52,7 +52,7 @@ export default function PrizeCountdown({ targetDate }) {
   if (!timeLeft) return null;
 
   return (
-    <div className="vq-glass relative overflow-hidden p-4 xs:p-6 sm:p-8">
+    <div className="nolo-glass relative overflow-hidden p-4 xs:p-6 sm:p-8">
       {/* Background Decorative Glows */}
       <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
       <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />

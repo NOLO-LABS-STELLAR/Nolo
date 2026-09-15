@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Target, Edit3, Check, X, Plus, TrendingUp, PiggyBank } from "lucide-react";
 
-const STORAGE_KEY = "vq_goal_tracker";
+const STORAGE_KEY = "nolo_goal_tracker";
 
 const EMPTY_STATES = {
   noGoal: {
@@ -83,7 +83,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
 
   if (!mounted) {
     return (
-      <section className="vq-glass-hover p-5 sm:p-6 animate-pulse">
+      <section className="nolo-glass-hover p-5 sm:p-6 animate-pulse">
         <div className="h-4 w-24 bg-vault-border/30 rounded" />
         <div className="mt-4 h-8 w-full bg-vault-border/20 rounded" />
       </section>
@@ -92,7 +92,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
 
   if (!goal) {
     return (
-      <section aria-label="Vault savings goal" className="vq-glass-hover p-5 sm:p-6">
+      <section aria-label="Vault savings goal" className="nolo-glass-hover p-5 sm:p-6">
         <div className="flex flex-col items-center text-center py-6">
           <span className="flex h-12 w-12 items-center justify-center rounded-full border border-vault-border bg-vault-surface text-vault-muted">
             <Target className="h-6 w-6" aria-hidden="true" />
@@ -122,7 +122,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
                 <button
                   type="button"
                   onClick={handleSetGoal}
-                  className="vq-btn-primary flex-1"
+                  className="nolo-btn-primary flex-1"
                 >
                   <Plus className="h-4 w-4" aria-hidden="true" />
                   Set Goal
@@ -130,7 +130,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
                 <button
                   type="button"
                   onClick={handleCancel}
-                  className="vq-btn-ghost px-3"
+                  className="nolo-btn-ghost px-3"
                   aria-label="Cancel"
                 >
                   <X className="h-4 w-4" aria-hidden="true" />
@@ -141,7 +141,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
             <button
               type="button"
               onClick={() => setIsEditing(true)}
-              className="vq-btn-primary mt-5"
+              className="nolo-btn-primary mt-5"
             >
               <Target className="h-4 w-4" aria-hidden="true" />
               Set Savings Goal
@@ -157,7 +157,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
   const percentage = Math.round(progress * 100);
 
   return (
-    <section aria-label="Vault savings goal tracker" className="vq-glass-hover p-5 sm:p-6">
+    <section aria-label="Vault savings goal tracker" className="nolo-glass-hover p-5 sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-vault-border bg-vault-surface text-vault-accent">
@@ -195,7 +195,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
             <button
               type="button"
               onClick={handleSetGoal}
-              className="vq-btn-primary flex-1"
+              className="nolo-btn-primary flex-1"
             >
               <Check className="h-4 w-4" aria-hidden="true" />
               Save
@@ -203,7 +203,7 @@ export default function VaultGoalTracker({ currentBalance = 0 }) {
             <button
               type="button"
               onClick={handleCancel}
-              className="vq-btn-ghost px-3"
+              className="nolo-btn-ghost px-3"
             >
               <X className="h-4 w-4" aria-hidden="true" />
             </button>

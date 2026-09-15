@@ -6,11 +6,11 @@ import {
   connectedNetwork,
   connectedPublicKey,
   isNetworkMismatch,
-} from "@vaultquest/stellar-wallet-connect/src/core/store";
-import { EXPECTED_NETWORK } from "@vaultquest/stellar-wallet-connect/src/lib/wallets";
+} from "@nolo/stellar-wallet-connect/src/core/store";
+import { EXPECTED_NETWORK } from "@nolo/stellar-wallet-connect/src/lib/wallets";
 
 function loadWalletService() {
-  return import("@vaultquest/stellar-wallet-connect/src/core/walletService");
+  return import("@nolo/stellar-wallet-connect/src/core/walletService");
 }
 
 function useNanostoreValue(store, fallback) {
@@ -218,7 +218,7 @@ export default function HeaderWalletStatus({ variant = "desktop" }) {
           type="button"
           onClick={handleConnect}
           disabled={isConnecting}
-          className="vq-btn-primary h-10 px-3 sm:px-4"
+          className="nolo-btn-primary h-10 px-3 sm:px-4"
         >
           {isConnecting ? (
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />

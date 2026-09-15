@@ -2,7 +2,7 @@
 use soroban_sdk::{
     contract, contractimpl, contracttype, symbol_short, token::TokenClient, Address, Env,
 };
-use vaultquest_common::{ContractError, StrategyReport, YieldStrategy, STRATEGY_INTERFACE_VERSION};
+use nolo_common::{ContractError, StrategyReport, YieldStrategy, STRATEGY_INTERFACE_VERSION};
 
 #[contracttype]
 #[derive(Clone)]
@@ -357,7 +357,7 @@ mod strategy_tests {
     #[test]
     fn interface_version_matches_shared_constant() {
         let (_env, client, _contract_id, _token, _issuer) = setup();
-        assert_eq!(client.interface_version(), vaultquest_common::STRATEGY_INTERFACE_VERSION);
+        assert_eq!(client.interface_version(), nolo_common::STRATEGY_INTERFACE_VERSION);
     }
 }
 

@@ -35,7 +35,7 @@ export default function VaultRiskExplainer() {
         {RISK_CARDS.map((card) => {
           const Icon = card.icon;
           return (
-            <article key={card.title} className="vq-glass-hover flex flex-col gap-3 p-5">
+            <article key={card.title} className="nolo-glass-hover flex flex-col gap-3 p-5">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-accent">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>

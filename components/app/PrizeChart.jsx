@@ -69,7 +69,7 @@ function ChartTooltip({ active, payload, label }) {
   const yieldValue = payload.find((entry) => entry.dataKey === "yield")?.value ?? 0;
 
   return (
-    <div className="vq-glass border border-vault-border/80 bg-vault-surface/95 px-4 py-3 shadow-glow backdrop-blur-md">
+    <div className="nolo-glass border border-vault-border/80 bg-vault-surface/95 px-4 py-3 shadow-glow backdrop-blur-md">
       <p className="text-xs font-bold text-vault-text">{label}</p>
       <div className="mt-2 space-y-1 text-xs">
         <div className="flex items-center justify-between gap-6">
@@ -96,7 +96,7 @@ export default function PrizeChart() {
   const latest = data[data.length - 1] ?? { principal: 0, yield: 0, total: 0 };
 
   return (
-    <section className="vq-glass-hover p-5 sm:p-6">
+    <section className="nolo-glass-hover p-5 sm:p-6">
       <div className="flex flex-col gap-3 border-b border-vault-border/40 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
@@ -128,13 +128,13 @@ export default function PrizeChart() {
       <div className="mt-5 aspect-[16/9] min-h-[360px] rounded-3xl border border-vault-border/40 bg-vault-surface/25 p-3 sm:p-4">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 10, right: 18, left: 0, bottom: 8 }}>
-            <CartesianGrid stroke="var(--vq-border)" strokeDasharray="3 3" opacity={0.22} vertical={false} />
-            <XAxis dataKey="month" tickLine={false} axisLine={false} stroke="var(--vq-muted)" fontSize={11} />
+            <CartesianGrid stroke="var(--nolo-border)" strokeDasharray="3 3" opacity={0.22} vertical={false} />
+            <XAxis dataKey="month" tickLine={false} axisLine={false} stroke="var(--nolo-muted)" fontSize={11} />
             <YAxis
               yAxisId="left"
               tickLine={false}
               axisLine={false}
-              stroke="var(--vq-muted)"
+              stroke="var(--nolo-muted)"
               fontSize={11}
               tickFormatter={(value) => `$${Math.round(value / 1000)}k`}
             />
@@ -143,7 +143,7 @@ export default function PrizeChart() {
               orientation="right"
               tickLine={false}
               axisLine={false}
-              stroke="var(--vq-muted)"
+              stroke="var(--nolo-muted)"
               fontSize={11}
               tickFormatter={(value) => `$${Math.round(value)}`}
             />
@@ -151,7 +151,7 @@ export default function PrizeChart() {
               verticalAlign="top"
               align="right"
               wrapperStyle={{ paddingBottom: 8, fontSize: 12 }}
-              formatter={(value) => <span style={{ color: "var(--vq-muted)" }}>{value}</span>}
+              formatter={(value) => <span style={{ color: "var(--nolo-muted)" }}>{value}</span>}
             />
             <Tooltip content={<ChartTooltip />} />
             {visible.principal && (
@@ -160,10 +160,10 @@ export default function PrizeChart() {
                 type="monotone"
                 dataKey="principal"
                 name="Principal"
-                stroke="var(--vq-text)"
+                stroke="var(--nolo-text)"
                 strokeWidth={3}
-                dot={{ r: 4, stroke: "var(--vq-bg)", strokeWidth: 2, fill: "var(--vq-text)" }}
-                activeDot={{ r: 6, stroke: "var(--vq-text)", strokeWidth: 4, fill: "var(--vq-text)" }}
+                dot={{ r: 4, stroke: "var(--nolo-bg)", strokeWidth: 2, fill: "var(--nolo-text)" }}
+                activeDot={{ r: 6, stroke: "var(--nolo-text)", strokeWidth: 4, fill: "var(--nolo-text)" }}
               />
             )}
             {visible.yield && (
@@ -174,7 +174,7 @@ export default function PrizeChart() {
                 name="Yield"
                 stroke="#f59e0b"
                 strokeWidth={3}
-                dot={{ r: 4, stroke: "var(--vq-bg)", strokeWidth: 2, fill: "#f59e0b" }}
+                dot={{ r: 4, stroke: "var(--nolo-bg)", strokeWidth: 2, fill: "#f59e0b" }}
                 activeDot={{ r: 6, stroke: "rgba(245, 158, 11, 0.45)", strokeWidth: 4, fill: "#f59e0b" }}
               />
             )}
@@ -183,15 +183,15 @@ export default function PrizeChart() {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">Latest principal</p>
           <p className="mt-1 text-2xl font-bold text-vault-text">{formatCurrency(latest.principal)}</p>
         </div>
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">Latest yield</p>
           <p className="mt-1 text-2xl font-bold text-amber-500 dark:text-amber-400">{formatCurrency(latest.yield)}</p>
         </div>
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">Combined balance</p>
           <p className="mt-1 text-2xl font-bold text-emerald-500 dark:text-emerald-400">{formatCurrency(latest.total)}</p>
         </div>

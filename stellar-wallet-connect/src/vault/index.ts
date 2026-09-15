@@ -1,5 +1,5 @@
 /**
- * VaultQuest pool UI module: pool detail (#73), reward history (#75), saved-pools watchlist (#89/#90),
+ * Nolo pool UI module: pool detail (#73), reward history (#75), saved-pools watchlist (#89/#90),
  * onboarding checklist (#202 — walletConnected, hasJoinedVault, loading props),
  * activity export (#211 — ActivityExport component + useActivityExport hook),
  * and the testable contract interface + mock (#67).

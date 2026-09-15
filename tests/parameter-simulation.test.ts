@@ -111,7 +111,7 @@ describe("diff preview", () => {
     expect(preview.summary.valid).toBe(1);
     expect(preview.summary.blocked).toBe(1);
     expect(preview.summary.highRisk).toBe(2);
-    expect(preview.schema).toBe("vaultquest.admin.param-simulation.v1");
+    expect(preview.schema).toBe("nolo.admin.param-simulation.v1");
   });
 
   it("surfaces conflicting proposals", () => {

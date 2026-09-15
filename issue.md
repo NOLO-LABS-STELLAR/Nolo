@@ -34,7 +34,7 @@
 
 ---
 
-## #661 – VaultQuest does not provide maintainer-safe fixture anonymization for shared bug reports
+## #661 – Nolo does not provide maintainer-safe fixture anonymization for shared bug reports
 
 **Problem:** Bug reports often need vault, wallet, transaction, and activity data, but maintainers need a tool to anonymize sensitive fields before sharing.
 
@@ -49,7 +49,7 @@
 
 ---
 
-## #660 – VaultQuest app shell does not expose service-worker or cache-busting strategy for stale build assets
+## #660 – Nolo app shell does not expose service-worker or cache-busting strategy for stale build assets
 
 **Problem:** Users can run stale JavaScript after deployments, causing mismatched contract addresses, API schemas, or transaction builders.
 

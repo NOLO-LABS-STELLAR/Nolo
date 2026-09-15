@@ -1,12 +1,12 @@
 // Nolo brand marks — "Draw" identity.
 //
 // The mark is a prize ball: a solid tomato disc with a punched-out centre.
-// The hole is painted with --vq-bg so the mark sits correctly on both the
+// The hole is painted with --nolo-bg so the mark sits correctly on both the
 // light (cream) and dark (warm ink) themes without a separate asset.
 
 const BALL = "#e4572e";
 
-export function NoloMark({ size = 32, holeColor = "var(--vq-bg)", className = "", title }) {
+export function NoloMark({ size = 32, holeColor = "var(--nolo-bg)", className = "", title }) {
   return (
     <svg
       width={size}

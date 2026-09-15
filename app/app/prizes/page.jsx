@@ -12,7 +12,7 @@ import TicketSimulator from "@/components/app/TicketSimulator";
 import DrawProofCard from "@/components/app/DrawProofCard";
 import DrawProofDetail from "@/components/app/DrawProofDetail";
 
-const API_BASE = process.env.NEXT_PUBLIC_VAULTQUEST_API_BASE_URL || "/api";
+const API_BASE = process.env.NEXT_PUBLIC_NOLO_API_BASE_URL || "/api";
 
 const generateMockTickets = (count) => {
   return Array.from({ length: count }, (_, i) => ({
@@ -104,7 +104,7 @@ export default function PrizesPage() {
       />
 
       <p className="text-vault-muted">Browse active prize rounds and past winners.</p>
-      <Link href="/app" className="vq-btn-ghost inline-flex">
+      <Link href="/app" className="nolo-btn-ghost inline-flex">
         ← {t("routes.prizes.backToDashboard")}
       </Link>
 

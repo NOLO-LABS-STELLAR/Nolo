@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "VaultQuest Database Migrations Manifest",
+  "description": "Nolo Database Migrations Manifest",
   "phases": {
     "core": {
       "description": "Foundational tables and structures",

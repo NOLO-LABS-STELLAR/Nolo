@@ -27,7 +27,7 @@ import {
 // Import backend types for validation
 import type { ActionType, ActionStatus } from "@trustquest/backend/src/constants.js";
 import { ACTION_TYPES, ACTION_STATUSES, ERROR_CODES } from "@trustquest/backend/src/constants.js";
-import type { ContractErrorKind } from "@vaultquest/stellar-wallet-connect/src/vault/contract/types.js";
+import type { ContractErrorKind } from "@nolo/stellar-wallet-connect/src/vault/contract/types.js";
 
 // Import backend indexer types
 import type { RawHorizonEvent, DecodedEvent } from "@trustquest/backend/src/services/stellarIndexer.js";

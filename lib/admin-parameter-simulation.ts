@@ -75,7 +75,7 @@ export interface SimulationResult {
 
 export interface DiffPreview {
   id: string;
-  schema: "vaultquest.admin.param-simulation.v1";
+  schema: "nolo.admin.param-simulation.v1";
   createdAt: string;
   author: string;
   proposals: ParameterProposal[];
@@ -358,7 +358,7 @@ export function createParameterDiffPreview(
 
   return {
     id: `sim-${hashForPreview(JSON.stringify(proposals), createdAt)}`,
-    schema: "vaultquest.admin.param-simulation.v1",
+    schema: "nolo.admin.param-simulation.v1",
     createdAt,
     author,
     proposals,
@@ -387,7 +387,7 @@ export function serializeDiffPreview(preview: DiffPreview): string {
 export function parseDiffPreview(raw: string): DiffPreview | null {
   try {
     const parsed = JSON.parse(raw) as DiffPreview;
-    if (parsed.schema !== "vaultquest.admin.param-simulation.v1") return null;
+    if (parsed.schema !== "nolo.admin.param-simulation.v1") return null;
     return parsed;
   } catch {
     return null;

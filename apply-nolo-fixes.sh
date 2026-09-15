@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# apply-vaultquest-fixes.sh
-# Run this from the ROOT of your vaultquest repo:
-#   bash apply-vaultquest-fixes.sh
+# apply-nolo-fixes.sh
+# Run this from the ROOT of your nolo repo:
+#   bash apply-nolo-fixes.sh
 # It writes every new/modified file directly — no patch context needed.
 set -e
 REPO_ROOT="$(pwd)"
-echo "Applying VaultQuest fixes to: $REPO_ROOT"
+echo "Applying Nolo fixes to: $REPO_ROOT"
 
 # ─────────────────────────────────────────────────────────────
 # #246  contracts/vault/src/lib.rs  (new file)
@@ -385,7 +385,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-violet-600 dark:text-violet-400">
-          <Vault className="h-6 w-6" /> VaultQuest
+          <Vault className="h-6 w-6" /> Nolo
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

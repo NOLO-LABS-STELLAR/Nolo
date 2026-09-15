@@ -250,7 +250,7 @@ export const StellarWalletIndicator: FC = () => {
           type="button"
           onClick={handleConnect}
           disabled={isConnecting}
-          className="vq-btn-primary h-10"
+          className="nolo-btn-primary h-10"
           aria-label="Connect Stellar wallet"
         >
           {isConnecting ? (

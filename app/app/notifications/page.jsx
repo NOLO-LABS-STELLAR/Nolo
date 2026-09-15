@@ -198,30 +198,30 @@ function NotificationsCenter() {
             reward events and transaction updates collapse into one current notification.
           </p>
         </div>
-        <Link href="/app/activity" className="vq-btn-ghost self-start sm:self-auto">
+        <Link href="/app/activity" className="nolo-btn-ghost self-start sm:self-auto">
           View activity
         </Link>
       </header>
 
       <section className="grid gap-4 sm:grid-cols-3" aria-label="Notification summary">
-        <div className="vq-glass-hover p-5">
+        <div className="nolo-glass-hover p-5">
           <Inbox className="h-5 w-5 text-nolo-500" aria-hidden="true" />
           <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-vault-muted">Total notifications</p>
           <p className="mt-1 text-2xl font-bold text-vault-text">{notifications.length}</p>
         </div>
-        <div className="vq-glass-hover p-5">
+        <div className="nolo-glass-hover p-5">
           <MailOpen className="h-5 w-5 text-amber-500" aria-hidden="true" />
           <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-vault-muted">Unread</p>
           <p className="mt-1 text-2xl font-bold text-vault-text">{unreadCount}</p>
         </div>
-        <div className="vq-glass-hover p-5">
+        <div className="nolo-glass-hover p-5">
           <CheckCircle2 className="h-5 w-5 text-emerald-500" aria-hidden="true" />
           <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-vault-muted">Dismissed</p>
           <p className="mt-1 text-2xl font-bold text-vault-text">{dismissedCount}</p>
         </div>
       </section>
 
-      <section className="vq-glass p-4 sm:p-6" aria-labelledby="notification-history-title">
+      <section className="nolo-glass p-4 sm:p-6" aria-labelledby="notification-history-title">
         <div className="flex flex-col gap-4 border-b border-vault-border pb-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 id="notification-history-title" className="text-lg font-semibold text-vault-text">
@@ -233,14 +233,14 @@ function NotificationsCenter() {
             <button
               type="button"
               onClick={() => setShowUnreadOnly((current) => !current)}
-              className="vq-btn-ghost"
+              className="nolo-btn-ghost"
             >
               {showUnreadOnly ? "Show all" : "Unread only"}
             </button>
             <button
               type="button"
               onClick={() => setShowDismissed((current) => !current)}
-              className="vq-btn-ghost"
+              className="nolo-btn-ghost"
             >
               {showDismissed ? (
                 <>
@@ -252,13 +252,13 @@ function NotificationsCenter() {
                 </>
               )}
             </button>
-            <button type="button" onClick={markAllRead} className="vq-btn-ghost">
+            <button type="button" onClick={markAllRead} className="nolo-btn-ghost">
               <Check className="h-4 w-4" aria-hidden="true" /> Mark all read
             </button>
-            <button type="button" onClick={() => dismissAll()} className="vq-btn-ghost">
+            <button type="button" onClick={() => dismissAll()} className="nolo-btn-ghost">
               <ShieldAlert className="h-4 w-4" aria-hidden="true" /> Dismiss all
             </button>
-            <button type="button" onClick={clearExpired} className="vq-btn-ghost">
+            <button type="button" onClick={clearExpired} className="nolo-btn-ghost">
               Clear expired
             </button>
           </div>
@@ -322,7 +322,7 @@ function NotificationsCenter() {
                             <button
                               type="button"
                               onClick={() => markRead(notification.id)}
-                              className="vq-btn-primary px-3 py-1.5 text-xs"
+                              className="nolo-btn-primary px-3 py-1.5 text-xs"
                             >
                               <Check className="h-4 w-4" aria-hidden="true" />
                               Mark read
@@ -331,7 +331,7 @@ function NotificationsCenter() {
                           <button
                             type="button"
                             onClick={() => dismiss(notification.id)}
-                            className="vq-btn-ghost px-3 py-1.5 text-xs"
+                            className="nolo-btn-ghost px-3 py-1.5 text-xs"
                           >
                             <ShieldAlert className="h-4 w-4" aria-hidden="true" />
                             Dismiss

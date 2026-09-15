@@ -234,7 +234,7 @@ export default function VaultFilters({ filters, setFilters, onClear }) {
       {/* Clear Filters */}
       <button
         onClick={onClear}
-        className="vq-btn-ghost mt-4 flex w-full items-center justify-center gap-2 border-dashed border-vault-muted/30 py-3 text-vault-muted hover:text-vault-accent hover:border-vault-accent"
+        className="nolo-btn-ghost mt-4 flex w-full items-center justify-center gap-2 border-dashed border-vault-muted/30 py-3 text-vault-muted hover:text-vault-accent hover:border-vault-accent"
       >
         <RotateCcw size={16} />
         Reset All Filters
@@ -248,7 +248,7 @@ export default function VaultFilters({ filters, setFilters, onClear }) {
       <div className="mb-6 flex items-center justify-between lg:hidden">
         <button
           onClick={() => setIsMobileOpen(true)}
-          className="vq-btn-ghost flex items-center gap-2"
+          className="nolo-btn-ghost flex items-center gap-2"
         >
           <Filter size={18} />
           Filters & Search

@@ -58,7 +58,7 @@ jobs:
       - name: Typecheck workspace packages
         run: |
           pnpm --filter backend run build
-          pnpm --filter @vaultquest/stellar-wallet-connect run typecheck
+          pnpm --filter @nolo/stellar-wallet-connect run typecheck
 
       - name: Run unit tests
         run: pnpm test

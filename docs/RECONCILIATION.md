@@ -7,7 +7,7 @@
 
 ## 1. System Overview
 
-The **VaultQuest Reconciliation Engine** is an operationally critical background service responsible for detecting, auditing, and repairing state drift across four key components of the backend:
+The **Nolo Reconciliation Engine** is an operationally critical background service responsible for detecting, auditing, and repairing state drift across four key components of the backend:
 
 1. **`ActionLedger`**: State machine tracking user intent and broadcast status (`pending`, `submitted`, `confirmed`, `reverted`, `orphaned`).
 2. **`VaultSettlement`**: Settlement state machine tracking vault fund distribution (`Unresolved`, `Resolving`, `Settled`, `Failed`).
@@ -28,7 +28,7 @@ The reconciler identifies 9 distinct categories of drift (`DriftType`). Below is
 
 ### 2. `missing_action`
 * **Definition:** A `PendingEvent` exists in the database with `consumedAt == null`, but no corresponding row in `ActionLedger` shares its `tx_hash`.
-* **Concrete Example:** A user interacts directly with a VaultQuest Soroban contract via the Stellar Laboratory or CLI without using the standard VaultQuest web app. The indexer ingests the contract event into `PendingEvent`, but no matching user intent was ever registered in `ActionLedger`.
+* **Concrete Example:** A user interacts directly with a Nolo Soroban contract via the Stellar Laboratory or CLI without using the standard Nolo web app. The indexer ingests the contract event into `PendingEvent`, but no matching user intent was ever registered in `ActionLedger`.
 
 ### 3. `duplicate_tx_hash`
 * **Definition:** Multiple `ActionLedger` records claim the exact same transaction hash (`tx_hash`).

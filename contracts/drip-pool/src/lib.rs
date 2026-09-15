@@ -2,7 +2,7 @@
 
 //! # Canonical contract (#495)
 //!
-//! This is the **authoritative** contract for VaultQuest pool state: principal,
+//! This is the **authoritative** contract for Nolo pool state: principal,
 //! rewards/yield, round/draw state, pause, and winner settlement all live here.
 //! `contracts/_deprecated/vault` is a deprecated, incompatible skeleton (single-admin, no
 //! rounds/lockups/claim-deadlines, no real token custody) and MUST NOT be used
@@ -61,7 +61,7 @@ use soroban_sdk::{
     contract, contracterror, contractimpl, contracttype, symbol_short, vec, Address, BytesN, Env,
     Vec,
 };
-use vaultquest_common::YieldStrategyClient;
+use nolo_common::YieldStrategyClient;
 
 pub mod proxy;
 pub mod strategy_adapter;

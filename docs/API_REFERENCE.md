@@ -1,6 +1,6 @@
-# VaultQuest API Reference
+# Nolo API Reference
 
-Comprehensive reference documentation for the VaultQuest backend REST API. This document covers all public endpoints with request/response schemas and curl examples.
+Comprehensive reference documentation for the Nolo backend REST API. This document covers all public endpoints with request/response schemas and curl examples.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ Comprehensive reference documentation for the VaultQuest backend REST API. This 
 ## Base URL
 
 ```
-Production: https://api.vaultquest.io
+Production: https://api.nolo.io
 Development: http://localhost:3001
 ```
 
@@ -527,7 +527,7 @@ curl -X GET \
 
 ```
 Content-Type: text/csv; charset=utf-8
-Content-Disposition: attachment; filename="vaultquest-activity-GABCDEF1.csv"
+Content-Disposition: attachment; filename="nolo-activity-GABCDEF1.csv"
 
 "id","date","action_type","pool_id","amount","token","status","tx_hash","error_code","submitted_at","confirmed_at"
 "550e8400-...","2026-06-27T10:00:00.000Z","deposit","42","1000000","USDC","confirmed","abc123...","","2026-06-27T10:00:05.000Z","2026-06-27T10:01:30.000Z"
@@ -991,5 +991,5 @@ curl 'http://localhost:3001/actions?wallet=GABCD...&limit=25&cursor=4f2b9a1d-...
 
 For API support or to report issues:
 
-- GitHub Issues: https://github.com/vaultquest/vaultquest
-- Documentation: https://docs.vaultquest.io
+- GitHub Issues: https://github.com/NOLO-LABS-STELLAR/Nolo
+- Documentation: https://docs.nolo.io

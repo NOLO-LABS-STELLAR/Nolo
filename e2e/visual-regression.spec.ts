@@ -33,7 +33,7 @@ test.describe('Visual Regression Tests', () => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
       
-      const heroSection = page.locator('text=VaultQuest').locator('..').first();
+      const heroSection = page.locator('text=Nolo').locator('..').first();
       await expect(heroSection).toHaveScreenshot('landing-hero.png', {
         animations: 'disabled',
       });

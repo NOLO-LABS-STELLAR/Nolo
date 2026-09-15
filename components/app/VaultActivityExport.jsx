@@ -17,10 +17,10 @@ import { Download, CheckCircle2, AlertCircle, Loader2, XCircle } from "lucide-re
  *   filename    Base filename without extension (default "vault-activity")
  *   pageSize    Rows fetched per page (default 100; backend caps at 100)
  *   fetchImpl   fetch implementation override (defaults to global fetch; for tests)
- *   apiBase     API base URL override (defaults to NEXT_PUBLIC_VAULTQUEST_API_BASE_URL or "/api")
+ *   apiBase     API base URL override (defaults to NEXT_PUBLIC_NOLO_API_BASE_URL or "/api")
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_VAULTQUEST_API_BASE_URL || "/api";
+const API_BASE = process.env.NEXT_PUBLIC_NOLO_API_BASE_URL || "/api";
 
 const FIELDS = [
   "id",

@@ -11,7 +11,7 @@ const publicRoutes: SmokeRoute[] = [
   {
     name: "marketing landing page",
     path: "/",
-    expectedContent: /VaultQuest|Launch DApp/i,
+    expectedContent: /Nolo|Launch DApp/i,
   },
 ];
 

@@ -67,7 +67,7 @@ export function formatPercent(
 // ── Yield-label formatting (#646) ──────────────────────────────────────────
 
 /**
- * VaultQuest's displayed "expected yield" is a forward-looking estimate, not
+ * Nolo's displayed "expected yield" is a forward-looking estimate, not
  * a realized historical return: base yield comes from a deployed strategy
  * (variable), and any additional prize amount is only paid out to a drawn
  * winner (not guaranteed to every participant). Neither dimension is

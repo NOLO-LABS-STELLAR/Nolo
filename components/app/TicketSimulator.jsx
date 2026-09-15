@@ -33,7 +33,7 @@ export default function TicketSimulator() {
   }, [ticketCount, ticketValue]);
 
   return (
-    <section className="vq-glass-hover p-5 sm:p-6">
+    <section className="nolo-glass-hover p-5 sm:p-6">
       <div className="flex flex-col gap-3 border-b border-vault-border/40 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
@@ -108,7 +108,7 @@ export default function TicketSimulator() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-          <article className="vq-glass p-4">
+          <article className="nolo-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
               <Calculator className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Win chance
@@ -117,7 +117,7 @@ export default function TicketSimulator() {
             <p className="mt-1 text-sm text-vault-muted">Estimated with current pool volume and saver count.</p>
           </article>
 
-          <article className="vq-glass p-4">
+          <article className="nolo-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
               <Users className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Pool pressure
@@ -126,7 +126,7 @@ export default function TicketSimulator() {
             <p className="mt-1 text-sm text-vault-muted">Implied entries across the current round.</p>
           </article>
 
-          <article className="vq-glass p-4">
+          <article className="nolo-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
               <Trophy className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Expected payout
@@ -135,7 +135,7 @@ export default function TicketSimulator() {
             <p className="mt-1 text-sm text-vault-muted">Per-ticket value based on the active pool metrics.</p>
           </article>
 
-          <article className="vq-glass p-4">
+          <article className="nolo-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
               <Wallet className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Contribution coverage

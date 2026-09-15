@@ -16,7 +16,7 @@ export default function CreatePoolPage() {
       <div className="flex items-center gap-3">
         <Link
           href="/app/admin/settings"
-          className="vq-btn-ghost h-10 w-10 p-0"
+          className="nolo-btn-ghost h-10 w-10 p-0"
           aria-label="Back to admin settings"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />

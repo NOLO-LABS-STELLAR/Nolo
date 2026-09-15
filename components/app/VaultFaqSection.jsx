@@ -70,7 +70,7 @@ export default function VaultFaqSection() {
       : FAQ_ITEMS.filter((item) => item.category === selectedCategory);
 
   return (
-    <section className="vq-glass p-6 space-y-6">
+    <section className="nolo-glass p-6 space-y-6">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-vault-accent/10 text-vault-accent border border-vault-accent/20">
           <HelpCircle size={20} />
@@ -154,7 +154,7 @@ export default function VaultFaqSection() {
         <p className="text-sm text-vault-muted">Need more help?</p>
         <a
           href="/docs"
-          className="vq-btn-ghost flex items-center gap-2 text-sm"
+          className="nolo-btn-ghost flex items-center gap-2 text-sm"
         >
           View Documentation
           <ExternalLink size={14} />

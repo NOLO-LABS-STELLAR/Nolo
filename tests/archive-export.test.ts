@@ -184,7 +184,7 @@ describe("archive JSON document shape", () => {
   it("serializes as JSON with schema metadata", () => {
     const document: ArchiveDocument = createArchiveExport(ROUNDS, OPTIONS);
     const parsed = JSON.parse(archiveToJSON(document)) as ArchiveDocument;
-    expect(parsed.schema).toBe("vaultquest.archive.v1");
+    expect(parsed.schema).toBe("nolo.archive.v1");
     expect(parsed.source).toBe("test");
     expect(parsed.generatedAt).toBe("2026-06-30T00:00:00.000Z");
     expect(parsed.records).toHaveLength(3);

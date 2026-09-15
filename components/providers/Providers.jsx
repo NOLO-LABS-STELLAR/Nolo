@@ -56,7 +56,7 @@ function ProvidersInner({ children }) {
   }, [i18n]);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem storageKey="vaultquest-theme">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem storageKey="nolo-theme">
       <WagmiProvider key={configVersion} config={wagmiConfig}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider>

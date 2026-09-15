@@ -1,11 +1,11 @@
 import { useState, type FC } from "react";
 import { CheckCircle2, ChevronDown, ChevronUp, Circle, HelpCircle, Wallet } from "lucide-react";
 
-export const ONBOARDING_STORAGE_KEY = "vaultquest.onboarding.dismissed";
+export const ONBOARDING_STORAGE_KEY = "nolo.onboarding.dismissed";
 
 const STEPS = [
-  { id: "connect-wallet", title: "Connect a Stellar wallet", body: "VaultQuest uses your wallet to show your position and request signatures for pool actions." },
-  { id: "correct-network", title: "Use the supported network", body: "Make sure your wallet is on the VaultQuest-supported Stellar network before joining a pool." },
+  { id: "connect-wallet", title: "Connect a Stellar wallet", body: "Nolo uses your wallet to show your position and request signatures for pool actions." },
+  { id: "correct-network", title: "Use the supported network", body: "Make sure your wallet is on the Nolo-supported Stellar network before joining a pool." },
   { id: "choose-vault", title: "Choose a vault", body: "Browse available pools and select one that matches your deposit size and lock period." },
   { id: "join-pool", title: "Join a pool", body: "Joining deposits the pool asset, records your shares, and keeps the action visible while it confirms." },
   { id: "follow-rewards", title: "Follow reward cycles", body: "Pools lock, draw, and settle on a schedule. Rewards appear after the cycle settles." },
@@ -78,7 +78,7 @@ export interface OnboardingChecklistProps {
   className?: string;
   walletConnected?: boolean;
   /**
-   * Whether the connected wallet is on a VaultQuest-supported network.
+   * Whether the connected wallet is on a Nolo-supported network.
    * Ignored while `walletConnected` is false. Defaults to `true` so a
    * caller that hasn't wired real network detection yet doesn't
    * regress to a permanently-blocked checklist — see #628.
@@ -167,7 +167,7 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
           {allDone ? (
             <div className="mt-4 flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-900/20 p-4">
               <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-300" aria-hidden="true" />
-              <p className="text-sm font-medium text-emerald-200">All steps complete — you're ready to use VaultQuest.</p>
+              <p className="text-sm font-medium text-emerald-200">All steps complete — you're ready to use Nolo.</p>
             </div>
           ) : (
             <ol className="mt-4 grid gap-3 md:grid-cols-2">

@@ -110,7 +110,7 @@ export default function WithdrawalEligibilityPanel({ position, onRefresh, onWith
   const assetLabel = position?.asset || "USDC";
 
   return (
-    <div className="vq-glass space-y-5 p-5" data-testid="withdrawal-eligibility-panel">
+    <div className="nolo-glass space-y-5 p-5" data-testid="withdrawal-eligibility-panel">
       <div className="flex items-center justify-between border-b border-vault-border/40 pb-3">
         <div className="flex items-center gap-2">
           {analysis.eligible ? (
@@ -125,7 +125,7 @@ export default function WithdrawalEligibilityPanel({ position, onRefresh, onWith
           type="button"
           onClick={handleRefreshClick}
           disabled={isRefreshing}
-          className="vq-btn-ghost flex items-center gap-1.5 py-1 px-2.5 text-xs text-vault-muted hover:text-vault-text"
+          className="nolo-btn-ghost flex items-center gap-1.5 py-1 px-2.5 text-xs text-vault-muted hover:text-vault-text"
           data-testid="refresh-eligibility-btn"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? "animate-spin" : ""}`} />
@@ -181,7 +181,7 @@ export default function WithdrawalEligibilityPanel({ position, onRefresh, onWith
           type="button"
           onClick={onWithdraw}
           disabled={!analysis.eligible}
-          className="vq-btn-primary flex items-center gap-1.5 px-4 py-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          className="nolo-btn-primary flex items-center gap-1.5 px-4 py-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
           data-testid="withdraw-submit-btn"
         >
           <span>Withdraw</span>

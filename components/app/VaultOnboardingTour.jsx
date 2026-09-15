@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronRight, RotateCcw, LayoutDashboard, CreditCard, UserCircle, SkipForward } from "lucide-react";
 
-const STORAGE_KEY = "vq_onboarding_tour_done";
+const STORAGE_KEY = "nolo_onboarding_tour_done";
 
 const TOUR_STEPS = [
   {
@@ -149,7 +149,7 @@ export default function VaultOnboardingTour() {
                 <button
                   type="button"
                   onClick={next}
-                  className="vq-btn-primary"
+                  className="nolo-btn-primary"
                 >
                   {isLast ? "Done" : "Next"}
                   {!isLast && (

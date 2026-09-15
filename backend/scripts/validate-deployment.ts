@@ -19,7 +19,7 @@ async function main() {
   const prisma = new PrismaClient();
   const schemaVersionService = new SchemaVersionService(prisma);
 
-  console.log("🔍 VaultQuest Deployment Validation");
+  console.log("🔍 Nolo Deployment Validation");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
   try {

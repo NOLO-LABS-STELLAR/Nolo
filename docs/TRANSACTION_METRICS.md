@@ -2,7 +2,7 @@
 
 ## Overview
 
-VaultQuest tracks transaction confirmation duration from wallet submission through to confirmed and indexed state. This enables maintainers to monitor network performance and distinguish between network delays and indexer processing time.
+Nolo tracks transaction confirmation duration from wallet submission through to confirmed and indexed state. This enables maintainers to monitor network performance and distinguish between network delays and indexer processing time.
 
 ## Tracked Actions
 

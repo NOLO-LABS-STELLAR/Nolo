@@ -108,7 +108,7 @@ export default function StrategiesPage() {
           <span>/</span>
           <span className="text-vault-text font-medium">Strategies</span>
         </div>
-        <Link href="/app/vaults" className="vq-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
+        <Link href="/app/vaults" className="nolo-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
           <ChevronLeft size={16} /> Back to Vaults
         </Link>
       </div>
@@ -127,7 +127,7 @@ export default function StrategiesPage() {
           return (
             <section 
               key={strategy.id} 
-              className="vq-glass p-6 sm:p-8 space-y-6 hover:shadow-glow hover:border-nolo-400/20 transition-all duration-300"
+              className="nolo-glass p-6 sm:p-8 space-y-6 hover:shadow-glow hover:border-nolo-400/20 transition-all duration-300"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-4">
@@ -189,7 +189,7 @@ export default function StrategiesPage() {
       </div>
 
       <div className="flex justify-center pt-4">
-        <Link href="/app/vaults" className="vq-btn-ghost">
+        <Link href="/app/vaults" className="nolo-btn-ghost">
           ← Return to Vaults List
         </Link>
       </div>

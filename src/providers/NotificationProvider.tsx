@@ -1,5 +1,5 @@
 /**
- * VaultQuest notification provider (#652).
+ * Nolo notification provider (#652).
  *
  * Owns the deduplicated notification list for the current wallet+network and
  * persists read/dismissed state so alerts survive reloads. Protocol alerts are
@@ -30,7 +30,7 @@ import {
   type VaultNotification,
 } from "../../lib/notification-dedup";
 
-const STORAGE_PREFIX = "vaultquest:notifications:";
+const STORAGE_PREFIX = "nolo:notifications:";
 
 interface PersistedNotificationState {
   readIds: string[];

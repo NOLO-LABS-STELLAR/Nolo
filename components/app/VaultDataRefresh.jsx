@@ -33,7 +33,7 @@ export default function VaultDataRefresh() {
   };
 
   return (
-    <div className="vq-glass-hover p-4 flex items-center justify-between gap-4">
+    <div className="nolo-glass-hover p-4 flex items-center justify-between gap-4">
       <div className="flex items-center gap-3">
         <Clock size={16} className="text-vault-muted" />
         <div>
@@ -45,7 +45,7 @@ export default function VaultDataRefresh() {
       <button
         onClick={handleRefresh}
         disabled={isRefreshing}
-        className="vq-btn-ghost flex items-center gap-2 disabled:opacity-50"
+        className="nolo-btn-ghost flex items-center gap-2 disabled:opacity-50"
       >
         <RefreshCw size={16} className={isRefreshing ? "animate-spin" : ""} />
         {isRefreshing ? "Refreshing..." : "Refresh"}

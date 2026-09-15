@@ -67,7 +67,7 @@ export function createVaultDataConfig(
     || inferNetworkName(passphrase);
 
   return {
-    apiBaseUrl: read(source, "NEXT_PUBLIC_VAULTQUEST_API_BASE_URL", read(source, "PUBLIC_VAULTQUEST_API_BASE_URL", "/api")),
+    apiBaseUrl: read(source, "NEXT_PUBLIC_NOLO_API_BASE_URL", read(source, "PUBLIC_NOLO_API_BASE_URL", "/api")),
     dripPoolContractId: manifest?.contracts?.dripPool?.contractId
       || read(source, "NEXT_PUBLIC_DRIP_POOL_CONTRACT_ID"),
     escrowContractId: manifest?.contracts?.escrow?.contractId
@@ -81,9 +81,9 @@ export function createVaultDataConfig(
         || read(source, "NEXT_PUBLIC_SOROBAN_RPC_URL"),
     },
     featureFlags: {
-      backendReads: readBoolean(source, "NEXT_PUBLIC_VAULTQUEST_BACKEND_READS", true),
-      contractFallbackReads: readBoolean(source, "NEXT_PUBLIC_VAULTQUEST_CONTRACT_FALLBACK_READS", true),
-      transactionPolling: readBoolean(source, "NEXT_PUBLIC_VAULTQUEST_TRANSACTION_POLLING", true),
+      backendReads: readBoolean(source, "NEXT_PUBLIC_NOLO_BACKEND_READS", true),
+      contractFallbackReads: readBoolean(source, "NEXT_PUBLIC_NOLO_CONTRACT_FALLBACK_READS", true),
+      transactionPolling: readBoolean(source, "NEXT_PUBLIC_NOLO_TRANSACTION_POLLING", true),
     },
     manifestVersion: manifest?.version,
   };

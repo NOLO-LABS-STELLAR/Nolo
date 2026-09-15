@@ -25,7 +25,7 @@ export default function AccountStatusWidget() {
 
   if (!mounted) {
     return (
-      <div className="vq-glass p-6">
+      <div className="nolo-glass p-6">
         <div className="h-5 w-32 bg-vault-border/30 rounded animate-pulse" />
         <div className="mt-4 space-y-3">
           <div className="h-16 bg-vault-border/20 rounded-lg animate-pulse" />
@@ -38,7 +38,7 @@ export default function AccountStatusWidget() {
   const { totalDeposits, netEarnings, status, memberSince } = PLACEHOLDER_STATUS;
 
   return (
-    <div className="vq-glass p-6">
+    <div className="nolo-glass p-6">
       <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
         <div className="flex items-center gap-2">
           <Shield className="h-5 w-5 text-vault-accent" aria-hidden="true" />

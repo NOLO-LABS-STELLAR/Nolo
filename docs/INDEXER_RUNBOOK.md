@@ -1,12 +1,12 @@
 # Indexer Operations Runbook
 
-This document details the operational procedures, metrics, alarm thresholds, and manual recovery steps for the VaultQuest Event Indexer.
+This document details the operational procedures, metrics, alarm thresholds, and manual recovery steps for the Nolo Event Indexer.
 
 ---
 
 ## 1. System Overview
 
-The Event Indexer is a background service that polls the Stellar/Soroban ledger for contract events emitted by VaultQuest pool contracts. These events are parsed and dispatched to the VaultQuest backend via the protected internal reconciliation endpoint (`POST /internal/reconcile`), which resolves transaction statuses in the database. (For background drift detection, automated/dual-controlled repair plans, and quarantine incident response, see [`RECONCILIATION.md`](RECONCILIATION.md)).
+The Event Indexer is a background service that polls the Stellar/Soroban ledger for contract events emitted by Nolo pool contracts. These events are parsed and dispatched to the Nolo backend via the protected internal reconciliation endpoint (`POST /internal/reconcile`), which resolves transaction statuses in the database. (For background drift detection, automated/dual-controlled repair plans, and quarantine incident response, see [`RECONCILIATION.md`](RECONCILIATION.md)).
 
 To keep track of sync progress and diagnose processing delays, the indexer periodically reports its checkpoint to:
 * **Endpoint:** `POST /internal/checkpoint`
@@ -53,7 +53,7 @@ The background reconciliation engine (`reconciler.ts`) flags actions stuck in `o
 
 1. **Confirm the drift.** Query the log for the offending `recordId`/`txHash`:
    ```bash
-   kubectl logs -l app=vaultquest-backend | grep stale_orphan
+   kubectl logs -l app=nolo-backend | grep stale_orphan
    ```
 2. **Investigate the orphaned action.** The action is a deposit/withdraw whose on-chain evidence never resolved. Check the tx on Stellar Expert / Horizon using the `txHash` from the log line.
 3. **Resolve or quarantine.** If the chain evidence exists but the DB row is stale, reconcile the action status manually (`POST /internal/reconcile` or the reconciliation admin route). If the action is unrecoverable, quarantine it (see `RECONCILIATION.md`) so it stops re-appearing in every run.
@@ -82,7 +82,7 @@ The reconciler does **not** auto-repair this drift: safely creating a `VaultSett
 
 1. **Confirm the drift.**
    ```bash
-   kubectl logs -l app=vaultquest-backend | grep missing_settlement
+   kubectl logs -l app=nolo-backend | grep missing_settlement
    ```
 2. **Locate the confirmed action.** Use the `txHash` in the log line and check on-chain evidence on Stellar Expert / Horizon. Confirm the referenced `vaultId` genuinely has no `VaultSettlement`.
 3. **Reconcile manually**, don't auto-repair: create the missing `VaultSettlement` row in an `Unresolved` state (so it enters the normal settlement retry path) with the correct `settlementType`, `recipient`, and the amount verified from the on-chain event, then clear the `missing_settlements_total` counter after resolution.
@@ -97,7 +97,7 @@ If the indexer reports a `lagging` or `degraded` state, follow these diagnostic 
 ### Step A: Inspect the Indexer Health Status
 Run a query against the health endpoint to gather current statistics:
 ```bash
-curl -X GET https://api.vaultquest.io/health/indexer
+curl -X GET https://api.nolo.io/health/indexer
 ```
 Example Degraded Output:
 ```json

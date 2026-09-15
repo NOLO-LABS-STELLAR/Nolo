@@ -140,7 +140,7 @@ export default function VaultHealthStatusPanel() {
   };
 
   return (
-    <section aria-label="Vault health status" className="vq-glass-hover overflow-hidden">
+    <section aria-label="Vault health status" className="nolo-glass-hover overflow-hidden">
       <div className="p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -174,7 +174,7 @@ export default function VaultHealthStatusPanel() {
               type="button"
               onClick={checkHealth}
               disabled={loading}
-              className="vq-btn-ghost h-8 px-2.5 disabled:opacity-60"
+              className="nolo-btn-ghost h-8 px-2.5 disabled:opacity-60"
               aria-label="Refresh status"
             >
               <RefreshCw
@@ -185,7 +185,7 @@ export default function VaultHealthStatusPanel() {
             <button
               type="button"
               onClick={() => setExpanded(!expanded)}
-              className="vq-btn-ghost h-8 px-2.5"
+              className="nolo-btn-ghost h-8 px-2.5"
               aria-expanded={expanded}
               aria-label={expanded ? "Collapse details" : "Expand details"}
             >

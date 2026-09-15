@@ -208,7 +208,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
   const hasEnoughBalance = nativeBalanceValue >= feeSummary.estimatedNative;
 
   return (
-    <section className="vq-glass-hover p-5 sm:p-6">
+    <section className="nolo-glass-hover p-5 sm:p-6">
       <div className="flex flex-col gap-3 border-b border-vault-border/40 pb-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
@@ -221,7 +221,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
         <button
           type="button"
           onClick={() => setRefreshTick((value) => value + 1)}
-          className="vq-btn-ghost self-start sm:self-auto"
+          className="nolo-btn-ghost self-start sm:self-auto"
         >
           <RefreshCw className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`} />
           Refresh rates
@@ -297,7 +297,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
       </div>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
             Live rate
           </p>
@@ -311,7 +311,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
           </p>
         </div>
 
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
             Estimated cost
           </p>
@@ -323,7 +323,7 @@ export default function GasPrioritySelector({ nativeBalance = 0, onChange }) {
           </p>
         </div>
 
-        <div className={`vq-glass p-4 ${hasEnoughBalance ? "" : "border-amber-400/30 bg-amber-500/10"}`}>
+        <div className={`nolo-glass p-4 ${hasEnoughBalance ? "" : "border-amber-400/30 bg-amber-500/10"}`}>
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
             Balance check
           </p>

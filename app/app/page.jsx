@@ -6,8 +6,8 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAccount, useChainId } from "wagmi";
 import { useTranslation } from "next-i18next";
 import { Sparkles } from "lucide-react";
-import { VaultApiClient } from "@vaultquest/stellar-wallet-connect/src/vault/data/apiClient";
-import { usePortfolioSummary } from "@vaultquest/stellar-wallet-connect/src/vault/hooks";
+import { VaultApiClient } from "@nolo/stellar-wallet-connect/src/vault/data/apiClient";
+import { usePortfolioSummary } from "@nolo/stellar-wallet-connect/src/vault/hooks";
 import { SUPPORTED_CHAINS } from "@/lib/wagmi";
 import OnboardingCards from "@/components/app/OnboardingCards";
 import PublicStatsBar from "@/components/app/PublicStatsBar";
@@ -19,8 +19,8 @@ import BridgeStatusTracker from "@/components/app/BridgeStatusTracker";
 import WinnerCelebration from "@/components/app/WinnerCelebration";
 import PrizeCountdown from "@/components/app/PrizeCountdown";
 import FaqAccordion from "@/components/app/FaqAccordion";
-import { WalletConnectionStatus } from "@vaultquest/stellar-wallet-connect/src/components/WalletConnectionStatus";
-import { OnboardingChecklist } from "@vaultquest/stellar-wallet-connect/src/vault/components/OnboardingChecklist";
+import { WalletConnectionStatus } from "@nolo/stellar-wallet-connect/src/components/WalletConnectionStatus";
+import { OnboardingChecklist } from "@nolo/stellar-wallet-connect/src/vault/components/OnboardingChecklist";
 import VaultEmptyState from "@/components/app/VaultEmptyState";
 import VaultOnboardingTour from "@/components/app/VaultOnboardingTour";
 import FirstDepositOnboarding from "@/components/app/FirstDepositOnboarding";
@@ -52,7 +52,7 @@ function DashboardSkeleton() {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         {/* Left Column */}
         <div className="space-y-8 lg:col-span-8">
-          <div className="vq-glass p-6 h-96 flex flex-col justify-between">
+          <div className="nolo-glass p-6 h-96 flex flex-col justify-between">
             <div className="flex items-center justify-between border-b border-vault-border/30 pb-4">
               <div className="h-6 w-40 bg-vault-border/40 rounded" />
               <div className="h-6 w-20 bg-vault-border/30 rounded-full" />
@@ -76,7 +76,7 @@ function DashboardSkeleton() {
 
         {/* Right Column */}
         <div className="space-y-8 lg:col-span-4">
-          <div className="vq-glass p-6 space-y-6">
+          <div className="nolo-glass p-6 space-y-6">
             <div className="h-6 w-32 bg-vault-border/40 rounded border-b border-vault-border/30 pb-3" />
             <div className="space-y-3">
               <div className="h-16 bg-vault-border/20 rounded-xl" />
@@ -85,7 +85,7 @@ function DashboardSkeleton() {
               <div className="h-16 bg-vault-border/20 rounded-xl" />
             </div>
           </div>
-          <div className="vq-glass p-6 h-56 flex flex-col justify-between">
+          <div className="nolo-glass p-6 h-56 flex flex-col justify-between">
             <div className="h-6 w-2/3 bg-vault-border/40 mx-auto rounded" />
             <div className="h-12 bg-vault-border/30 rounded-xl w-full" />
             <div className="h-12 bg-vault-border/20 rounded-xl w-full" />
@@ -199,7 +199,7 @@ export default function AppDashboardPage() {
       <VaultMetricsCards />
 
       {vaultMetadata.length > 0 && (
-        <section className="vq-glass p-6">
+        <section className="nolo-glass p-6">
           <div className="flex items-center justify-between gap-4 pb-4 border-b border-vault-border/30">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-vault-muted">Canonical vault metadata</p>
@@ -243,12 +243,12 @@ export default function AppDashboardPage() {
             hasJoinedVault={hasJoinedVault && !onboardingForceOpen}
           />
 
-          {!onboardingForceOpen && (hasJoinedVault || (typeof window !== "undefined" && localStorage.getItem("vq_first_deposit_onboarding_dismissed") === "true")) && (
+          {!onboardingForceOpen && (hasJoinedVault || (typeof window !== "undefined" && localStorage.getItem("nolo_first_deposit_onboarding_dismissed") === "true")) && (
             <div className="flex justify-end pr-2">
               <button
                 type="button"
                 onClick={() => {
-                  localStorage.removeItem("vq_first_deposit_onboarding_dismissed");
+                  localStorage.removeItem("nolo_first_deposit_onboarding_dismissed");
                   setOnboardingForceOpen(true);
                 }}
                 className="text-xs font-semibold text-nolo-400 hover:text-nolo-300 transition-colors hover:underline"
@@ -271,7 +271,7 @@ export default function AppDashboardPage() {
 
         {/* Right Column */}
         <aside className="space-y-8 lg:col-span-4">
-          <div className="vq-glass p-6 space-y-6">
+          <div className="nolo-glass p-6 space-y-6">
             <h3 className="text-lg font-bold text-vault-text border-b border-vault-border/30 pb-3">
               Protocol Statistics
             </h3>
@@ -300,7 +300,7 @@ export default function AppDashboardPage() {
             </>
           )}
 
-          <section className="vq-glass p-6 text-center sm:p-8 relative overflow-hidden group">
+          <section className="nolo-glass p-6 text-center sm:p-8 relative overflow-hidden group">
             <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-nolo-500/10 blur-xl transition-all duration-300 group-hover:scale-125" />
             <h2 className="text-xl font-bold text-vault-text">{t("routes.dashboard.joinTitle")}</h2>
             <p className="mt-2 text-sm text-vault-muted">
@@ -310,17 +310,17 @@ export default function AppDashboardPage() {
             </p>
             <div className="mt-6 flex flex-col gap-3">
               {onboardingStep === 0 ? (
-                <button type="button" onClick={handleStartSaving} className="vq-btn-primary w-full">
+                <button type="button" onClick={handleStartSaving} className="nolo-btn-primary w-full">
                   {t("routes.dashboard.startSaving")}
                 </button>
               ) : (
                 <>
-                  <Link href="/app/prizes" className="vq-btn-primary w-full">{t("routes.dashboard.viewAllPrizes")}</Link>
-                  <Link href="/app/vaults" className="vq-btn-ghost w-full">{t("routes.dashboard.manageVaults")}</Link>
+                  <Link href="/app/prizes" className="nolo-btn-primary w-full">{t("routes.dashboard.viewAllPrizes")}</Link>
+                  <Link href="/app/vaults" className="nolo-btn-ghost w-full">{t("routes.dashboard.manageVaults")}</Link>
                 </>
               )}
               {!isConnected && onboardingStep === 0 && (
-                <button type="button" onClick={() => openConnectModal?.()} className="vq-btn-ghost w-full">
+                <button type="button" onClick={() => openConnectModal?.()} className="nolo-btn-ghost w-full">
                   {t("routes.dashboard.connectWallet")}
                 </button>
               )}

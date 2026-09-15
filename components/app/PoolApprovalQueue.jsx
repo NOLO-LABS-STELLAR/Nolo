@@ -55,7 +55,7 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
               status: "approved",
               reviewedAt: new Date().toISOString(),
               reviewNote,
-              reviewer: "admin@vaultquest.io",
+              reviewer: "admin@nolo.io",
             }
           : pool,
       ),
@@ -73,7 +73,7 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
               status: "rejected",
               reviewedAt: new Date().toISOString(),
               reviewNote,
-              reviewer: "admin@vaultquest.io",
+              reviewer: "admin@nolo.io",
             }
           : pool,
       ),
@@ -85,7 +85,7 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
   const pendingPools = pools.filter((p) => p.status === "pending");
 
   return (
-    <section className="vq-glass p-6 space-y-6">
+    <section className="nolo-glass p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20">
@@ -192,14 +192,14 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
                     <div className="flex gap-3 mt-3">
                       <button
                         onClick={() => handleApprove(pool.id)}
-                        className="flex-1 vq-btn-primary flex items-center justify-center gap-2"
+                        className="flex-1 nolo-btn-primary flex items-center justify-center gap-2"
                       >
                         <CheckCircle size={16} />
                         Approve
                       </button>
                       <button
                         onClick={() => handleReject(pool.id)}
-                        className="flex-1 vq-btn-ghost border-nolo-500/40 text-nolo-600 dark:text-nolo-400 hover:bg-nolo-500/10 flex items-center justify-center gap-2"
+                        className="flex-1 nolo-btn-ghost border-nolo-500/40 text-nolo-600 dark:text-nolo-400 hover:bg-nolo-500/10 flex items-center justify-center gap-2"
                       >
                         <XCircle size={16} />
                         Reject

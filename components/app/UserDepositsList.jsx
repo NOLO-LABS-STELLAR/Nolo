@@ -45,7 +45,7 @@ export default function UserDepositsList({ transactions = [], selectedAsset = "a
   const slice = filtered.slice(safePage * PAGE_SIZE, safePage * PAGE_SIZE + PAGE_SIZE);
 
   return (
-    <section className="vq-glass p-4 sm:p-6" aria-label="Transaction history">
+    <section className="nolo-glass p-4 sm:p-6" aria-label="Transaction history">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center gap-3">
           <div>
@@ -128,7 +128,7 @@ export default function UserDepositsList({ transactions = [], selectedAsset = "a
             type="button"
             disabled={safePage === 0}
             onClick={() => setPage((p) => Math.max(0, p - 1))}
-            className="vq-btn-ghost disabled:opacity-40"
+            className="nolo-btn-ghost disabled:opacity-40"
             aria-label="Previous page"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -141,7 +141,7 @@ export default function UserDepositsList({ transactions = [], selectedAsset = "a
             type="button"
             disabled={safePage >= pageCount - 1}
             onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
-            className="vq-btn-ghost disabled:opacity-40"
+            className="nolo-btn-ghost disabled:opacity-40"
             aria-label="Next page"
           >
             Next

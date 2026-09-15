@@ -5,7 +5,7 @@ export function createLogger(level: string): Logger {
 
   return pino({
     level,
-    base: { service: "vaultquest-backend" },
+    base: { service: "nolo-backend" },
     timestamp: pino.stdTimeFunctions.isoTime,
     transport: isDevelopment
       ? {

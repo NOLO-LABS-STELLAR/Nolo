@@ -32,7 +32,7 @@ Every exported record carries:
 ### Format & Integrity
 
 - CSV follows RFC 4180 quoting (headers + one row per round, newest first).
-- JSON uses the `vaultquest.archive.v1` schema with `generatedAt`, `count`, `redacted`, `records`, and `winners`.
+- JSON uses the `nolo.archive.v1` schema with `generatedAt`, `count`, `redacted`, `records`, and `winners`.
 - Every document ships a **proof hash** (FNV-1a over the canonical record rows) so a changed/truncated export is detectable.
 - Identical input produces byte-identical output when `generatedAt` is pinned (the exporter is deterministic and sort-stable).
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useAccount } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { buildStellarExplorerUrl } from "@/lib/stellar-explorer";
-import { defaultVaultDataConfig } from "@vaultquest/stellar-wallet-connect/src/vault/data/config";
+import { defaultVaultDataConfig } from "@nolo/stellar-wallet-connect/src/vault/data/config";
 import {
   Wallet,
   ChevronLeft,
@@ -46,7 +46,7 @@ function DetailSection({ icon: Icon, title, description, children }) {
   const titleId = `${title.toLowerCase().replace(/\s+/g, "-")}-title`;
 
   return (
-    <section className="vq-glass space-y-5 p-4 sm:p-6" aria-labelledby={titleId}>
+    <section className="nolo-glass space-y-5 p-4 sm:p-6" aria-labelledby={titleId}>
       <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <Icon className="h-5 w-5" aria-hidden="true" />
@@ -82,7 +82,7 @@ function DetailSkeleton() {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
         {/* Left Column (Stats & Calculator) */}
         <div className="space-y-8 lg:col-span-8">
-          <div className="vq-glass p-6 h-56 flex flex-col justify-between">
+          <div className="nolo-glass p-6 h-56 flex flex-col justify-between">
             <div className="h-6 w-1/3 bg-vault-border/40 rounded" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="h-16 bg-vault-border/20 rounded-xl" />
@@ -91,12 +91,12 @@ function DetailSkeleton() {
               <div className="h-16 bg-vault-border/20 rounded-xl" />
             </div>
           </div>
-          <div className="vq-glass p-6 h-64 bg-vault-surface/20" />
+          <div className="nolo-glass p-6 h-64 bg-vault-surface/20" />
         </div>
 
         {/* Right Column (Actions / Wallet info) */}
         <div className="space-y-8 lg:col-span-4">
-          <div className="vq-glass p-6 h-80 bg-vault-surface/40 flex flex-col justify-between" />
+          <div className="nolo-glass p-6 h-80 bg-vault-surface/40 flex flex-col justify-between" />
         </div>
       </div>
     </div>
@@ -146,7 +146,7 @@ export default function VaultDetailPage({ params }) {
   if (!vault) {
     return (
       <div className="mx-auto max-w-xl py-12 text-center">
-        <div className="vq-glass p-8 flex flex-col items-center gap-6">
+        <div className="nolo-glass p-8 flex flex-col items-center gap-6">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-500/10 text-nolo-500 border border-nolo-500/20">
             <AlertCircle size={32} />
           </div>
@@ -156,7 +156,7 @@ export default function VaultDetailPage({ params }) {
               The vault directory index could not resolve vault ID &quot;{id}&quot;. It may have expired, changed addresses, or been archived.
             </p>
           </div>
-          <Link href="/app/vaults" className="vq-btn-primary w-full text-center">
+          <Link href="/app/vaults" className="nolo-btn-primary w-full text-center">
             Return to Vaults
           </Link>
         </div>
@@ -175,7 +175,7 @@ export default function VaultDetailPage({ params }) {
           <span>/</span>
           <span className="text-vault-text font-medium truncate max-w-[200px]">{vault.name}</span>
         </div>
-        <Link href="/app/vaults" className="vq-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
+        <Link href="/app/vaults" className="nolo-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
           <ChevronLeft size={16} /> Back to Vaults
         </Link>
       </div>
@@ -317,7 +317,7 @@ export default function VaultDetailPage({ params }) {
         <aside className="space-y-8 lg:col-span-4">
           <VaultParticipantInsights vault={vault} />
           <VaultHealthStatusPanel />
-          <section className="vq-glass p-4 sm:p-6 space-y-6 relative overflow-hidden group">
+          <section className="nolo-glass p-4 sm:p-6 space-y-6 relative overflow-hidden group">
             <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
             <div>
               <h2 className="text-lg font-bold text-vault-text flex items-center gap-2">
@@ -374,7 +374,7 @@ export default function VaultDetailPage({ params }) {
                   <button
                     type="button"
                     onClick={() => setIsDepositOpen(true)}
-                    className="vq-btn-primary w-full"
+                    className="nolo-btn-primary w-full"
                   >
                     Deposit Funds
                   </button>
@@ -396,7 +396,7 @@ export default function VaultDetailPage({ params }) {
                         { duration: 5000 }
                       );
                     }}
-                    className="vq-btn-ghost w-full"
+                    className="nolo-btn-ghost w-full"
                   >
                     Withdraw Principal
                   </button>
@@ -416,7 +416,7 @@ export default function VaultDetailPage({ params }) {
                 <button
                   type="button"
                   onClick={() => openConnectModal?.()}
-                  className="vq-btn-primary w-full py-2.5"
+                  className="nolo-btn-primary w-full py-2.5"
                 >
                   Connect Wallet
                 </button>

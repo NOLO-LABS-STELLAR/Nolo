@@ -109,7 +109,7 @@ export default function VaultRoundArchivePage() {
   );
 
   const exportedDocument = useMemo(
-    () => createArchiveExport(completedRounds, { source: "vaultquest.archive.mock" }),
+    () => createArchiveExport(completedRounds, { source: "nolo.archive.mock" }),
     [completedRounds],
   );
 
@@ -128,7 +128,7 @@ export default function VaultRoundArchivePage() {
       format === "json" ? archiveToJSON(exportedDocument) : archiveToCSV(exportedDocument.records);
     const extension = format === "json" ? "json" : "csv";
     downloadFile(
-      `vaultquest-round-archive-${new Date().toISOString().slice(0, 10)}.${extension}`,
+      `nolo-round-archive-${new Date().toISOString().slice(0, 10)}.${extension}`,
       content,
       format === "json" ? "application/json" : "text/csv",
     );
@@ -152,13 +152,13 @@ export default function VaultRoundArchivePage() {
             Review closed vault rounds, dates, participation, deposits, and prize outcomes, or export the archive.
           </p>
         </div>
-        <Link href="/app/vaults" className="vq-btn-ghost self-start">
+        <Link href="/app/vaults" className="nolo-btn-ghost self-start">
           <ChevronLeft className="h-4 w-4" aria-hidden="true" />
           Back to vaults
         </Link>
       </div>
 
-      <section className="vq-glass p-4 sm:p-6" aria-labelledby="archive-export-title">
+      <section className="nolo-glass p-4 sm:p-6" aria-labelledby="archive-export-title">
         <div>
           <h2 id="archive-export-title" className="flex items-center gap-2 text-base font-semibold text-vault-text">
             {format === "csv" ? <FileSpreadsheet className="h-5 w-5 text-emerald-500" aria-hidden="true" /> : <FileJson className="h-5 w-5 text-amber-500" aria-hidden="true" />}
@@ -195,7 +195,7 @@ export default function VaultRoundArchivePage() {
               <option value="json">JSON</option>
             </select>
           </div>
-          <button type="button" onClick={handleExport} className="vq-btn-primary">
+          <button type="button" onClick={handleExport} className="nolo-btn-primary">
             <Download className="h-4 w-4" aria-hidden="true" />
             Export {filteredRecords.length} round{filteredRecords.length === 1 ? "" : "s"}
           </button>
@@ -216,7 +216,7 @@ export default function VaultRoundArchivePage() {
       </section>
 
       {filteredRecords.length === 0 ? (
-        <section className="vq-glass flex flex-col items-center px-6 py-16 text-center">
+        <section className="nolo-glass flex flex-col items-center px-6 py-16 text-center">
           <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-vault-surface text-vault-muted">
             <Archive className="h-8 w-8" aria-hidden="true" />
           </span>
@@ -230,7 +230,7 @@ export default function VaultRoundArchivePage() {
           {visibleRounds.map((round) => {
             const stale = isArchiveEntryStale(round.verifiedAt);
             return (
-            <article key={round.id} className="vq-glass-hover p-5">
+            <article key={round.id} className="nolo-glass-hover p-5">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -261,7 +261,7 @@ export default function VaultRoundArchivePage() {
                     proof {round.proofHash}
                   </p>
                 </div>
-                <Link href={`/app/vaults/${round.vaultId}`} className="vq-btn-ghost self-start py-1.5">
+                <Link href={`/app/vaults/${round.vaultId}`} className="nolo-btn-ghost self-start py-1.5">
                   View vault
                 </Link>
               </div>
@@ -281,7 +281,7 @@ export default function VaultRoundArchivePage() {
               <button
                 type="button"
                 onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
-                className="vq-btn-primary"
+                className="nolo-btn-primary"
               >
                 Load more rounds
               </button>

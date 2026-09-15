@@ -1,6 +1,6 @@
 # Environment Variable Inventory
 
-Reference for configuration used by the VaultQuest frontend.
+Reference for configuration used by the Nolo frontend.
 
 ## Classification
 

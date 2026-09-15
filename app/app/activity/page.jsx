@@ -8,7 +8,7 @@ import {
   ChevronLeft, ChevronRight, Filter, Clock, History, AlertCircle, EyeOff, Eye
 } from "lucide-react";
 import { DEMO_TRANSACTIONS } from "@/lib/demo-portfolio";
-import { ActivityExport } from "@vaultquest/stellar-wallet-connect/src/vault/components/ActivityExport";
+import { ActivityExport } from "@nolo/stellar-wallet-connect/src/vault/components/ActivityExport";
 import TransactionHistoryModal from "@/components/app/TransactionHistoryModal";
 
 /**
@@ -19,7 +19,7 @@ import TransactionHistoryModal from "@/components/app/TransactionHistoryModal";
  * localStorage pattern other per-device settings in this app use (see
  * components/app/AppNav.jsx's high-contrast toggle).
  */
-export const ACTIVITY_PRIVACY_MODE_KEY = "vaultquest-activity-privacy-mode";
+export const ACTIVITY_PRIVACY_MODE_KEY = "nolo-activity-privacy-mode";
 
 /**
  * Resolve the label shown for one activity row, masking the identifying
@@ -67,7 +67,7 @@ export function ActivityFeed({ transactions, privacyMode = false }) {
   const slice = filtered.slice(safePage * PAGE_SIZE, safePage * PAGE_SIZE + PAGE_SIZE);
 
   return (
-    <section className="vq-glass p-4 sm:p-6">
+    <section className="nolo-glass p-4 sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-lg font-semibold text-vault-text">Activity History</h2>
@@ -146,11 +146,11 @@ export function ActivityFeed({ transactions, privacyMode = false }) {
 
       {filtered.length > PAGE_SIZE && (
         <div className="mt-4 flex items-center justify-between border-t border-vault-border pt-4">
-          <button type="button" disabled={safePage === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="vq-btn-ghost disabled:opacity-40">
+          <button type="button" disabled={safePage === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="nolo-btn-ghost disabled:opacity-40">
             <ChevronLeft className="h-4 w-4" /> Prev
           </button>
           <span className="text-sm text-vault-muted">Page {safePage + 1} of {pageCount}</span>
-          <button type="button" disabled={safePage >= pageCount - 1} onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))} className="vq-btn-ghost disabled:opacity-40">
+          <button type="button" disabled={safePage >= pageCount - 1} onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))} className="nolo-btn-ghost disabled:opacity-40">
             Next <ChevronRight className="h-4 w-4" />
           </button>
         </div>
@@ -176,19 +176,19 @@ function ActivitySummary({ transactions }) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-3">
-      <div className="vq-glass-hover p-5">
+      <div className="nolo-glass-hover p-5">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-emerald-500"><ArrowDownRight className="h-5 w-5" /></span>
         <p className="mt-4 text-xs font-medium uppercase tracking-wide text-vault-muted">Total Deposits</p>
         <p className="mt-1 text-2xl font-bold tabular-nums text-vault-text">${stats.totalDeposits.toLocaleString()}</p>
         <p className="text-sm text-vault-muted">{stats.depositCount} deposits</p>
       </div>
-      <div className="vq-glass-hover p-5">
+      <div className="nolo-glass-hover p-5">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-muted"><ArrowUpRight className="h-5 w-5" /></span>
         <p className="mt-4 text-xs font-medium uppercase tracking-wide text-vault-muted">Total Withdrawals</p>
         <p className="mt-1 text-2xl font-bold tabular-nums text-vault-text">${stats.totalWithdrawals.toLocaleString()}</p>
         <p className="text-sm text-vault-muted">{stats.withdrawCount} withdrawals</p>
       </div>
-      <div className="vq-glass-hover p-5">
+      <div className="nolo-glass-hover p-5">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-amber-500"><Gift className="h-5 w-5" /></span>
         <p className="mt-4 text-xs font-medium uppercase tracking-wide text-vault-muted">Total Claims</p>
         <p className="mt-1 text-2xl font-bold tabular-nums text-vault-text">${stats.totalClaims.toLocaleString()}</p>
@@ -201,13 +201,13 @@ function ActivitySummary({ transactions }) {
 function EmptyActivity() {
   const { openConnectModal } = useConnectModal();
   return (
-    <div className="vq-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
+    <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
       <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-nolo-500/10 text-nolo-500 ring-2 ring-nolo-400/20">
         <Wallet className="h-8 w-8" />
       </span>
       <h2 className="mt-6 text-xl font-semibold text-vault-text">Wallet not connected</h2>
       <p className="mt-2 max-w-md text-sm text-vault-muted">Connect your wallet to view your account activity, deposits, withdrawals, and prize claims.</p>
-      <button type="button" onClick={() => openConnectModal?.()} className="vq-btn-primary mt-8">
+      <button type="button" onClick={() => openConnectModal?.()} className="nolo-btn-primary mt-8">
         <Wallet className="h-4 w-4" /> Connect wallet
       </button>
     </div>
@@ -257,7 +257,7 @@ export default function ActivityPage() {
             onClick={togglePrivacyMode}
             aria-pressed={privacyMode}
             title="Hide vault/pool names in your local activity view. On-chain data is still public and unaffected."
-            className="vq-btn-ghost inline-flex items-center gap-2 text-sm"
+            className="nolo-btn-ghost inline-flex items-center gap-2 text-sm"
           >
             {privacyMode ? <EyeOff className="h-4 w-4" aria-hidden="true" /> : <Eye className="h-4 w-4" aria-hidden="true" />}
             {privacyMode ? "Privacy mode: On" : "Privacy mode: Off"}
@@ -274,12 +274,12 @@ export default function ActivityPage() {
             walletConnected={isConnected}
             summary={summary}
           />
-          <div className="vq-glass flex items-center justify-between p-4 sm:p-6">
+          <div className="nolo-glass flex items-center justify-between p-4 sm:p-6">
             <div>
               <h3 className="text-base font-semibold text-vault-text">Full transaction history</h3>
               <p className="text-sm text-vault-muted">View paginated deposits, withdrawals, and claims from the backend.</p>
             </div>
-            <button type="button" onClick={() => setHistoryOpen(true)} className="vq-btn-primary">
+            <button type="button" onClick={() => setHistoryOpen(true)} className="nolo-btn-primary">
               <History className="h-4 w-4" /> View history
             </button>
           </div>

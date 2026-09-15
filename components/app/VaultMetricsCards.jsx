@@ -6,7 +6,7 @@ import { formatUsd } from "@/lib/yield-counter";
 
 function MetricCardSkeleton() {
   return (
-    <div className="animate-pulse vq-glass p-5">
+    <div className="animate-pulse nolo-glass p-5">
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 rounded-xl bg-vault-border/40" />
         <div className="space-y-1.5 flex-1">
@@ -20,7 +20,7 @@ function MetricCardSkeleton() {
 
 function MetricCard({ icon: Icon, label, value, accent }) {
   return (
-    <div className="vq-glass-hover p-5">
+    <div className="nolo-glass-hover p-5">
       <div className="flex items-start gap-3">
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface"

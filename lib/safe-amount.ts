@@ -1,7 +1,7 @@
 /**
  * Exact token amount arithmetic utilities (#599).
  *
- * All financial calculations in VaultQuest must use these utilities
+ * All financial calculations in Nolo must use these utilities
  * instead of JavaScript `Number` arithmetic to avoid precision loss
  * with i128 contract values.
  *

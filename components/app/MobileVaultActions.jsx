@@ -95,13 +95,13 @@ export default function MobileVaultActions({ vaultName, onAction }) {
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowConfirm(null)}
-                  className="flex-1 vq-btn-ghost"
+                  className="flex-1 nolo-btn-ghost"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={confirmAction}
-                  className="flex-1 vq-btn-primary flex items-center justify-center gap-2"
+                  className="flex-1 nolo-btn-primary flex items-center justify-center gap-2"
                 >
                   <CheckCircle2 size={16} />
                   Confirm

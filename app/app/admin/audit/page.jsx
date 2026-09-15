@@ -39,7 +39,7 @@ export default function AdminAuditPage() {
 
   function adminAuthHeaders() {
     if (typeof window === "undefined") return {};
-    const token = window.sessionStorage.getItem("vaultquest.walletSessionToken");
+    const token = window.sessionStorage.getItem("nolo.walletSessionToken");
     return token ? { authorization: `Bearer ${token}` } : {};
   }
 
@@ -89,7 +89,7 @@ export default function AdminAuditPage() {
 
   if (!isAdmin) {
     return (
-      <div className="vq-glass flex flex-col items-center px-6 py-16 text-center">
+      <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center">
         <Shield className="h-16 w-16 text-vault-muted" />
         <h2 className="mt-6 text-xl font-semibold text-vault-text">Access Restricted</h2>
         <p className="mt-2 max-w-md text-sm text-vault-muted">
@@ -111,7 +111,7 @@ export default function AdminAuditPage() {
         </p>
       </header>
 
-      <div className="vq-glass p-4 sm:p-6">
+      <div className="nolo-glass p-4 sm:p-6">
         <div className="flex flex-wrap items-end gap-4">
           <div className="flex flex-col gap-1">
             <label htmlFor="filter-param" className="text-xs font-medium text-vault-muted">
@@ -156,15 +156,15 @@ export default function AdminAuditPage() {
       </div>
 
       {loading ? (
-        <div className="vq-glass p-8 text-center">
+        <div className="nolo-glass p-8 text-center">
           <p className="text-sm text-vault-muted">Loading audit records...</p>
         </div>
       ) : error ? (
-        <div className="vq-glass p-8 text-center">
+        <div className="nolo-glass p-8 text-center">
           <p className="text-sm text-nolo-400">{error}</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="vq-glass flex flex-col items-center px-6 py-16 text-center">
+        <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center">
           <Clock className="h-12 w-12 text-vault-muted" />
           <h2 className="mt-4 text-lg font-semibold text-vault-text">No audit records found</h2>
           <p className="mt-1 text-sm text-vault-muted">
@@ -174,7 +174,7 @@ export default function AdminAuditPage() {
           </p>
         </div>
       ) : (
-        <div className="vq-glass overflow-hidden">
+        <div className="nolo-glass overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
@@ -220,7 +220,7 @@ export default function AdminAuditPage() {
                 type="button"
                 disabled={safePage === 0}
                 onClick={() => setPage(p => Math.max(0, p - 1))}
-                className="vq-btn-ghost disabled:opacity-40"
+                className="nolo-btn-ghost disabled:opacity-40"
               >
                 <ChevronLeft className="h-4 w-4" /> Prev
               </button>
@@ -229,7 +229,7 @@ export default function AdminAuditPage() {
                 type="button"
                 disabled={safePage >= pageCount - 1}
                 onClick={() => setPage(p => Math.min(pageCount - 1, p + 1))}
-                className="vq-btn-ghost disabled:opacity-40"
+                className="nolo-btn-ghost disabled:opacity-40"
               >
                 Next <ChevronRight className="h-4 w-4" />
               </button>

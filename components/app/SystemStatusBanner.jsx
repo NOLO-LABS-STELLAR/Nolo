@@ -90,7 +90,7 @@ export default function SystemStatusBanner() {
     <div
       role="alert"
       aria-live="assertive"
-      className={`vq-glass mb-6 border-${severityConfig.color}-500/40 bg-${severityConfig.color}-500/10`}
+      className={`nolo-glass mb-6 border-${severityConfig.color}-500/40 bg-${severityConfig.color}-500/10`}
     >
       <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-3">
@@ -122,7 +122,7 @@ export default function SystemStatusBanner() {
             type="button"
             onClick={checkAllServices}
             disabled={checking}
-            className="vq-btn-ghost h-9 px-3 disabled:opacity-60"
+            className="nolo-btn-ghost h-9 px-3 disabled:opacity-60"
             aria-label="Refresh status"
           >
             <RefreshCw
@@ -133,7 +133,7 @@ export default function SystemStatusBanner() {
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className="vq-btn-ghost h-9 px-3"
+            className="nolo-btn-ghost h-9 px-3"
             aria-expanded={expanded}
             aria-label={expanded ? "Collapse details" : "Expand details"}
           >

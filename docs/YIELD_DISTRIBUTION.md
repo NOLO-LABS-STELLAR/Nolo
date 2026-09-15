@@ -1,6 +1,6 @@
 # Yield Distribution Mathematics
 
-This document provides a detailed explanation of how yield is calculated and distributed in the VaultQuest protocol. It covers the mathematical formulas, implementation details, and precision handling.
+This document provides a detailed explanation of how yield is calculated and distributed in the Nolo protocol. It covers the mathematical formulas, implementation details, and precision handling.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This document provides a detailed explanation of how yield is calculated and dis
 
 ## Overview
 
-VaultQuest implements a prize-linked savings mechanism where users deposit funds into pools. The deposited assets generate yield through Stellar's liquidity pools or other DeFi protocols. This yield is then distributed as prizes to randomly selected winners while preserving principal deposits.
+Nolo implements a prize-linked savings mechanism where users deposit funds into pools. The deposited assets generate yield through Stellar's liquidity pools or other DeFi protocols. This yield is then distributed as prizes to randomly selected winners while preserving principal deposits.
 
 ### Key Principles
 
@@ -565,7 +565,7 @@ Error: 0.0001 USDC (0.1%)
 
 ## Summary
 
-The VaultQuest yield distribution mechanism is mathematically sound and economically fair:
+The Nolo yield distribution mechanism is mathematically sound and economically fair:
 
 1. **Proportional Chances**: Winning probability is directly proportional to deposit size
 2. **Expected Value Preservation**: Average returns match the underlying protocol APY

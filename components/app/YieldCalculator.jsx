@@ -14,11 +14,11 @@ import {
 } from "recharts";
 
 const TRADITIONAL_BANK_APY = 0.5; // 0.5% typical savings account
-const VAULTQUEST_BASE_APY = 4.5; // 4.5% base yield
+const NOLO_BASE_APY = 4.5; // 4.5% base yield
 
 export default function YieldCalculator() {
   const [principal, setPrincipal] = useState(5000);
-  const [customAPY, setCustomAPY] = useState(VAULTQUEST_BASE_APY);
+  const [customAPY, setCustomAPY] = useState(NOLO_BASE_APY);
   const [years, setYears] = useState(3);
   const [showCustomAPY, setShowCustomAPY] = useState(false);
 
@@ -60,7 +60,7 @@ export default function YieldCalculator() {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="vq-glass border border-vault-border/80 bg-vault-surface/95 px-4 py-3 shadow-glow backdrop-blur-md">
+        <div className="nolo-glass border border-vault-border/80 bg-vault-surface/95 px-4 py-3 shadow-glow backdrop-blur-md">
           <p className="text-xs font-bold text-vault-text">
             {payload[0].payload.year}
           </p>
@@ -97,7 +97,7 @@ export default function YieldCalculator() {
   };
 
   return (
-    <section className="vq-glass p-4 sm:p-6 lg:p-8">
+    <section className="nolo-glass p-4 sm:p-6 lg:p-8">
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-vault-border/30 pb-4">
         <div className="flex items-center gap-2">
           <Calculator className="h-6 w-6 text-nolo-500" aria-hidden="true" />
@@ -263,19 +263,19 @@ export default function YieldCalculator() {
             >
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="var(--vq-border)"
+                stroke="var(--nolo-border)"
                 opacity={0.2}
                 vertical={false}
               />
               <XAxis
                 dataKey="year"
-                stroke="var(--vq-muted)"
+                stroke="var(--nolo-muted)"
                 fontSize={11}
                 tickLine={false}
                 axisLine={false}
               />
               <YAxis
-                stroke="var(--vq-muted)"
+                stroke="var(--nolo-muted)"
                 fontSize={11}
                 tickLine={false}
                 axisLine={false}
@@ -283,7 +283,7 @@ export default function YieldCalculator() {
               />
               <Tooltip
                 content={<CustomTooltip />}
-                cursor={{ fill: "var(--vq-border)", opacity: 0.1 }}
+                cursor={{ fill: "var(--nolo-border)", opacity: 0.1 }}
               />
               <Bar
                 dataKey="Traditional Bank"
@@ -298,7 +298,7 @@ export default function YieldCalculator() {
 
       {/* Results Summary */}
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="vq-glass-hover p-4">
+        <div className="nolo-glass-hover p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
             Traditional Bank
           </p>
@@ -310,7 +310,7 @@ export default function YieldCalculator() {
           </p>
         </div>
 
-        <div className="vq-glass-hover border-nolo-400/30 p-4 ring-2 ring-nolo-400/20">
+        <div className="nolo-glass-hover border-nolo-400/30 p-4 ring-2 ring-nolo-400/20">
           <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">
             Nolo
           </p>
@@ -322,7 +322,7 @@ export default function YieldCalculator() {
           </p>
         </div>
 
-        <div className="vq-glass-hover bg-emerald-500/10 p-4">
+        <div className="nolo-glass-hover bg-emerald-500/10 p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
             Your Advantage
           </p>

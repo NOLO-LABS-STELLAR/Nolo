@@ -607,7 +607,7 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
   const errorMessage = getContractErrorMessage(error);
 
   return (
-    <article className={`vq-glass overflow-hidden ${statusConfig.borderClass}`}>
+    <article className={`nolo-glass overflow-hidden ${statusConfig.borderClass}`}>
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-3">
@@ -694,7 +694,7 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
                   type="button"
                   onClick={() => onApprove(proposal.id)}
                   disabled={!canApprove}
-                  className={`vq-btn-primary flex-1 ${!canApprove ? "opacity-50 cursor-not-allowed" : ""}`}
+                  className={`nolo-btn-primary flex-1 ${!canApprove ? "opacity-50 cursor-not-allowed" : ""}`}
                 >
                   <CheckCircle className="h-4 w-4" aria-hidden="true" />
                   Approve
@@ -705,7 +705,7 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
               <button
                 type="button"
                 onClick={() => onExecute(proposal.id)}
-                className="vq-btn-primary flex-1"
+                className="nolo-btn-primary flex-1"
               >
                 <Play className="h-4 w-4" aria-hidden="true" />
                 Execute
@@ -715,7 +715,7 @@ function ProposalCard({ proposal, isAdmin, onApprove, onExecute, onCancel, error
               <button
                 type="button"
                 onClick={() => onCancel(proposal.id)}
-                className="vq-btn-ghost flex-1 border-nolo-400/40 text-nolo-600 hover:bg-nolo-500/10 dark:text-nolo-400"
+                className="nolo-btn-ghost flex-1 border-nolo-400/40 text-nolo-600 hover:bg-nolo-500/10 dark:text-nolo-400"
               >
                 <Ban className="h-4 w-4" aria-hidden="true" />
                 Cancel
@@ -862,7 +862,7 @@ export default function AdminProposalsPage() {
             {t("routes.admin.proposals.subtitle")}
           </p>
         </header>
-        <div className="vq-glass flex flex-col items-center px-6 py-16 text-center">
+        <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center">
           <Shield className="h-16 w-16 text-vault-muted" aria-hidden="true" />
           <h2 className="mt-6 text-xl font-semibold text-vault-text">
             Wallet Not Connected
@@ -886,7 +886,7 @@ export default function AdminProposalsPage() {
             {t("routes.admin.proposals.subtitle")}
           </p>
         </header>
-        <div className="vq-glass flex flex-col items-center border-amber-500/40 bg-amber-500/10 px-6 py-16 text-center">
+        <div className="nolo-glass flex flex-col items-center border-amber-500/40 bg-amber-500/10 px-6 py-16 text-center">
           <AlertTriangle className="h-16 w-16 text-amber-500" aria-hidden="true" />
           <h2 className="mt-6 text-xl font-semibold text-vault-text">
             Access Restricted
@@ -920,7 +920,7 @@ export default function AdminProposalsPage() {
         <button
           type="button"
           onClick={() => setFilter("pending_below_threshold")}
-          className={`vq-glass-hover p-5 text-left transition-all ${
+          className={`nolo-glass-hover p-5 text-left transition-all ${
             filter === "pending_below_threshold" ? "ring-2 ring-amber-400/30" : ""
           }`}
         >
@@ -936,7 +936,7 @@ export default function AdminProposalsPage() {
         <button
           type="button"
           onClick={() => setFilter("ready_to_execute")}
-          className={`vq-glass-hover p-5 text-left transition-all ${
+          className={`nolo-glass-hover p-5 text-left transition-all ${
             filter === "ready_to_execute" ? "ring-2 ring-emerald-400/30" : ""
           }`}
         >
@@ -952,7 +952,7 @@ export default function AdminProposalsPage() {
         <button
           type="button"
           onClick={() => setFilter("executed")}
-          className={`vq-glass-hover p-5 text-left transition-all ${
+          className={`nolo-glass-hover p-5 text-left transition-all ${
             filter === "executed" ? "ring-2 ring-emerald-400/30" : ""
           }`}
         >
@@ -968,7 +968,7 @@ export default function AdminProposalsPage() {
         <button
           type="button"
           onClick={() => setFilter("expired")}
-          className={`vq-glass-hover p-5 text-left transition-all ${
+          className={`nolo-glass-hover p-5 text-left transition-all ${
             filter === "expired" ? "ring-2 ring-nolo-400/30" : ""
           }`}
         >
@@ -1017,7 +1017,7 @@ export default function AdminProposalsPage() {
       {/* Proposals List */}
       <div className="space-y-4">
         {filteredProposals.length === 0 ? (
-          <div className="vq-glass p-12 text-center">
+          <div className="nolo-glass p-12 text-center">
             <Users className="mx-auto h-12 w-12 text-vault-muted" aria-hidden="true" />
             <p className="mt-4 text-sm text-vault-muted">No proposals found</p>
           </div>

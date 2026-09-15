@@ -22,7 +22,7 @@ export default function VaultNotificationSettings() {
   };
 
   return (
-    <section className="vq-glass-hover p-6 space-y-4">
+    <section className="nolo-glass-hover p-6 space-y-4">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-vault-accent/10 text-vault-accent border border-vault-accent/20">
           <Bell size={20} />
@@ -105,7 +105,7 @@ export default function VaultNotificationSettings() {
         </label>
       </div>
 
-      <button onClick={handleSave} className="vq-btn-primary w-full">
+      <button onClick={handleSave} className="nolo-btn-primary w-full">
         Save Preferences
       </button>
 

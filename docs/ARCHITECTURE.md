@@ -1,13 +1,13 @@
-# VaultQuest Architecture
+# Nolo Architecture
 
-This document maps the VaultQuest stack and shows how the frontend,
+This document maps the Nolo stack and shows how the frontend,
 wallet, backend, Soroban contracts, Stellar network, and indexer flow
 connect to deliver the `create`, `join`, `drip`, `claim`, and `withdraw`
 user journeys.
 
 ## Architecture overview
 
-VaultQuest separates the stack into three authoritative layers:
+Nolo separates the stack into three authoritative layers:
 
 - **Soroban contract state** — true source of vault balances, deposits,
   positions, prize eligibility, and claim/withdraw outcomes.
@@ -21,7 +21,7 @@ VaultQuest separates the stack into three authoritative layers:
 
 ```mermaid
 flowchart TD
-  subgraph FRONTEND[VaultQuest frontend]
+  subgraph FRONTEND[Nolo frontend]
     UI[UI components]
     Wallet[stellar-wallet-connect wallet layer]
   end
@@ -84,7 +84,7 @@ sequenceDiagram
 
 ## Event indexing flow
 
-VaultQuest relies on event-driven reconciliation so that backend intent
+Nolo relies on event-driven reconciliation so that backend intent
 records and contract state stay aligned.
 
 1. A signed transaction is submitted by the frontend wallet to Stellar.
@@ -142,7 +142,7 @@ The factory persists this metadata with each pool record and increments a versio
 
 ## Configuration boundaries
 
-VaultQuest deployments are boundary-driven by configuration:
+Nolo deployments are boundary-driven by configuration:
 
 - Wallet + frontend read from browser-safe Horizon/Soroban environment values
   such as `NEXT_PUBLIC_HORIZON_URL` and `PUBLIC_SOROBAN_NETWORK_PASSPHRASE`.

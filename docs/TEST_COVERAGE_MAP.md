@@ -1,6 +1,6 @@
-# VaultQuest Test Coverage Map
+# Nolo Test Coverage Map
 
-This map tracks important product and platform areas that should stay covered as VaultQuest changes. Status labels are intentionally blunt:
+This map tracks important product and platform areas that should stay covered as Nolo changes. Status labels are intentionally blunt:
 
 - **Covered**: direct automated coverage exists.
 - **Partial**: useful coverage exists, but important paths are missing.

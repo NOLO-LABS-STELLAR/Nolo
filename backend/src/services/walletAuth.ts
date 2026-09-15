@@ -80,7 +80,7 @@ export class WalletAuthService {
     const expiresAt = new Date(Date.now() + this.challengeTtlMs);
 
     // Domain separation: bind challenge to network/contract/action/idempotency_key
-    const domainParts = ["vaultquest-auth", input.network];
+    const domainParts = ["nolo-auth", input.network];
     if (input.contract) domainParts.push(input.contract);
     if (input.action) domainParts.push(input.action);
     if (input.idempotencyKey) domainParts.push(input.idempotencyKey);
@@ -134,7 +134,7 @@ export class WalletAuthService {
 
     // Verify every domain field server-side
     if (
-      parsedPayload.appName !== "VaultQuest" ||
+      parsedPayload.appName !== "Nolo" ||
       parsedPayload.network !== input.network ||
       parsedPayload.purpose !== "API_AUTHENTICATION" ||
       parsedPayload.nonce !== challenge.nonce

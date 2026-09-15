@@ -3,7 +3,7 @@ import { PUBLIC_STATS } from "@/lib/demo-portfolio";
 
 function Stat({ label, value }) {
   return (
-    <div className="vq-glass min-w-0 flex-1 px-4 py-3 sm:px-5 sm:py-4">
+    <div className="nolo-glass min-w-0 flex-1 px-4 py-3 sm:px-5 sm:py-4">
       <p className="text-xs font-medium uppercase tracking-wide text-vault-muted">{label}</p>
       <p className="mt-1 truncate text-lg font-bold text-vault-text sm:text-xl">{value}</p>
     </div>

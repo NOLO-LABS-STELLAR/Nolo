@@ -33,7 +33,7 @@ function makeFs(overrides: Partial<FsAdapter> = {}): FsAdapter {
   };
 }
 
-const DATABASE_URL = "postgres://user:secret@db.example.com:5432/vaultquest";
+const DATABASE_URL = "postgres://user:secret@db.example.com:5432/nolo";
 const BACKUP_DIR = "/backups";
 
 // Fixed timestamp for deterministic filename assertions
@@ -73,7 +73,7 @@ describe("BackupService.run()", () => {
     expect(args).toContain("--username");
     expect(args).toContain("user");
     expect(args).toContain("--dbname");
-    expect(args).toContain("vaultquest");
+    expect(args).toContain("nolo");
 
     // Output path contains backup dir and timestamp filename
     expect(args).toContain("--file");
@@ -142,7 +142,7 @@ describe("BackupService.run()", () => {
     const spawn = makeSpawn(0);
     const svc = new BackupService({
       backupDir: BACKUP_DIR,
-      databaseUrl: "postgres://user@localhost/vaultquest",
+      databaseUrl: "postgres://user@localhost/nolo",
       spawn,
       fs: makeFs(),
       now: () => FIXED_NOW
@@ -358,7 +358,7 @@ describe("BackupService.verifyBackup()", () => {
 // ─── BackupService.restoreBackup() ────────────────────────────────────────────
 
 describe("BackupService.restoreBackup()", () => {
-  const SCRATCH_DB_URL = "postgres://user:secret@db.example.com:5432/vaultquest_scratch";
+  const SCRATCH_DB_URL = "postgres://user:secret@db.example.com:5432/nolo_scratch";
 
   it("successfully restores dump file to a scratch database", async () => {
     const spawn = makeSpawn(0, "");
@@ -373,7 +373,7 @@ describe("BackupService.restoreBackup()", () => {
     const result = await svc.restoreBackup(dumpPath, SCRATCH_DB_URL);
 
     expect(result.filePath).toBe(dumpPath);
-    expect(result.targetDatabase).toBe("vaultquest_scratch");
+    expect(result.targetDatabase).toBe("nolo_scratch");
     expect(result.durationMs).toBeGreaterThanOrEqual(0);
 
     expect(spawn).toHaveBeenCalledTimes(1);
@@ -381,7 +381,7 @@ describe("BackupService.restoreBackup()", () => {
 
     expect(cmd).toBe("pg_restore");
     expect(args).toContain("--dbname");
-    expect(args).toContain("vaultquest_scratch");
+    expect(args).toContain("nolo_scratch");
     expect(args).toContain(dumpPath);
     expect(env.PGPASSWORD).toBe("secret");
   });
@@ -420,7 +420,7 @@ describe("BackupService.restoreBackup()", () => {
       allowProductionRestore: true
     });
 
-    expect(result.targetDatabase).toBe("vaultquest");
+    expect(result.targetDatabase).toBe("nolo");
     expect(spawn).toHaveBeenCalledTimes(1);
   });
 
@@ -442,7 +442,7 @@ describe("BackupService.restoreBackup()", () => {
 // ─── BackupService.runRestoreDrill() ──────────────────────────────────────────
 
 describe("BackupService.runRestoreDrill()", () => {
-  const SCRATCH_DB_URL = "postgres://user:secret@db.example.com:5432/vaultquest_scratch";
+  const SCRATCH_DB_URL = "postgres://user:secret@db.example.com:5432/nolo_scratch";
 
   it("executes restore drill against the latest backup file", async () => {
     const spawn = makeSpawn(0, "");
@@ -465,7 +465,7 @@ describe("BackupService.runRestoreDrill()", () => {
     expect(drillResult.success).toBe(true);
     expect(drillResult.verify.valid).toBe(true);
     expect(drillResult.verify.filePath).toContain("2026-06-28");
-    expect(drillResult.restore?.targetDatabase).toBe("vaultquest_scratch");
+    expect(drillResult.restore?.targetDatabase).toBe("nolo_scratch");
 
     // Spawn called twice: 1 for pg_restore --list (verify), 1 for pg_restore (restore)
     expect(spawn).toHaveBeenCalledTimes(2);

@@ -1,5 +1,5 @@
 {
-  "name": "@vaultquest/stellar-wallet-connect",
+  "name": "@nolo/stellar-wallet-connect",
   "version": "0.1.0",
   "private": true,
   "type": "module",

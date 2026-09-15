@@ -14,7 +14,7 @@ export async function startTestDb(): Promise<TestDb> {
   const backendDir = fileURLToPath(new URL("../../", import.meta.url));
   const prismaCliPath = resolve(backendDir, "node_modules/prisma/build/index.js");
   const container: StartedPostgreSqlContainer = await new PostgreSqlContainer("postgres:16-alpine")
-    .withDatabase("vaultquest_test")
+    .withDatabase("nolo_test")
     .withUsername("test")
     .withPassword("test")
     .start();

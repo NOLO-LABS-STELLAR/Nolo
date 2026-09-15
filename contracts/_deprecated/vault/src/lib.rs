@@ -21,7 +21,7 @@
 use soroban_sdk::{
     contract, contractimpl, contracttype, panic_with_error, symbol_short, Address, Env, Symbol,
 };
-use vaultquest_common::ContractError;
+use nolo_common::ContractError;
 
 // ─────────────────────────────────────────────
 // Storage key types

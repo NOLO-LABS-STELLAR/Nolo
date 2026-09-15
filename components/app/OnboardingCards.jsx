@@ -41,7 +41,7 @@ export default function OnboardingCards() {
         return (
           <article
             key={step.title}
-            className="vq-glass-hover group relative overflow-hidden p-5"
+            className="nolo-glass-hover group relative overflow-hidden p-5"
           >
             <div
               className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${step.accent} opacity-60 transition-opacity duration-300 group-hover:opacity-100`}

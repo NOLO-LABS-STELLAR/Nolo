@@ -328,7 +328,7 @@ export default function VaultKeyboardNavAudit() {
 
   if (!mounted) {
     return (
-      <section className="vq-glass-hover p-5 sm:p-6 animate-pulse">
+      <section className="nolo-glass-hover p-5 sm:p-6 animate-pulse">
         <div className="h-5 w-48 bg-vault-border/30 rounded" />
         <div className="mt-4 space-y-2">
           <div className="h-12 bg-vault-border/20 rounded-xl" />
@@ -340,7 +340,7 @@ export default function VaultKeyboardNavAudit() {
   }
 
   return (
-    <section aria-label="Keyboard navigation audit" className="vq-glass-hover p-5 sm:p-6">
+    <section aria-label="Keyboard navigation audit" className="nolo-glass-hover p-5 sm:p-6">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-vault-border bg-vault-surface text-vault-accent">
@@ -352,7 +352,7 @@ export default function VaultKeyboardNavAudit() {
           type="button"
           onClick={runAudit}
           disabled={running}
-          className="vq-btn-ghost h-8 px-3 text-xs disabled:opacity-60"
+          className="nolo-btn-ghost h-8 px-3 text-xs disabled:opacity-60"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${running ? "animate-spin" : ""}`} aria-hidden="true" />
           Re-check

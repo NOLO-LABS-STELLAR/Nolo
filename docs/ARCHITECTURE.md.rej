@@ -1,6 +1,6 @@
 diff a/docs/ARCHITECTURE.md b/docs/ARCHITECTURE.md	(rejected hunks)
 @@ -1,16 +1,104 @@
- # VaultQuest — Architecture
+ # Nolo — Architecture
  
 +> **Note:** This document reflects the current cross-stack architecture.
 +> Changes introduced by the issues tracked below are highlighted with ✅.

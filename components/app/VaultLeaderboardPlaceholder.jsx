@@ -51,7 +51,7 @@ export default function VaultLeaderboardPlaceholder({ rankings = SAMPLE_RANKINGS
   const hasRankings = rankings.length > 0;
 
   return (
-    <section className="vq-glass p-4 sm:p-6" aria-labelledby="vault-leaderboard-title">
+    <section className="nolo-glass p-4 sm:p-6" aria-labelledby="vault-leaderboard-title">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-amber-500">

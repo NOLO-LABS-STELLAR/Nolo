@@ -42,7 +42,7 @@ export const NetworkDiagnostics: FC = () => {
   const handleCopy = () => {
     const attestation = getManifestAttestation();
     const displayKey = publicKey ? (anonymize ? `${publicKey.slice(0, 4)}...ANONYMIZED` : publicKey) : "N/A";
-    const info = `### VaultQuest Diagnostic Report
+    const info = `### Nolo Diagnostic Report
 - **Timestamp**: ${new Date().toISOString()}
 - **Wallet Connected**: ${publicKey ? "Yes" : "No"}
 - **Wallet Public Key**: ${displayKey}
@@ -87,7 +87,7 @@ export const NetworkDiagnostics: FC = () => {
             <div>
               <h2 className="text-sm font-semibold text-white">Network Mismatch Blocked Action</h2>
               <p className="text-xs text-nolo-300 mt-0.5">
-                Your wallet is connected to <span className="font-bold uppercase">{network}</span>, but the VaultQuest dApp expects <span className="font-bold uppercase">{EXPECTED_NETWORK}</span>. Core transaction options are disabled.
+                Your wallet is connected to <span className="font-bold uppercase">{network}</span>, but the Nolo dApp expects <span className="font-bold uppercase">{EXPECTED_NETWORK}</span>. Core transaction options are disabled.
               </p>
             </div>
           </div>

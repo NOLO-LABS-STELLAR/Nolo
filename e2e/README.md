@@ -1,6 +1,6 @@
 # E2E Testing Guide
 
-This directory contains end-to-end tests for VaultQuest using Playwright.
+This directory contains end-to-end tests for Nolo using Playwright.
 
 ## Test Suites
 
