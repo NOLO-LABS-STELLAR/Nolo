@@ -21,7 +21,7 @@ import {
 import {
   createMockVaultClient,
   SAMPLE_ADDRESS,
-} from "@vaultquest/stellar-wallet-connect/src/vault/contract/mockClient";
+} from "@nolo/stellar-wallet-connect/src/vault/contract/mockClient";
 import { SavingsService } from "../../services/savingsService";
 import {
   createChallenge,

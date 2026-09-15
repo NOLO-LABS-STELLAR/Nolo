@@ -1,7 +1,7 @@
 # Wallet Disconnect UI Test - Implementation Summary
 
 ## Overview
-Comprehensive Playwright end-to-end tests verifying that the VaultQuest UI updates correctly when a wallet is disconnected.
+Comprehensive Playwright end-to-end tests verifying that the Nolo UI updates correctly when a wallet is disconnected.
 
 ## Checklist-to-Test Mapping
 

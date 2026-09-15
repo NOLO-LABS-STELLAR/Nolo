@@ -1,6 +1,6 @@
 # Protocol Health Dashboard & Alert Thresholds
 
-This document defines the operational health states, alert thresholds, and diagnostic signals displayed on the VaultQuest Maintainer Protocol Health Dashboard.
+This document defines the operational health states, alert thresholds, and diagnostic signals displayed on the Nolo Maintainer Protocol Health Dashboard.
 
 ## Service Health Signals & Alert Thresholds
 
@@ -30,7 +30,7 @@ All diagnostic endpoints and dashboard UI components MUST sanitize sensitive URL
 
 ## Notification Delivery & Deduplication (#652)
 
-Operational alerts (RPC degradation, indexer lag, contract errors, withdraw batching) are surfaced in the VaultQuest notification center. To prevent alert storms from repeated or overlapping events, notifications are **deduplicated by identity and scope**.
+Operational alerts (RPC degradation, indexer lag, contract errors, withdraw batching) are surfaced in the Nolo notification center. To prevent alert storms from repeated or overlapping events, notifications are **deduplicated by identity and scope**.
 
 ### Identity & Scope Model
 - Every notification has an **identity key**: `type::scope::subject`.
@@ -46,7 +46,7 @@ Operational alerts (RPC degradation, indexer lag, contract errors, withdraw batc
 - A user who dismissed an alert stays **dismissed across refreshes** of the same alert family — refreshed alerts do not re-notify.
 
 ### Lifecycle
-- Read/dismissed state is **persisted** to `localStorage` under `vaultquest:notifications:<scopeKey>`, where `scopeKey` is `wallet@network`, so dismissed state cannot leak across accounts/networks.
+- Read/dismissed state is **persisted** to `localStorage` under `nolo:notifications:<scopeKey>`, where `scopeKey` is `wallet@network`, so dismissed state cannot leak across accounts/networks.
 - Alerts can carry an `expiresAt`; `clearExpired` prunes stale alerts and is applied on load.
 
 ### Enabling a Repeat Alert for the Dashboard

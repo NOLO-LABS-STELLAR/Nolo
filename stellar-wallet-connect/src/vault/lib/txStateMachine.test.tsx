@@ -225,7 +225,7 @@ describe("useTxFlow", () => {
 
 describe("usePersistentTxFlow – persistence and recovery", () => {
   const scopeKey = "test-wallet:testnet";
-  const STORAGE_KEY = `vaultquest:pending_tx:${scopeKey}`;
+  const STORAGE_KEY = `nolo:pending_tx:${scopeKey}`;
 
   beforeEach(() => {
     localStorage.clear();

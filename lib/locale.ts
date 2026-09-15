@@ -3,7 +3,7 @@ export const SUPPORTED_LOCALES = ["en", "es", "fr", "de"] as const;
 export type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
 export const DEFAULT_LOCALE: SupportedLocale = "en";
-export const LOCALE_STORAGE_KEY = "vaultquest-locale";
+export const LOCALE_STORAGE_KEY = "nolo-locale";
 
 export function isSupportedLocale(value: string | null | undefined): value is SupportedLocale {
   return !!value && (SUPPORTED_LOCALES as readonly string[]).includes(value);

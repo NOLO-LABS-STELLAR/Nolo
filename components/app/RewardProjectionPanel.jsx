@@ -38,7 +38,7 @@ export default function RewardProjectionPanel({ projection, onRefresh }) {
   const formattedDate = updatedAt ? new Date(updatedAt).toLocaleString() : "Unknown";
 
   return (
-    <div className="vq-glass space-y-4 p-5" data-testid="reward-projection-panel">
+    <div className="nolo-glass space-y-4 p-5" data-testid="reward-projection-panel">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-vault-accent" />
@@ -48,7 +48,7 @@ export default function RewardProjectionPanel({ projection, onRefresh }) {
           <button
             type="button"
             onClick={onRefresh}
-            className="vq-btn-ghost p-1.5 text-xs text-vault-muted hover:text-vault-text"
+            className="nolo-btn-ghost p-1.5 text-xs text-vault-muted hover:text-vault-text"
             title="Refresh projection"
             data-testid="refresh-projection-btn"
           >

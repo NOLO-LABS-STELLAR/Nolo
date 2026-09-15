@@ -89,7 +89,7 @@ export default function TrustPage() {
         {SECTIONS.map((section) => {
           const Icon = section.icon;
           return (
-            <section key={section.id} className="vq-glass p-6 sm:p-8" id={section.id}>
+            <section key={section.id} className="nolo-glass p-6 sm:p-8" id={section.id}>
               <div className="flex items-center gap-3 mb-5">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
                   <Icon className="h-5 w-5" />
@@ -109,7 +109,7 @@ export default function TrustPage() {
         })}
       </div>
 
-      <section className="vq-glass p-6 sm:p-8">
+      <section className="nolo-glass p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-5">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
             <ExternalLink className="h-5 w-5" />
@@ -118,19 +118,19 @@ export default function TrustPage() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <a
-            href="https://docs.vaultquest.io"
+            href="https://docs.nolo.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="vq-glass-hover flex items-center justify-between p-4"
+            className="nolo-glass-hover flex items-center justify-between p-4"
           >
             <span className="text-sm font-medium text-vault-text">Documentation</span>
             <ExternalLink className="h-4 w-4 text-vault-muted" />
           </a>
           <a
-            href="https://github.com/Obiajulu-gif/vaultquest"
+            href="https://github.com/NOLO-LABS-STELLAR/Nolo"
             target="_blank"
             rel="noopener noreferrer"
-            className="vq-glass-hover flex items-center justify-between p-4"
+            className="nolo-glass-hover flex items-center justify-between p-4"
           >
             <span className="text-sm font-medium text-vault-text">GitHub Repository</span>
             <ExternalLink className="h-4 w-4 text-vault-muted" />

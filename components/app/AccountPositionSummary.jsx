@@ -8,7 +8,7 @@ import { DEMO_TRANSACTIONS, summarizeAccountPositions } from "@/lib/demo-portfol
 
 function SummaryCardSkeleton() {
   return (
-    <div className="vq-glass p-5 animate-pulse">
+    <div className="nolo-glass p-5 animate-pulse">
       <div className="h-10 w-10 rounded-xl bg-vault-border/40" />
       <div className="mt-4 h-3 w-24 rounded bg-vault-border/30" />
       <div className="mt-2 h-6 w-16 rounded bg-vault-border/40" />
@@ -18,7 +18,7 @@ function SummaryCardSkeleton() {
 
 function SummaryCard({ icon: Icon, label, value, sub }) {
   return (
-    <div className="vq-glass-hover p-5">
+    <div className="nolo-glass-hover p-5">
       <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-vault-accent">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </span>
@@ -31,7 +31,7 @@ function SummaryCard({ icon: Icon, label, value, sub }) {
 
 function EmptyPositions() {
   return (
-    <div className="vq-glass flex flex-col items-center px-6 py-12 text-center">
+    <div className="nolo-glass flex flex-col items-center px-6 py-12 text-center">
       <span className="flex h-14 w-14 items-center justify-center rounded-full border border-vault-border bg-vault-surface text-vault-muted">
         <Compass className="h-7 w-7" aria-hidden="true" />
       </span>
@@ -40,7 +40,7 @@ function EmptyPositions() {
         Join a vault to start earning yield and entering prize rounds. Your positions will show up
         here once you do.
       </p>
-      <Link href="/app/vaults" className="vq-btn-primary mt-6">
+      <Link href="/app/vaults" className="nolo-btn-primary mt-6">
         Browse vaults
       </Link>
     </div>
@@ -101,7 +101,7 @@ export default function AccountPositionSummary({ transactions = DEMO_TRANSACTION
         />
       </div>
 
-      <div className="vq-glass divide-y divide-vault-border/40">
+      <div className="nolo-glass divide-y divide-vault-border/40">
         {positions.map((position) => (
           <div key={position.pool} className="flex items-center justify-between gap-4 p-4">
             <div>

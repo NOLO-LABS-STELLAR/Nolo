@@ -2,14 +2,14 @@ import type { FC, ReactNode } from "react";
 import { AlertTriangle, Inbox, Loader2, RefreshCw, Wallet, WifiOff } from "lucide-react";
 
 /**
- * Unified empty / loading / error state components for VaultQuest (#61).
+ * Unified empty / loading / error state components for Nolo (#61).
  *
  * Provides a consistent fallback UI across account, vault, prize, dashboard,
  * and marketplace surfaces so the app feels polished and contributors do not
  * re-implement the same patterns on every page.
  *
  * All components share:
- *  - The dark VaultQuest theme (`bg-[#1A120D]` etc.)
+ *  - The dark Nolo theme (`bg-[#1A120D]` etc.)
  *  - Accessible labels (`role`, `aria-live`)
  *  - Optional action / retry CTAs
  *  - Mobile-first responsive layout

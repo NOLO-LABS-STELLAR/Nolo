@@ -1,5 +1,5 @@
 /** Must match `RPC_STORAGE_KEY` in the root app `lib/customRpc.js`. */
-export const RPC_STORAGE_KEY = "vaultquest-custom-rpc";
+export const RPC_STORAGE_KEY = "nolo-custom-rpc";
 
 function normalizeBaseUrl(url: string): string {
   return url.trim().replace(/\/+$/, "");

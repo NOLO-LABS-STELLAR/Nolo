@@ -1,6 +1,6 @@
 # Vault pool UI module
 
-Pool-level UI for VaultQuest plus a testable contract seam.
+Pool-level UI for Nolo plus a testable contract seam.
 
 | Piece | Issue | What it is |
 |---|---|---|
@@ -17,7 +17,7 @@ All states (loading, empty, stale, error, wallet-disconnected) reuse the shared
 
 `PoolDetail` shows the first-time wallet onboarding checklist by default. Users
 can dismiss it or reopen it from the compact checklist button; the preference is
-stored in `localStorage` under `vaultquest.onboarding.dismissed`.
+stored in `localStorage` under `nolo.onboarding.dismissed`.
 
 ## Shared data-access and query state (#22)
 
@@ -52,15 +52,15 @@ variables. Defaults favor backend reads with intentional contract fallbacks.
 
 | Variable | Purpose | Default |
 |---|---|---|
-| `NEXT_PUBLIC_VAULTQUEST_API_BASE_URL` / `PUBLIC_VAULTQUEST_API_BASE_URL` | Backend API base URL for reads and transaction polling | `/api` |
+| `NEXT_PUBLIC_NOLO_API_BASE_URL` / `PUBLIC_NOLO_API_BASE_URL` | Backend API base URL for reads and transaction polling | `/api` |
 | `NEXT_PUBLIC_DRIP_POOL_CONTRACT_ID` | Soroban drip-pool contract ID | empty string |
 | `NEXT_PUBLIC_TRUSTLESS_WORK_ESCROW_CONTRACT_ID` | Optional escrow contract ID | unset |
 | `NEXT_PUBLIC_SOROBAN_NETWORK_PASSPHRASE` / `PUBLIC_SOROBAN_NETWORK_PASSPHRASE` | Network passphrase used to infer testnet/mainnet/futurenet/custom | empty string |
 | `NEXT_PUBLIC_HORIZON_URL` / `PUBLIC_HORIZON_URL` | Horizon URL metadata | empty string |
 | `NEXT_PUBLIC_SOROBAN_RPC_URL` | Soroban RPC URL metadata | empty string |
-| `NEXT_PUBLIC_VAULTQUEST_BACKEND_READS` | Enable backend-driven reads | `true` |
-| `NEXT_PUBLIC_VAULTQUEST_CONTRACT_FALLBACK_READS` | Allow direct contract fallback reads | `true` |
-| `NEXT_PUBLIC_VAULTQUEST_TRANSACTION_POLLING` | Poll non-terminal action statuses | `true` |
+| `NEXT_PUBLIC_NOLO_BACKEND_READS` | Enable backend-driven reads | `true` |
+| `NEXT_PUBLIC_NOLO_CONTRACT_FALLBACK_READS` | Allow direct contract fallback reads | `true` |
+| `NEXT_PUBLIC_NOLO_TRANSACTION_POLLING` | Poll non-terminal action statuses | `true` |
 
 ## Contract-interface mock strategy (#67)
 

@@ -1,6 +1,6 @@
 # Indexer event fixtures
 
-Reusable fixtures for every Soroban contract event consumed by the VaultQuest
+Reusable fixtures for every Soroban contract event consumed by the Nolo
 indexer parser (`src/services/stellarIndexer.ts`, see `defaultXdrDecoder`).
 
 ## Layout

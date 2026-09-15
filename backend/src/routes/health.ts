@@ -24,7 +24,7 @@ export const healthRoutes = (svc: LedgerService): FastifyPluginAsync =>
         status: "ok",
         uptime: Math.floor(process.uptime()),
         timestamp: new Date().toISOString(),
-        service: "vaultquest-backend"
+        service: "nolo-backend"
       });
     });
 

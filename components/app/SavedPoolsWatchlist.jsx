@@ -18,7 +18,7 @@ export default function SavedPoolsWatchlist() {
 
   if (loading && savedPools.length === 0) {
     return (
-      <div className="vq-glass p-6">
+      <div className="nolo-glass p-6">
         <div className="flex items-center gap-3">
           <RefreshCw className="h-5 w-5 animate-spin text-vault-accent" aria-hidden="true" />
           <p className="text-vault-muted">Loading watchlist...</p>
@@ -29,14 +29,14 @@ export default function SavedPoolsWatchlist() {
 
   if (error) {
     return (
-      <div className="vq-glass p-6">
+      <div className="nolo-glass p-6">
         <div className="flex items-center gap-3 text-nolo-500">
           <AlertCircle className="h-5 w-5" aria-hidden="true" />
           <p>{error}</p>
         </div>
         <button
           onClick={refetch}
-          className="vq-btn-ghost mt-4"
+          className="nolo-btn-ghost mt-4"
         >
           <RefreshCw className="h-4 w-4" aria-hidden="true" />
           Retry
@@ -47,7 +47,7 @@ export default function SavedPoolsWatchlist() {
 
   if (savedPools.length === 0) {
     return (
-      <div className="vq-glass p-8 text-center">
+      <div className="nolo-glass p-8 text-center">
         <div className="mb-4 flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-vault-surface text-vault-muted border border-vault-border">
           <Star size={32} />
         </div>
@@ -55,7 +55,7 @@ export default function SavedPoolsWatchlist() {
         <p className="text-vault-muted mt-2">
           Add pools to your watchlist to monitor them easily
         </p>
-        <Link href="/app/vaults" className="vq-btn-primary mt-6 inline-flex">
+        <Link href="/app/vaults" className="nolo-btn-primary mt-6 inline-flex">
           Browse Pools
         </Link>
       </div>
@@ -87,7 +87,7 @@ export default function SavedPoolsWatchlist() {
           return (
             <div
               key={pool.id}
-              className={`vq-glass-hover p-4 ${poolUnavailable ? "opacity-60" : ""}`}
+              className={`nolo-glass-hover p-4 ${poolUnavailable ? "opacity-60" : ""}`}
             >
               <div className="flex items-start justify-between gap-3 mb-3">
                 <div className="flex-1">
@@ -134,7 +134,7 @@ export default function SavedPoolsWatchlist() {
               {!poolUnavailable && (
                 <Link
                   href={`/app/vaults/${pool.pool_id}`}
-                  className="vq-btn-ghost mt-4 w-full text-center text-sm"
+                  className="nolo-btn-ghost mt-4 w-full text-center text-sm"
                 >
                   View Pool
                 </Link>

@@ -243,7 +243,7 @@ export default function SupportWidget() {
                     <p className="text-sm text-vault-muted mb-3">Didn&apos;t find what you need?</p>
                     <button 
                       onClick={() => setView("ticket")}
-                      className="vq-btn-primary w-full py-2"
+                      className="nolo-btn-primary w-full py-2"
                     >
                       Contact Support
                     </button>
@@ -318,7 +318,7 @@ export default function SupportWidget() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="vq-btn-primary w-full py-3 flex items-center justify-center gap-2 group"
+                      className="nolo-btn-primary w-full py-3 flex items-center justify-center gap-2 group"
                     >
                       {isSubmitting ? (
                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
@@ -346,7 +346,7 @@ export default function SupportWidget() {
                   </div>
                   <button 
                     onClick={() => setView("home")}
-                    className="vq-btn-ghost px-6 py-2 mt-4"
+                    className="nolo-btn-ghost px-6 py-2 mt-4"
                   >
                     Back to Home
                   </button>

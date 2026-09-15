@@ -13,7 +13,7 @@ fn snapshot_rows() -> BTreeMap<&'static str, Vec<&'static str>> {
             let topic0 = parts.next().expect("topic 0");
             let topic1 = parts.next().expect("topic 1");
             let fields = parts.next().expect("payload fields");
-            assert_eq!(topic0, "vaultquest", "{event} changed envelope topic 0");
+            assert_eq!(topic0, "nolo", "{event} changed envelope topic 0");
             assert_eq!(topic1, "v1", "{event} changed schema version");
             (event, fields.split(',').collect())
         })
@@ -40,7 +40,7 @@ fn documented_event_rows_match_the_versioned_snapshot() {
 #[test]
 fn documented_envelope_remains_indexer_compatible() {
     for expected in [
-        "| `0` | `\"vaultquest\"` |",
+        "| `0` | `\"nolo\"` |",
         "| `1` | schema version, currently `\"v1\"` |",
         "| `2` | event name |",
         "| `3` | pool id when available, otherwise admin/config scope |",

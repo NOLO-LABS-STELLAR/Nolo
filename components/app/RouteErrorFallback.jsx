@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 function makeDiagnosticId(error) {
-  return error?.digest || (typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : "vq-error");
+  return error?.digest || (typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : "nolo-error");
 }
 
 export default function RouteErrorFallback({ error, reset, title = "Something went wrong" }) {

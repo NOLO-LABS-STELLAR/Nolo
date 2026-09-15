@@ -1,6 +1,6 @@
 # Database Migrations
 
-This directory contains all database migrations for the VaultQuest backend, organized by phase and feature.
+This directory contains all database migrations for the Nolo backend, organized by phase and feature.
 
 ## Migration Structure
 
@@ -135,5 +135,5 @@ npx prisma migrate reset
 ## References
 
 - [Prisma Migrations Docs](https://www.prisma.io/docs/concepts/components/prisma-migrate)
-- [VaultQuest Architecture](../docs/ARCHITECTURE.md)
+- [Nolo Architecture](../docs/ARCHITECTURE.md)
 - [API Responses Documentation](../docs/API_RESPONSES.md)

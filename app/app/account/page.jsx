@@ -25,7 +25,7 @@ import { DEMO_PORTFOLIO, DEMO_TRANSACTIONS } from "@/lib/demo-portfolio";
 function MetricCard({ icon: Icon, label, value, sub, highlight }) {
   return (
     <article
-      className={`vq-glass-hover p-5 ${highlight ? "ring-2 ring-nolo-400/25 shadow-glow" : ""}`}
+      className={`nolo-glass-hover p-5 ${highlight ? "ring-2 ring-nolo-400/25 shadow-glow" : ""}`}
     >
       <div className="flex items-start justify-between gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500 dark:text-nolo-400">
@@ -135,7 +135,7 @@ function ConnectedDashboard({ address, isNetworkMismatch, onRetry, locale }) {
         <button
           type="button"
           onClick={restartTour}
-          className="vq-btn-ghost flex items-center gap-2 text-xs"
+          className="nolo-btn-ghost flex items-center gap-2 text-xs"
         >
           <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
           Replay onboarding tour
@@ -152,7 +152,7 @@ function EmptyAccount() {
   const { t } = useTranslation("common");
 
   return (
-    <div className="vq-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
+    <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
       <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-nolo-500/10 text-nolo-500 ring-2 ring-nolo-400/20 dark:text-nolo-400">
         <Wallet className="h-8 w-8" aria-hidden="true" />
       </span>
@@ -165,7 +165,7 @@ function EmptyAccount() {
       <button
         type="button"
         onClick={() => openConnectModal?.()}
-        className="vq-btn-primary mt-8"
+        className="nolo-btn-primary mt-8"
       >
         <Wallet className="h-4 w-4" aria-hidden="true" />
         {t("routes.account.connectWallet")}

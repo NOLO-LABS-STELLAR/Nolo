@@ -32,7 +32,7 @@ export default function DashboardWelcomeCard() {
   if (!mounted) return null;
 
   return (
-    <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+    <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
       <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-nolo-500/10 blur-2xl" />
       <div className="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-amber-500/10 blur-2xl" />
 
@@ -54,7 +54,7 @@ export default function DashboardWelcomeCard() {
           <button
             type="button"
             onClick={handleCopy}
-            className="vq-btn-ghost inline-flex items-center gap-2 text-xs"
+            className="nolo-btn-ghost inline-flex items-center gap-2 text-xs"
             aria-label={copied ? "Address copied" : "Copy wallet address"}
           >
             <Wallet className="h-4 w-4" aria-hidden="true" />

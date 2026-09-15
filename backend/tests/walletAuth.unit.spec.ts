@@ -41,7 +41,7 @@ describe("WalletAuthService", () => {
       expect(result.challengeId).toBeDefined();
       expect(result.nonce).toBeDefined();
       expect(result.expiresAt).toBeInstanceOf(Date);
-      expect(result.domain).toContain("vaultquest-auth");
+      expect(result.domain).toContain("nolo-auth");
       expect(result.domain).toContain("TESTNET");
       expect(prisma.walletChallenge.create).toHaveBeenCalledOnce();
     });
@@ -266,7 +266,7 @@ describe("WalletAuthService", () => {
       });
 
       const payload = JSON.stringify({
-        appName: "VaultQuest",
+        appName: "Nolo",
         network: "TESTNET",
         purpose: "WRONG_PURPOSE",
         nonce: "nonce1"
@@ -294,7 +294,7 @@ describe("WalletAuthService", () => {
       });
 
       const payload = JSON.stringify({
-        appName: "VaultQuest",
+        appName: "Nolo",
         network: "TESTNET",
         purpose: "API_AUTHENTICATION",
         nonce: "wrong-nonce"
@@ -345,7 +345,7 @@ describe("WalletAuthService", () => {
       // Build a genuinely valid signature so crypto verification passes.
       const kp = (await import("@stellar/stellar-sdk")).Keypair.random();
       const payload = JSON.stringify({
-        appName: "VaultQuest",
+        appName: "Nolo",
         network: "TESTNET",
         purpose: "API_AUTHENTICATION",
         nonce: "correct-nonce"
@@ -382,7 +382,7 @@ describe("WalletAuthService", () => {
     it("rejects when the conditional updateMany consumes zero rows (concurrent double-verify loser)", async () => {
       const kp = (await import("@stellar/stellar-sdk")).Keypair.random();
       const payload = JSON.stringify({
-        appName: "VaultQuest",
+        appName: "Nolo",
         network: "TESTNET",
         purpose: "API_AUTHENTICATION",
         nonce: "correct-nonce"

@@ -1,4 +1,4 @@
-# VaultQuest Testing Guide
+# Nolo Testing Guide
 
 This document outlines the testing infrastructure and how to contribute tests.
 

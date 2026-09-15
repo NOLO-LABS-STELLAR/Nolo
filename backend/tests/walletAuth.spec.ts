@@ -29,7 +29,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -85,7 +85,7 @@ describe("WalletAuthService", () => {
 
     // Sign for PUBLIC but send to TESTNET challenge
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "PUBLIC",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -112,7 +112,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: "some-other-nonce",
@@ -139,7 +139,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -169,7 +169,7 @@ describe("WalletAuthService", () => {
 
     const expiredDate = new Date(Date.now() - 1000).toISOString();
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -197,7 +197,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -240,7 +240,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,
@@ -266,7 +266,7 @@ describe("WalletAuthService", () => {
     });
 
     const payload = JSON.stringify({
-      appName: "VaultQuest",
+      appName: "Nolo",
       network: "TESTNET",
       purpose: "API_AUTHENTICATION",
       nonce: challenge.nonce,

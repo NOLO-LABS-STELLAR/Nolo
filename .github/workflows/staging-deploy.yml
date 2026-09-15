@@ -96,10 +96,10 @@ jobs:
           key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
             docker pull ghcr.io/${{ github.repository }}/backend:staging
-            docker stop vaultquest-backend-staging || true
-            docker rm vaultquest-backend-staging || true
+            docker stop nolo-backend-staging || true
+            docker rm nolo-backend-staging || true
             docker run -d \
-              --name vaultquest-backend-staging \
-              --env-file /etc/vaultquest/staging.env \
+              --name nolo-backend-staging \
+              --env-file /etc/nolo/staging.env \
               -p 3001:3000 \
               ghcr.io/${{ github.repository }}/backend:staging

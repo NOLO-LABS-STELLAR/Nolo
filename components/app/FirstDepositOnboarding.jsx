@@ -9,7 +9,7 @@ import { MOCK_VAULTS } from "@/lib/vault-mock-data";
 import { POOL_STATUS } from "@/lib/pool-status";
 import { SUPPORTED_CHAINS } from "@/lib/wagmi";
 
-const STORAGE_KEY = "vq_first_deposit_onboarding_dismissed";
+const STORAGE_KEY = "nolo_first_deposit_onboarding_dismissed";
 
 export default function FirstDepositOnboarding({ hasJoinedVault, onOpenDeposit }) {
   const { isConnected, address, chain } = useAccount();
@@ -42,7 +42,7 @@ export default function FirstDepositOnboarding({ hasJoinedVault, onOpenDeposit }
   const activePools = MOCK_VAULTS.filter((v) => v.status === POOL_STATUS.ACTIVE);
 
   return (
-    <div className="vq-glass relative overflow-hidden rounded-3xl border border-nolo-500/20 bg-[#1A120D]/40 p-6 md:p-8 animate-in fade-in slide-in-from-bottom-4 duration-300">
+    <div className="nolo-glass relative overflow-hidden rounded-3xl border border-nolo-500/20 bg-[#1A120D]/40 p-6 md:p-8 animate-in fade-in slide-in-from-bottom-4 duration-300">
       {/* Top Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-nolo-500/10 via-transparent to-transparent pointer-events-none" />
 
@@ -92,7 +92,7 @@ export default function FirstDepositOnboarding({ hasJoinedVault, onOpenDeposit }
             <button
               type="button"
               onClick={openConnectModal}
-              className="vq-btn-primary mt-4 w-full justify-center text-xs py-2 inline-flex items-center gap-1.5"
+              className="nolo-btn-primary mt-4 w-full justify-center text-xs py-2 inline-flex items-center gap-1.5"
             >
               Connect Wallet
               <ArrowRight className="h-3.5 w-3.5" />
@@ -180,7 +180,7 @@ export default function FirstDepositOnboarding({ hasJoinedVault, onOpenDeposit }
               </div>
               <Link
                 href="/app/vaults"
-                className="vq-btn-primary text-xs py-2 inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
+                className="nolo-btn-primary text-xs py-2 inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
               >
                 Deposit Now
                 <ArrowRight className="h-3 w-3" />

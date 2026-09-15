@@ -155,7 +155,7 @@ export default function PoolCreationForm({ onSubmit }) {
   }, [form, onSubmit, pending]);
 
   return (
-    <div className="vq-glass mx-auto max-w-3xl p-5 sm:p-6">
+    <div className="nolo-glass mx-auto max-w-3xl p-5 sm:p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
@@ -344,7 +344,7 @@ export default function PoolCreationForm({ onSubmit }) {
             <p className="text-xs text-vault-muted">
               {hasErrors ? "Please fix the errors above to continue." : "Review all values before proceeding."}
             </p>
-            <button type="button" onClick={handleNext} className="vq-btn-primary">
+            <button type="button" onClick={handleNext} className="nolo-btn-primary">
               Review <ArrowRight className="h-4 w-4 ml-1" aria-hidden="true" />
             </button>
           </div>
@@ -384,10 +384,10 @@ export default function PoolCreationForm({ onSubmit }) {
           </div>
 
           <div className="flex items-center justify-between pt-2">
-            <button type="button" onClick={() => setStep(0)} className="vq-btn-ghost">
+            <button type="button" onClick={() => setStep(0)} className="nolo-btn-ghost">
               <ArrowLeft className="h-4 w-4 mr-1" aria-hidden="true" /> Back
             </button>
-            <button type="button" onClick={handleSubmit} className="vq-btn-primary">
+            <button type="button" onClick={handleSubmit} className="nolo-btn-primary">
               <Wallet className="h-4 w-4" aria-hidden="true" />
               Sign & Create Pool
             </button>
@@ -418,7 +418,7 @@ export default function PoolCreationForm({ onSubmit }) {
           <p className="text-sm text-vault-muted text-center">
             The pool <strong className="text-vault-text">{form.name}</strong> has been created and is now accepting deposits.
           </p>
-          <button type="button" onClick={() => { setStep(0); setForm({ name: "", asset: "XLM", minDeposit: "100", maxDeposit: "250000", maxParticipants: "1000", startDate: "", endDate: "", lockup: 0, rewardYieldPct: "100", description: "" }); }} className="vq-btn-primary mt-4">
+          <button type="button" onClick={() => { setStep(0); setForm({ name: "", asset: "XLM", minDeposit: "100", maxDeposit: "250000", maxParticipants: "1000", startDate: "", endDate: "", lockup: 0, rewardYieldPct: "100", description: "" }); }} className="nolo-btn-primary mt-4">
             <Plus className="h-4 w-4" aria-hidden="true" />
             Create another pool
           </button>

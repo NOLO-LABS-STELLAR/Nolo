@@ -128,7 +128,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
                 <div className="flex items-center gap-2">
                   <button
                     onClick={onClearAll}
-                    className="vq-btn-ghost text-sm"
+                    className="nolo-btn-ghost text-sm"
                   >
                     Clear All
                   </button>
@@ -147,7 +147,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
               {/* Mobile stacked view */}
               <div className="lg:hidden space-y-4">
                 {pools.map((pool) => (
-                  <div key={pool.id} className="vq-glass p-4">
+                  <div key={pool.id} className="nolo-glass p-4">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h4 className="font-semibold text-vault-text">{pool.name}</h4>
@@ -195,7 +195,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
                     </div>
                     <Link
                       href={`/app/vaults/${pool.id}`}
-                      className="vq-btn-primary mt-3 w-full text-center text-sm"
+                      className="nolo-btn-primary mt-3 w-full text-center text-sm"
                     >
                       View Pool <ArrowUpRight size={14} className="inline ml-1" />
                     </Link>
@@ -230,7 +230,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
                         </div>
                         <Link
                           href={`/app/vaults/${pool.id}`}
-                          className="vq-btn-ghost w-full text-center text-xs"
+                          className="nolo-btn-ghost w-full text-center text-xs"
                         >
                           View <ArrowUpRight size={12} className="inline ml-1" />
                         </Link>

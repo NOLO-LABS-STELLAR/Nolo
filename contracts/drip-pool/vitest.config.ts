@@ -7,7 +7,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./"),
       "@drip-pool": path.resolve(__dirname, "./"),
       "@trustquest/backend": path.resolve(__dirname, "../../backend"),
-      "@vaultquest/stellar-wallet-connect": path.resolve(__dirname, "../../stellar-wallet-connect"),
+      "@nolo/stellar-wallet-connect": path.resolve(__dirname, "../../stellar-wallet-connect"),
     },
   },
   test: {

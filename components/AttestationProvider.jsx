@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { loadManifestAsync, validateManifestAgainstEnv } from "@/lib/deployment-manifest";
-import { registerManifestLoader } from "@vaultquest/stellar-wallet-connect/core/env";
-import { registerManifestGetter } from "@vaultquest/stellar-wallet-connect/vault/data/config";
+import { registerManifestLoader } from "@nolo/stellar-wallet-connect/core/env";
+import { registerManifestGetter } from "@nolo/stellar-wallet-connect/vault/data/config";
 import AttestationError from "@/components/AttestationError";
 
 export default function AttestationProvider({ children }) {

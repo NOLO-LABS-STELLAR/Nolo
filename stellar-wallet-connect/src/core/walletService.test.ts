@@ -32,14 +32,14 @@ describe("walletService - Account Switching (#409)", () => {
 
   it("should reset user-scoped state when switching accounts rapidly", () => {
     // Set some dummy data in localStorage for pending tx state
-    localStorage.setItem("vaultquest_pending_tx_state", JSON.stringify({ pending: true }));
+    localStorage.setItem("nolo_pending_tx_state", JSON.stringify({ pending: true }));
 
     // Connect wallet A
     setConnection("G_WALLET_A", "freighter");
 
     // Initially, clear shouldn't be called for a fresh connection
     expect(vaultQueryClient.clear).not.toHaveBeenCalled();
-    expect(localStorage.getItem("vaultquest_pending_tx_state")).toBeTruthy();
+    expect(localStorage.getItem("nolo_pending_tx_state")).toBeTruthy();
 
     // Switch to wallet B
     setConnection("G_WALLET_B", "freighter");
@@ -48,7 +48,7 @@ describe("walletService - Account Switching (#409)", () => {
     expect(vaultQueryClient.clear).toHaveBeenCalledTimes(1);
     
     // Pending tx state for the old wallet MUST be removed
-    expect(localStorage.getItem("vaultquest_pending_tx_state")).toBeNull();
+    expect(localStorage.getItem("nolo_pending_tx_state")).toBeNull();
     
     // Ensure the new connection is stored properly
     expect(localStorage.getItem("publicKey")).toBe("G_WALLET_B");

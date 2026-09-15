@@ -104,7 +104,7 @@ export default function LevelOnboarding({ activeBalance = 0 }) {
   const dashOffset = circumference * (1 - progress);
 
   return (
-    <section className="vq-glass-hover relative overflow-hidden p-5 sm:p-6">
+    <section className="nolo-glass-hover relative overflow-hidden p-5 sm:p-6">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,191,36,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(220,38,38,0.08),transparent_35%)]" aria-hidden="true" />
 
       <AnimatePresence>
@@ -167,7 +167,7 @@ export default function LevelOnboarding({ activeBalance = 0 }) {
             onClick={() => {
               setDemoBalance((value) => value + 750);
             }}
-            className="vq-btn-primary w-full"
+            className="nolo-btn-primary w-full"
           >
             <Award className="h-4 w-4" aria-hidden="true" />
             Simulate deposit milestone

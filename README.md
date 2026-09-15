@@ -1,4 +1,4 @@
-# VaultQuest
+# Nolo
 
 A Stellar/Soroban no-loss prize-savings dApp. Users deposit into pooled
 vaults; yield is awarded to a random winner each round while every deposit
@@ -20,8 +20,8 @@ remains withdrawable in full.
 ## Quick start
 
 ```bash
-git clone https://github.com/Obiajulu-gif/vaultquest.git
-cd vaultquest
+git clone https://github.com/NOLO-LABS-STELLAR/Nolo.git
+cd nolo
 pnpm install
 
 # Setup database (migrations and mock seed data)

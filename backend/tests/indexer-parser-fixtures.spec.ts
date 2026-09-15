@@ -1,6 +1,6 @@
 /**
  * Parser tests for every Soroban contract event type consumed by the
- * VaultQuest indexer (issue #413), driven by the fixtures in
+ * Nolo indexer (issue #413), driven by the fixtures in
  * `tests/fixtures/indexer-events/`. These tests exercise `defaultXdrDecoder`
  * directly — no database or LedgerService involved — so they run fast and
  * stay isolated from indexer/ledger reconciliation concerns.

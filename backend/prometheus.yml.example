@@ -1,11 +1,11 @@
-# Prometheus configuration for VaultQuest Backend monitoring
+# Prometheus configuration for Nolo Backend monitoring
 # Copy this to prometheus.yml and adjust as needed
 
 global:
   scrape_interval: 15s         # Default scrape interval
   evaluation_interval: 15s     # How often to evaluate rules
   external_labels:
-    monitor: 'vaultquest-backend'
+    monitor: 'nolo-backend'
     environment: 'development'
 
 # Alertmanager configuration
@@ -25,8 +25,8 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-  # VaultQuest Backend
-  - job_name: 'vaultquest-backend'
+  # Nolo Backend
+  - job_name: 'nolo-backend'
     static_configs:
       - targets: ['localhost:3000']
     metrics_path: '/metrics'

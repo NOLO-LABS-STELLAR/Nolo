@@ -25,7 +25,7 @@ const getAssetForTx = (tx) => {
 // Skeleton component to ensure zero layout shift during loading / SSR
 function ChartSkeleton() {
   return (
-    <div className="vq-glass p-6 min-h-[400px] flex flex-col justify-between animate-pulse">
+    <div className="nolo-glass p-6 min-h-[400px] flex flex-col justify-between animate-pulse">
       <div className="flex items-center justify-between border-b border-vault-border/50 pb-4">
         <div className="h-6 w-48 bg-vault-border/40 rounded"></div>
         <div className="h-4 w-24 bg-vault-border/30 rounded"></div>
@@ -119,7 +119,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="vq-glass border border-vault-border/80 bg-vault-surface/95 px-3 py-2 text-xs shadow-glow backdrop-blur-md">
+        <div className="nolo-glass border border-vault-border/80 bg-vault-surface/95 px-3 py-2 text-xs shadow-glow backdrop-blur-md">
           <p className="font-bold text-vault-text flex items-center gap-1.5">
             <span
               className="inline-block h-2 w-2 rounded-full"
@@ -141,7 +141,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="vq-glass border border-vault-border/80 bg-vault-surface/95 px-3 py-2 text-xs shadow-glow backdrop-blur-md">
+        <div className="nolo-glass border border-vault-border/80 bg-vault-surface/95 px-3 py-2 text-xs shadow-glow backdrop-blur-md">
           <p className="font-bold text-vault-text">{data.name} 2026</p>
           <p className="mt-1 font-semibold text-vault-text">
             Balance: ${data.balance.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -155,7 +155,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-6" aria-label="Deposit Analytics">
       {/* Distribution Card */}
-      <article className="vq-glass p-5 flex flex-col justify-between min-h-[400px]">
+      <article className="nolo-glass p-5 flex flex-col justify-between min-h-[400px]">
         <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
           <div className="flex items-center gap-2">
             <Coins className="h-5 w-5 text-nolo-500" aria-hidden="true" />
@@ -193,7 +193,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
                         key={`cell-${index}`}
                         fill={entry.color}
                         opacity={isAnySelected && !isSelected ? 0.35 : 1}
-                        stroke={isSelected ? "var(--vq-text)" : "var(--vq-border)"}
+                        stroke={isSelected ? "var(--nolo-text)" : "var(--nolo-border)"}
                         strokeWidth={isSelected ? 2 : 1}
                         className="transition-all duration-300 focus:outline-none"
                       />
@@ -248,7 +248,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
       </article>
 
       {/* Progression Card */}
-      <article className="vq-glass p-5 flex flex-col justify-between min-h-[400px]">
+      <article className="nolo-glass p-5 flex flex-col justify-between min-h-[400px]">
         <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
           <div className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-nolo-500" aria-hidden="true" />
@@ -260,17 +260,17 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
         <div className="w-full h-64 py-4 flex-grow">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lineData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="var(--vq-border)" opacity={0.2} vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--nolo-border)" opacity={0.2} vertical={false} />
               <XAxis
                 dataKey="name"
-                stroke="var(--vq-muted)"
+                stroke="var(--nolo-muted)"
                 fontSize={11}
                 tickLine={false}
                 axisLine={false}
                 dy={10}
               />
               <YAxis
-                stroke="var(--vq-muted)"
+                stroke="var(--nolo-muted)"
                 fontSize={11}
                 tickLine={false}
                 axisLine={false}
@@ -281,10 +281,10 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
               <Line
                 type="monotone"
                 dataKey="balance"
-                stroke="var(--vq-accent)"
+                stroke="var(--nolo-accent)"
                 strokeWidth={3}
-                dot={{ r: 4, stroke: "var(--vq-bg)", strokeWidth: 2, fill: "var(--vq-accent)" }}
-                activeDot={{ r: 6, stroke: "var(--vq-accent-glow)", strokeWidth: 4, fill: "var(--vq-accent)" }}
+                dot={{ r: 4, stroke: "var(--nolo-bg)", strokeWidth: 2, fill: "var(--nolo-accent)" }}
+                activeDot={{ r: 6, stroke: "var(--nolo-accent-glow)", strokeWidth: 4, fill: "var(--nolo-accent)" }}
                 animationDuration={1000}
               />
             </LineChart>

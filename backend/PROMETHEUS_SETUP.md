@@ -1,6 +1,6 @@
 # Prometheus Metrics Setup
 
-This document explains the Prometheus metrics integration in the VaultQuest backend.
+This document explains the Prometheus metrics integration in the Nolo backend.
 
 ## Overview
 
@@ -153,7 +153,7 @@ Recommended alert rule:
 
 ```yaml
 groups:
-  - name: vaultquest-reconciliation
+  - name: nolo-reconciliation
     rules:
       - alert: StaleOrphansEscalated
         expr: stale_orphans_current{bucket="30d"} > 0
@@ -193,10 +193,10 @@ global:
   scrape_interval: 15s
   evaluation_interval: 15s
   external_labels:
-    monitor: "vaultquest-backend"
+    monitor: "nolo-backend"
 
 scrape_configs:
-  - job_name: "vaultquest-backend"
+  - job_name: "nolo-backend"
     static_configs:
       - targets: ["localhost:3000"]
     metrics_path: "/metrics"
@@ -208,7 +208,7 @@ scrape_configs:
 
 ```yaml
 scrape_configs:
-  - job_name: "vaultquest-backend"
+  - job_name: "nolo-backend"
     static_configs:
       - targets: ["https://api.example.com:3000"]
     metrics_path: "/metrics"
@@ -225,7 +225,7 @@ version: "3.8"
 
 services:
   backend:
-    image: vaultquest/backend:latest
+    image: nolo/backend:latest
     ports:
       - "3000:3000"
     environment:
@@ -364,7 +364,7 @@ Example alert rules (`alerts.yml`):
 
 ```yaml
 groups:
-  - name: vaultquest
+  - name: nolo
     rules:
       - alert: HighErrorRate
         expr: rate(http_requests_total{status_code=~"5.."}[5m]) > 0.05

@@ -30,7 +30,7 @@ const mockGetFrontendEnv = vi.fn();
 const mockGetManifestAttestation = vi.fn();
 const mockAttestManifest = vi.fn();
 
-vi.mock("@vaultquest/stellar-wallet-connect", () => {
+vi.mock("@nolo/stellar-wallet-connect", () => {
   return {
     getFrontendEnv: () => mockGetFrontendEnv(),
     getManifestAttestation: () => mockGetManifestAttestation(),

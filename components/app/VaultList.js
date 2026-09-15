@@ -50,7 +50,7 @@ export default function VaultList({ vaults = [], suggestions = null, onSuggestio
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="vq-glass-hover group flex flex-col justify-between p-5"
+            className="nolo-glass-hover group flex flex-col justify-between p-5"
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -90,7 +90,7 @@ export default function VaultList({ vaults = [], suggestions = null, onSuggestio
             <button
               type="button"
               aria-label={`View ${vault.name} details`}
-              className="vq-btn-ghost mt-6 w-full group-hover:bg-vault-accent group-hover:text-white group-hover:border-vault-accent transition-all"
+              className="nolo-btn-ghost mt-6 w-full group-hover:bg-vault-accent group-hover:text-white group-hover:border-vault-accent transition-all"
             >
             <div className="mt-4 rounded-xl border border-vault-border bg-vault-surface/30 p-3">
               <p className="text-[10px] font-bold uppercase tracking-wider text-vault-muted">
@@ -104,7 +104,7 @@ export default function VaultList({ vaults = [], suggestions = null, onSuggestio
               </p>
             </div>
 
-            <Link href={`/app/vaults/${vault.id}`} className="vq-btn-primary mt-6 w-full text-center">
+            <Link href={`/app/vaults/${vault.id}`} className="nolo-btn-primary mt-6 w-full text-center">
               View Vault
               <ArrowUpRight size={16} className="ml-1 inline" />
             </Link>

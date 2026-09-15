@@ -36,7 +36,7 @@ export default function VaultRewardsExplanationModal() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="vq-btn-ghost inline-flex items-center gap-2"
+        className="nolo-btn-ghost inline-flex items-center gap-2"
         aria-haspopup="dialog"
         aria-expanded={isOpen}
       >
@@ -141,7 +141,7 @@ export default function VaultRewardsExplanationModal() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="vq-btn-primary"
+                    className="nolo-btn-primary"
                   >
                     Got it
                   </button>

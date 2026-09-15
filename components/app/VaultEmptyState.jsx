@@ -56,7 +56,7 @@ export default function VaultEmptyState({ variant = "dashboard", onClearFilters 
   const { Icon, iconBg, iconColor, title, description, actions } = config;
 
   return (
-    <div className="vq-glass flex flex-col items-center px-6 py-16 text-center sm:px-12">
+    <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center sm:px-12">
       {/* Icon */}
       <span
         className={`flex h-16 w-16 items-center justify-center rounded-full border border-vault-border ring-2 ring-vault-border/30 ${iconBg} ${iconColor}`}
@@ -73,8 +73,8 @@ export default function VaultEmptyState({ variant = "dashboard", onClearFilters 
         {actions.map((action) => {
           const ActionIcon = action.Icon;
           const cls = action.primary
-            ? "vq-btn-primary inline-flex items-center gap-2"
-            : "vq-btn-ghost inline-flex items-center gap-2";
+            ? "nolo-btn-primary inline-flex items-center gap-2"
+            : "nolo-btn-ghost inline-flex items-center gap-2";
 
           if (action.onClick) {
             return (

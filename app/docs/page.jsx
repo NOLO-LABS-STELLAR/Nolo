@@ -62,8 +62,8 @@ export default function ProtocolDocsPage() {
             <p>To run Nolo locally:</p>
             <pre className="mt-2 rounded-lg bg-black/50 p-4 font-mono text-sm">
               <code>
-                git clone https://github.com/yours-anjikon/vaultquest.git<br/>
-                cd vaultquest<br/>
+                git clone https://github.com/NOLO-LABS-STELLAR/Nolo.git<br/>
+                cd nolo<br/>
                 pnpm install<br/>
                 pnpm dev
               </code>

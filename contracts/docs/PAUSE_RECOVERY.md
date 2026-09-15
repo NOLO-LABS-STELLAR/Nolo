@@ -1,6 +1,6 @@
 # Admin pause and recovery behavior
 
-VaultQuest pause controls are for incident response: protect user funds,
+Nolo pause controls are for incident response: protect user funds,
 preserve readable state, and give frontend/backend services a predictable mode
 while maintainers recover.
 
@@ -49,7 +49,7 @@ pool detail pages, balances, and reward history stay visible.
 
 Suggested user-facing copy:
 
-- Banner title: `VaultQuest is temporarily paused`
+- Banner title: `Nolo is temporarily paused`
 - Body: `Pool actions are disabled while maintainers complete recovery. Your balances and history remain visible.`
 - Button/tooltips: `Action unavailable during pause`
 

@@ -1,5 +1,5 @@
 /**
- * Display helpers for VaultQuest pool UI (#73, #75).
+ * Display helpers for Nolo pool UI (#73, #75).
  *
  * Privacy-aware address truncation, amount/date formatting, and Stellar
  * explorer links. Pure functions so they are trivially unit-testable.

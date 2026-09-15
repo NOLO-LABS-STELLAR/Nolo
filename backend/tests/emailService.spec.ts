@@ -15,7 +15,7 @@ describe("EmailService", () => {
     vi.clearAllMocks();
     svc = new EmailService({
       apiKey: "SG.test-api-key-12345678901234567890",
-      fromEmail: "test@vaultquest.io"
+      fromEmail: "test@nolo.io"
     });
   });
 

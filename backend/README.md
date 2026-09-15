@@ -1,4 +1,4 @@
-# VaultQuest Backend
+# Nolo Backend
 
 Action ledger and reconciliation service for TrustQuest (issue #34).
 

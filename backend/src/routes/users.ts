@@ -29,7 +29,7 @@ export const usersRoutes: FastifyPluginAsync<{ prisma: PrismaClient }> = async (
            id: userPayload.id,
            name: "Demo User",
            email: "demo@example.com",
-           bio: "VaultQuest Saver",
+           bio: "Nolo Saver",
            walletAddress: null,
            createdAt: new Date().toISOString(),
            updatedAt: new Date().toISOString(),

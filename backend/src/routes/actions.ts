@@ -232,7 +232,7 @@ export const actionsRoutes = (
           dataContent
         ].join("\n") + "\n";
 
-        const filename = `vaultquest-activity-${q.wallet.slice(0, 8)}.csv`;
+        const filename = `nolo-activity-${q.wallet.slice(0, 8)}.csv`;
         reply
           .header("Content-Type", "text/csv; charset=utf-8")
           .header("Content-Disposition", `attachment; filename="${filename}"`);
@@ -251,7 +251,7 @@ export const actionsRoutes = (
         checksum
       };
 
-      const filename = `vaultquest-activity-${q.wallet.slice(0, 8)}.json`;
+      const filename = `nolo-activity-${q.wallet.slice(0, 8)}.json`;
       reply
         .header("Content-Type", "application/json; charset=utf-8")
         .header("Content-Disposition", `attachment; filename="${filename}"`);

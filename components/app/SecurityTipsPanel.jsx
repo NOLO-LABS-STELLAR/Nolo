@@ -26,7 +26,7 @@ const TIPS = [
   },
 ];
 
-const STORAGE_KEY = "vq_security_tips_dismissed";
+const STORAGE_KEY = "nolo_security_tips_dismissed";
 
 export default function SecurityTipsPanel() {
   const [dismissed, setDismissed] = useState(true);
@@ -53,7 +53,7 @@ export default function SecurityTipsPanel() {
   return (
     <section
       aria-label="Account security tips"
-      className="vq-glass border-amber-400/30 bg-amber-500/5 p-5 sm:p-6"
+      className="nolo-glass border-amber-400/30 bg-amber-500/5 p-5 sm:p-6"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function SecurityTipsPanel() {
 
       <div className="mt-4 flex items-center justify-between gap-4">
         <a
-          href="https://docs.vaultquest.io/security"
+          href="https://docs.nolo.io/security"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs font-medium text-vault-muted underline underline-offset-2 hover:text-vault-text"
@@ -111,7 +111,7 @@ export default function SecurityTipsPanel() {
         <button
           type="button"
           onClick={handleDismiss}
-          className="vq-btn-ghost h-8 px-3 text-xs"
+          className="nolo-btn-ghost h-8 px-3 text-xs"
         >
           Got it, dismiss
         </button>

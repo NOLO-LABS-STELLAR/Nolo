@@ -105,7 +105,7 @@ stellar contract invoke \
 
 ## 4. Helper Script Reference
 
-Use [`contracts/scripts/rollback_upgrade.sh`](file:///c:/Users/PAB-NETWORK/Downloads/vaultquest-archive/contracts/scripts/rollback_upgrade.sh) to generate the exact CLI command sequence for any target pool proxy:
+Use [`contracts/scripts/rollback_upgrade.sh`](file:///c:/Users/PAB-NETWORK/Downloads/nolo-archive/contracts/scripts/rollback_upgrade.sh) to generate the exact CLI command sequence for any target pool proxy:
 
 ```bash
 ./contracts/scripts/rollback_upgrade.sh <PROXY_CONTRACT_ID> <PREVIOUS_LOGIC_ADDRESS> testnet

@@ -24,7 +24,7 @@ export default function ThemeToggle({ className = "" }) {
       <button
         type="button"
         aria-label="Toggle theme"
-        className={`vq-btn-ghost h-10 w-10 p-0 ${className}`}
+        className={`nolo-btn-ghost h-10 w-10 p-0 ${className}`}
         disabled
       />
     );

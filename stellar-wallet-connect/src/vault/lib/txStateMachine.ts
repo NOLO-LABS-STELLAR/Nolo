@@ -187,7 +187,7 @@ interface PersistedTxRecord {
   savedAt: number;
 }
 
-const PERSIST_KEY_PREFIX = "vaultquest:pending_tx:";
+const PERSIST_KEY_PREFIX = "nolo:pending_tx:";
 const PERSIST_TTL_MS = 24 * 60 * 60 * 1000; // 24 h
 
 function persistTxRecord(scopeKey: string, record: PersistedTxRecord): void {

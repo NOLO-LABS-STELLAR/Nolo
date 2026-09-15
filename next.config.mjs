@@ -5,7 +5,7 @@ const { i18n } = require('./next-i18next.config.js');
 
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["@vaultquest/stellar-wallet-connect"],
+  transpilePackages: ["@nolo/stellar-wallet-connect"],
   webpack: (config) => {
     config.resolve.extensionAlias = {
       ".js": [".ts", ".tsx", ".js", ".jsx"],

@@ -49,7 +49,7 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
 
   if (!startDate || !endDate) {
     return (
-      <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+      <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <AlertTriangle className="h-8 w-8 text-amber-500" />
           <p className="text-sm text-vault-muted">Round date information is not available.</p>
@@ -60,7 +60,7 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
 
   if (status === "invalid") {
     return (
-      <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+      <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <AlertTriangle className="h-8 w-8 text-amber-500" />
           <p className="text-sm text-vault-muted">Invalid round dates. Please check the configuration.</p>
@@ -72,7 +72,7 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
   if (status === "upcoming") {
     const startsIn = calculateTimeLeft(startDate);
     return (
-      <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+      <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
         <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-blue-500/10 blur-[80px]" />
         <div className="relative flex flex-col items-center gap-4">
           <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-blue-500">
@@ -96,7 +96,7 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
 
   if (status === "ended") {
     return (
-      <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+      <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
         <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-slate-500/10 blur-[80px]" />
         <div className="relative flex flex-col items-center gap-4">
           <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-vault-muted">
@@ -117,7 +117,7 @@ export default function RoundCountdown({ startDate, endDate, label = "Round" }) 
   const bgColor = timeLeft.isComplete ? "bg-emerald-500/10" : "bg-nolo-500/10";
 
   return (
-    <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
+    <div className="nolo-glass relative overflow-hidden p-6 sm:p-8">
       <div className={`absolute -left-20 -top-20 h-40 w-40 rounded-full ${bgColor} blur-[80px]`} />
       <div className={`absolute -right-20 -bottom-20 h-40 w-40 rounded-full ${bgColor} blur-[80px]`} />
 

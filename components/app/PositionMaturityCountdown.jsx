@@ -92,7 +92,7 @@ export default function PositionMaturityCountdown({
 
   if (!maturityDate) {
     return (
-      <div className="vq-glass relative overflow-hidden p-5">
+      <div className="nolo-glass relative overflow-hidden p-5">
         <div className="flex flex-col items-center gap-3 text-center">
           <AlertTriangle className="h-6 w-6 text-amber-500" />
           <p className="text-sm text-vault-muted">Maturity date information is not available.</p>
@@ -103,7 +103,7 @@ export default function PositionMaturityCountdown({
 
   if (isPaused) {
     return (
-      <div className="vq-glass relative overflow-hidden p-5">
+      <div className="nolo-glass relative overflow-hidden p-5">
         <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-amber-500/10 blur-[80px]" />
         <div className="relative flex flex-col items-center gap-3 text-center">
           <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-amber-500">
@@ -120,7 +120,7 @@ export default function PositionMaturityCountdown({
 
   if (isExpired) {
     return (
-      <div className="vq-glass relative overflow-hidden p-5">
+      <div className="nolo-glass relative overflow-hidden p-5">
         <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-slate-500/10 blur-[80px]" />
         <div className="relative flex flex-col items-center gap-3 text-center">
           <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-vault-muted">
@@ -137,7 +137,7 @@ export default function PositionMaturityCountdown({
 
   if (isMatured || alreadyCompleted) {
     return (
-      <div className="vq-glass relative overflow-hidden p-5">
+      <div className="nolo-glass relative overflow-hidden p-5">
         <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-emerald-500/10 blur-[80px]" />
         <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-emerald-500/10 blur-[80px]" />
         <div className="relative flex flex-col items-center gap-3 text-center">
@@ -159,7 +159,7 @@ export default function PositionMaturityCountdown({
   if (!timeLeft) return null;
 
   return (
-    <div className="vq-glass relative overflow-hidden p-5">
+    <div className="nolo-glass relative overflow-hidden p-5">
       <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
       <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
 

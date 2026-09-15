@@ -87,7 +87,7 @@ test.describe("Core user flows", () => {
   test("landing page renders", async ({ page }) => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
 
-    await expect(page.getByText("VaultQuest")).toBeVisible();
+    await expect(page.getByText("Nolo")).toBeVisible();
     await expect(page.getByText("Launch DApp")).toBeVisible();
   });
 });

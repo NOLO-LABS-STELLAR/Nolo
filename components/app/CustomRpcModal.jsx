@@ -200,13 +200,13 @@ export default function CustomRpcModal({ open, onClose }) {
         )}
 
         <div className="mt-6 flex flex-wrap gap-2">
-          <button type="button" onClick={handleSave} className="vq-btn-primary">
+          <button type="button" onClick={handleSave} className="nolo-btn-primary">
             Save & apply
           </button>
-          <button type="button" onClick={handleReset} className="vq-btn-ghost">
+          <button type="button" onClick={handleReset} className="nolo-btn-ghost">
             Reset defaults
           </button>
-          <button type="button" onClick={onClose} className="vq-btn-ghost">
+          <button type="button" onClick={onClose} className="nolo-btn-ghost">
             Cancel
           </button>
         </div>

@@ -19,8 +19,8 @@ export default function Button({
 }: ButtonProps) {
   const base =
     variant === "primary"
-      ? "vq-btn-primary"
-      : "vq-btn-ghost";
+      ? "nolo-btn-primary"
+      : "nolo-btn-ghost";
 
   return (
     <button

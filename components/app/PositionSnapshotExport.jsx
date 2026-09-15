@@ -54,7 +54,7 @@ export default function PositionSnapshotExport({
       const url = URL.createObjectURL(blob);
 
       link.setAttribute("href", url);
-      link.setAttribute("download", `vaultquest-positions-${Date.now()}.csv`);
+      link.setAttribute("download", `nolo-positions-${Date.now()}.csv`);
       link.style.visibility = "hidden";
       document.body.appendChild(link);
       link.click();
@@ -69,7 +69,7 @@ export default function PositionSnapshotExport({
   const isEmpty = !positions || positions.length === 0;
 
   return (
-    <section className="vq-glass-hover p-6 space-y-4">
+    <section className="nolo-glass-hover p-6 space-y-4">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-vault-accent/10 text-vault-accent border border-vault-accent/20">
           <FileText size={20} />
@@ -101,7 +101,7 @@ export default function PositionSnapshotExport({
           <button
             onClick={handleExport}
             disabled={isExporting || isEmpty}
-            className="vq-btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50"
+            className="nolo-btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {isExporting ? (
               <>

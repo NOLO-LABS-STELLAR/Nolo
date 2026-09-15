@@ -1,4 +1,4 @@
-# Contributing to VaultQuest
+# Contributing to Nolo
 
 Welcome! This guide explains how to choose an issue, set up the project,
 validate your changes, and prepare a pull request that maintainers can merge
@@ -10,7 +10,7 @@ every future contributor.
 
 ## 1. Pick the right issue
 
-VaultQuest issues live across several surfaces:
+Nolo issues live across several surfaces:
 
 | Label / area | What it usually involves | Good for |
 |---|---|---|
@@ -37,7 +37,7 @@ before writing code**. A 5-minute clarification beats a 2-day rewrite.
 ## 2. Project layout
 
 ```
-vaultquest/
+nolo/
 ├── backend/                    # Fastify action-ledger + reconciliation service
 ├── contracts/                  # Soroban smart contracts (Rust)
 ├── stellar-wallet-connect/     # Drop-in wallet module (React + Astro)
@@ -65,8 +65,8 @@ section — read it before running commands inside that folder.
 ### Bootstrap
 
 ```bash
-git clone https://github.com/<your-username>/vaultquest.git
-cd vaultquest
+git clone https://github.com/<your-username>/nolo.git
+cd nolo
 pnpm install
 ```
 
@@ -193,7 +193,7 @@ approach, or split the issue into smaller pieces.
 
 ## 7. Accessibility expectations (frontend PRs)
 
-VaultQuest aims for keyboard-navigable, screen-reader-friendly UI. For any
+Nolo aims for keyboard-navigable, screen-reader-friendly UI. For any
 frontend change:
 
 - New interactive elements need `aria-label` or visible text.
@@ -226,4 +226,4 @@ of a focus-trapped, ARIA-compliant dialog.
 - **Want to propose a larger change?** Open a discussion or draft RFC issue
   before writing code.
 
-Thanks for contributing to VaultQuest! 🚀
+Thanks for contributing to Nolo! 🚀

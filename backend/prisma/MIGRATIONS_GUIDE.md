@@ -1,6 +1,6 @@
 # Database Migrations Guide
 
-This guide explains how to work with VaultQuest database migrations.
+This guide explains how to work with Nolo database migrations.
 
 ## Quick Overview
 
@@ -241,7 +241,7 @@ CREATE UNIQUE INDEX "user_settings_user_id_key" ON "user_settings"("user_id");
 ## Related Documentation
 
 - [Prisma Migrations](https://www.prisma.io/docs/concepts/components/prisma-migrate)
-- [VaultQuest Architecture](./docs/ARCHITECTURE.md)
+- [Nolo Architecture](./docs/ARCHITECTURE.md)
 - [API Documentation](./docs/API_RESPONSES.md)
 - [Migrations README](./prisma/migrations/README.md)
 - [Migrations Manifest](./prisma/migrations/MANIFEST.json)

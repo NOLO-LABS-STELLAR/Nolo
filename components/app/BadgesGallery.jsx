@@ -160,7 +160,7 @@ export default function BadgesGallery() {
   const [hoveredBadge, setHoveredBadge] = useState(null);
 
   return (
-    <section className="vq-glass p-6 sm:p-8">
+    <section className="nolo-glass p-6 sm:p-8">
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h2 className="text-xl font-bold text-vault-text">Achievement Gallery</h2>

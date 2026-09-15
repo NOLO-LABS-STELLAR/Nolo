@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Circle, Clock, ExternalLink, AlertCircle, RefreshCw } from "lucide-react";
 import { buildStellarExplorerUrl } from "@/lib/stellar-explorer";
-import { defaultVaultDataConfig } from "@vaultquest/stellar-wallet-connect/src/vault/data/config";
+import { defaultVaultDataConfig } from "@nolo/stellar-wallet-connect/src/vault/data/config";
 
 const BRIDGE_STEPS = [
   { id: "deposit", label: "Deposit Verification", chain: "origin" },
@@ -69,7 +69,7 @@ export default function BridgeStatusTracker({
   };
 
   return (
-    <div className="vq-glass w-full max-w-2xl space-y-6 p-4 sm:p-6">
+    <div className="nolo-glass w-full max-w-2xl space-y-6 p-4 sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="text-lg font-semibold text-vault-text">

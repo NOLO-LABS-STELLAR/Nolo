@@ -55,7 +55,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
   };
 
   return (
-    <div className="vq-glass space-y-6 p-6" data-testid="protocol-health-dashboard">
+    <div className="nolo-glass space-y-6 p-6" data-testid="protocol-health-dashboard">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-vault-border/40 pb-4">
         <div>
           <div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
           type="button"
           onClick={handleRefresh}
           disabled={isRefreshing}
-          className="vq-btn-ghost flex items-center gap-1.5 py-1.5 px-3 text-xs text-vault-muted hover:text-vault-text self-start sm:self-auto"
+          className="nolo-btn-ghost flex items-center gap-1.5 py-1.5 px-3 text-xs text-vault-muted hover:text-vault-text self-start sm:self-auto"
           data-testid="refresh-health-btn"
         >
           <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? "animate-spin" : ""}`} />

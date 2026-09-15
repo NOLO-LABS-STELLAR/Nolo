@@ -59,7 +59,7 @@ export default function PoolCapacityIndicator({
 
   if (analysis.isUnlimited) {
     return (
-      <div className="vq-glass-hover p-4" data-testid="pool-capacity-indicator">
+      <div className="nolo-glass-hover p-4" data-testid="pool-capacity-indicator">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-wide text-vault-muted">
             Pool Capacity
@@ -102,7 +102,7 @@ export default function PoolCapacityIndicator({
 
   return (
     <div
-      className={`vq-glass-hover ${sizeClasses[size] || sizeClasses.default}`}
+      className={`nolo-glass-hover ${sizeClasses[size] || sizeClasses.default}`}
       data-testid="pool-capacity-indicator"
       role="group"
       aria-label="Pool capacity"

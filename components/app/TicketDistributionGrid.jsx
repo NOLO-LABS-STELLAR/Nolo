@@ -140,7 +140,7 @@ export default function TicketDistributionGrid({
   };
 
   return (
-    <div className="vq-glass w-full space-y-4 p-4 sm:p-6">
+    <div className="nolo-glass w-full space-y-4 p-4 sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="text-lg font-semibold text-vault-text">Ticket Distribution</h3>

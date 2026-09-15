@@ -1,4 +1,4 @@
-# VaultQuest E2E Testing Guide
+# Nolo E2E Testing Guide
 
 ## Quick Start
 

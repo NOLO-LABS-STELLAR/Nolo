@@ -161,7 +161,7 @@ export default function DepositModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm sm:items-center">
-      <div className="vq-glass w-full max-w-5xl overflow-hidden border border-vault-border/60 shadow-2xl">
+      <div className="nolo-glass w-full max-w-5xl overflow-hidden border border-vault-border/60 shadow-2xl">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-vault-border/40 px-5 py-4 sm:px-6">
           <div>
@@ -175,7 +175,7 @@ export default function DepositModal({ isOpen, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="vq-btn-ghost h-10 w-10 rounded-full p-0 disabled:opacity-40"
+            className="nolo-btn-ghost h-10 w-10 rounded-full p-0 disabled:opacity-40"
             aria-label="Close deposit modal"
             disabled={step === "loading"}
           >
@@ -427,31 +427,31 @@ export default function DepositModal({ isOpen, onClose }) {
           <div className="flex gap-3">
             {step === "input" && (
               <>
-                <button type="button" onClick={onClose} className="vq-btn-ghost">
+                <button type="button" onClick={onClose} className="nolo-btn-ghost">
                   Cancel
                 </button>
-                <button type="button" onClick={handleContinue} className="vq-btn-primary">
+                <button type="button" onClick={handleContinue} className="nolo-btn-primary">
                   Confirm deposit
                 </button>
               </>
             )}
             {step === "confirm" && (
               <>
-                <button type="button" onClick={() => setStep("input")} className="vq-btn-ghost">
+                <button type="button" onClick={() => setStep("input")} className="nolo-btn-ghost">
                   <ArrowLeft className="h-4 w-4 mr-1 inline" /> Back
                 </button>
-                <button type="button" onClick={handleConfirmDeposit} className="vq-btn-primary">
+                <button type="button" onClick={handleConfirmDeposit} className="nolo-btn-primary">
                   Sign & Submit
                 </button>
               </>
             )}
             {step === "loading" && (
-              <button type="button" disabled className="vq-btn-primary opacity-50 cursor-not-allowed">
+              <button type="button" disabled className="nolo-btn-primary opacity-50 cursor-not-allowed">
                 Broadcasting...
               </button>
             )}
             {step === "success" && (
-              <button type="button" onClick={onClose} className="vq-btn-primary">
+              <button type="button" onClick={onClose} className="nolo-btn-primary">
                 Close
               </button>
             )}

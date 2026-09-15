@@ -111,7 +111,7 @@ const FAQ_ITEMS = [
 
 export default function FaqAccordion() {
   return (
-    <section className="vq-glass mx-auto w-full max-w-3xl p-6 sm:p-8" aria-labelledby="faq-heading">
+    <section className="nolo-glass mx-auto w-full max-w-3xl p-6 sm:p-8" aria-labelledby="faq-heading">
       <h2 id="faq-heading" className="text-xl font-semibold text-vault-text sm:text-2xl">
         Frequently asked questions
       </h2>
@@ -135,7 +135,7 @@ export default function FaqAccordion() {
                 />
               </Accordion.Trigger>
             </Accordion.Header>
-            <Accordion.Content className="vq-accordion-content vq-faq-content text-sm leading-relaxed">
+            <Accordion.Content className="nolo-accordion-content nolo-faq-content text-sm leading-relaxed">
               <div className="px-4 pb-4 pt-0">{item.content}</div>
             </Accordion.Content>
           </Accordion.Item>

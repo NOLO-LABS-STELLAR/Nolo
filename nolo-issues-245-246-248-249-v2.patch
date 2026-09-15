@@ -1,6 +1,6 @@
-From 825f3e5c7f3a4e877c4380081991390d273dd882 Mon Sep 17 00:00:00 2001
-From: VaultQuest Dev <dev@vaultquest.local>
-Date: Sat, 27 Jun 2026 12:07:35 +0000
+From fdee7ddd0abae966e9313746370d6b1fd51cefd6 Mon Sep 17 00:00:00 2001
+From: Nolo Dev <dev@nolo.local>
+Date: Sat, 27 Jun 2026 12:29:08 +0000
 Subject: [PATCH] fix: resolve issues #245 #246 #248 #249
 
 #246 [Contracts] Implement Emergency Pause (Circuit Breaker) in Vault Contract
@@ -31,21 +31,18 @@ Subject: [PATCH] fix: resolve issues #245 #246 #248 #249
 ---
  backend/src/plugins/rate-limit.test.ts |  71 +++++
  backend/src/plugins/rate-limit.ts      |  64 +++++
- backend/src/server.ts                  |  39 +++
+ backend/src/server.ts                  |  24 +-
  components/Navbar.tsx                  | 171 ++++++++++++
  components/navConfig.ts                |  45 ++++
  contracts/vault/src/lib.rs             | 344 +++++++++++++++++++++++++
- docs/ARCHITECTURE.md                   | 104 ++++++++
- tailwind.config.js                     |  45 ++++
- 8 files changed, 883 insertions(+)
+ docs/ARCHITECTURE.md                   | 106 +++++++-
+ tailwind.config.js                     |  33 ++-
+ 8 files changed, 846 insertions(+), 12 deletions(-)
  create mode 100644 backend/src/plugins/rate-limit.test.ts
  create mode 100644 backend/src/plugins/rate-limit.ts
- create mode 100644 backend/src/server.ts
  create mode 100644 components/Navbar.tsx
  create mode 100644 components/navConfig.ts
  create mode 100644 contracts/vault/src/lib.rs
- create mode 100644 docs/ARCHITECTURE.md
- create mode 100644 tailwind.config.js
 
 diff --git a/backend/src/plugins/rate-limit.test.ts b/backend/src/plugins/rate-limit.test.ts
 new file mode 100644
@@ -195,21 +192,21 @@ index 0000000..7657c0c
 +  fastify: "4.x || 5.x",
 +});
 diff --git a/backend/src/server.ts b/backend/src/server.ts
-new file mode 100644
-index 0000000..f4d5664
---- /dev/null
+index 9b1c8d5..f4d5664 100644
+--- a/backend/src/server.ts
 +++ b/backend/src/server.ts
-@@ -0,0 +1,39 @@
+@@ -1,18 +1,38 @@
 +// backend/src/server.ts
 +// Fastify application entry-point.
 +// Registers plugins (including rate-limiting) and route handlers.
 +
-+import Fastify from "fastify";
+ import Fastify from "fastify";
 +import rateLimitPlugin from "./plugins/rate-limit.js";
-+import actionLedgerRoutes from "./routes/action-ledger.js";
-+import reconciliationRoutes from "./routes/reconciliation.js";
-+
-+export async function buildApp() {
+ import actionLedgerRoutes from "./routes/action-ledger.js";
+ import reconciliationRoutes from "./routes/reconciliation.js";
+ 
+ export async function buildApp() {
+-  const app = Fastify({ logger: true });
 +  const app = Fastify({
 +    logger: true,
 +    trustProxy: true, // Required so @fastify/rate-limit can read X-Forwarded-For
@@ -221,24 +218,24 @@ index 0000000..f4d5664
 +    max: Number(process.env.RATE_LIMIT_MAX ?? 100),
 +    timeWindow: Number(process.env.RATE_LIMIT_WINDOW_MS ?? 60_000),
 +  });
-+
+ 
 +  // ── Routes ───────────────────────────────────────────────────────────
-+  await app.register(actionLedgerRoutes, { prefix: "/action-ledger" });
-+  await app.register(reconciliationRoutes, { prefix: "/reconciliation" });
-+
+   await app.register(actionLedgerRoutes, { prefix: "/action-ledger" });
+   await app.register(reconciliationRoutes, { prefix: "/reconciliation" });
+ 
+-  app.get("/health", async () => ({ status: "ok" }));
 +  // ── Health ───────────────────────────────────────────────────────────
 +  app.get("/health", { config: { rateLimit: { max: 300 } } }, async () => ({
 +    status: "ok",
 +  }));
-+
-+  return app;
-+}
-+
+ 
+   return app;
+ }
+ 
 +// Stand-alone start (not used when imported for testing)
-+if (process.argv[1] === new URL(import.meta.url).pathname) {
-+  const app = await buildApp();
-+  await app.listen({ port: Number(process.env.PORT ?? 3001), host: "0.0.0.0" });
-+}
+ if (process.argv[1] === new URL(import.meta.url).pathname) {
+   const app = await buildApp();
+   await app.listen({ port: Number(process.env.PORT ?? 3001), host: "0.0.0.0" });
 diff --git a/components/Navbar.tsx b/components/Navbar.tsx
 new file mode 100644
 index 0000000..bb1c3b3
@@ -332,7 +329,7 @@ index 0000000..bb1c3b3
 +          className="flex items-center gap-2 text-xl font-bold text-violet-600 dark:text-violet-400"
 +        >
 +          <Vault className="h-6 w-6" />
-+          VaultQuest
++          Nolo
 +        </Link>
 +
 +        {/* Desktop links */}
@@ -818,20 +815,22 @@ index 0000000..432a430
 +    }
 +}
 diff --git a/docs/ARCHITECTURE.md b/docs/ARCHITECTURE.md
-new file mode 100644
-index 0000000..77ebf22
---- /dev/null
+index 8592487..77ebf22 100644
+--- a/docs/ARCHITECTURE.md
 +++ b/docs/ARCHITECTURE.md
-@@ -0,0 +1,104 @@
-+# VaultQuest — Architecture
-+
+@@ -1,16 +1,104 @@
+ # Nolo — Architecture
+ 
 +> **Note:** This document reflects the current cross-stack architecture.
 +> Changes introduced by the issues tracked below are highlighted with ✅.
 +
 +---
 +
-+## Stack overview
-+
+ ## Stack overview
+ 
+-- Frontend: Next.js 14, Tailwind CSS
+-- Backend: Fastify, Node.js, TypeScript
+-- Contracts: Soroban (Rust), Stellar
 +```
 +┌─────────────────────────────────────────────────────────────────┐
 +│  Browser / Mobile (Next.js 14 · App Router · Tailwind CSS)      │
@@ -898,11 +897,17 @@ index 0000000..77ebf22
 +```
 +
 +---
-+
+ 
+-## Packages
 +## Dark-mode strategy (#249)
-+
+ 
+-| Path | Description |
 +| Layer | Implementation |
-+|---|---|
+ |---|---|
+-| `backend/` | Fastify action-ledger and reconciliation service |
+-| `contracts/` | Soroban smart contracts (Rust) |
+-| `app/` | Next.js frontend |
+-| `docs/` | Architecture and design docs |
 +| Tailwind config | `darkMode: "class"` — activates `dark:` variants when `<html>` carries the `dark` class |
 +| Persistence | `localStorage.setItem("theme", "dark" \| "light")` |
 +| OS fallback | `window.matchMedia("(prefers-color-scheme: dark)")` on first load |
@@ -928,29 +933,29 @@ index 0000000..77ebf22
 +| `RATE_LIMIT_MAX` | `100` | Requests per window per IP |
 +| `RATE_LIMIT_WINDOW_MS` | `60000` | Window size in milliseconds |
 diff --git a/tailwind.config.js b/tailwind.config.js
-new file mode 100644
-index 0000000..d82e520
---- /dev/null
+index 15ebd3d..d82e520 100644
+--- a/tailwind.config.js
 +++ b/tailwind.config.js
-@@ -0,0 +1,45 @@
+@@ -1,13 +1,44 @@
 +// tailwind.config.js
 +// Updated to enable class-based dark mode (#249).
 +// The Navbar's useDarkMode hook toggles the `dark` class on <html>,
 +// which activates all dark: variants throughout the app.
 +
-+/** @type {import('tailwindcss').Config} */
-+const config = {
+ /** @type {import('tailwindcss').Config} */
+ const config = {
 +  // 'class' strategy: Tailwind applies dark variants when the `dark`
 +  // class is present on an ancestor element (we set it on <html>).
 +  darkMode: "class",
 +
-+  content: [
-+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-+  ],
+   content: [
+     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+   ],
 +
-+  theme: {
+   theme: {
+-    extend: {},
 +    extend: {
 +      colors: {
 +        // Brand palette — add / adjust to match your design system
@@ -972,12 +977,11 @@ index 0000000..d82e520
 +        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
 +      },
 +    },
-+  },
+   },
 +
-+  plugins: [],
-+};
-+
-+export default config;
+   plugins: [],
+ };
+ 
 -- 
 2.43.0
 

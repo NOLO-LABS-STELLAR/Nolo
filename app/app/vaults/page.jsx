@@ -158,11 +158,11 @@ export default function VaultsPage() {
             </p>
           </div>
           <div className="flex gap-2 self-start">
-            <Link href="/app/vaults/calendar" className="vq-btn-ghost">
+            <Link href="/app/vaults/calendar" className="nolo-btn-ghost">
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
               Calendar
             </Link>
-            <Link href="/app/vaults/archive" className="vq-btn-ghost">
+            <Link href="/app/vaults/archive" className="nolo-btn-ghost">
               <Archive className="h-4 w-4" aria-hidden="true" />
               {t("routes.vaults.roundArchive")}
             </Link>
@@ -200,7 +200,7 @@ export default function VaultsPage() {
           <div className="grid gap-6 xl:grid-cols-2">
             <GasPrioritySelector nativeBalance={0.0018} />
 
-            <section className="vq-glass-hover flex flex-col justify-between p-6">
+            <section className="nolo-glass-hover flex flex-col justify-between p-6">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
                   {t("routes.vaults.depositReview")}
@@ -217,13 +217,13 @@ export default function VaultsPage() {
                 <button
                   type="button"
                   onClick={() => setIsDepositModalOpen(true)}
-                  className="vq-btn-primary"
+                  className="nolo-btn-primary"
                 >
                   {t("routes.vaults.openDepositModal")}
                 </button>
                 <Link
                   href="/app/vaults/planner"
-                  className="vq-btn-ghost"
+                  className="nolo-btn-ghost"
                 >
                   {t("routes.vaults.recurringPlanner")}
                 </Link>
@@ -245,7 +245,7 @@ export default function VaultsPage() {
                 {selectedPools.length >= 2 && (
                   <button
                     onClick={() => setComparisonOpen(true)}
-                    className="vq-btn-primary text-sm flex items-center gap-2"
+                    className="nolo-btn-primary text-sm flex items-center gap-2"
                   >
                     <GitCompare size={16} aria-hidden="true" />
                     Compare ({selectedPools.length})
@@ -302,7 +302,7 @@ export default function VaultsPage() {
         onClose={() => setComparisonOpen(false)}
       />
 
-      <Link href="/app" className="vq-btn-ghost inline-flex">
+      <Link href="/app" className="nolo-btn-ghost inline-flex">
         ← Back to dashboard
       </Link>
     </div>

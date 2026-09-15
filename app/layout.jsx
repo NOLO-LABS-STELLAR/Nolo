@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("vaultquest-theme");if(t==="system"||!t){var d=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;"dark"===d?document.documentElement.classList.add("dark"):"light"===d&&document.documentElement.classList.remove("dark")}else if(t==="dark"){document.documentElement.classList.add("dark")}else{document.documentElement.classList.remove("dark")}if(localStorage.getItem("vaultquest-high-contrast")==="true"){document.documentElement.classList.add("high-contrast")}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("nolo-theme");if(t==="system"||!t){var d=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;"dark"===d?document.documentElement.classList.add("dark"):"light"===d&&document.documentElement.classList.remove("dark")}else if(t==="dark"){document.documentElement.classList.add("dark")}else{document.documentElement.classList.remove("dark")}if(localStorage.getItem("nolo-high-contrast")==="true"){document.documentElement.classList.add("high-contrast")}}catch(e){}})();`,
           }}
         />
         {manifestVersion && (

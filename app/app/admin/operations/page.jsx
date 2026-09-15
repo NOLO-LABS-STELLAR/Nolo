@@ -30,7 +30,7 @@ export default function AdminOperationsPage() {
       </header>
 
       {!isConnected ? (
-        <div className="vq-glass flex flex-col items-center px-6 py-16 text-center">
+        <div className="nolo-glass flex flex-col items-center px-6 py-16 text-center">
           <Shield className="h-16 w-16 text-vault-muted" aria-hidden="true" />
           <h2 className="mt-6 text-xl font-semibold text-vault-text">
             Wallet Not Connected

@@ -76,7 +76,7 @@ export default function IndexerReplayControl({ isAuthorized = false }) {
   const isBusy = isDryRunRunning || isReplayRunning;
 
   return (
-    <section className="vq-glass p-6 space-y-6">
+    <section className="nolo-glass p-6 space-y-6">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-500 border border-purple-500/20">
           <Database size={20} />
@@ -142,7 +142,7 @@ export default function IndexerReplayControl({ isAuthorized = false }) {
               <button
                 onClick={handleDryRun}
                 disabled={!isValid || isBusy}
-                className="flex-1 vq-btn-ghost flex items-center justify-center gap-2 disabled:opacity-50"
+                className="flex-1 nolo-btn-ghost flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isDryRunRunning ? (
                   <Loader2 size={16} className="animate-spin" />
@@ -154,7 +154,7 @@ export default function IndexerReplayControl({ isAuthorized = false }) {
               <button
                 onClick={() => setShowConfirm(true)}
                 disabled={!isValid || isBusy || !dryRunResults}
-                className="flex-1 vq-btn-primary flex items-center justify-center gap-2 disabled:opacity-50"
+                className="flex-1 nolo-btn-primary flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isReplayRunning ? (
                   <Loader2 size={16} className="animate-spin" />
@@ -288,14 +288,14 @@ export default function IndexerReplayControl({ isAuthorized = false }) {
                 <div className="flex gap-3 pt-2">
                   <button
                     onClick={() => setShowConfirm(false)}
-                    className="flex-1 vq-btn-ghost"
+                    className="flex-1 nolo-btn-ghost"
                     disabled={isReplayRunning}
                   >
                     Cancel
                   </button>
                   <button
                     onClick={handleReplay}
-                    className="flex-1 vq-btn-primary"
+                    className="flex-1 nolo-btn-primary"
                     disabled={isReplayRunning}
                   >
                     Confirm & Execute

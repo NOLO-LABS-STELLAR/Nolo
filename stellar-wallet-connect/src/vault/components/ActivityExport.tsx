@@ -7,7 +7,7 @@ import { useActivityExport, type ExportFormat } from "../hooks";
 /**
  * Activity export controls (#211).
  *
- * Lets connected users download their VaultQuest action history as JSON or CSV.
+ * Lets connected users download their Nolo action history as JSON or CSV.
  * Pairs with `useActivityExport` for the fetch/download side-effect.
  *
  * ## Exported fields
@@ -64,7 +64,7 @@ export const ActivityExport: FC<ActivityExportProps> = ({
     <section aria-label="Export activity" className="rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-5">
       <h2 className="text-base font-semibold text-white">Export activity</h2>
       <p className="mt-1 text-sm text-gray-400">
-        Download your VaultQuest transaction history for personal records or support.
+        Download your Nolo transaction history for personal records or support.
       </p>
 
       {summary && (

@@ -16,23 +16,23 @@ const DOC_GROUPS = [
     topic: "Operations",
     icon: FileText,
     links: [
-      { label: "Indexer runbook", href: "https://github.com/Obiajulu-gif/vaultquest/blob/main/docs/INDEXER_RUNBOOK.md" },
-      { label: "State model", href: "https://github.com/Obiajulu-gif/vaultquest/blob/main/docs/STATE_MODEL.md" },
+      { label: "Indexer runbook", href: "https://github.com/NOLO-LABS-STELLAR/Nolo/blob/main/docs/INDEXER_RUNBOOK.md" },
+      { label: "State model", href: "https://github.com/NOLO-LABS-STELLAR/Nolo/blob/main/docs/STATE_MODEL.md" },
     ],
   },
   {
     topic: "Developers",
     icon: Code,
     links: [
-      { label: "API notes", href: "https://github.com/Obiajulu-gif/vaultquest/blob/main/docs/API.md" },
-      { label: "Testing guide", href: "https://github.com/Obiajulu-gif/vaultquest/blob/main/docs/TESTING.md" },
+      { label: "API notes", href: "https://github.com/NOLO-LABS-STELLAR/Nolo/blob/main/docs/API.md" },
+      { label: "Testing guide", href: "https://github.com/NOLO-LABS-STELLAR/Nolo/blob/main/docs/TESTING.md" },
     ],
   },
 ];
 
 export default function VaultDocsQuickLinks({ compact = false }) {
   return (
-    <section className="vq-glass p-4 sm:p-6" aria-labelledby="vault-docs-title">
+    <section className="nolo-glass p-4 sm:p-6" aria-labelledby="vault-docs-title">
       <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <BookOpen className="h-5 w-5" aria-hidden="true" />

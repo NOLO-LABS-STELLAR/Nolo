@@ -161,7 +161,7 @@ function AgendaView({ events }) {
   return (
     <div className="space-y-4">
       {groupedEvents.map((group, idx) => (
-        <div key={idx} className="vq-glass p-4">
+        <div key={idx} className="nolo-glass p-4">
           <div className="font-semibold text-vault-text mb-3 flex items-center gap-2">
             <CalendarIcon size={16} className="text-vault-accent" />
             {group.date.toLocaleDateString("en-US", {
@@ -282,7 +282,7 @@ export default function PoolCalendar({ pools }) {
         </div>
       </div>
 
-      <div className="vq-glass p-4">
+      <div className="nolo-glass p-4">
         <div className="flex flex-wrap gap-4 mb-4 text-xs">
           {Object.entries(EVENT_TYPES).map(([key, { label, color, textColor }]) => (
             <div key={key} className="flex items-center gap-2">
@@ -304,7 +304,7 @@ export default function PoolCalendar({ pools }) {
       </div>
 
       {selectedDate && selectedEvents.length > 0 && (
-        <div className="vq-glass p-4">
+        <div className="nolo-glass p-4">
           <h4 className="font-semibold text-vault-text mb-3">
             Events on {selectedDate.toLocaleDateString("en-US", { month: "long", day: "numeric" })}
           </h4>

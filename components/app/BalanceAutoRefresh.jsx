@@ -98,7 +98,7 @@ export default function BalanceAutoRefresh() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="vq-btn-ghost flex h-10 items-center gap-2 px-3 py-1.5"
+        className="nolo-btn-ghost flex h-10 items-center gap-2 px-3 py-1.5"
         aria-label="Balance refresh settings"
       >
         <div className="relative flex h-5 w-5 items-center justify-center">

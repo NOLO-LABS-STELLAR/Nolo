@@ -15,12 +15,12 @@ export interface SendEmailInput {
 
 const templates: Record<string, { subject: string; html: string }> = {
   welcome: {
-    subject: "Welcome to VaultQuest",
+    subject: "Welcome to Nolo",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h1 style="color: #4F46E5;">Welcome to VaultQuest!</h1>
-        <p>Thank you for joining VaultQuest. We're excited to have you on board.</p>
-        <p>With VaultQuest, you can:</p>
+        <h1 style="color: #4F46E5;">Welcome to Nolo!</h1>
+        <p>Thank you for joining Nolo. We're excited to have you on board.</p>
+        <p>With Nolo, you can:</p>
         <ul>
           <li>Create and manage savings vaults</li>
           <li>Participate in quest challenges</li>
@@ -54,7 +54,7 @@ export class EmailService {
 
   constructor(config: EmailConfig) {
     this.apiKey = config.apiKey;
-    this.fromEmail = config.fromEmail || "noreply@vaultquest.io";
+    this.fromEmail = config.fromEmail || "noreply@nolo.io";
     this.logger = config.logger;
     this.initialized = !!config.apiKey;
 
@@ -104,7 +104,7 @@ export class EmailService {
   }
 
   async sendPasswordResetEmail(email: string, resetToken: string): Promise<boolean> {
-    const resetUrl = `https://vaultquest.io/reset-password?token=${resetToken}`;
+    const resetUrl = `https://nolo.io/reset-password?token=${resetToken}`;
     return this.sendEmail({
       to: email,
       template: "password_reset",

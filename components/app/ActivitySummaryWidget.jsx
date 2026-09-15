@@ -48,7 +48,7 @@ export default function ActivitySummaryWidget() {
 
   if (!mounted) {
     return (
-      <div className="vq-glass p-6">
+      <div className="nolo-glass p-6">
         <div className="h-5 w-32 bg-vault-border/30 rounded animate-pulse" />
         <div className="mt-4 space-y-3">
           {[...Array(3)].map((_, i) => (
@@ -60,7 +60,7 @@ export default function ActivitySummaryWidget() {
   }
 
   return (
-    <div className="vq-glass p-6">
+    <div className="nolo-glass p-6">
       <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
         <div className="flex items-center gap-2">
           <Activity className="h-5 w-5 text-vault-accent" aria-hidden="true" />

@@ -1,6 +1,6 @@
-# VaultQuest API Contract Reference
+# Nolo API Contract Reference
 
-Developer-facing reference for the VaultQuest backend REST API. Covers pool
+Developer-facing reference for the Nolo backend REST API. Covers pool
 actions, dashboard summary, saved-pools watchlist, and activity export.
 Frontend contributors can build UI integrations against these shapes without
 reading the backend source.
@@ -215,7 +215,7 @@ Export the wallet's full activity history as JSON or CSV.
 
 **Response — 200 OK (CSV format)**
 
-Returns `Content-Type: text/csv` with `Content-Disposition: attachment; filename="vaultquest-activity-<wallet-prefix>.csv"`.
+Returns `Content-Type: text/csv` with `Content-Disposition: attachment; filename="nolo-activity-<wallet-prefix>.csv"`.
 
 ```
 "id","date","action_type","pool_id","amount","token","status","tx_hash","error_code","submitted_at","confirmed_at"

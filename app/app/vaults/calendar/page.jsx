@@ -43,7 +43,7 @@ export default function PoolCalendarPage() {
         </div>
       </header>
 
-      <div className="vq-glass p-4 bg-blue-500/10 border-blue-500/20">
+      <div className="nolo-glass p-4 bg-blue-500/10 border-blue-500/20">
         <p className="text-sm text-blue-400">
           <strong>Timezone:</strong> All times are shown in your local timezone ({Intl.DateTimeFormat().resolvedOptions().timeZone})
         </p>
@@ -51,7 +51,7 @@ export default function PoolCalendarPage() {
 
       <PoolCalendar pools={poolsWithDates} />
 
-      <Link href="/app/vaults" className="vq-btn-ghost inline-flex">
+      <Link href="/app/vaults" className="nolo-btn-ghost inline-flex">
         ← Back to vaults
       </Link>
     </div>

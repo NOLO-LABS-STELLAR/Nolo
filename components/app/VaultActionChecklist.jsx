@@ -43,7 +43,7 @@ export default function VaultActionChecklist({
   }
 
   return (
-    <div className="vq-glass space-y-5 p-5 sm:p-6">
+    <div className="nolo-glass space-y-5 p-5 sm:p-6">
       {/* Action summary */}
       <div>
         <div className="flex items-center gap-2 mb-3">

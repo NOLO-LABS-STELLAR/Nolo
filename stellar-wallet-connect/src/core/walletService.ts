@@ -143,7 +143,7 @@ export async function checkAndNotifyFunding(): Promise<void> {
 function resetUserScopedState(): void {
   vaultQueryClient.clear();
   if (typeof localStorage !== "undefined") {
-    localStorage.removeItem("vaultquest_pending_tx_state");
+    localStorage.removeItem("nolo_pending_tx_state");
   }
 }
 

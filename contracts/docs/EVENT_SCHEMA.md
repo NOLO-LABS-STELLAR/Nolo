@@ -1,4 +1,4 @@
-# VaultQuest Soroban event schema
+# Nolo Soroban event schema
 
 This document is the canonical event contract for pool lifecycle and user
 actions. Contract, backend, and frontend changes that add or rename fields must
@@ -10,7 +10,7 @@ Every event uses these topic positions:
 
 | Topic | Value |
 |---|---|
-| `0` | `"vaultquest"` |
+| `0` | `"nolo"` |
 | `1` | schema version, currently `"v1"` |
 | `2` | event name |
 | `3` | pool id when available, otherwise admin/config scope |

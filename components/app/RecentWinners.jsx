@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import { Trophy, Gift, ShieldCheck } from "lucide-react";
 
-const API_BASE = process.env.NEXT_PUBLIC_VAULTQUEST_API_BASE_URL || "/api";
+const API_BASE = process.env.NEXT_PUBLIC_NOLO_API_BASE_URL || "/api";
 
 const MOCK_WINNERS = [
   {
@@ -247,7 +247,7 @@ export default function RecentWinners() {
                 className={`w-64 shrink-0 rounded-2xl p-5 transition-transform duration-300 select-none ${
                   isLargeWin
                     ? "bg-gradient-to-br from-amber-500/10 via-yellow-500/5 to-amber-600/10 border border-amber-500/40 shadow-[0_4px_20px_rgba(245,158,11,0.12)] hover:border-amber-400 hover:scale-[1.02]"
-                    : "vq-glass border border-vault-border bg-vault-surface/40 hover:border-nolo-400/30 hover:scale-[1.02]"
+                    : "nolo-glass border border-vault-border bg-vault-surface/40 hover:border-nolo-400/30 hover:scale-[1.02]"
                 }`}
               >
                 <div className="flex items-center justify-between">

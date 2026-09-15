@@ -1602,7 +1602,7 @@ impl MockStrategy {
         _from: Address,
         _asset: Address,
         _amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         Ok(())
     }
     pub fn redeem(
@@ -1610,14 +1610,14 @@ impl MockStrategy {
         _to: Address,
         _asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         Ok(amount)
     }
     pub fn harvest(
         _env: Env,
         _asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
-        Ok(vaultquest_common::StrategyReport {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 0,
             realized_loss: 0,
             total_assets: 0,
@@ -1641,7 +1641,7 @@ impl BadVersionStrategy {
         _from: Address,
         _asset: Address,
         _amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         Ok(())
     }
     pub fn redeem(
@@ -1649,14 +1649,14 @@ impl BadVersionStrategy {
         _to: Address,
         _asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         Ok(amount)
     }
     pub fn harvest(
         _env: Env,
         _asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
-        Ok(vaultquest_common::StrategyReport {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 0,
             realized_loss: 0,
             total_assets: 0,
@@ -1682,7 +1682,7 @@ impl RealTokenStrategy {
         from: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         token.transfer(&from, &env.current_contract_address(), &amount);
         Ok(())
@@ -1692,7 +1692,7 @@ impl RealTokenStrategy {
         to: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         let available = token.balance(&env.current_contract_address());
         let redeemed = if amount < available {
@@ -1708,10 +1708,10 @@ impl RealTokenStrategy {
     pub fn harvest(
         env: Env,
         asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
         let balance =
             token::TokenClient::new(&env, &asset).balance(&env.current_contract_address());
-        Ok(vaultquest_common::StrategyReport {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 0,
             realized_loss: 0,
             total_assets: balance,
@@ -3089,7 +3089,7 @@ impl InflatingYieldStrategy {
         from: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         token.transfer(&from, &env.current_contract_address(), &amount);
         Ok(())
@@ -3099,7 +3099,7 @@ impl InflatingYieldStrategy {
         to: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         let available = token.balance(&env.current_contract_address());
         let redeemed = if amount < available { amount } else { available };
@@ -3111,11 +3111,11 @@ impl InflatingYieldStrategy {
     pub fn harvest(
         env: Env,
         asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
         // Inflate: claim 999999 yield when we only hold the deposited amount
         let _balance = token::TokenClient::new(&env, &asset)
             .balance(&env.current_contract_address());
-        Ok(vaultquest_common::StrategyReport {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 999_999,
             realized_loss: 0,
             total_assets: 999_999,
@@ -3161,7 +3161,7 @@ impl HidingLossStrategy {
         from: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         token.transfer(&from, &env.current_contract_address(), &amount);
         Ok(())
@@ -3171,7 +3171,7 @@ impl HidingLossStrategy {
         to: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         let available = token.balance(&env.current_contract_address());
         let redeemed = if amount < available { amount } else { available };
@@ -3183,11 +3183,11 @@ impl HidingLossStrategy {
     pub fn harvest(
         env: Env,
         asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
         // Report zero change even when balance has dropped (hiding loss)
         let _balance = token::TokenClient::new(&env, &asset)
             .balance(&env.current_contract_address());
-        Ok(vaultquest_common::StrategyReport {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 0,
             realized_loss: 0,
             total_assets: 1_000_000, // lie about total assets
@@ -3223,12 +3223,12 @@ fn test_validate_strategy_rejects_inflated_total_assets() {
     // Let's test the harvest path instead (already tested above).
     // This test verifies the validate path passes for honest strategies.
     client.validate_strategy(&admin);
-    let phase: vaultquest_common::strategy::StrategyRotationPhase = env
+    let phase: nolo_common::strategy::StrategyRotationPhase = env
         .storage()
         .instance()
         .get(&DataKey::StrategyRotationPhase)
         .unwrap();
-    assert_ne!(phase, vaultquest_common::strategy::StrategyRotationPhase::Idle);
+    assert_ne!(phase, nolo_common::strategy::StrategyRotationPhase::Idle);
 }
 
 // ── deposit concentration limits (#643) ─────────────────────────────────────
@@ -3529,12 +3529,12 @@ fn test_cancel_rotation_clears_proposed_state() {
     client.propose_strategy(&admin, &s2, &500);
 
     // Confirm rotation is pending.
-    let phase: vaultquest_common::strategy::StrategyRotationPhase = env
+    let phase: nolo_common::strategy::StrategyRotationPhase = env
         .storage()
         .instance()
         .get(&DataKey::StrategyRotationPhase)
         .unwrap();
-    assert_eq!(phase, vaultquest_common::strategy::StrategyRotationPhase::Proposed);
+    assert_eq!(phase, nolo_common::strategy::StrategyRotationPhase::Proposed);
 
     let proposed: Option<Address> = env
         .storage()
@@ -3546,12 +3546,12 @@ fn test_cancel_rotation_clears_proposed_state() {
     client.cancel_strategy_rotation(&admin);
 
     // Phase returns to Idle.
-    let phase_after: vaultquest_common::strategy::StrategyRotationPhase = env
+    let phase_after: nolo_common::strategy::StrategyRotationPhase = env
         .storage()
         .instance()
         .get(&DataKey::StrategyRotationPhase)
         .unwrap();
-    assert_eq!(phase_after, vaultquest_common::strategy::StrategyRotationPhase::Idle);
+    assert_eq!(phase_after, nolo_common::strategy::StrategyRotationPhase::Idle);
 
     // Proposed state is cleared.
     let proposed_after: Option<Address> = env
@@ -3600,12 +3600,12 @@ fn test_admin_epoch_change_does_not_invalidate_pending_rotation() {
     assert!(client.governance_epoch() > 0);
 
     // Rotation is still pending — strategy rotation doesn't use epoch checks.
-    let phase: vaultquest_common::strategy::StrategyRotationPhase = env
+    let phase: nolo_common::strategy::StrategyRotationPhase = env
         .storage()
         .instance()
         .get(&DataKey::StrategyRotationPhase)
         .unwrap();
-    assert_eq!(phase, vaultquest_common::strategy::StrategyRotationPhase::Proposed);
+    assert_eq!(phase, nolo_common::strategy::StrategyRotationPhase::Proposed);
 
     // After timelock, activate still works.
     skip_high_risk_delay(&env);
@@ -3751,14 +3751,14 @@ impl FailableStrategy {
         from: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<(), vaultquest_common::ContractError> {
+    ) -> Result<(), nolo_common::ContractError> {
         let fails: bool = env
             .storage()
             .instance()
             .get(&FailableKey::DepositFails)
             .unwrap_or(false);
         if fails {
-            return Err(vaultquest_common::ContractError::StrategyPaused);
+            return Err(nolo_common::ContractError::StrategyPaused);
         }
         let token = token::TokenClient::new(&env, &asset);
         token.transfer(&from, &env.current_contract_address(), &amount);
@@ -3770,7 +3770,7 @@ impl FailableStrategy {
         to: Address,
         asset: Address,
         amount: i128,
-    ) -> Result<i128, vaultquest_common::ContractError> {
+    ) -> Result<i128, nolo_common::ContractError> {
         let token = token::TokenClient::new(&env, &asset);
         let available = token.balance(&env.current_contract_address());
         let redeemed = if amount < available { amount } else { available };
@@ -3783,18 +3783,18 @@ impl FailableStrategy {
     pub fn harvest(
         env: Env,
         asset: Address,
-    ) -> Result<vaultquest_common::StrategyReport, vaultquest_common::ContractError> {
+    ) -> Result<nolo_common::StrategyReport, nolo_common::ContractError> {
         let fails: bool = env
             .storage()
             .instance()
             .get(&FailableKey::HarvestFails)
             .unwrap_or(false);
         if fails {
-            return Err(vaultquest_common::ContractError::StrategyPaused);
+            return Err(nolo_common::ContractError::StrategyPaused);
         }
         let balance =
             token::TokenClient::new(&env, &asset).balance(&env.current_contract_address());
-        Ok(vaultquest_common::StrategyReport {
+        Ok(nolo_common::StrategyReport {
             realized_yield: 0,
             realized_loss: 0,
             total_assets: balance,
@@ -3906,12 +3906,12 @@ fn reconcile_strategy_tolerates_degraded_adapter_harvest_failure() {
     s1_client.set_harvest_fails(&true);
     client.reconcile_strategy(&admin);
 
-    let phase: vaultquest_common::strategy::StrategyRotationPhase = env
+    let phase: nolo_common::strategy::StrategyRotationPhase = env
         .storage()
         .instance()
         .get(&DataKey::StrategyRotationPhase)
         .unwrap();
-    assert_eq!(phase, vaultquest_common::strategy::StrategyRotationPhase::Reconciled);
+    assert_eq!(phase, nolo_common::strategy::StrategyRotationPhase::Reconciled);
 }
 
 /// Emergency recall must always succeed even while the adapter's `deposit`

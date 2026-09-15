@@ -13,44 +13,44 @@ const ERROR_DETAILS = {
     title: "Contract Revert",
     description: "The smart contract rejected the transaction. This usually happens if a specific condition wasn't met (e.g., minimum deposit amount).",
     solution: "Check if you're trying to deposit below the minimum or if the pool has reached its capacity.",
-    link: "https://docs.vaultquest.io/troubleshooting/reverts"
+    link: "https://docs.nolo.io/troubleshooting/reverts"
   },
   "0x4e487b71": {
     title: "Arithmetic Over/Underflow",
     description: "A mathematical error occurred within the contract logic.",
     solution: "This is likely a bug. Please report this error code to the support team.",
-    link: "https://docs.vaultquest.io/troubleshooting/panic"
+    link: "https://docs.nolo.io/troubleshooting/panic"
   },
   "INSUFFICIENT_FUNDS": {
     title: "Insufficient Balance",
     description: "You don't have enough tokens or native gas (AVAX) to complete this transaction.",
     solution: "Ensure your wallet has enough balance to cover both the deposit amount and the network gas fees.",
-    link: "https://docs.vaultquest.io/troubleshooting/gas"
+    link: "https://docs.nolo.io/troubleshooting/gas"
   },
   "USER_REJECTED": {
     title: "Transaction Cancelled",
     description: "You declined the transaction request in your wallet.",
     solution: "If this was a mistake, try the transaction again and approve it in your wallet.",
-    link: "https://docs.vaultquest.io/troubleshooting/wallet"
+    link: "https://docs.nolo.io/troubleshooting/wallet"
   },
   "REVERTED_ON_CHAIN": {
     title: "On-Chain Revert",
     description: "The transaction was processed but failed on the blockchain.",
     solution: "Check the transaction hash on Explorer for more details. It could be due to slippage or pool changes.",
-    link: "https://docs.vaultquest.io/troubleshooting/on-chain-failure"
+    link: "https://docs.nolo.io/troubleshooting/on-chain-failure"
   },
   // Stellar XDR return codes (Generic examples)
   "tx_bad_seq": {
     title: "Bad Sequence Number",
     description: "The transaction sequence number is incorrect.",
     solution: "Refresh the app to sync your wallet's sequence number and try again.",
-    link: "https://docs.vaultquest.io/troubleshooting/stellar-sequence"
+    link: "https://docs.nolo.io/troubleshooting/stellar-sequence"
   },
   "op_underfunded": {
     title: "Account Underfunded",
     description: "Your Stellar account doesn't have enough XLM to cover the operation.",
     solution: "Add more XLM to your wallet to cover the minimum balance and transaction fees.",
-    link: "https://docs.vaultquest.io/troubleshooting/stellar-fees"
+    link: "https://docs.nolo.io/troubleshooting/stellar-fees"
   }
 };
 
@@ -68,7 +68,7 @@ const getErrorData = (error) => {
     title: "Transaction Failed",
     description: "An unexpected error occurred while processing your transaction.",
     solution: "Try refreshing the page or checking your internet connection. If it persists, use the details below to contact support.",
-    link: "https://docs.vaultquest.io/troubleshooting/unknown",
+    link: "https://docs.nolo.io/troubleshooting/unknown",
     rawCode
   };
 };

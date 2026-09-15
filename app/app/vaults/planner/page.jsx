@@ -44,7 +44,7 @@ export default function DepositPlannerPage() {
   // Prevent NextJS Hydration mismatches
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem("vaultquest_deposit_schedules");
+    const stored = localStorage.getItem("nolo_deposit_schedules");
     if (stored) {
       try {
         setSchedules(JSON.parse(stored));
@@ -56,7 +56,7 @@ export default function DepositPlannerPage() {
 
   const saveSchedules = (newSchedules) => {
     setSchedules(newSchedules);
-    localStorage.setItem("vaultquest_deposit_schedules", JSON.stringify(newSchedules));
+    localStorage.setItem("nolo_deposit_schedules", JSON.stringify(newSchedules));
   };
 
   const selectedVault = useMemo(() => {
@@ -185,7 +185,7 @@ export default function DepositPlannerPage() {
           <span>/</span>
           <span className="text-vault-text font-medium">Schedule Planner</span>
         </div>
-        <Link href="/app/vaults" className="vq-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
+        <Link href="/app/vaults" className="nolo-btn-ghost py-1.5 px-3 self-start flex items-center gap-1">
           <ChevronLeft size={16} /> Back to Vaults
         </Link>
       </div>
@@ -201,7 +201,7 @@ export default function DepositPlannerPage() {
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Left Column: Schedule Creator Form */}
         <section className="space-y-6 lg:col-span-7">
-          <div className="vq-glass p-6 sm:p-8 space-y-6">
+          <div className="nolo-glass p-6 sm:p-8 space-y-6">
             <h2 className="text-xl font-bold text-vault-text flex items-center gap-2">
               <Plus className="h-5 w-5 text-nolo-500" /> Configure New Schedule
             </h2>
@@ -342,7 +342,7 @@ export default function DepositPlannerPage() {
               <button
                 type="submit"
                 disabled={!isConnected}
-                className={`vq-btn-primary w-full ${!isConnected ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`nolo-btn-primary w-full ${!isConnected ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 <Plus size={16} /> Add Schedule
               </button>
@@ -352,7 +352,7 @@ export default function DepositPlannerPage() {
 
         {/* Right Column: Existing Schedules / Empty State */}
         <section className="space-y-6 lg:col-span-5">
-          <div className="vq-glass p-6 sm:p-8 space-y-6">
+          <div className="nolo-glass p-6 sm:p-8 space-y-6">
             <h2 className="text-xl font-bold text-vault-text flex items-center gap-2">
               <Calendar className="h-5 w-5 text-nolo-500" /> Active Schedules
             </h2>
@@ -404,7 +404,7 @@ export default function DepositPlannerPage() {
       </div>
 
       <div className="flex justify-center pt-4">
-        <Link href="/app/vaults" className="vq-btn-ghost">
+        <Link href="/app/vaults" className="nolo-btn-ghost">
           ← Return to Vaults List
         </Link>
       </div>

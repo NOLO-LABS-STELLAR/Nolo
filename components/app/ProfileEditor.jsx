@@ -64,7 +64,7 @@ export default function ProfileEditor() {
 
   if (!address) {
     return (
-      <div className="vq-glass p-6 text-center">
+      <div className="nolo-glass p-6 text-center">
         <User className="mx-auto h-12 w-12 text-vault-muted" aria-hidden="true" />
         <p className="mt-3 text-sm text-vault-muted">Connect your wallet to customize your profile</p>
       </div>
@@ -72,7 +72,7 @@ export default function ProfileEditor() {
   }
 
   return (
-    <div className="vq-glass overflow-hidden flex flex-col md:flex-row min-h-[500px]">
+    <div className="nolo-glass overflow-hidden flex flex-col md:flex-row min-h-[500px]">
       {/* Sidebar Navigation */}
       <div className="w-full md:w-64 border-b md:border-b-0 md:border-r border-vault-border bg-vault-surface/20">
         <div className="p-4 md:p-6 space-y-2">
@@ -238,7 +238,7 @@ export default function ProfileEditor() {
                 type="button"
                 onClick={handleSave}
                 disabled={saving || saved}
-                className="vq-btn-primary min-w-[150px] justify-center transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                className="nolo-btn-primary min-w-[150px] justify-center transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {saving ? (
                   <div className="flex items-center gap-2">

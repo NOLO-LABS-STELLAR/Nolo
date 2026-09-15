@@ -21,7 +21,7 @@ import {
   Download,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { getFrontendEnv, getManifestAttestation, attestManifest } from "@vaultquest/stellar-wallet-connect";
+import { getFrontendEnv, getManifestAttestation, attestManifest } from "@nolo/stellar-wallet-connect";
 import {
   PROTOCOL_PARAMETER_CATALOG,
   createParameterDiffPreview,
@@ -209,7 +209,7 @@ function StatusBadge({ status }) {
 
 function MetricCard({ label, value, detail, icon: Icon }) {
   return (
-    <div className="vq-glass p-5">
+    <div className="nolo-glass p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
@@ -297,7 +297,7 @@ export default function AdminSettingsPage() {
         console.warn("Failed to load frontend env", e);
       }
 
-      const API_BASE = process.env.NEXT_PUBLIC_VAULTQUEST_API_BASE_URL || "/api";
+      const API_BASE = process.env.NEXT_PUBLIC_NOLO_API_BASE_URL || "/api";
       const horizonUrl = env.NEXT_PUBLIC_HORIZON_URL;
       const contractId = env.NEXT_PUBLIC_DRIP_POOL_CONTRACT_ID;
 
@@ -478,15 +478,15 @@ export default function AdminSettingsPage() {
           </div>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link href="/app/admin/proposals" className="vq-btn-ghost inline-flex items-center gap-2">
+          <Link href="/app/admin/proposals" className="nolo-btn-ghost inline-flex items-center gap-2">
             <Shield className="h-4 w-4" aria-hidden="true" />
             {t("routes.admin.settings.viewProposals")}
           </Link>
-          <Link href="/app/admin/pools/create" className="vq-btn-primary inline-flex items-center gap-2">
+          <Link href="/app/admin/pools/create" className="nolo-btn-primary inline-flex items-center gap-2">
             <Plus className="h-4 w-4" aria-hidden="true" />
             Create pool
           </Link>
-          <Link href="/app/prizes" className="vq-btn-ghost inline-flex items-center gap-2">
+          <Link href="/app/prizes" className="nolo-btn-ghost inline-flex items-center gap-2">
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
             {t("routes.admin.settings.reviewRounds")}
           </Link>
@@ -550,7 +550,7 @@ export default function AdminSettingsPage() {
         />
       </div>
 
-      <section className="vq-glass p-5 sm:p-6">
+      <section className="nolo-glass p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="text-lg font-semibold text-vault-text">Protocol parameters</h2>
@@ -588,7 +588,7 @@ export default function AdminSettingsPage() {
         </div>
       </section>
 
-      <section className="vq-glass p-5 sm:p-6" aria-labelledby="simulation-title">
+      <section className="nolo-glass p-5 sm:p-6" aria-labelledby="simulation-title">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 id="simulation-title" className="flex items-center gap-2 text-lg font-semibold text-vault-text">
@@ -654,7 +654,7 @@ export default function AdminSettingsPage() {
           {selectedSpec && (
             <p className="text-xs text-vault-muted lg:col-span-4">{selectedSpec.description} {selectedSpec.boundaryNote}</p>
           )}
-          <button type="submit" className="vq-btn-primary lg:col-span-4">
+          <button type="submit" className="nolo-btn-primary lg:col-span-4">
             <GitCompareArrows className="h-4 w-4" aria-hidden="true" />
             Add to simulation
           </button>
@@ -765,7 +765,7 @@ export default function AdminSettingsPage() {
                 />
                 Allow override of blocked stringencies (requires explicit sign-off in the proposal)
               </label>
-              <button type="button" onClick={downloadPreview} className="vq-btn-ghost ml-auto">
+              <button type="button" onClick={downloadPreview} className="nolo-btn-ghost ml-auto">
                 <Download className="h-4 w-4" aria-hidden="true" />
                 Download diff JSON
               </button>
@@ -775,7 +775,7 @@ export default function AdminSettingsPage() {
       </section>
 
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <section className="vq-glass p-5 sm:p-6">
+        <section className="nolo-glass p-5 sm:p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-lg font-semibold text-vault-text">Active rounds</h2>
@@ -841,7 +841,7 @@ export default function AdminSettingsPage() {
         </section>
 
         <div className="space-y-6">
-          <section className="vq-glass p-5 sm:p-6">
+          <section className="nolo-glass p-5 sm:p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold text-vault-text">Service status</h2>
@@ -893,7 +893,7 @@ export default function AdminSettingsPage() {
             </div>
           </section>
 
-          <section className="vq-glass p-5 sm:p-6">
+          <section className="nolo-glass p-5 sm:p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold text-vault-text">Operational notes</h2>

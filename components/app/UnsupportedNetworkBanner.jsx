@@ -20,7 +20,7 @@ export default function UnsupportedNetworkBanner() {
     <div
       role="alert"
       aria-live="assertive"
-      className="vq-glass mb-6 flex flex-col gap-3 border-amber-500/40 bg-amber-500/10 p-4 sm:flex-row sm:items-center sm:justify-between"
+      className="nolo-glass mb-6 flex flex-col gap-3 border-amber-500/40 bg-amber-500/10 p-4 sm:flex-row sm:items-center sm:justify-between"
     >
       <div className="flex items-start gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-400 ring-2 ring-amber-400/30">
@@ -37,7 +37,7 @@ export default function UnsupportedNetworkBanner() {
         type="button"
         disabled={isPending}
         onClick={() => switchChain?.({ chainId: target.id })}
-        className="vq-btn-primary shrink-0 disabled:opacity-60"
+        className="nolo-btn-primary shrink-0 disabled:opacity-60"
       >
         {isPending ? "Switching…" : `Switch to ${target.name}`}
       </button>

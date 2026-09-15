@@ -66,7 +66,7 @@ export default function WinnerCelebration({
   };
 
   const handleShare = () => {
-    const text = `🎉 I just won ${prizeAmount} ${prizeCurrency} on Nolo! Prize-linked savings that actually reward savers. Join me at vaultquest.io`;
+    const text = `🎉 I just won ${prizeAmount} ${prizeCurrency} on Nolo! Prize-linked savings that actually reward savers. Join me at nolo.io`;
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };

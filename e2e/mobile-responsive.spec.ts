@@ -222,7 +222,7 @@ test.describe('Mobile Responsiveness Tests', () => {
     test('should display consistent branding across devices', async ({ page }) => {
       await page.goto('/');
       
-      await expect(page.locator('text=VaultQuest')).toBeVisible();
+      await expect(page.locator('text=Nolo')).toBeVisible();
     });
 
     test('should maintain functionality parity between mobile and desktop', async ({ page, isMobile }) => {

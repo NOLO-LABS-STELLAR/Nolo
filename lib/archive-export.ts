@@ -66,7 +66,7 @@ export interface ArchiveWinnerRecord {
 }
 
 export interface ArchiveDocument {
-  schema: "vaultquest.archive.v1";
+  schema: "nolo.archive.v1";
   id: string;
   source: string;
   generatedAt: string;
@@ -181,9 +181,9 @@ export function createArchiveExport(
   const proofHash = computeArchiveProofHash(rows);
 
   return {
-    schema: "vaultquest.archive.v1",
+    schema: "nolo.archive.v1",
     id: options.id ?? `archive-${generatedAt}`,
-    source: options.source ?? "vaultquest.mock",
+    source: options.source ?? "nolo.mock",
     generatedAt,
     count: records.length,
     redacted,
