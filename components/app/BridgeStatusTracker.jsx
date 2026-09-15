@@ -109,7 +109,7 @@ export default function BridgeStatusTracker({
                     isComplete
                       ? "border-green-500 bg-green-500/20"
                       : isActive
-                        ? "border-red-500 bg-red-500/20"
+                        ? "border-nolo-500 bg-nolo-500/20"
                         : "border-vault-border bg-vault-surface"
                   }`}
                   animate={
@@ -131,7 +131,7 @@ export default function BridgeStatusTracker({
                   {isComplete ? (
                     <CheckCircle2 className="h-5 w-5 text-green-500" />
                   ) : isActive ? (
-                    <RefreshCw className="h-5 w-5 animate-spin text-red-500" />
+                    <RefreshCw className="h-5 w-5 animate-spin text-nolo-500" />
                   ) : (
                     <Circle className="h-5 w-5 text-vault-muted" />
                   )}
@@ -151,7 +151,7 @@ export default function BridgeStatusTracker({
                     <h4
                       className={`text-sm font-medium transition-colors duration-300 ${
                         isActive
-                          ? "text-red-500"
+                          ? "text-nolo-500"
                           : isComplete
                             ? "text-green-500"
                             : "text-vault-muted"
@@ -173,7 +173,7 @@ export default function BridgeStatusTracker({
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
-                        className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500"
+                        className="rounded-full bg-nolo-500/10 px-3 py-1 text-xs font-medium text-nolo-500"
                       >
                         In Progress
                       </motion.div>
@@ -197,7 +197,7 @@ export default function BridgeStatusTracker({
                 href={getExplorerUrl(sourceTxHash, sourceChain)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-vault-surface px-3 py-1.5 text-xs font-mono text-vault-text transition-all duration-300 hover:bg-red-500/10 hover:text-red-500"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-vault-surface px-3 py-1.5 text-xs font-mono text-vault-text transition-all duration-300 hover:bg-nolo-500/10 hover:text-nolo-500"
               >
                 <span className="truncate max-w-[200px]">{sourceTxHash}</span>
                 <ExternalLink className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
@@ -219,7 +219,7 @@ export default function BridgeStatusTracker({
                 href={getExplorerUrl(destinationTxHash, destinationChain)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-vault-surface px-3 py-1.5 text-xs font-mono text-vault-text transition-all duration-300 hover:bg-red-500/10 hover:text-red-500"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-vault-surface px-3 py-1.5 text-xs font-mono text-vault-text transition-all duration-300 hover:bg-nolo-500/10 hover:text-nolo-500"
               >
                 <span className="truncate max-w-[200px]">{destinationTxHash}</span>
                 <ExternalLink className="h-3 w-3 flex-shrink-0" aria-hidden="true" />

@@ -124,14 +124,14 @@ export default function BalanceAutoRefresh() {
                 strokeDasharray={50.27} // 2 * PI * r
                 animate={{ strokeDashoffset: 50.27 * (1 - progress / 100) }}
                 transition={{ duration: 0, ease: "linear" }}
-                className="text-red-500"
+                className="text-nolo-500"
               />
             )}
           </svg>
           {isPaused ? (
             <Pause className="relative z-10 h-3 w-3 text-vault-muted" />
           ) : (
-            <RefreshCw className={`relative z-10 h-3 w-3 ${refreshInterval ? "animate-spin-slow text-red-500" : "text-vault-muted"}`} />
+            <RefreshCw className={`relative z-10 h-3 w-3 ${refreshInterval ? "animate-spin-slow text-nolo-500" : "text-vault-muted"}`} />
           )}
         </div>
         <span className="text-xs font-semibold">{activeOption?.label || "Off"}</span>
@@ -159,7 +159,7 @@ export default function BalanceAutoRefresh() {
                 }}
                 className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-200 ${
                   refreshInterval === option.value
-                    ? "bg-red-500/10 text-red-600 font-semibold"
+                    ? "bg-nolo-500/10 text-nolo-600 font-semibold"
                     : "text-vault-muted hover:bg-vault-surface/50 hover:text-vault-text"
                 }`}
               >

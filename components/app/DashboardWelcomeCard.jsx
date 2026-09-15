@@ -33,13 +33,13 @@ export default function DashboardWelcomeCard() {
 
   return (
     <div className="vq-glass relative overflow-hidden p-6 sm:p-8">
-      <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-red-500/10 blur-2xl" />
+      <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-nolo-500/10 blur-2xl" />
       <div className="absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-amber-500/10 blur-2xl" />
 
       <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-vault-border bg-vault-surface px-3 py-1 text-xs font-medium text-vault-muted backdrop-blur-md">
-            <Sparkles className="h-3.5 w-3.5 text-red-500" aria-hidden="true" />
+            <Sparkles className="h-3.5 w-3.5 text-nolo-500" aria-hidden="true" />
             Welcome back
           </div>
           <h1 className="text-2xl font-extrabold tracking-tight text-vault-text sm:text-3xl">

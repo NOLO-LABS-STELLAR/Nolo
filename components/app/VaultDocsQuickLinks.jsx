@@ -34,7 +34,7 @@ export default function VaultDocsQuickLinks({ compact = false }) {
   return (
     <section className="vq-glass p-4 sm:p-6" aria-labelledby="vault-docs-title">
       <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <BookOpen className="h-5 w-5" aria-hidden="true" />
         </span>
         <div>
@@ -51,7 +51,7 @@ export default function VaultDocsQuickLinks({ compact = false }) {
         {DOC_GROUPS.map(({ topic, icon: Icon, links }) => (
           <div key={topic} className="rounded-xl border border-vault-border bg-vault-surface/40 p-4">
             <div className="flex items-center gap-2 text-sm font-semibold text-vault-text">
-              <Icon className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Icon className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               {topic}
             </div>
             <div className="mt-3 flex flex-col gap-2">
@@ -63,7 +63,7 @@ export default function VaultDocsQuickLinks({ compact = false }) {
                     href={link.href}
                     target={external ? "_blank" : undefined}
                     rel={external ? "noreferrer" : undefined}
-                    className="flex min-h-10 items-center justify-between gap-3 rounded-lg border border-vault-border/60 bg-vault-bg/30 px-3 py-2 text-sm font-medium text-vault-text transition-colors hover:border-red-400/40 hover:text-red-500"
+                    className="flex min-h-10 items-center justify-between gap-3 rounded-lg border border-vault-border/60 bg-vault-bg/30 px-3 py-2 text-sm font-medium text-vault-text transition-colors hover:border-nolo-400/40 hover:text-nolo-500"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />

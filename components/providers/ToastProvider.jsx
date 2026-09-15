@@ -39,14 +39,14 @@ export const ToastProvider = ({ children }) => {
 const ToastItem = ({ toast, onRemove }) => {
   const icons = {
     success: <CheckCircle className="w-5 h-5 text-emerald-500" />,
-    error: <AlertCircle className="w-5 h-5 text-red-500" />,
+    error: <AlertCircle className="w-5 h-5 text-nolo-500" />,
     info: <Info className="w-5 h-5 text-blue-500" />,
     warning: <AlertTriangle className="w-5 h-5 text-yellow-500" />,
   };
 
   const bgColors = {
     success: "bg-emerald-500/10 border-emerald-500/20",
-    error: "bg-red-500/10 border-red-500/20",
+    error: "bg-nolo-500/10 border-nolo-500/20",
     info: "bg-blue-500/10 border-blue-500/20",
     warning: "bg-yellow-500/10 border-yellow-500/20",
   };

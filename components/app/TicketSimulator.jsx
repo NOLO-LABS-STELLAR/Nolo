@@ -37,7 +37,7 @@ export default function TicketSimulator() {
       <div className="flex flex-col gap-3 border-b border-vault-border/40 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
-            <Ticket className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <Ticket className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             Prize simulator
           </div>
           <h2 className="mt-1 text-xl font-semibold text-vault-text">
@@ -53,7 +53,7 @@ export default function TicketSimulator() {
         <div className="space-y-5 rounded-3xl border border-vault-border/40 bg-vault-surface/30 p-5">
           <div className="space-y-3">
             <label htmlFor="ticket-count" className="flex items-center gap-2 text-sm font-medium text-vault-text">
-              <Ticket className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Ticket className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Ticket count
             </label>
             <input
@@ -64,7 +64,7 @@ export default function TicketSimulator() {
               step="1"
               value={ticketCount}
               onChange={(event) => setTicketCount(Number(event.target.value))}
-              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-red-500"
+              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-nolo-500"
             />
             <div className="flex items-center justify-between text-xs text-vault-muted">
               <span>1 ticket</span>
@@ -75,7 +75,7 @@ export default function TicketSimulator() {
 
           <div className="space-y-3">
             <label htmlFor="ticket-value" className="flex items-center gap-2 text-sm font-medium text-vault-text">
-              <Wallet className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Wallet className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Ticket value
             </label>
             <input
@@ -86,7 +86,7 @@ export default function TicketSimulator() {
               step="5"
               value={ticketValue}
               onChange={(event) => setTicketValue(Number(event.target.value))}
-              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-red-500"
+              className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-vault-border accent-nolo-500"
             />
             <div className="flex items-center justify-between text-xs text-vault-muted">
               <span>$5 stake</span>
@@ -110,7 +110,7 @@ export default function TicketSimulator() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           <article className="vq-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
-              <Calculator className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Calculator className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Win chance
             </div>
             <p className="mt-2 text-3xl font-black text-vault-text">{formatPercent(metrics.winningChance)}</p>
@@ -119,7 +119,7 @@ export default function TicketSimulator() {
 
           <article className="vq-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
-              <Users className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Users className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Pool pressure
             </div>
             <p className="mt-2 text-3xl font-black text-vault-text">{metrics.totalEntries.toLocaleString()}</p>
@@ -128,7 +128,7 @@ export default function TicketSimulator() {
 
           <article className="vq-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
-              <Trophy className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Trophy className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Expected payout
             </div>
             <p className="mt-2 text-3xl font-black text-emerald-500 dark:text-emerald-400">{formatUsd(metrics.expectedPayout)}</p>
@@ -137,7 +137,7 @@ export default function TicketSimulator() {
 
           <article className="vq-glass p-4">
             <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-vault-muted">
-              <Wallet className="h-4 w-4 text-red-500" aria-hidden="true" />
+              <Wallet className="h-4 w-4 text-nolo-500" aria-hidden="true" />
               Contribution coverage
             </div>
             <p className="mt-2 text-3xl font-black text-vault-text">{formatPercent(metrics.prizeCoverage * 100)}</p>

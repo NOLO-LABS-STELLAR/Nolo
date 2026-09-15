@@ -54,9 +54,9 @@ const NETWORK_GATED_STEP_IDS = new Set(["choose-vault", "join-pool", "follow-rew
 
 function ChecklistSkeleton() {
   return (
-    <div className="animate-pulse rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-4 sm:p-5">
+    <div className="animate-pulse rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-4 sm:p-5">
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-full bg-red-900/30" />
+        <div className="h-10 w-10 rounded-full bg-nolo-900/30" />
         <div className="space-y-1.5">
           <div className="h-4 w-40 rounded bg-vault-border" />
           <div className="h-3 w-28 rounded bg-vault-border" />
@@ -64,7 +64,7 @@ function ChecklistSkeleton() {
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="rounded-xl border border-red-900/20 bg-black/20 p-3">
+          <div key={i} className="rounded-xl border border-nolo-900/20 bg-black/20 p-3">
             <div className="h-3 w-32 rounded bg-vault-border" />
             <div className="mt-2 h-8 w-full rounded bg-vault-border" />
           </div>
@@ -125,7 +125,7 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
   if (dismissed) {
     return (
       <button type="button" onClick={revisit}
-        className={`inline-flex items-center gap-2 rounded-xl border border-red-500/40 bg-red-900/30 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505] ${className}`}>
+        className={`inline-flex items-center gap-2 rounded-xl border border-nolo-500/40 bg-nolo-900/30 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-nolo-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] ${className}`}>
         <HelpCircle className="h-4 w-4" aria-hidden="true" />
         Onboarding checklist
       </button>
@@ -133,10 +133,10 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
   }
 
   return (
-    <aside aria-label="Onboarding checklist" className={`rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-4 text-gray-200 sm:p-5 ${className}`}>
+    <aside aria-label="Onboarding checklist" className={`rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-4 text-gray-200 sm:p-5 ${className}`}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-900/30 text-red-300">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-nolo-900/30 text-nolo-300">
             <Wallet className="h-5 w-5" aria-hidden="true" />
           </span>
           <div>
@@ -145,7 +145,7 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
           </div>
         </div>
         <button type="button" onClick={() => setExpanded((v) => !v)} aria-expanded={expanded}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-red-500/30 text-gray-200 transition-colors hover:bg-red-900/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400">
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-nolo-500/30 text-gray-200 transition-colors hover:bg-nolo-900/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400">
           {expanded ? <ChevronUp className="h-4 w-4" aria-hidden="true" /> : <ChevronDown className="h-4 w-4" aria-hidden="true" />}
           <span className="sr-only">{expanded ? "Collapse" : "Expand"}</span>
         </button>
@@ -177,7 +177,7 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
                 return (
                   <li
                     key={step.id}
-                    className={`flex gap-3 rounded-xl border border-red-900/20 bg-black/20 p-3 ${blocked ? "opacity-60" : ""}`}
+                    className={`flex gap-3 rounded-xl border border-nolo-900/20 bg-black/20 p-3 ${blocked ? "opacity-60" : ""}`}
                   >
                     {done
                       ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" aria-hidden="true" />
@@ -194,7 +194,7 @@ export const OnboardingChecklist: FC<OnboardingChecklistProps> = ({
             </ol>
           )}
           <button type="button" onClick={dismiss}
-            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]">
+            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-nolo-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]">
             Got it
           </button>
         </>

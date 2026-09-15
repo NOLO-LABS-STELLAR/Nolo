@@ -227,7 +227,7 @@ export default function HeaderWalletStatus({ variant = "desktop" }) {
           )}
           Connect Wallet
         </button>
-        {error && !compact && <p className="text-xs text-red-500">{error}</p>}
+        {error && !compact && <p className="text-xs text-nolo-500">{error}</p>}
       </div>
     );
   }
@@ -259,7 +259,7 @@ export default function HeaderWalletStatus({ variant = "desktop" }) {
         type="button"
         onClick={handleDisconnect}
         disabled={isConnecting}
-        className="ml-auto flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-vault-muted transition-colors hover:bg-red-500/10 hover:text-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 disabled:opacity-50"
+        className="ml-auto flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-vault-muted transition-colors hover:bg-nolo-500/10 hover:text-nolo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 disabled:opacity-50"
         aria-label={`Disconnect wallet. ${statusLabel}`}
         title="Disconnect wallet"
       >

@@ -9,7 +9,7 @@ import { Coins, TrendingUp } from "lucide-react";
 const ASSET_COLORS = {
   USDC: "#10b981", // Emerald 500
   XLM: "#3b82f6",  // Blue 500
-  AVAX: "#ef4444", // Red 500
+  AVAX: "#E4572E", // Red 500
 };
 
 // Map transaction pools to assets
@@ -158,7 +158,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
       <article className="vq-glass p-5 flex flex-col justify-between min-h-[400px]">
         <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
           <div className="flex items-center gap-2">
-            <Coins className="h-5 w-5 text-red-500" aria-hidden="true" />
+            <Coins className="h-5 w-5 text-nolo-500" aria-hidden="true" />
             <h2 className="text-base font-semibold text-vault-text">Deposit Allocation</h2>
           </div>
           <span className="text-xs text-vault-muted font-medium">Click slices to filter list</span>
@@ -223,7 +223,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
                   onClick={() => onSelectAsset(selectedAsset === item.name ? "all" : item.name)}
                   className={`w-full flex items-center justify-between p-2 rounded-xl border text-left transition-all duration-300 ${
                     isSelected
-                      ? "border-red-400 bg-red-500/10 ring-1 ring-red-400/20"
+                      ? "border-nolo-400 bg-nolo-500/10 ring-1 ring-nolo-400/20"
                       : "border-vault-border/40 hover:border-vault-border bg-vault-surface/20"
                   }`}
                 >
@@ -251,7 +251,7 @@ function DepositAnalytics({ transactions = [], selectedAsset, onSelectAsset }) {
       <article className="vq-glass p-5 flex flex-col justify-between min-h-[400px]">
         <div className="flex items-center justify-between border-b border-vault-border/30 pb-3">
           <div className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-red-500" aria-hidden="true" />
+            <TrendingUp className="h-5 w-5 text-nolo-500" aria-hidden="true" />
             <h2 className="text-base font-semibold text-vault-text">Savings Progression</h2>
           </div>
           <span className="text-xs text-vault-muted font-medium">Cumulative growth</span>

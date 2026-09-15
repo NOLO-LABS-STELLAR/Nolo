@@ -166,7 +166,7 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
                               className="text-emerald-500"
                             />
                           ) : (
-                            <XCircle size={14} className="text-red-500" />
+                            <XCircle size={14} className="text-nolo-500" />
                           )}
                           <span className="text-vault-text capitalize">
                             {key.replace(/([A-Z])/g, " $1").trim()}
@@ -199,7 +199,7 @@ export default function PoolApprovalQueue({ isAdmin = false }) {
                       </button>
                       <button
                         onClick={() => handleReject(pool.id)}
-                        className="flex-1 vq-btn-ghost border-red-500/40 text-red-600 dark:text-red-400 hover:bg-red-500/10 flex items-center justify-center gap-2"
+                        className="flex-1 vq-btn-ghost border-nolo-500/40 text-nolo-600 dark:text-nolo-400 hover:bg-nolo-500/10 flex items-center justify-center gap-2"
                       >
                         <XCircle size={16} />
                         Reject

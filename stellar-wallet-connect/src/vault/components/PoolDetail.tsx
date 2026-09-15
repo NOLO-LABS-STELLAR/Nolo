@@ -72,7 +72,7 @@ const CONFIDENCE_META: Record<
   conflicting: {
     icon: <AlertTriangle className="h-3 w-3" aria-hidden="true" />,
     label: "Providers disagree on this balance",
-    className: "text-red-400",
+    className: "text-nolo-400",
   },
 };
 
@@ -84,7 +84,7 @@ const Stat: FC<{ icon: ReactNode; label: string; value: string; confidence?: Rea
 }) => {
   const meta = confidence ? CONFIDENCE_META[confidence] : null;
   return (
-    <div className="rounded-xl border border-red-900/30 bg-[#1A0505]/60 p-3 sm:p-4">
+    <div className="rounded-xl border border-nolo-900/30 bg-[#1A120D]/60 p-3 sm:p-4">
       <div className="flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-wide text-gray-400">
         {icon}
         {label}
@@ -193,7 +193,7 @@ export const PoolDetail: FC<PoolDetailProps> = ({
               type="button"
               onClick={onToggleSaved}
               disabled={savingSavedState}
-              className="inline-flex items-center gap-2 rounded-xl border border-red-500/30 px-4 py-2 text-sm font-semibold text-white hover:bg-red-900/20 disabled:cursor-not-allowed disabled:opacity-60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="inline-flex items-center gap-2 rounded-xl border border-nolo-500/30 px-4 py-2 text-sm font-semibold text-white hover:bg-nolo-900/20 disabled:cursor-not-allowed disabled:opacity-60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               <Bookmark className="h-4 w-4" aria-hidden="true" />
               {savingSavedState ? "Saving…" : saved ? "Unsave pool" : "Save pool"}
@@ -238,7 +238,7 @@ export const PoolDetail: FC<PoolDetailProps> = ({
       </dl>
 
       {/* User position */}
-      <div className="rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-5">
+      <div className="rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-5">
         <h2 className="text-lg font-semibold text-white">Your position</h2>
         {!walletConnected ? (
           <div className="mt-3">
@@ -273,10 +273,10 @@ export const PoolDetail: FC<PoolDetailProps> = ({
               type="button"
               onClick={() => !mismatch && onAction?.(action)}
               disabled={mismatch || txFlow?.busy}
-              className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505] ${
+              className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D] ${
                 mismatch
                   ? "bg-gray-600 opacity-50 cursor-not-allowed focus-visible:ring-gray-400"
-                  : "bg-red-600 hover:bg-red-700 focus-visible:ring-red-400"
+                  : "bg-nolo-600 hover:bg-nolo-700 focus-visible:ring-nolo-400"
               }`}
               title={mismatch ? "Actions blocked due to network mismatch" : ACTION_LABEL[action]}
             >

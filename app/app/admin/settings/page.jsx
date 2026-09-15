@@ -189,8 +189,8 @@ const STATUS_STYLE = {
   },
   unavailable: {
     label: "Unavailable",
-    className: "bg-red-500/15 text-red-300 ring-red-400/30",
-    dot: "bg-red-500",
+    className: "bg-nolo-500/15 text-nolo-300 ring-nolo-400/30",
+    dot: "bg-nolo-500",
     icon: AlertTriangle,
   },
 };
@@ -218,7 +218,7 @@ function MetricCard({ label, value, detail, icon: Icon }) {
           <p className="mt-2 text-2xl font-bold text-vault-text">{value}</p>
           <p className="mt-1 text-sm text-vault-muted">{detail}</p>
         </div>
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400">
+        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-nolo-500/20 bg-nolo-500/10 text-nolo-400">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
       </div>
@@ -278,7 +278,7 @@ export default function AdminSettingsPage() {
     none: "border-vault-border bg-vault-surface text-vault-muted",
     low: "border-sky-400/30 bg-sky-500/10 text-sky-300",
     medium: "border-amber-400/30 bg-amber-500/10 text-amber-300",
-    high: "border-red-400/40 bg-red-500/15 text-red-300",
+    high: "border-nolo-400/40 bg-nolo-500/15 text-nolo-300",
   };
 
   useEffect(() => {
@@ -461,7 +461,7 @@ export default function AdminSettingsPage() {
         className="flex flex-col gap-4 rounded-3xl border border-vault-border bg-gradient-to-br from-[#2B0B0B] via-vault-surface to-vault-bg p-6 shadow-glass sm:flex-row sm:items-end sm:justify-between"
       >
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-red-300">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-nolo-300">
             {t("routes.admin.settings.kicker")}
           </p>
           <h1 className="text-3xl font-bold text-vault-text">{t("routes.admin.settings.title")}</h1>
@@ -495,15 +495,15 @@ export default function AdminSettingsPage() {
 
       {/* Attestation Mismatch Warnings */}
       {attestation && !attestation.verified && (
-        <div className="rounded-3xl border border-red-500/30 bg-red-950/40 p-5 text-red-200">
+        <div className="rounded-3xl border border-nolo-500/30 bg-nolo-950/40 p-5 text-nolo-200">
           <div className="flex items-start gap-3">
-            <AlertTriangle className="h-6 w-6 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
+            <AlertTriangle className="h-6 w-6 text-nolo-400 shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <h3 className="text-base font-bold text-white">Deployment Mismatch Detected</h3>
-              <p className="text-sm text-red-300 mt-1">
+              <p className="text-sm text-nolo-300 mt-1">
                 The active network configuration does not match the compiled deployment manifest:
               </p>
-              <ul className="mt-3 list-disc list-inside text-sm space-y-1.5 text-red-300">
+              <ul className="mt-3 list-disc list-inside text-sm space-y-1.5 text-nolo-300">
                 {attestation.mismatches.map((m) => (
                   <li key={m.field}>
                     <strong>{m.field}</strong>: Expected &quot;{m.manifestValue}&quot;, Active &quot;{m.envValue}&quot;
@@ -513,7 +513,7 @@ export default function AdminSettingsPage() {
               <div className="mt-4 text-sm">
                 <a
                   href="/docs/DEPLOYMENT_PROVENANCE.md"
-                  className="underline font-semibold text-white hover:text-red-200"
+                  className="underline font-semibold text-white hover:text-nolo-200"
                 >
                   Read Deployment Provenance Documentation
                 </a>
@@ -592,7 +592,7 @@ export default function AdminSettingsPage() {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 id="simulation-title" className="flex items-center gap-2 text-lg font-semibold text-vault-text">
-              <FlaskConical className="h-5 w-5 text-red-400" aria-hidden="true" />
+              <FlaskConical className="h-5 w-5 text-nolo-400" aria-hidden="true" />
               Parameter simulation &amp; diff preview
             </h2>
             <p className="mt-1 text-sm text-vault-muted">
@@ -619,7 +619,7 @@ export default function AdminSettingsPage() {
                 setSelectedParamId(e.target.value);
                 setProposedValueInput(String(spec ? spec.current : ""));
               }}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500"
             >
               {PROTOCOL_PARAMETER_CATALOG.map((spec) => (
                 <option key={spec.id} value={spec.id}>{spec.label}</option>
@@ -637,7 +637,7 @@ export default function AdminSettingsPage() {
               step="any"
               value={proposedValueInput}
               onChange={(e) => setProposedValueInput(e.target.value)}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500"
             />
           </div>
           <div className="flex flex-col gap-1 lg:col-span-2">
@@ -648,7 +648,7 @@ export default function AdminSettingsPage() {
               value={rationaleInput}
               onChange={(e) => setRationaleInput(e.target.value)}
               placeholder="Why this change is needed…"
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500"
             />
           </div>
           {selectedSpec && (
@@ -680,7 +680,7 @@ export default function AdminSettingsPage() {
               </div>
               <div className="rounded-xl border border-vault-border bg-vault-surface/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-vault-muted">Blocked</p>
-                <p className="mt-1 text-xl font-black text-red-400">{diffPreview.summary.blocked}</p>
+                <p className="mt-1 text-xl font-black text-nolo-400">{diffPreview.summary.blocked}</p>
               </div>
               <div className="rounded-xl border border-vault-border bg-vault-surface/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-vault-muted">High risk</p>
@@ -710,7 +710,7 @@ export default function AdminSettingsPage() {
                           {result.riskLevel} risk
                         </span>
                         {result.blocked && (
-                          <span className="rounded-full border border-red-400/40 bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-300">
+                          <span className="rounded-full border border-nolo-400/40 bg-nolo-500/15 px-2.5 py-0.5 text-xs font-semibold text-nolo-300">
                             Blocked change
                           </span>
                         )}
@@ -731,14 +731,14 @@ export default function AdminSettingsPage() {
                       <span className="rounded-lg border border-vault-border bg-vault-bg/40 px-2.5 py-1 font-mono text-vault-text">
                         {formatSimulatedValue(result.fromValue, result.unit)}
                       </span>
-                      <ArrowRight className="h-4 w-4 text-red-400" aria-hidden="true" />
-                      <span className="rounded-lg border border-red-400/30 bg-red-500/10 px-2.5 py-1 font-mono font-semibold text-red-200">
+                      <ArrowRight className="h-4 w-4 text-nolo-400" aria-hidden="true" />
+                      <span className="rounded-lg border border-nolo-400/30 bg-nolo-500/10 px-2.5 py-1 font-mono font-semibold text-nolo-200">
                         {formatSimulatedValue(result.toValue, result.unit)}
                       </span>
                     </div>
                   </div>
                   {result.blocked && result.blockedReason && (
-                    <p className="mt-2 flex items-center gap-2 text-sm text-red-300">
+                    <p className="mt-2 flex items-center gap-2 text-sm text-nolo-300">
                       <ShieldAlert className="h-4 w-4 shrink-0" aria-hidden="true" />
                       {result.blockedReason}
                     </p>
@@ -761,7 +761,7 @@ export default function AdminSettingsPage() {
                   type="checkbox"
                   checked={overrideBlocked}
                   onChange={(e) => setOverrideBlocked(e.target.checked)}
-                  className="h-4 w-4 accent-red-500"
+                  className="h-4 w-4 accent-nolo-500"
                 />
                 Allow override of blocked stringencies (requires explicit sign-off in the proposal)
               </label>
@@ -783,7 +783,7 @@ export default function AdminSettingsPage() {
                 Operational snapshot for the rounds currently being managed.
               </p>
             </div>
-            <Clock3 className="h-5 w-5 text-red-400" aria-hidden="true" />
+            <Clock3 className="h-5 w-5 text-nolo-400" aria-hidden="true" />
           </div>
 
           <div className="mt-5 space-y-4">
@@ -830,7 +830,7 @@ export default function AdminSettingsPage() {
                   </div>
                   <div className="h-2 overflow-hidden rounded-full bg-vault-border/40">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-red-500 to-amber-400"
+                      className="h-full rounded-full bg-gradient-to-r from-nolo-500 to-amber-400"
                       style={{ width: `${round.progress}%` }}
                     />
                   </div>
@@ -849,7 +849,7 @@ export default function AdminSettingsPage() {
                   Monitored services that affect protocol visibility and execution.
                 </p>
               </div>
-              <Server className="h-5 w-5 text-red-400" aria-hidden="true" />
+              <Server className="h-5 w-5 text-nolo-400" aria-hidden="true" />
             </div>
 
             <div className="mt-5 space-y-3">
@@ -880,7 +880,7 @@ export default function AdminSettingsPage() {
                     </div>
                   )}
                   {service.name === "Smart contract" && service.status !== "operational" && service.status !== "loading" && (
-                    <div className="mt-1 pl-5.5 text-xs text-red-300">
+                    <div className="mt-1 pl-5.5 text-xs text-nolo-300">
                       <span>Verify deployment or see </span>
                       <a href="/docs/env-inventory.md" className="underline font-semibold hover:text-white transition-colors">
                         Environment Inventory Guide
@@ -910,7 +910,7 @@ export default function AdminSettingsPage() {
                   key={note.title}
                   className="flex items-start gap-3 rounded-2xl border border-vault-border bg-vault-surface/40 p-4"
                 >
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-xs font-semibold text-red-300">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-nolo-500/10 text-xs font-semibold text-nolo-300">
                     {index + 1}
                   </span>
                   <div>

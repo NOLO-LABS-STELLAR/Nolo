@@ -50,7 +50,7 @@ function FieldRow({ label, value, verified, copyable }) {
         {verified !== undefined && (
           verified
             ? <ShieldCheck className="h-3 w-3 text-emerald-400" />
-            : <ShieldAlert className="h-3 w-3 text-red-400" />
+            : <ShieldAlert className="h-3 w-3 text-nolo-400" />
         )}
       </div>
     </div>
@@ -181,7 +181,7 @@ export default function DrawProofDetail({ proof, rpcUrl, onClose }) {
             </button>
 
             {verificationError && (
-              <div className="mt-2 rounded-lg bg-red-950/30 border border-red-900/30 p-2 text-xs text-red-400 flex items-start gap-2">
+              <div className="mt-2 rounded-lg bg-nolo-950/30 border border-nolo-900/30 p-2 text-xs text-nolo-400 flex items-start gap-2">
                 <AlertCircle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
                 {verificationError}
               </div>
@@ -196,7 +196,7 @@ export default function DrawProofDetail({ proof, rpcUrl, onClose }) {
                       All checks passed
                     </span>
                   ) : (
-                    <span className="text-xs font-semibold text-red-400 flex items-center gap-1">
+                    <span className="text-xs font-semibold text-nolo-400 flex items-center gap-1">
                       <ShieldAlert className="h-3.5 w-3.5" />
                       Verification failed
                     </span>
@@ -207,11 +207,11 @@ export default function DrawProofDetail({ proof, rpcUrl, onClose }) {
                     <span className="text-[11px] text-gray-400">{field.name}</span>
                     <div className="flex items-center gap-1.5">
                       {field.status === "pass" && <ShieldCheck className="h-3 w-3 text-emerald-400" />}
-                      {field.status === "fail" && <ShieldAlert className="h-3 w-3 text-red-400" />}
+                      {field.status === "fail" && <ShieldAlert className="h-3 w-3 text-nolo-400" />}
                       {field.status === "unverified" && <AlertCircle className="h-3 w-3 text-gray-500" />}
                       <span className={`text-[10px] font-mono ${
                         field.status === "pass" ? "text-emerald-400" :
-                        field.status === "fail" ? "text-red-400" : "text-gray-500"
+                        field.status === "fail" ? "text-nolo-400" : "text-gray-500"
                       }`}>
                         {field.status}
                       </span>

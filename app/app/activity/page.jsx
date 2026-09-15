@@ -48,7 +48,7 @@ const ACTIVITY_TYPES = {
 const STATUS_LABELS = {
   confirmed: { label: "Confirmed", class: "text-emerald-600 dark:text-emerald-400" },
   pending: { label: "Pending", class: "text-amber-600 dark:text-amber-400" },
-  failed: { label: "Failed", class: "text-red-600 dark:text-red-400" },
+  failed: { label: "Failed", class: "text-nolo-600 dark:text-nolo-400" },
 };
 
 const PAGE_SIZE = 10;
@@ -91,7 +91,7 @@ export function ActivityFeed({ transactions, privacyMode = false }) {
                 onClick={() => { setFilter(tab.id); setPage(0); }}
                 className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                   filter === tab.id
-                    ? "bg-red-500/10 text-red-500 dark:text-red-400"
+                    ? "bg-nolo-500/10 text-nolo-500 dark:text-nolo-400"
                     : "text-vault-muted hover:bg-vault-surface hover:text-vault-text"
                 }`}
               >
@@ -202,7 +202,7 @@ function EmptyActivity() {
   const { openConnectModal } = useConnectModal();
   return (
     <div className="vq-glass flex flex-col items-center px-6 py-16 text-center sm:px-10">
-      <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-red-500/10 text-red-500 ring-2 ring-red-400/20">
+      <span className="flex h-16 w-16 items-center justify-center rounded-full border border-vault-border bg-nolo-500/10 text-nolo-500 ring-2 ring-nolo-400/20">
         <Wallet className="h-8 w-8" />
       </span>
       <h2 className="mt-6 text-xl font-semibold text-vault-text">Wallet not connected</h2>

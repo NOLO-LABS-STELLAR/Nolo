@@ -208,7 +208,7 @@ export default function VaultHealthStatusPanel() {
         {error && (
           <div
             role="alert"
-            className="mt-3 flex items-start gap-2 rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-500"
+            className="mt-3 flex items-start gap-2 rounded-lg border border-nolo-500/20 bg-nolo-500/10 p-3 text-sm text-nolo-500"
           >
             <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{error}</span>

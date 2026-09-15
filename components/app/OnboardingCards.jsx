@@ -8,7 +8,7 @@ const STEPS = [
     title: "No-loss prize savings",
     description:
       "Deposit into pooled vaults. Yield funds weekly prizes while your principal stays fully withdrawable.",
-    accent: "from-red-500/20 to-orange-500/10",
+    accent: "from-nolo-500/20 to-orange-500/10",
   },
   {
     icon: Wallet,
@@ -48,7 +48,7 @@ export default function OnboardingCards() {
               aria-hidden="true"
             />
             <div className="relative">
-              <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500 shadow-glass ring-2 ring-red-400/20 transition-all duration-300 group-hover:shadow-glow dark:text-red-400">
+              <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500 shadow-glass ring-2 ring-nolo-400/20 transition-all duration-300 group-hover:shadow-glow dark:text-nolo-400">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <p className="text-xs font-medium uppercase tracking-wider text-vault-muted">

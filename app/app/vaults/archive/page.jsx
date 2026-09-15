@@ -144,7 +144,7 @@ export default function VaultRoundArchivePage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-vault-border bg-vault-surface px-3 py-1 text-xs font-medium text-vault-muted">
-            <Archive className="h-3.5 w-3.5 text-red-500" aria-hidden="true" />
+            <Archive className="h-3.5 w-3.5 text-nolo-500" aria-hidden="true" />
             Completed vault rounds
           </div>
           <h1 className="mt-4 text-3xl font-bold text-vault-text">Round Archive</h1>
@@ -172,17 +172,17 @@ export default function VaultRoundArchivePage() {
           <div className="flex flex-col gap-1">
             <label htmlFor="archive-from" className="text-xs font-medium text-vault-muted">From</label>
             <input id="archive-from" type="date" value={fromDate} onChange={(e) => { setFromDate(e.target.value); setVisibleCount(PAGE_SIZE); }}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500" />
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500" />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="archive-to" className="text-xs font-medium text-vault-muted">To</label>
             <input id="archive-to" type="date" value={toDate} onChange={(e) => { setToDate(e.target.value); setVisibleCount(PAGE_SIZE); }}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500" />
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500" />
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="archive-network" className="text-xs font-medium text-vault-muted">Network</label>
             <select id="archive-network" value={network} onChange={(e) => { setNetwork(e.target.value); setVisibleCount(PAGE_SIZE); }}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500">
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500">
               <option value="all">All networks</option>
               {NETWORKS.map((item) => <option key={item} value={item}>{item}</option>)}
             </select>
@@ -190,7 +190,7 @@ export default function VaultRoundArchivePage() {
           <div className="flex flex-col gap-1">
             <label htmlFor="archive-format" className="text-xs font-medium text-vault-muted">Format</label>
             <select id="archive-format" value={format} onChange={(e) => setFormat(e.target.value)}
-              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-red-500">
+              className="rounded-lg border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text focus:outline-none focus:ring-2 focus:ring-nolo-500">
               <option value="csv">CSV</option>
               <option value="json">JSON</option>
             </select>

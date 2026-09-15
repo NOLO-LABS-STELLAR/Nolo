@@ -243,7 +243,7 @@ export default function VaultActivityExport({
       )}
 
       {status === "error" && (
-        <div role="alert" className="mt-3 flex items-center gap-2 rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-400">
+        <div role="alert" className="mt-3 flex items-center gap-2 rounded-lg bg-nolo-500/10 px-3 py-2 text-sm text-nolo-400">
           <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
           <span>{errorMsg}</span>
         </div>

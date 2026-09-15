@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "VaultQuest — Ahorros sin riesgo con premios",
+    "title": "Nolo — Ahorros sin riesgo con premios",
     "description": "Deposita, genera rendimiento y gana premios sin arriesgar tu capital."
   },
   "nav": {
@@ -16,7 +16,7 @@
     "terms": "Términos del producto",
     "privacy": "Política de privacidad",
     "language": "Idioma",
-    "copyright": "© {{year}} VaultQuest. Todos los derechos reservados."
+    "copyright": "© {{year}} Nolo. Todos los derechos reservados."
   },
   "vaults": {
     "title": "Bóvedas",

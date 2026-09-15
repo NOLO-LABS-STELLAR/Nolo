@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { NoloLogo } from "@/components/brand/NoloLogo";
 import { usePathname } from "next/navigation";
 import { useDisconnect } from "wagmi";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -10,7 +11,6 @@ import {
   User,
   Settings,
   LogOut,
-  Vault,
   X,
   Menu,
 } from "lucide-react";
@@ -70,7 +70,7 @@ export default function Sidebar() {
         href={item.href}
         className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
           active
-            ? "bg-red-500/15 text-red-600 ring-1 ring-red-400/30 dark:text-red-400"
+            ? "bg-nolo-500/15 text-nolo-600 ring-1 ring-nolo-400/30 dark:text-nolo-400"
             : "text-vault-muted hover:bg-vault-surface hover:text-vault-text"
         }`}
         aria-current={active ? "page" : undefined}
@@ -89,10 +89,10 @@ export default function Sidebar() {
       {/* Logo */}
       <Link
         href="/app"
-        className="mb-4 flex items-center gap-2 rounded-xl px-4 py-3 text-lg font-bold tracking-tight text-vault-text transition-colors duration-300 hover:text-red-500"
+        className="mb-4 flex items-center rounded-xl px-4 py-3 transition-opacity duration-300 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400"
+        aria-label="Nolo home"
       >
-        <Vault className="h-6 w-6" aria-hidden="true" />
-        VaultQuest
+        <NoloLogo markSize={26} wordmarkClassName="text-[24px]" />
       </Link>
 
       {/* Nav links */}
@@ -105,7 +105,7 @@ export default function Sidebar() {
       <button
         type="button"
         onClick={handleLogout}
-        className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-vault-muted transition-all duration-300 hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400"
+        className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-vault-muted transition-all duration-300 hover:bg-nolo-500/10 hover:text-nolo-600 dark:hover:text-nolo-400"
         aria-label="Disconnect wallet and logout"
       >
         <LogOut className="h-5 w-5 shrink-0" aria-hidden="true" />

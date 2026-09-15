@@ -53,12 +53,12 @@ export default function UserDepositsList({ transactions = [], selectedAsset = "a
             <p className="text-sm text-vault-muted">Filter and browse your pool activity</p>
           </div>
           {selectedAsset !== "all" && (
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 border border-red-500/20 px-2.5 py-1 text-xs font-semibold text-red-500 dark:text-red-400">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-nolo-500/10 border border-nolo-500/20 px-2.5 py-1 text-xs font-semibold text-nolo-500 dark:text-nolo-400">
               <span>Asset: {selectedAsset}</span>
               <button
                 type="button"
                 onClick={onClearAsset}
-                className="hover:text-red-700 dark:hover:text-red-300 font-bold ml-0.5 px-0.5 transition-colors focus:outline-none"
+                className="hover:text-nolo-700 dark:hover:text-nolo-300 font-bold ml-0.5 px-0.5 transition-colors focus:outline-none"
                 aria-label={`Clear ${selectedAsset} filter`}
               >
                 &times;
@@ -78,7 +78,7 @@ export default function UserDepositsList({ transactions = [], selectedAsset = "a
               setFilter(e.target.value);
               setPage(0);
             }}
-            className="rounded-xl border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+            className="rounded-xl border border-vault-border bg-vault-surface px-3 py-2 text-sm text-vault-text transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-nolo-400"
           >
             <option value="all">All types</option>
             <option value="deposit">Deposits</option>

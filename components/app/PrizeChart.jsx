@@ -100,7 +100,7 @@ export default function PrizeChart() {
       <div className="flex flex-col gap-3 border-b border-vault-border/40 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.24em] text-vault-muted">
-            <BarChart3 className="h-4 w-4 text-red-500" aria-hidden="true" />
+            <BarChart3 className="h-4 w-4 text-nolo-500" aria-hidden="true" />
             Deposit history
           </div>
           <h2 className="mt-1 text-xl font-semibold text-vault-text">
@@ -116,7 +116,7 @@ export default function PrizeChart() {
                 key={series.key}
                 type="button"
                 onClick={() => setVisible((current) => ({ ...current, [series.key]: !current[series.key] }))}
-                className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-300 ${active ? "border-red-400/30 bg-red-500/10 text-red-500" : "border-vault-border/50 bg-vault-surface/30 text-vault-muted"}`}
+                className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-300 ${active ? "border-nolo-400/30 bg-nolo-500/10 text-nolo-500" : "border-vault-border/50 bg-vault-surface/30 text-vault-muted"}`}
               >
                 {series.label}
               </button>

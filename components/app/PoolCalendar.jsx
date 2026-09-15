@@ -9,7 +9,7 @@ const EVENT_TYPES = {
   opening: { label: "Opening", color: "bg-blue-500", textColor: "text-blue-500" },
   locking: { label: "Locking", color: "bg-yellow-500", textColor: "text-yellow-500" },
   drawing: { label: "Drawing", color: "bg-purple-500", textColor: "text-purple-500" },
-  claiming: { label: "Claim Deadline", color: "bg-red-500", textColor: "text-red-500" },
+  claiming: { label: "Claim Deadline", color: "bg-nolo-500", textColor: "text-nolo-500" },
 };
 
 function getPoolEvents(pool) {

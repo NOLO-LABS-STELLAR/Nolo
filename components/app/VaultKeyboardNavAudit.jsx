@@ -257,7 +257,7 @@ function AuditResult({ check, result, expanded, onToggle }) {
               {result.pass ? (
                 <CheckCircle2 className="h-5 w-5 text-emerald-500" aria-label="Pass" />
               ) : (
-                <XCircle className="h-5 w-5 text-red-500" aria-label="Fail" />
+                <XCircle className="h-5 w-5 text-nolo-500" aria-label="Fail" />
               )}
             </>
           )}
@@ -366,7 +366,7 @@ export default function VaultKeyboardNavAudit() {
             {summary.pass} passed
           </span>
           {summary.fail > 0 && (
-            <span className="flex items-center gap-1 text-red-500">
+            <span className="flex items-center gap-1 text-nolo-500">
               <XCircle className="h-3.5 w-3.5" aria-hidden="true" />
               {summary.fail} failed
             </span>

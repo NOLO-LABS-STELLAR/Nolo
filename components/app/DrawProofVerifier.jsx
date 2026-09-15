@@ -17,9 +17,9 @@ const FIELD_STATUS_STYLES = {
     chip: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
   },
   fail: {
-    row: "bg-red-500/[0.06]",
-    text: "text-red-400",
-    chip: "bg-red-500/15 border-red-500/30 text-red-400",
+    row: "bg-nolo-500/[0.06]",
+    text: "text-nolo-400",
+    chip: "bg-nolo-500/15 border-nolo-500/30 text-nolo-400",
   },
   unverified: {
     row: "",
@@ -43,7 +43,7 @@ function VerificationFieldRow({ field }) {
         {field.detail && (
           <span
             className={`text-[10px] truncate max-w-[220px] ${
-              field.status === "fail" ? "text-red-400/90" : "text-gray-600"
+              field.status === "fail" ? "text-nolo-400/90" : "text-gray-600"
             }`}
             title={field.detail}
           >
@@ -122,7 +122,7 @@ export default function DrawProofVerifier({ proof, rpcUrl }) {
       </button>
 
       {error && (
-        <div className="rounded-lg bg-red-950/30 border border-red-900/30 p-2 text-xs text-red-400 flex items-start gap-2">
+        <div className="rounded-lg bg-nolo-950/30 border border-nolo-900/30 p-2 text-xs text-nolo-400 flex items-start gap-2">
           <AlertCircle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           {error}
         </div>
@@ -137,7 +137,7 @@ export default function DrawProofVerifier({ proof, rpcUrl }) {
                 Proof verified successfully
               </span>
             ) : (
-              <span className="text-xs font-semibold text-red-400 flex items-center gap-1">
+              <span className="text-xs font-semibold text-nolo-400 flex items-center gap-1">
                 <ShieldAlert className="h-3.5 w-3.5" />
                 Proof verification failed
               </span>

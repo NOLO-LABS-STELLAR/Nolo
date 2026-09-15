@@ -46,7 +46,7 @@ export default function AttestationError({ mismatches }) {
                 <td style={{ padding: "0.5rem", color: "#4ade80" }}>
                   {m.manifestValue}
                 </td>
-                <td style={{ padding: "0.5rem", color: "#f87171" }}>
+                <td style={{ padding: "0.5rem", color: "#F2754D" }}>
                   {m.envValue}
                 </td>
               </tr>

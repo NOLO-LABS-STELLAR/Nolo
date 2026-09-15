@@ -263,7 +263,7 @@ export const StellarWalletIndicator: FC = () => {
         {error && (
           <div
             role="alert"
-            className="absolute right-0 mt-2 w-64 rounded-xl border border-red-500/30 bg-red-950/90 p-3 text-xs text-red-200 shadow-xl backdrop-blur-md z-50"
+            className="absolute right-0 mt-2 w-64 rounded-xl border border-nolo-500/30 bg-nolo-950/90 p-3 text-xs text-nolo-200 shadow-xl backdrop-blur-md z-50"
           >
             <div className="flex items-start gap-2">
               <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
@@ -282,7 +282,7 @@ export const StellarWalletIndicator: FC = () => {
       <button
         type="button"
         onClick={() => setIsDropdownOpen((o) => !o)}
-        className="flex h-10 items-center gap-2 rounded-xl border border-vault-border bg-vault-surface px-3 text-sm font-medium text-vault-text backdrop-blur-md transition-all duration-300 hover:border-red-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+        className="flex h-10 items-center gap-2 rounded-xl border border-vault-border bg-vault-surface px-3 text-sm font-medium text-vault-text backdrop-blur-md transition-all duration-300 hover:border-nolo-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400"
         aria-label="Stellar wallet settings"
         aria-expanded={isDropdownOpen}
       >
@@ -364,7 +364,7 @@ export const StellarWalletIndicator: FC = () => {
           <button
             type="button"
             onClick={handleDisconnect}
-            className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-red-400 transition-colors hover:bg-red-500/10"
+            className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-sm text-nolo-400 transition-colors hover:bg-nolo-500/10"
           >
             <LogOut className="h-4 w-4" />
             Disconnect

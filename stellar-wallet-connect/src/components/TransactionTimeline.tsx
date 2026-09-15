@@ -110,9 +110,9 @@ const StageRow: FC<StageRowProps> = ({ meta, state, isLast }) => {
     },
     active: {
       icon: <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />,
-      iconBg: "bg-red-600 text-white",
+      iconBg: "bg-nolo-600 text-white",
       label: "text-white",
-      line: "bg-red-900/40",
+      line: "bg-nolo-900/40",
     },
     pending: {
       icon: <span className="h-2 w-2 rounded-full bg-gray-500" aria-hidden="true" />,
@@ -122,9 +122,9 @@ const StageRow: FC<StageRowProps> = ({ meta, state, isLast }) => {
     },
     failed: {
       icon: <X className="h-4 w-4" aria-hidden="true" />,
-      iconBg: "bg-red-700 text-white",
-      label: "text-red-300",
-      line: "bg-red-900/40",
+      iconBg: "bg-nolo-700 text-white",
+      label: "text-nolo-300",
+      line: "bg-nolo-900/40",
     },
   }[state];
 
@@ -174,7 +174,7 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
             ? "Transaction completed"
             : "Transaction in progress"
       }
-      className={`rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-6 ${className}`}
+      className={`rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-6 ${className}`}
     >
       {/* Header */}
       <header className="mb-6 flex items-start justify-between gap-4">
@@ -193,7 +193,7 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
                   href={explorerUrl(txHash)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-red-400 hover:text-red-300 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 rounded"
+                  className="inline-flex items-center gap-1 text-nolo-400 hover:text-nolo-300 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 rounded"
                 >
                   {txHash.slice(0, 12)}…{txHash.slice(-8)}
                   <ExternalLink className="h-3 w-3" aria-hidden="true" />
@@ -214,7 +214,7 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
             Success
           </span>
         ) : isFailed ? (
-          <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-red-700/20 px-2.5 py-1 text-xs font-medium text-red-300">
+          <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-nolo-700/20 px-2.5 py-1 text-xs font-medium text-nolo-300">
             <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
             Failed
           </span>
@@ -235,8 +235,8 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
 
       {/* Failure detail */}
       {isFailed && errorMessage && (
-        <div className="mt-4 rounded-xl border border-red-700/40 bg-red-900/20 p-4 text-sm text-red-200">
-          <p className="font-semibold text-red-300">Why it failed</p>
+        <div className="mt-4 rounded-xl border border-nolo-700/40 bg-nolo-900/20 p-4 text-sm text-nolo-200">
+          <p className="font-semibold text-nolo-300">Why it failed</p>
           <p className="mt-1 leading-relaxed">{errorMessage}</p>
         </div>
       )}
@@ -248,7 +248,7 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
             <button
               type="button"
               onClick={onDismiss}
-              className="rounded-xl px-4 py-2 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+              className="rounded-xl px-4 py-2 text-sm font-medium text-gray-400 hover:bg-white/5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400"
             >
               {isSuccess ? "Done" : "Close"}
             </button>
@@ -257,7 +257,7 @@ export const TransactionTimeline: FC<TransactionTimelineProps> = ({
             <button
               type="button"
               onClick={onRetry}
-              className="inline-flex items-center gap-2 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A0505]"
+              className="inline-flex items-center gap-2 rounded-xl bg-nolo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-nolo-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A120D]"
             >
               <RefreshCw className="h-4 w-4" aria-hidden="true" />
               Retry

@@ -161,7 +161,7 @@ export default function AdminAuditPage() {
         </div>
       ) : error ? (
         <div className="vq-glass p-8 text-center">
-          <p className="text-sm text-red-400">{error}</p>
+          <p className="text-sm text-nolo-400">{error}</p>
         </div>
       ) : filtered.length === 0 ? (
         <div className="vq-glass flex flex-col items-center px-6 py-16 text-center">

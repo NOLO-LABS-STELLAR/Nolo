@@ -64,7 +64,7 @@ export const DataRefreshControl: FC<DataRefreshControlProps> = ({
         <span
           role="alert"
           title={partialError.message}
-          className="inline-flex items-center gap-1.5 rounded-full bg-red-500/15 px-2.5 py-1 text-xs font-medium text-red-400"
+          className="inline-flex items-center gap-1.5 rounded-full bg-nolo-500/15 px-2.5 py-1 text-xs font-medium text-nolo-400"
         >
           <AlertTriangle className="h-3 w-3" aria-hidden="true" />
           Update failed
@@ -82,7 +82,7 @@ export const DataRefreshControl: FC<DataRefreshControlProps> = ({
         onClick={onRefresh}
         disabled={fetching}
         aria-label="Refresh data"
-        className="inline-flex items-center justify-center rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-red-900/30 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex items-center justify-center rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-nolo-900/30 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-400 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <RefreshCw className={`h-4 w-4 ${fetching ? "animate-spin" : ""}`} aria-hidden="true" />
       </button>

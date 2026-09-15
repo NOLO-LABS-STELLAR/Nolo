@@ -203,11 +203,11 @@ export default function DepositPlannerPage() {
         <section className="space-y-6 lg:col-span-7">
           <div className="vq-glass p-6 sm:p-8 space-y-6">
             <h2 className="text-xl font-bold text-vault-text flex items-center gap-2">
-              <Plus className="h-5 w-5 text-red-500" /> Configure New Schedule
+              <Plus className="h-5 w-5 text-nolo-500" /> Configure New Schedule
             </h2>
 
             {!isConnected && (
-              <div className="p-4 rounded-xl border border-red-500/20 bg-red-500/5 text-red-500 flex items-start gap-3">
+              <div className="p-4 rounded-xl border border-nolo-500/20 bg-nolo-500/5 text-nolo-500 flex items-start gap-3">
                 <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <span className="font-bold">Wallet Disconnected:</span> You must connect your Web3 wallet to authorize smart scheduler transaction signatures.
@@ -225,7 +225,7 @@ export default function DepositPlannerPage() {
                   id="vault-select"
                   value={selectedVaultId}
                   onChange={(e) => setSelectedVaultId(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                  className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                 >
                   <option value="">Select a vault...</option>
                   {MOCK_VAULTS.map((vault) => (
@@ -251,7 +251,7 @@ export default function DepositPlannerPage() {
                     step="any"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="w-full pl-9 pr-16 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                    className="w-full pl-9 pr-16 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                     placeholder="100.00"
                   />
                   {selectedVault && (
@@ -275,7 +275,7 @@ export default function DepositPlannerPage() {
                       setFrequency(e.target.value);
                       setSelectedDay(e.target.value === "monthly" ? 1 : 1); // Reset defaults
                     }}
-                    className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                    className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                   >
                     {FREQUENCIES.map((f) => (
                       <option key={f.id} value={f.id}>
@@ -294,7 +294,7 @@ export default function DepositPlannerPage() {
                       id="day-preference-select"
                       value={selectedDay}
                       onChange={(e) => setSelectedDay(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                      className="w-full px-4 py-2.5 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                     >
                       {frequency === "monthly"
                         ? Array.from({ length: 28 }, (_, i) => i + 1).map((day) => (
@@ -329,7 +329,7 @@ export default function DepositPlannerPage() {
 
               {/* Form Statuses */}
               {errorMsg && (
-                <div className="text-sm text-red-500 flex items-center gap-1.5">
+                <div className="text-sm text-nolo-500 flex items-center gap-1.5">
                   <AlertCircle size={16} /> {errorMsg}
                 </div>
               )}
@@ -354,7 +354,7 @@ export default function DepositPlannerPage() {
         <section className="space-y-6 lg:col-span-5">
           <div className="vq-glass p-6 sm:p-8 space-y-6">
             <h2 className="text-xl font-bold text-vault-text flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-red-500" /> Active Schedules
+              <Calendar className="h-5 w-5 text-nolo-500" /> Active Schedules
             </h2>
 
             {schedules.length === 0 ? (
@@ -374,14 +374,14 @@ export default function DepositPlannerPage() {
                 {schedules.map((schedule) => (
                   <div 
                     key={schedule.id}
-                    className="p-4 rounded-xl border border-vault-border bg-vault-surface/40 flex items-start justify-between gap-3 hover:border-red-400/25 transition-all"
+                    className="p-4 rounded-xl border border-vault-border bg-vault-surface/40 flex items-start justify-between gap-3 hover:border-nolo-400/25 transition-all"
                   >
                     <div className="space-y-1">
                       <h4 className="text-sm font-bold text-vault-text">{schedule.vaultName}</h4>
                       <p className="text-xs text-vault-muted">
                         Amount: <span className="font-semibold text-vault-text">{schedule.amount.toLocaleString()} {schedule.asset}</span>
                       </p>
-                      <p className="text-[10px] text-red-500/80 font-bold uppercase tracking-wider">
+                      <p className="text-[10px] text-nolo-500/80 font-bold uppercase tracking-wider">
                         Frequency: {schedule.frequency}
                       </p>
                       <div className="flex items-center gap-1 text-[10px] text-vault-muted pt-1">
@@ -390,7 +390,7 @@ export default function DepositPlannerPage() {
                     </div>
                     <button
                       onClick={() => handleDeleteSchedule(schedule.id)}
-                      className="p-1.5 rounded-lg text-vault-muted hover:text-red-500 hover:bg-red-500/10 transition-colors"
+                      className="p-1.5 rounded-lg text-vault-muted hover:text-nolo-500 hover:bg-nolo-500/10 transition-colors"
                       title="Delete schedule"
                     >
                       <Trash2 size={14} />

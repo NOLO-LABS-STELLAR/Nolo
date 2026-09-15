@@ -54,11 +54,11 @@ export default function PrizeCountdown({ targetDate }) {
   return (
     <div className="vq-glass relative overflow-hidden p-4 xs:p-6 sm:p-8">
       {/* Background Decorative Glows */}
-      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-[80px]" />
-      <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-red-500/10 blur-[80px]" />
+      <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
+      <div className="absolute -right-20 -bottom-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
 
       <div className="relative flex flex-col items-center gap-4 sm:gap-6">
-        <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest text-red-500">
+        <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-widest text-nolo-500">
           {timeLeft.isComplete ? (
             <CheckCircle2 className="h-4 w-4" />
           ) : (
@@ -75,7 +75,7 @@ export default function PrizeCountdown({ targetDate }) {
           <TimerSegment value={timeLeft.minutes} label="Mins" />
           <div className="mb-4 text-xl font-light text-vault-border xs:text-2xl sm:mb-8 sm:text-4xl">:</div>
           <TimerSegment value={timeLeft.seconds} label="Secs" />
-          <div className="mb-3 text-lg font-light text-red-400/60 xs:text-xl sm:mb-6 sm:text-2xl">.</div>
+          <div className="mb-3 text-lg font-light text-nolo-400/60 xs:text-xl sm:mb-6 sm:text-2xl">.</div>
           <div className="w-8 text-left xs:w-10 sm:w-16">
             <TimerSegment value={timeLeft.ms} label="MS" animate={false} small />
           </div>
@@ -114,7 +114,7 @@ const TimerSegment = memo(function TimerSegment({ value, label, animate = true, 
       <div
         className={`font-mono font-bold tabular-nums transition-all duration-150 ${
           shouldAnimate 
-            ? "scale-110 text-red-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]" 
+            ? "scale-110 text-nolo-500 drop-shadow-[0_0_8px_rgba(220,38,38,0.3)]" 
             : "scale-100 text-vault-text"
         } ${small ? "text-lg xs:text-xl sm:text-3xl" : "text-2xl xs:text-4xl sm:text-6xl"}`}
       >

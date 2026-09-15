@@ -30,7 +30,7 @@ export default function SavedPoolsWatchlist() {
   if (error) {
     return (
       <div className="vq-glass p-6">
-        <div className="flex items-center gap-3 text-red-500">
+        <div className="flex items-center gap-3 text-nolo-500">
           <AlertCircle className="h-5 w-5" aria-hidden="true" />
           <p>{error}</p>
         </div>
@@ -99,7 +99,7 @@ export default function SavedPoolsWatchlist() {
                   <button
                     onClick={() => handleRemove(pool.pool_id)}
                     disabled={removingId === pool.pool_id}
-                    className="p-1.5 rounded-lg hover:bg-red-500/20 text-vault-muted hover:text-red-500 transition-colors disabled:opacity-50"
+                    className="p-1.5 rounded-lg hover:bg-nolo-500/20 text-vault-muted hover:text-nolo-500 transition-colors disabled:opacity-50"
                     aria-label="Remove from watchlist"
                   >
                     <Trash2 size={16} aria-hidden="true" />

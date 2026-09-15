@@ -84,7 +84,7 @@ export default function ActivitySummaryWidget() {
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
                   item.positive
                     ? "bg-green-500/10 text-green-600 dark:text-green-400"
-                    : "bg-red-500/10 text-red-600 dark:text-red-400"
+                    : "bg-nolo-500/10 text-nolo-600 dark:text-nolo-400"
                 }`}
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />
@@ -97,7 +97,7 @@ export default function ActivitySummaryWidget() {
               </div>
               <span
                 className={`text-sm font-semibold shrink-0 ${
-                  item.positive ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
+                  item.positive ? "text-green-600 dark:text-green-400" : "text-nolo-600 dark:text-nolo-400"
                 }`}
               >
                 {item.amount}

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "VaultQuest — Épargne sans risque avec prix",
+    "title": "Nolo — Épargne sans risque avec prix",
     "description": "Déposez, générez des rendements et gagnez des prix sans risquer votre capital."
   },
   "nav": {
@@ -16,7 +16,7 @@
     "terms": "Conditions du produit",
     "privacy": "Politique de confidentialité",
     "language": "Langue",
-    "copyright": "© {{year}} VaultQuest. Tous droits réservés."
+    "copyright": "© {{year}} Nolo. Tous droits réservés."
   },
   "vaults": {
     "title": "Coffres",

@@ -9,9 +9,9 @@ const STORAGE_KEY = "vq_onboarding_tour_done";
 const TOUR_STEPS = [
   {
     icon: LayoutDashboard,
-    title: "Welcome to VaultQuest",
+    title: "Welcome to Nolo",
     body: "This is your dashboard. It shows live protocol stats, your savings progress, and the next prize draw countdown. Everything you need is right here.",
-    accent: "from-red-500/15 to-orange-500/10",
+    accent: "from-nolo-500/15 to-orange-500/10",
   },
   {
     icon: CreditCard,
@@ -98,7 +98,7 @@ export default function VaultOnboardingTour() {
             <div className="relative p-6">
               {/* Header */}
               <div className="flex items-start justify-between gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500 dark:text-red-400">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500 dark:text-nolo-400">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <button
@@ -126,9 +126,9 @@ export default function VaultOnboardingTour() {
                     key={i}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       i === step
-                        ? "w-5 bg-red-500"
+                        ? "w-5 bg-nolo-500"
                         : i < step
-                          ? "w-1.5 bg-red-500/40"
+                          ? "w-1.5 bg-nolo-500/40"
                           : "w-1.5 bg-vault-border"
                     }`}
                   />

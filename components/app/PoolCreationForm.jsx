@@ -81,7 +81,7 @@ function validateForm(form) {
 function FieldError({ message }) {
   if (!message) return null;
   return (
-    <p className="mt-1 flex items-center gap-1 text-xs text-red-500" role="alert">
+    <p className="mt-1 flex items-center gap-1 text-xs text-nolo-500" role="alert">
       <AlertTriangle className="h-3 w-3 shrink-0" aria-hidden="true" />
       {message}
     </p>
@@ -95,7 +95,7 @@ function StepIndicator({ current, total }) {
         <span
           key={i}
           className={`h-1.5 rounded-full transition-all duration-300 ${
-            i <= current ? "bg-red-500 w-6" : "bg-vault-border w-1.5"
+            i <= current ? "bg-nolo-500 w-6" : "bg-vault-border w-1.5"
           }`}
           aria-hidden="true"
         />
@@ -187,7 +187,7 @@ export default function PoolCreationForm({ onSubmit }) {
               id="pool-name"
               value={form.name}
               onChange={(e) => update("name", e.target.value)}
-              className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+              className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               placeholder="e.g. USDC Stable Yield Pool"
               maxLength={VALIDATION.name.maxLength}
             />
@@ -204,7 +204,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 id="pool-asset"
                 value={form.asset}
                 onChange={(e) => update("asset", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               >
                 {ASSETS.map((a) => (
                   <option key={a} value={a}>{a}</option>
@@ -219,7 +219,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 id="pool-lockup"
                 value={form.lockup}
                 onChange={(e) => update("lockup", Number(e.target.value))}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               >
                 {LOCKUP_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -240,7 +240,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 min={VALIDATION.minDeposit.min}
                 value={form.minDeposit}
                 onChange={(e) => update("minDeposit", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <FieldError message={fieldError("minDeposit")} />
             </div>
@@ -254,7 +254,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 min={VALIDATION.maxDeposit.min}
                 value={form.maxDeposit}
                 onChange={(e) => update("maxDeposit", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <FieldError message={fieldError("maxDeposit")} />
             </div>
@@ -273,7 +273,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 max={VALIDATION.maxParticipants.max}
                 value={form.maxParticipants}
                 onChange={(e) => update("maxParticipants", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <FieldError message={fieldError("maxParticipants")} />
             </div>
@@ -288,7 +288,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 max={500}
                 value={form.rewardYieldPct}
                 onChange={(e) => update("rewardYieldPct", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <p className="mt-1 text-xs text-vault-muted">100 bps = 1x baseline reward weight</p>
             </div>
@@ -305,7 +305,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 type="date"
                 value={form.startDate}
                 onChange={(e) => update("startDate", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <FieldError message={fieldError("startDate")} />
             </div>
@@ -318,7 +318,7 @@ export default function PoolCreationForm({ onSubmit }) {
                 type="date"
                 value={form.endDate}
                 onChange={(e) => update("endDate", e.target.value)}
-                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25"
+                className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25"
               />
               <FieldError message={fieldError("endDate")} />
             </div>
@@ -334,7 +334,7 @@ export default function PoolCreationForm({ onSubmit }) {
               value={form.description}
               onChange={(e) => update("description", e.target.value)}
               rows={3}
-              className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-red-400 focus:ring-2 focus:ring-red-400/25 resize-none"
+              className="mt-1 w-full rounded-xl border border-vault-border bg-vault-surface px-4 py-2.5 text-sm text-vault-text outline-none transition focus:border-nolo-400 focus:ring-2 focus:ring-nolo-400/25 resize-none"
               placeholder="Brief description of this pool's purpose..."
             />
           </div>
@@ -398,8 +398,8 @@ export default function PoolCreationForm({ onSubmit }) {
       {/* Step 2: Submitting */}
       {step === 2 && (
         <div className="flex flex-col items-center justify-center py-12 space-y-4">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-red-500/30">
-            <Loader2 className="h-8 w-8 animate-spin text-red-400" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-nolo-500/30">
+            <Loader2 className="h-8 w-8 animate-spin text-nolo-400" />
           </div>
           <h3 className="text-lg font-semibold text-vault-text">Creating pool...</h3>
           <p className="text-sm text-vault-muted max-w-xs text-center">

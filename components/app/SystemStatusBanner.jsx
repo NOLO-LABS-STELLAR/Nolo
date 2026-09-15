@@ -27,7 +27,7 @@ const ENDPOINTS = [
     name: "Avalanche RPC",
     url: "https://api.avax.network",
   },
-  { id: "backend-api", name: "VaultQuest Backend", url: "/api/health" },
+  { id: "backend-api", name: "Nolo Backend", url: "/api/health" },
 ];
 
 const STATUS_SEVERITY = {

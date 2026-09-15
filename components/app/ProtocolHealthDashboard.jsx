@@ -47,7 +47,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
       case "unavailable":
       default:
         return (
-          <span className="flex items-center gap-1 rounded-full border border-red-500/30 bg-red-500/10 px-2.5 py-0.5 text-xs font-bold text-red-400" data-testid="status-unavailable">
+          <span className="flex items-center gap-1 rounded-full border border-nolo-500/30 bg-nolo-500/10 px-2.5 py-0.5 text-xs font-bold text-nolo-400" data-testid="status-unavailable">
             <XCircle className="h-3.5 w-3.5" /> Unavailable
           </span>
         );
@@ -98,7 +98,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
             </div>
           </div>
           {data.rpc.error && (
-            <p className="rounded bg-red-500/10 p-2 text-[11px] font-mono text-red-400" data-testid="rpc-error">
+            <p className="rounded bg-nolo-500/10 p-2 text-[11px] font-mono text-nolo-400" data-testid="rpc-error">
               {sanitizeSecret(data.rpc.error)}
             </p>
           )}
@@ -124,7 +124,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
             </div>
           </div>
           {data.backend.error && (
-            <p className="rounded bg-red-500/10 p-2 text-[11px] font-mono text-red-400" data-testid="backend-error">
+            <p className="rounded bg-nolo-500/10 p-2 text-[11px] font-mono text-nolo-400" data-testid="backend-error">
               {sanitizeSecret(data.backend.error)}
             </p>
           )}
@@ -150,7 +150,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
             </div>
           </div>
           {data.indexer.error && (
-            <p className="rounded bg-red-500/10 p-2 text-[11px] font-mono text-red-400" data-testid="indexer-error">
+            <p className="rounded bg-nolo-500/10 p-2 text-[11px] font-mono text-nolo-400" data-testid="indexer-error">
               {sanitizeSecret(data.indexer.error)}
             </p>
           )}
@@ -176,7 +176,7 @@ export default function ProtocolHealthDashboard({ healthData, onRefresh }) {
             </div>
           </div>
           {data.contracts.error && (
-            <p className="rounded bg-red-500/10 p-2 text-[11px] font-mono text-red-400" data-testid="contracts-error">
+            <p className="rounded bg-nolo-500/10 p-2 text-[11px] font-mono text-nolo-400" data-testid="contracts-error">
               {sanitizeSecret(data.contracts.error)}
             </p>
           )}

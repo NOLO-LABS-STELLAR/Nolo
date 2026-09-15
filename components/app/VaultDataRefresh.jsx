@@ -52,7 +52,7 @@ export default function VaultDataRefresh() {
       </button>
 
       {error && (
-        <div className="absolute top-full left-0 right-0 mt-2 flex items-start gap-2 text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+        <div className="absolute top-full left-0 right-0 mt-2 flex items-start gap-2 text-sm text-nolo-500 bg-nolo-500/10 border border-nolo-500/20 rounded-lg p-3">
           <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
           <span>{error}</span>
         </div>

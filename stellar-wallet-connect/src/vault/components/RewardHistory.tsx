@@ -93,7 +93,7 @@ const OutcomeBadge: FC<{ status: RewardOutcome }> = ({ status }) => {
 
 const PROOF_BADGE: Record<ProofStatus, { label: string; className: string; title: string }> = {
   verified: { label: "Proof ✓", className: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30", title: "Draw proof verified" },
-  tampered: { label: "Proof ✗", className: "bg-red-500/10 text-red-400 border border-red-500/30", title: "Draw proof integrity check failed" },
+  tampered: { label: "Proof ✗", className: "bg-nolo-500/10 text-nolo-400 border border-nolo-500/30", title: "Draw proof integrity check failed" },
   missing: { label: "No proof", className: "bg-gray-500/10 text-gray-400 border border-gray-600/30", title: "No draw proof found for this round" },
   pending: { label: "Proof pending", className: "bg-amber-500/10 text-amber-400 border border-amber-500/30", title: "Draw proof not yet available" },
   unverified: { label: "Proof ?", className: "bg-gray-500/10 text-gray-400 border border-gray-600/30", title: "Proof present but could not be fully verified" },
@@ -103,7 +103,7 @@ const CLAIM_STATUS_BADGE: Record<string, { label: string; className: string }> =
   claimed: { label: "Claimed", className: "bg-emerald-500/10 text-emerald-400" },
   pending: { label: "Claim pending", className: "bg-amber-500/10 text-amber-400" },
   unclaimed: { label: "Unclaimed", className: "bg-gray-500/10 text-gray-300" },
-  failed: { label: "Claim failed", className: "bg-red-500/10 text-red-400" },
+  failed: { label: "Claim failed", className: "bg-nolo-500/10 text-nolo-400" },
 };
 
 const ProofBadge: FC<{ proofStatus: ProofStatus; detail?: string }> = ({ proofStatus, detail }) => {
@@ -135,7 +135,7 @@ const TxLink: FC<{ txHash: string | null; network: StellarNetwork }> = ({ txHash
         href={explorerTxUrl(txHash, network) ?? undefined}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 text-sm text-red-300 hover:text-red-200 hover:underline"
+        className="inline-flex items-center gap-1 text-sm text-nolo-300 hover:text-nolo-200 hover:underline"
       >
         {truncateAddress(txHash)}
         <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -186,7 +186,7 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
     <section aria-label="Reward history" className="space-y-3">
       <header className="flex items-center justify-between gap-3">
         <h2 className="flex items-center gap-2 text-lg font-semibold text-white">
-          <Trophy className="h-5 w-5 text-red-400" aria-hidden="true" />
+          <Trophy className="h-5 w-5 text-nolo-400" aria-hidden="true" />
           Reward history
         </h2>
         <DataRefreshControl
@@ -199,10 +199,10 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
       </header>
 
       {/* Desktop: table */}
-      <div className="hidden overflow-hidden rounded-2xl border border-red-900/30 bg-[#1A0505]/60 sm:block">
+      <div className="hidden overflow-hidden rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 sm:block">
         <table className="w-full text-left text-sm">
           <thead className="text-xs uppercase tracking-wide text-gray-400">
-            <tr className="border-b border-red-900/30">
+            <tr className="border-b border-nolo-900/30">
               <th scope="col" className="px-4 py-3 font-medium">Pool</th>
               <th scope="col" className="px-4 py-3 font-medium">Cycle ended</th>
               <th scope="col" className="px-4 py-3 font-medium">Reward</th>
@@ -216,7 +216,7 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
           </thead>
           <tbody>
             {entries.map((entry) => (
-              <tr key={entry.id} className="border-b border-red-900/20 last:border-0">
+              <tr key={entry.id} className="border-b border-nolo-900/20 last:border-0">
                 <td className="px-4 py-3 font-medium text-white">{entry.poolName}</td>
                 <td className="px-4 py-3 text-gray-300">{formatDate(entry.cycleEndedAt)}</td>
                 <td className="px-4 py-3 text-gray-300">
@@ -251,7 +251,7 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
                         type="button"
                         onClick={() => onClaim(entry)}
                         disabled={claimFlow?.busy}
-                        className="rounded-lg bg-red-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
+                        className="rounded-lg bg-nolo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
                       >
                         Claim
                       </button>
@@ -267,7 +267,7 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
       {/* Mobile: cards */}
       <ul className="space-y-3 sm:hidden">
         {entries.map((entry) => (
-          <li key={entry.id} className="rounded-2xl border border-red-900/30 bg-[#1A0505]/60 p-4">
+          <li key={entry.id} className="rounded-2xl border border-nolo-900/30 bg-[#1A120D]/60 p-4">
             <div className="flex items-center justify-between gap-2">
               <span className="font-medium text-white">{entry.poolName}</span>
               <OutcomeBadge status={entry.status} />
@@ -312,7 +312,7 @@ export const RewardHistory: FC<RewardHistoryProps> = ({
                     type="button"
                     onClick={() => onClaim(entry)}
                     disabled={claimFlow?.busy}
-                    className="w-full rounded-lg bg-red-600 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
+                    className="w-full rounded-lg bg-nolo-600 py-2 text-sm font-semibold text-white hover:bg-nolo-700 disabled:cursor-not-allowed disabled:opacity-60 transition-colors"
                   >
                     Claim reward
                   </button>

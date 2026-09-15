@@ -48,7 +48,7 @@ function DetailSection({ icon: Icon, title, description, children }) {
   return (
     <section className="vq-glass space-y-5 p-4 sm:p-6" aria-labelledby={titleId}>
       <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-red-500">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-vault-border bg-vault-surface text-nolo-500">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <div>
@@ -147,7 +147,7 @@ export default function VaultDetailPage({ params }) {
     return (
       <div className="mx-auto max-w-xl py-12 text-center">
         <div className="vq-glass p-8 flex flex-col items-center gap-6">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-500/10 text-red-500 border border-red-500/20">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-nolo-500/10 text-nolo-500 border border-nolo-500/20">
             <AlertCircle size={32} />
           </div>
           <div>
@@ -183,7 +183,7 @@ export default function VaultDetailPage({ params }) {
       {/* Hero Header */}
       <header className="space-y-4">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-red-500/10 border border-red-500/20 px-3 py-1 text-xs font-semibold text-red-500">
+          <span className="rounded-full bg-nolo-500/10 border border-nolo-500/20 px-3 py-1 text-xs font-semibold text-nolo-500">
             {vault.network}
           </span>
           <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-500">
@@ -256,7 +256,7 @@ export default function VaultDetailPage({ params }) {
                     type="number"
                     value={calcPrincipal}
                     onChange={(e) => setCalcPrincipal(e.target.value)}
-                    className="w-full pl-7 pr-16 py-2 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/30"
+                    className="w-full pl-7 pr-16 py-2 rounded-xl border border-vault-border bg-vault-surface text-vault-text font-semibold focus:border-nolo-400 focus:outline-none focus:ring-2 focus:ring-nolo-400/30"
                     placeholder="1000"
                   />
                   <span className="absolute right-3 top-2.5 text-xs font-bold text-vault-muted uppercase">
@@ -318,10 +318,10 @@ export default function VaultDetailPage({ params }) {
           <VaultParticipantInsights vault={vault} />
           <VaultHealthStatusPanel />
           <section className="vq-glass p-4 sm:p-6 space-y-6 relative overflow-hidden group">
-            <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-[80px]" />
+            <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-nolo-500/10 blur-[80px]" />
             <div>
               <h2 className="text-lg font-bold text-vault-text flex items-center gap-2">
-                <Shield className="h-5 w-5 text-red-500" /> Your Position Data
+                <Shield className="h-5 w-5 text-nolo-500" /> Your Position Data
               </h2>
               <p className="mt-1 text-sm text-vault-muted">
                 Wallet-specific vault metrics load after connection.
@@ -333,7 +333,7 @@ export default function VaultDetailPage({ params }) {
                 <div className="grid gap-3">
                   <div className="rounded-xl border border-vault-border bg-vault-surface/40 p-4">
                     <div className="flex items-center gap-2 text-sm font-semibold text-vault-text">
-                      <CircleDollarSign className="h-4 w-4 text-red-500" aria-hidden="true" />
+                      <CircleDollarSign className="h-4 w-4 text-nolo-500" aria-hidden="true" />
                       Balance
                     </div>
                     <div className="mt-3 flex justify-between items-center text-sm">
@@ -344,7 +344,7 @@ export default function VaultDetailPage({ params }) {
 
                   <div className="rounded-xl border border-vault-border bg-vault-surface/40 p-4">
                     <div className="flex items-center gap-2 text-sm font-semibold text-vault-text">
-                      <Ticket className="h-4 w-4 text-red-500" aria-hidden="true" />
+                      <Ticket className="h-4 w-4 text-nolo-500" aria-hidden="true" />
                       Draw Eligibility
                     </div>
                     <div className="mt-3 space-y-2">

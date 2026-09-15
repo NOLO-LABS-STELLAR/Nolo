@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
     content: (
       <>
         <p>
-          VaultQuest pools saver deposits on Stellar. Yield from the pool funds periodic prize
+          Nolo pools saver deposits on Stellar. Yield from the pool funds periodic prize
           drawings while your <strong>principal stays fully withdrawable</strong> at any time.
         </p>
         <p className="mt-3">
@@ -101,7 +101,7 @@ const FAQ_ITEMS = [
         </p>
         <p className="mt-3">
           Accounts must maintain the Stellar minimum balance (base reserve plus subentries). EVM
-          flows on Avalanche use separate gas fees paid in AVAX. VaultQuest does not add a protocol
+          flows on Avalanche use separate gas fees paid in AVAX. Nolo does not add a protocol
           deposit fee beyond on-chain network costs.
         </p>
       </>
@@ -127,7 +127,7 @@ export default function FaqAccordion() {
             className="overflow-hidden rounded-xl border border-vault-border bg-vault-surface/60"
           >
             <Accordion.Header>
-              <Accordion.Trigger className="group flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-vault-text transition-colors hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg dark:hover:text-red-400">
+              <Accordion.Trigger className="group flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-vault-text transition-colors hover:text-nolo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nolo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-vault-bg dark:hover:text-nolo-400">
                 {item.question}
                 <ChevronDown
                   className="h-4 w-4 shrink-0 text-vault-muted transition-transform duration-200 group-data-[state=open]:rotate-180"

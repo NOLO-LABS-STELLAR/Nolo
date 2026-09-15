@@ -155,7 +155,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
                       </div>
                       <button
                         onClick={() => onRemove(pool.id)}
-                        className="p-1.5 rounded-lg hover:bg-red-500/20 text-vault-muted hover:text-red-500 transition-colors"
+                        className="p-1.5 rounded-lg hover:bg-nolo-500/20 text-vault-muted hover:text-nolo-500 transition-colors"
                         aria-label="Remove from comparison"
                       >
                         <X size={16} aria-hidden="true" />
@@ -222,7 +222,7 @@ export default function PoolComparisonDrawer({ pools, onRemove, onClearAll, onCl
                           </div>
                           <button
                             onClick={() => onRemove(pool.id)}
-                            className="p-1 rounded hover:bg-red-500/20 text-vault-muted hover:text-red-500 transition-colors"
+                            className="p-1 rounded hover:bg-nolo-500/20 text-vault-muted hover:text-nolo-500 transition-colors"
                             aria-label="Remove from comparison"
                           >
                             <X size={14} aria-hidden="true" />
